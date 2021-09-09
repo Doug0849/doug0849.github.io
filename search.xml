@@ -1,6 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>.includes .matches .filter .find .some .findIndex 使用</title>
+    <url>/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A81/</url>
+    <content><![CDATA[<p>.includes(變數或值) 只能使用在陣列物件value查核上，核對對象為一個變數或是值</p>
+<span id="more"></span>
+<p>.matches(‘.class’或’#id’) 查找元素所含有的class或id，或是也可以用 classList.contain()，matches比較簡潔</p>
+<p>.filter(設定條件函示) 是把一個陣列物件裡面符合條件的選出來，不符合的剃除，最後他還是一個陣列</p>
+<p>.find(設定條件函示)是把一個陣列物件裡面，第一個符合條件的挑出來，就停止</p>
+<p>.some(設定條件函示)是把一個陣列物件裡面，查找是否有相符的，有就是true沒有就是false，並不回傳整筆符合資料</p>
+<p>.findIndex(設定條件函示)回傳項目Index，找不到則回傳-1)</p>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>技術筆記</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>跳軌換跑道關於學習寫CODE這件事</title>
+    <url>/2021/07/18/%E8%B7%B3%E8%BB%8C%E6%8F%9B%E8%B7%91%E9%81%93%EF%BC%8C%E9%97%9C%E6%96%BC%E5%AD%B8%E7%BF%92%E5%AF%ABCODE%E9%80%99%E4%BB%B6%E4%BA%8B/</url>
+    <content><![CDATA[<blockquote><p>　　終於在2021年5月底的時候，下定決心要轉換跑道，關於開始走上轉職成為網頁工程師的路上。</p>
+</blockquote>
+<span id="more"></span>
+<p>　　後來開始在網路上查找相關的資訊，思考要如何學習以及入門的時候，搜尋到了AC CAMP，看完了簡介沒兩分鐘馬上決定從這個地方開始出發。</p>
+<p>　　其實本身自己也算是完全沒有任何關於寫code的經驗，所以剛開始是加入學期一，發現AC 的課綱內容真的寫得很清楚明瞭，對我來說我覺得真的不困難，所以很快的就把所有學期一的預讀內容和練習完成，然後還迫不及待的馬上進入了學期二的預讀階段，最後在六月底開班前完成了學期二之一的預讀，也接著開啟學期二之二的預讀了!</p>
+<p>　　在寫這篇文章時，距離下定決心轉換跑道後大概經過了一個半月左右的時間，從零基礎的我，到完成了學期二之一，學了非常多的新知識，新觀念，以及新技術，這都是一個半月前自己沒有想像過的，而在一步步完成這些階段性的課程後，越來越據信心自己能夠成功轉職。</p>
+<p>　　這當中真的非常謝謝AC 的所有教練以及助教，在過去幾周當中，課程內容不僅僅是教你如何認識code寫code，還有很多的關於學習的技巧、心態的調整、學長姐的經驗分享…好多好多，這些真的都讓我受益匪淺，而且AC的學習環境真的設計的很棒，每個單元都有相對的關係，一步步建立起相關的知識、一步步的加深練習難度且不斷地重複操作熟悉，然後又有點像是在玩遊戲一樣，當遇到打不贏的BOSS還有助教可以求救幫助，最後破關斬將所帶來的成就感也讓自己信心大增，當中建立起自信心也不再那麼擔心害怕自己沒辦法成功轉職，保持著良好的心態持續的學習，相信自己能夠達到目標。</p>
+<p>　　對於下一個階段的學習，希望自己能夠保持著學習動力繼續完成所有挑戰，而目前也已經在預讀學期二之二了，課程難度真的有感提升超多！期望自己能夠在八月分開課之前完成所有的預讀與練習。</p>
+]]></content>
+      <categories>
+        <category>日記</category>
+      </categories>
+      <tags>
+        <tag>轉職</tag>
+        <tag>AlphaCamp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>預讀學期2-2_S3_A12-電影清單加碼功能-作業心得</title>
     <url>/2021/07/29/%E9%A0%90%E8%AE%80%E5%AD%B8%E6%9C%9F2-2-S3-A12-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E5%8A%A0%E7%A2%BC%E5%8A%9F%E8%83%BD-%E4%BD%9C%E6%A5%AD%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<p>　　之前一直沒有寫相關的作業心得筆記，一方面是覺得難度不高，一方面覺得操作幾次就很熟練了，所以就很懶惰…但進入到學期2-2後，光是S2的製作電影清單，突然感覺難度一下提升超級多，很多內容不是一次兩次就能夠記起來且熟悉，而且函式的拆解跟邏輯複雜度上也提升相當多，演算法也來到了百行之多，這時才發現真的很難一下吸收，所以決定開始來寫學習、作業、技術相關筆記來加深自己的記憶及熟練度。</p>
@@ -148,23 +187,9 @@
       </categories>
       <tags>
         <tag>技術筆記</tag>
-        <tag>作業</tag>
         <tag>AlphaCamp</tag>
+        <tag>作業</tag>
         <tag>setAttribute()</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ejs樣板語法技術筆記</title>
-    <url>/2021/09/08/ejs%E6%A8%A3%E6%9D%BF%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/</url>
-    <content><![CDATA[<p>在ejs樣版檔案下的標籤語意</p>
-<p>&lt;%   ‘脚本’ 标签，用于流程控制，无输出。<br>&lt;%_  删除其前面的空格符<br>&lt;%__ 在模板中，透过 __ 或 _p 辅助函数，即可取得翻译后的字符串，前者用于一般使用；而后者用于复数字符串。<br>     可詳<a href="https://hexo.io/zh-cn/docs/internationalization">Hexo官方文檔</a><br>&lt;%=  输出数据到模板（输出是转义 HTML 标签），像是等於innerHTML<br>&lt;%-  输出非转义的数据到模板，像是等於innerText<br>&lt;%#  注释标签，不执行、不输出内容<br>&lt;%%  输出字符串 ‘&lt;%’<br>%&gt;   一般结束标签<br>-%&gt;  删除紧随其后的换行符<br>_%&gt;  将结束标签后面的空格符删除</p>
-]]></content>
-      <categories>
-        <category>EJS</category>
-      </categories>
-      <tags>
-        <tag>技術筆記</tag>
-        <tag>EJS</tag>
       </tags>
   </entry>
   <entry>
@@ -194,29 +219,23 @@
         <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>技術筆記</tag>
         <tag>Javascript</tag>
+        <tag>技術筆記</tag>
       </tags>
   </entry>
   <entry>
-    <title>.toggle() 和 .appendchild()</title>
-    <url>/2021/09/09/toggle%E5%92%8Cappendchild/</url>
-    <content><![CDATA[<h2 id="toggle"><a href="#toggle" class="headerlink" title="toggle"></a>toggle</h2><p>範例</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">element.classList.toggle(&#x27;sample&#x27;) </span><br></pre></td></tr></table></figure>
-
-<p>element ：某元素，使用document.querySelecrot選出<br>.classList ：某元素的class屬性<br>.toggle(‘.sample’) ：</p>
-<p>如果class屬性裡面沒有sample則加上sample，<br>如果class屬性裡面有sample則刪除sample，</p>
+    <title>Hexo操作</title>
+    <url>/2021/09/09/Hexo%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h3 id="關於draft"><a href="#關於draft" class="headerlink" title="關於draft"></a>關於draft</h3><p>放在/source/_drafts下<br>可執行命令hexo new draft <code>&lt;title&gt;</code> 創建草稿<br>通過執行命令hexo publish <code>&lt;title&gt;</code> 可以把_drafts下的草稿文章推到_posts下</p>
 <span id="more"></span>
-
-<p>Node.appendChild(sample) 是將一個節點加到指定的父節點中所有子節點的最後面。如果sample這個節點已經存在document樹當中，那 appendChild(sample) 會將原本sample這個節點位置移動到node這個新的位置（不需要事先移除要移動的節點）。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// TodoList Delete and check</span></span><br><span class="line">list.addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> target = event.target;</span><br><span class="line">  <span class="keyword">const</span> parentElement = target.parentElement</span><br><span class="line">  <span class="comment">//按下垃圾桶，將項目刪除</span></span><br><span class="line">  <span class="keyword">if</span> (target.classList.contains(<span class="string">&quot;delete&quot;</span>)) &#123;</span><br><span class="line">    parentElement.remove();</span><br><span class="line">    <span class="comment">//Todo中項目按下名字，將項目移置done中</span></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target.tagName === <span class="string">&quot;LABEL&quot;</span>) &#123;</span><br><span class="line">    doneList.appendChild(parentElement)</span><br><span class="line">    target.classList.toggle(<span class="string">&quot;checked&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// DoneList Delete and back</span></span><br><span class="line">doneList.addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> target = event.target;</span><br><span class="line">  <span class="keyword">const</span> parentElement = target.parentElement</span><br><span class="line">  <span class="comment">//按下垃圾桶，將項目刪除</span></span><br><span class="line">  <span class="keyword">if</span> (target.classList.contains(<span class="string">&quot;delete&quot;</span>)) &#123;</span><br><span class="line">    parentElement.remove();</span><br><span class="line">    <span class="comment">//Done中項目按下名字，將項目移置Todo中</span></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target.tagName === <span class="string">&quot;LABEL&quot;</span>) &#123;</span><br><span class="line">    list.appendChild(parentElement)</span><br><span class="line">    target.classList.toggle(<span class="string">&quot;checked&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>會按照new_post_name的配置來命名文章<br>如果有開啟_config裡的post_asset_folder: true，對應的asset資料夾也會一起移動<br>手動操作也是可以的，草稿最後會被解析到model(‘Post’)中，參數published變為0 （預設情况下不會傳給布局頁面進行渲染）<br>_config.yml中如果設定render_drafts: true<br>就會傳給布局頁面進行渲染<br>在generate或deploy時會自動把_drafts/下的文件解析生成到目標文件夾下（但不會移動到/source/_posts下）</p>
 ]]></content>
       <categories>
-        <category>JavaScript</category>
+        <category>Hexo</category>
       </categories>
       <tags>
         <tag>技術筆記</tag>
-        <tag>Javascript</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -261,23 +280,58 @@
       </tags>
   </entry>
   <entry>
-    <title>跳軌換跑道關於學習寫CODE這件事</title>
-    <url>/2021/07/18/%E8%B7%B3%E8%BB%8C%E6%8F%9B%E8%B7%91%E9%81%93%EF%BC%8C%E9%97%9C%E6%96%BC%E5%AD%B8%E7%BF%92%E5%AF%ABCODE%E9%80%99%E4%BB%B6%E4%BA%8B/</url>
-    <content><![CDATA[<blockquote><p>　　終於在2021年5月底的時候，下定決心要轉換跑道，關於開始走上轉職成為網頁工程師的路上。</p>
-</blockquote>
+    <title>ejs樣板語法技術筆記</title>
+    <url>/2021/09/08/ejs%E6%A8%A3%E6%9D%BF%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/</url>
+    <content><![CDATA[<p>在ejs樣版檔案下的標籤語意</p>
+<p>&lt;%   ‘脚本’ 标签，用于流程控制，无输出。<br>&lt;%_  删除其前面的空格符<br>&lt;%__ 在模板中，透过 __ 或 _p 辅助函数，即可取得翻译后的字符串，前者用于一般使用；而后者用于复数字符串。<br>     可詳<a href="https://hexo.io/zh-cn/docs/internationalization">Hexo官方文檔</a><br>&lt;%=  输出数据到模板（输出是转义 HTML 标签），像是等於innerHTML<br>&lt;%-  输出非转义的数据到模板，像是等於innerText<br>&lt;%#  注释标签，不执行、不输出内容<br>&lt;%%  输出字符串 ‘&lt;%’<br>%&gt;   一般结束标签<br>-%&gt;  删除紧随其后的换行符<br>_%&gt;  将结束标签后面的空格符删除</p>
+]]></content>
+      <categories>
+        <category>EJS</category>
+      </categories>
+      <tags>
+        <tag>技術筆記</tag>
+        <tag>EJS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>.toggle() 和 .appendchild()</title>
+    <url>/2021/09/09/toggle%E5%92%8Cappendchild/</url>
+    <content><![CDATA[<h2 id="toggle"><a href="#toggle" class="headerlink" title="toggle"></a>toggle</h2><p>範例</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">element.classList.toggle(&#x27;sample&#x27;) </span><br></pre></td></tr></table></figure>
+
+<p>element ：某元素，使用document.querySelecrot選出<br>.classList ：某元素的class屬性<br>.toggle(‘.sample’) ：</p>
+<p>如果class屬性裡面沒有sample則加上sample，<br>如果class屬性裡面有sample則刪除sample，</p>
 <span id="more"></span>
-<p>　　後來開始在網路上查找相關的資訊，思考要如何學習以及入門的時候，搜尋到了AC CAMP，看完了簡介沒兩分鐘馬上決定從這個地方開始出發。</p>
-<p>　　其實本身自己也算是完全沒有任何關於寫code的經驗，所以剛開始是加入學期一，發現AC 的課綱內容真的寫得很清楚明瞭，對我來說我覺得真的不困難，所以很快的就把所有學期一的預讀內容和練習完成，然後還迫不及待的馬上進入了學期二的預讀階段，最後在六月底開班前完成了學期二之一的預讀，也接著開啟學期二之二的預讀了!</p>
-<p>　　在寫這篇文章時，距離下定決心轉換跑道後大概經過了一個半月左右的時間，從零基礎的我，到完成了學期二之一，學了非常多的新知識，新觀念，以及新技術，這都是一個半月前自己沒有想像過的，而在一步步完成這些階段性的課程後，越來越據信心自己能夠成功轉職。</p>
-<p>　　這當中真的非常謝謝AC 的所有教練以及助教，在過去幾周當中，課程內容不僅僅是教你如何認識code寫code，還有很多的關於學習的技巧、心態的調整、學長姐的經驗分享…好多好多，這些真的都讓我受益匪淺，而且AC的學習環境真的設計的很棒，每個單元都有相對的關係，一步步建立起相關的知識、一步步的加深練習難度且不斷地重複操作熟悉，然後又有點像是在玩遊戲一樣，當遇到打不贏的BOSS還有助教可以求救幫助，最後破關斬將所帶來的成就感也讓自己信心大增，當中建立起自信心也不再那麼擔心害怕自己沒辦法成功轉職，保持著良好的心態持續的學習，相信自己能夠達到目標。</p>
-<p>　　對於下一個階段的學習，希望自己能夠保持著學習動力繼續完成所有挑戰，而目前也已經在預讀學期二之二了，課程難度真的有感提升超多！期望自己能夠在八月分開課之前完成所有的預讀與練習。</p>
+
+<p>Node.appendChild(sample) 是將一個節點加到指定的父節點中所有子節點的最後面。如果sample這個節點已經存在document樹當中，那 appendChild(sample) 會將原本sample這個節點位置移動到node這個新的位置（不需要事先移除要移動的節點）。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// TodoList Delete and check</span></span><br><span class="line">list.addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> target = event.target;</span><br><span class="line">  <span class="keyword">const</span> parentElement = target.parentElement</span><br><span class="line">  <span class="comment">//按下垃圾桶，將項目刪除</span></span><br><span class="line">  <span class="keyword">if</span> (target.classList.contains(<span class="string">&quot;delete&quot;</span>)) &#123;</span><br><span class="line">    parentElement.remove();</span><br><span class="line">    <span class="comment">//Todo中項目按下名字，將項目移置done中</span></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target.tagName === <span class="string">&quot;LABEL&quot;</span>) &#123;</span><br><span class="line">    doneList.appendChild(parentElement)</span><br><span class="line">    target.classList.toggle(<span class="string">&quot;checked&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// DoneList Delete and back</span></span><br><span class="line">doneList.addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> target = event.target;</span><br><span class="line">  <span class="keyword">const</span> parentElement = target.parentElement</span><br><span class="line">  <span class="comment">//按下垃圾桶，將項目刪除</span></span><br><span class="line">  <span class="keyword">if</span> (target.classList.contains(<span class="string">&quot;delete&quot;</span>)) &#123;</span><br><span class="line">    parentElement.remove();</span><br><span class="line">    <span class="comment">//Done中項目按下名字，將項目移置Todo中</span></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target.tagName === <span class="string">&quot;LABEL&quot;</span>) &#123;</span><br><span class="line">    list.appendChild(parentElement)</span><br><span class="line">    target.classList.toggle(<span class="string">&quot;checked&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>Javascript</tag>
+        <tag>技術筆記</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>今天是學寫Code的第107天</title>
+    <url>/2021/09/09/%E4%BB%8A%E5%A4%A9%E6%98%AF%E5%AD%B8%E5%AF%ABCode%E7%9A%84%E7%AC%AC107%E5%A4%A9/</url>
+    <content><![CDATA[<h5 id="今天是我學寫code的第107天"><a href="#今天是我學寫code的第107天" class="headerlink" title="今天是我學寫code的第107天"></a><center>今天是我學寫code的第107天</center></h5><p><strong><em><center>(歡呼加鼓掌!)</center></em></strong></p>
+<p>　　在2021年5月25日晚上這一天，對自己下了一個人生的新決定，決定要轉換跑道啦!<br>　　學到至今3個月多一些，加上第一次自己成功在Github上用Hexo架出靜態網頁，就在這邊稍微紀錄一下自己的轉職日記啦! XD</p>
+<span id="more"></span>
+<p>　　再一次說說為什麼在這老大不小的年紀，就在今年年底即將正式年滿32歲的微大叔年紀，竟然毅然決然地決定換跑道吧!</p>
+<p>　　本身原本是從事建築設計產業的，但從大學開始半工半讀一直做到了現，到海外越南工作，到了前幾個月還是下了個決心轉換跑道了。</p>
+<p>　　原因的話，其實一方面是疫情影響的關係導致無法回親愛的臺灣，一方面是建築設計這產業在臺灣的處境真的越來越差，薪資待遇真的讓我覺得糟糕到很離譜，本身就須具備很多專業的知識及技術能力，還得花很多時間學習新的軟件操作及使用，但學這麼多卻完全不見薪水有多大的成長，反而變成理所應當的感覺，而且這產業所背負的責任壓力，時間壓力以及工作量卻又時常相當的大，所以就在想著若是回臺灣後到底要不要繼續這產業，最後最後自己內心的想法是”NO”，所以就就開始思考了，那我想做什麼?</p>
+<p>　　這要回到小時候，其實自己的父親是一位很熱愛電腦的人，他在我小學一二年級的時候，就買了第一台window 95的電腦，於是我從小就熱愛打電腦遊戲，後來父母覺得我們似乎有興趣，也把我們送到電腦補習班學習，但對於那個年紀連除法都不會的我來說，學程式語言真的太難了。後來父母就把我轉送到學習PhotoShop、DreamWeaver、Flash…但老實說現在大概只有PhotoShop功力還行吧，後來長大自己對這方面也比較有興趣又自己買書學了Illustrator，我想也是因為從小培養出對電腦相關的興趣，加上國中畢業時原本想要去念大安高中的資訊科，但那時候母親聽信親戚的話，那時候很多人覺得念技職學校沒未來，大家都要念普通高中然後進好名校，所以堅持不讓我念技職學校，也可能是這原因，又再心理埋下了另一個小小的遺憾，直至今日人生自己做主，所以就下定決心不如開始學習寫程式吧!</p>
+<p>　　剛好越南疫情也相當嚴重，所有工作幾乎都停擺，工作也非常不忙碌，所以有比較多的時間可以專心學習，就這樣<strong>邊打電動邊工作邊學怎麼Programming</strong>到今天<strong>107</strong>天的日子裡，已經會如何使用Express.js以及MongoDB來架設基本的網站，雖說還不是很熟悉，但也算是一個歷程了，再來又自己學習了如何在Github架出靜態網頁，如何用Hexo框架系統在Github架設個人blog，也算是滿滿的成就感啦!(再次為自己歡呼加鼓掌)</p>
+<p>　　再來下個階段目標，因為目前這個Blog還是套用超具人氣的樣板(可是它真的很好用，害我有點懶惰)，接著開始會自己學習把所有Blog頁面重新架設過，並建立出自己風格的Hexo主題，然後陸陸續續把相關練習作品整理起來，在這邊當成最好的履歷表呈現出來，也繼續學習更多複雜精進的技術，另一方面看看是否會幫助到一些跟我一樣半路出家的人，接著希望明年差不多這個時間，看看是否能順利達成轉職目標，就讓我們繼續看下去吧!</p>
 ]]></content>
       <categories>
         <category>日記</category>
       </categories>
       <tags>
         <tag>轉職</tag>
-        <tag>AlphaCamp</tag>
       </tags>
   </entry>
   <entry>
@@ -316,62 +370,8 @@
         <category>相談室</category>
       </categories>
       <tags>
-        <tag>工作相談室</tag>
         <tag>AlphaCamp</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>.includes .matches .filter .find .some .findIndex 使用</title>
-    <url>/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A81/</url>
-    <content><![CDATA[<p>.includes(變數或值) 只能使用在陣列物件value查核上，核對對象為一個變數或是值</p>
-<span id="more"></span>
-<p>.matches(‘.class’或’#id’) 查找元素所含有的class或id，或是也可以用 classList.contain()，matches比較簡潔</p>
-<p>.filter(設定條件函示) 是把一個陣列物件裡面符合條件的選出來，不符合的剃除，最後他還是一個陣列</p>
-<p>.find(設定條件函示)是把一個陣列物件裡面，第一個符合條件的挑出來，就停止</p>
-<p>.some(設定條件函示)是把一個陣列物件裡面，查找是否有相符的，有就是true沒有就是false，並不回傳整筆符合資料</p>
-<p>.findIndex(設定條件函示)回傳項目Index，找不到則回傳-1)</p>
-]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-      <tags>
-        <tag>技術筆記</tag>
-        <tag>Javascript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo操作</title>
-    <url>/2021/09/09/Hexo%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<h3 id="關於draft"><a href="#關於draft" class="headerlink" title="關於draft"></a>關於draft</h3><p>放在/source/_drafts下<br>可執行命令hexo new draft <code>&lt;title&gt;</code> 創建草稿<br>通過執行命令hexo publish <code>&lt;title&gt;</code> 可以把_drafts下的草稿文章推到_posts下</p>
-<span id="more"></span>
-<p>會按照new_post_name的配置來命名文章<br>如果有開啟_config裡的post_asset_folder: true，對應的asset資料夾也會一起移動<br>手動操作也是可以的，草稿最後會被解析到model(‘Post’)中，參數published變為0 （預設情况下不會傳給布局頁面進行渲染）<br>_config.yml中如果設定render_drafts: true<br>就會傳給布局頁面進行渲染<br>在generate或deploy時會自動把_drafts/下的文件解析生成到目標文件夾下（但不會移動到/source/_posts下）</p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>技術筆記</tag>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>今天是學寫Code的第107天</title>
-    <url>/2021/09/09/%E4%BB%8A%E5%A4%A9%E6%98%AF%E5%AD%B8%E5%AF%ABCode%E7%9A%84%E7%AC%AC107%E5%A4%A9/</url>
-    <content><![CDATA[<h5 id="今天是我學寫code的第107天"><a href="#今天是我學寫code的第107天" class="headerlink" title="今天是我學寫code的第107天"></a><center>今天是我學寫code的第107天</center></h5><p><strong><em><center>(歡呼加鼓掌!)</center></em></strong></p>
-<p>　　在2021年5月25日晚上這一天，對自己下了一個人生的新決定，決定要轉換跑道啦!<br>　　學到至今3個月多一些，加上第一次自己成功在Github上用Hexo架出靜態網頁，就在這邊稍微紀錄一下自己的轉職日記啦! XD</p>
-<span id="more"></span>
-<p>　　再一次說說為什麼在這老大不小的年紀，就在今年年底即將正式年滿32歲的微大叔年紀，竟然毅然決然地決定換跑道吧!</p>
-<p>　　本身原本是從事建築設計產業的，但從大學開始半工半讀一直做到了現，到海外越南工作，到了前幾個月還是下了個決心轉換跑道了。</p>
-<p>　　原因的話，其實一方面是疫情影響的關係導致無法回親愛的臺灣，一方面是建築設計這產業在臺灣的處境真的越來越差，薪資待遇真的讓我覺得糟糕到很離譜，本身就須具備很多專業的知識及技術能力，還得花很多時間學習新的軟件操作及使用，但學這麼多卻完全不見薪水有多大的成長，反而變成理所應當的感覺，而且這產業所背負的責任壓力，時間壓力以及工作量卻又時常相當的大，所以就在想著若是回臺灣後到底要不要繼續這產業，最後最後自己內心的想法是”NO”，所以就就開始思考了，那我想做什麼?</p>
-<p>　　這要回到小時候，其實自己的父親是一位很熱愛電腦的人，他在我小學一二年級的時候，就買了第一台window 95的電腦，於是我從小就熱愛打電腦遊戲，後來父母覺得我們似乎有興趣，也把我們送到電腦補習班學習，但對於那個年紀連除法都不會的我來說，學程式語言真的太難了。後來父母就把我轉送到學習PhotoShop、DreamWeaver、Flash…但老實說現在大概只有PhotoShop功力還行吧，後來長大自己對這方面也比較有興趣又自己買書學了Illustrator，我想也是因為從小培養出對電腦相關的興趣，加上國中畢業時原本想要去念大安高中的資訊科，但那時候母親聽信親戚的話，那時候很多人覺得念技職學校沒未來，大家都要念普通高中然後進好名校，所以堅持不讓我念技職學校，也可能是這原因，又再心理埋下了另一個小小的遺憾，直至今日人生自己做主，所以就下定決心不如開始學習寫程式吧!</p>
-<p>　　剛好越南疫情也相當嚴重，所有工作幾乎都停擺，工作也非常不忙碌，所以有比較多的時間可以專心學習，就這樣<strong>邊打電動邊工作邊學怎麼Programming</strong>到今天<strong>107</strong>天的日子裡，已經會如何使用Express.js以及MongoDB來架設基本的網站，雖說還不是很熟悉，但也算是一個歷程了，再來又自己學習了如何在Github架出靜態網頁，如何用Hexo框架系統在Github架設個人blog，也算是滿滿的成就感啦!(再次為自己歡呼加鼓掌)</p>
-<p>　　再來下個階段目標，因為目前這個Blog還是套用超具人氣的樣板(可是它真的很好用，害我有點懶惰)，接著開始會自己學習把所有Blog頁面重新架設過，並建立出自己風格的Hexo主題，然後陸陸續續把相關練習作品整理起來，在這邊當成最好的履歷表呈現出來，也繼續學習更多複雜精進的技術，另一方面看看是否會幫助到一些跟我一樣半路出家的人，接著希望明年差不多這個時間，看看是否能順利達成轉職目標，就讓我們繼續看下去吧!</p>
-]]></content>
-      <categories>
-        <category>日記</category>
-      </categories>
-      <tags>
-        <tag>轉職</tag>
+        <tag>工作相談室</tag>
       </tags>
   </entry>
 </search>
