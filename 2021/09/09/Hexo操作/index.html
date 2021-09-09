@@ -248,6 +248,7 @@
 <p>簡易命令寫法 hexo g<br>可以附帶參數 -w 將會隨時監控原始檔案的變動，只要一變動便會重新生成新的html，在本地測試時很好用，開一個終端機執行hexo serve啟動本地伺服器觀察，一個終端機執行 hexo g -w 將會持續幫你更新檔案。</p>
 <h3 id="關於部屬"><a href="#關於部屬" class="headerlink" title="關於部屬"></a>關於部屬</h3><p>執行命令hexo deploy<br>在執行hexo deploy之前要先執行 hexo generate來產生靜態文件，然後在執行hexo deploy就會將靜態文件上傳到指定位置。<br>Hexo預設支援github，只要在github開好repo並設定成github_page，可以在站點_config裡加入設定值</p>
 <p>deploy:<br>  type: git<br>  repo: <a target="_blank" rel="noopener" href="https://github.com/%E5%80%8B%E4%BA%BA%E5%B8%B3%E8%99%9F/repo%E5%90%8D%E7%A8%B1">https://github.com/個人帳號/repo名稱</a><br>  branch: master(推送到master分支，若不使用master分支要設定到你repo設定的預設分支上)</p>
+<p>執行hexo deploy -m “commit message”<br>等於git commit -m “message”</p>
 <h3 id="關於本地伺服器"><a href="#關於本地伺服器" class="headerlink" title="關於本地伺服器"></a>關於本地伺服器</h3><p>執行完hexo generate後若不想直接上傳到個人網路空間，<br>可以執行 hexo serve 來啟動本地伺服器，觀察檢查是否有其他問題。<br>本地伺服器位置位於 <a target="_blank" rel="noopener" href="https://localhost:4000/">https://localhost:4000</a></p>
 <h3 id="關於站點配置-config-yml"><a href="#關於站點配置-config-yml" class="headerlink" title="關於站點配置_config.yml"></a>關於站點配置_config.yml</h3><p>有很多的基本配置都在這個文件裡，相關的配置變數可以詳官方網站的文件說明。<br><strong><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration">Hexo配置</a></strong></p>
 
