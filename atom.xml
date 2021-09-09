@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>想要邊撸鐵邊學CODE的DOUG</title>
+  
+  <subtitle>快樂每一天</subtitle>
+  <link href="https://doug0849.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://doug0849.github.io/"/>
+  <updated>2021-09-09T16:44:32.000Z</updated>
+  <id>https://doug0849.github.io/</id>
+  
+  <author>
+    <name>Doug 道</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>今天是學寫Code的第107天</title>
+    <link href="https://doug0849.github.io/2021/09/09/%E4%BB%8A%E5%A4%A9%E6%98%AF%E5%AD%B8%E5%AF%ABCode%E7%9A%84%E7%AC%AC107%E5%A4%A9/"/>
+    <id>https://doug0849.github.io/2021/09/09/%E4%BB%8A%E5%A4%A9%E6%98%AF%E5%AD%B8%E5%AF%ABCode%E7%9A%84%E7%AC%AC107%E5%A4%A9/</id>
+    <published>2021-09-09T16:44:32.000Z</published>
+    <updated>2021-09-09T16:44:32.000Z</updated>
+    
+    
+    <summary type="html">&lt;h5 id=&quot;今天是我學寫code的第107天&quot;&gt;&lt;a href=&quot;#今天是我學寫code的第107天&quot; class=&quot;headerlink&quot; title=&quot;今天是我學寫code的第107天&quot;&gt;&lt;/a&gt;&lt;center&gt;今天是我學寫code的第107天&lt;/center&gt;&lt;/h5&gt;&lt;p&gt;&lt;strong&gt;&lt;em&gt;&lt;center&gt;(歡呼加鼓掌!)&lt;/center&gt;&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;　　在2021年5月25日晚上這一天，對自己下了一個人生的新決定，決定要轉換跑道啦!&lt;br&gt;　　學到至今3個月多一些，加上第一次自己成功在Github上用Hexo架出靜態網頁，就在這邊稍微紀錄一下自己的轉職日記啦! XD&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="日記" scheme="https://doug0849.github.io/categories/%E6%97%A5%E8%A8%98/"/>
+    
+    
+    <category term="轉職" scheme="https://doug0849.github.io/tags/%E8%BD%89%E8%81%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo操作</title>
+    <link href="https://doug0849.github.io/2021/09/09/Hexo%E6%93%8D%E4%BD%9C/"/>
+    <id>https://doug0849.github.io/2021/09/09/Hexo%E6%93%8D%E4%BD%9C/</id>
+    <published>2021-09-09T14:35:44.000Z</published>
+    <updated>2021-09-09T14:35:44.000Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;關於draft&quot;&gt;&lt;a href=&quot;#關於draft&quot; class=&quot;headerlink&quot; title=&quot;關於draft&quot;&gt;&lt;/a&gt;關於draft&lt;/h3&gt;&lt;p&gt;放在/source/_drafts下&lt;br&gt;可執行命令hexo new draft &lt;code&gt;&amp;lt;title&amp;gt;&lt;/code&gt; 創建草稿&lt;br&gt;通過執行命令hexo publish &lt;code&gt;&amp;lt;title&amp;gt;&lt;/code&gt; 可以把_drafts下的草稿文章推到_posts下&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Hexo" scheme="https://doug0849.github.io/categories/Hexo/"/>
+    
+    
+    <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
+    
+    <category term="Hexo" scheme="https://doug0849.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VS Code - Markdown &amp; Hexo 自動補齊語法標籤設定</title>
+    <link href="https://doug0849.github.io/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/"/>
+    <id>https://doug0849.github.io/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/</id>
+    <published>2021-09-09T11:26:39.000Z</published>
+    <updated>2021-09-09T11:26:39.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;在VS Code中寫Markdown，每次撰寫時遇到一些插入圖片或是其他語法覺得很麻煩，因為都不會自動補齊，因此上網找了些資訊看VS Code要怎麼調整才能達到這個功能。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="VS Code" scheme="https://doug0849.github.io/categories/VS-Code/"/>
+    
+    
+    <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
+    
+    <category term="Hexo" scheme="https://doug0849.github.io/tags/Hexo/"/>
+    
+    <category term="Markdown" scheme="https://doug0849.github.io/tags/Markdown/"/>
+    
+    <category term="VScode" scheme="https://doug0849.github.io/tags/VScode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>.toggle() 和 .appendchild()</title>
+    <link href="https://doug0849.github.io/2021/09/09/toggle%E5%92%8Cappendchild/"/>
+    <id>https://doug0849.github.io/2021/09/09/toggle%E5%92%8Cappendchild/</id>
+    <published>2021-09-09T10:49:53.000Z</published>
+    <updated>2021-09-09T10:49:53.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;toggle&quot;&gt;&lt;a href=&quot;#toggle&quot; class=&quot;headerlink&quot; title=&quot;toggle&quot;&gt;&lt;/a&gt;toggle&lt;/h2&gt;&lt;p&gt;範例&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;element.classList.toggle(&amp;#x27;sample&amp;#x27;) &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+
+&lt;p&gt;element ：某元素，使用document.querySelecrot選出&lt;br&gt;.classList ：某元素的class屬性&lt;br&gt;.toggle(‘.sample’) ：&lt;/p&gt;
+&lt;p&gt;如果class屬性裡面沒有sample則加上sample，&lt;br&gt;如果class屬性裡面有sample則刪除sample，&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="JavaScript" scheme="https://doug0849.github.io/categories/JavaScript/"/>
+    
+    
+    <category term="Javascript" scheme="https://doug0849.github.io/tags/Javascript/"/>
+    
+    <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ejs樣板語法技術筆記</title>
+    <link href="https://doug0849.github.io/2021/09/08/ejs%E6%A8%A3%E6%9D%BF%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
+    <id>https://doug0849.github.io/2021/09/08/ejs%E6%A8%A3%E6%9D%BF%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/</id>
+    <published>2021-09-08T13:14:27.000Z</published>
+    <updated>2021-09-08T13:14:27.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在ejs樣版檔案下的標籤語意&lt;/p&gt;
+&lt;p&gt;&amp;lt;%   ‘脚本’ 标签，用于流程控制，无输出。&lt;br&gt;&amp;lt;%_  删除其前面的空格符&lt;br&gt;&amp;lt;%__ 在模板中，透过 __ 或 _p</summary>
+        
+      
+    
+    
+    
+    <category term="EJS" scheme="https://doug0849.github.io/categories/EJS/"/>
+    
+    
+    <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
+    
+    <category term="EJS" scheme="https://doug0849.github.io/tags/EJS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>預讀學期2-2_S3_A12-電影清單加碼功能-作業心得</title>
+    <link href="https://doug0849.github.io/2021/07/29/%E9%A0%90%E8%AE%80%E5%AD%B8%E6%9C%9F2-2-S3-A12-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E5%8A%A0%E7%A2%BC%E5%8A%9F%E8%83%BD-%E4%BD%9C%E6%A5%AD%E5%BF%83%E5%BE%97/"/>
+    <id>https://doug0849.github.io/2021/07/29/%E9%A0%90%E8%AE%80%E5%AD%B8%E6%9C%9F2-2-S3-A12-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E5%8A%A0%E7%A2%BC%E5%8A%9F%E8%83%BD-%E4%BD%9C%E6%A5%AD%E5%BF%83%E5%BE%97/</id>
+    <published>2021-07-29T16:00:00.000Z</published>
+    <updated>2021-07-29T16:00:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;　　之前一直沒有寫相關的作業心得筆記，一方面是覺得難度不高，一方面覺得操作幾次就很熟練了，所以就很懶惰…但進入到學期2-2後，光是S2的製作電影清單，突然感覺難度一下提升超級多，很多內容不是一次兩次就能夠記起來且熟悉，而且函式的拆解跟邏輯複雜度上也提升相當多，演算法也來到了百行之多，這時才發現真的很難一下吸收，所以決定開始來寫學習、作業、技術相關筆記來加深自己的記憶及熟練度。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="AlphaCamp 作業練習" scheme="https://doug0849.github.io/categories/AlphaCamp-%E4%BD%9C%E6%A5%AD%E7%B7%B4%E7%BF%92/"/>
+    
+    
+    <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
+    
+    <category term="AlphaCamp" scheme="https://doug0849.github.io/tags/AlphaCamp/"/>
+    
+    <category term="作業" scheme="https://doug0849.github.io/tags/%E4%BD%9C%E6%A5%AD/"/>
+    
+    <category term="setAttribute()" scheme="https://doug0849.github.io/tags/setAttribute/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>開箱數位軟體團隊-模擬專案體驗帶你找出適合的職能-流水帳心得</title>
+    <link href="https://doug0849.github.io/2021/07/24/%E9%96%8B%E7%AE%B1%E6%95%B8%E4%BD%8D%E8%BB%9F%E9%AB%94%E5%9C%98%E9%9A%8A-%E6%A8%A1%E6%93%AC%E5%B0%88%E6%A1%88%E9%AB%94%E9%A9%97%E5%B8%B6%E4%BD%A0%E6%89%BE%E5%87%BA%E9%81%A9%E5%90%88%E7%9A%84%E8%81%B7%E8%83%BD-%E6%B5%81%E6%B0%B4%E5%B8%B3%E5%BF%83%E5%BE%97/"/>
+    <id>https://doug0849.github.io/2021/07/24/%E9%96%8B%E7%AE%B1%E6%95%B8%E4%BD%8D%E8%BB%9F%E9%AB%94%E5%9C%98%E9%9A%8A-%E6%A8%A1%E6%93%AC%E5%B0%88%E6%A1%88%E9%AB%94%E9%A9%97%E5%B8%B6%E4%BD%A0%E6%89%BE%E5%87%BA%E9%81%A9%E5%90%88%E7%9A%84%E8%81%B7%E8%83%BD-%E6%B5%81%E6%B0%B4%E5%B8%B3%E5%BF%83%E5%BE%97/</id>
+    <published>2021-07-24T10:31:43.000Z</published>
+    <updated>2021-07-24T10:31:43.000Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;&lt;p&gt;2021年7月22日，非常感謝AC又舉辦了每月一次的數位職涯相談室啦! 本次邀請到的就是本BLOG 方格子 的前端及全端工程師：Jiang &amp;amp; Kuan 來分享現實職場當中前後端各別負責的工作內容。 &lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="相談室" scheme="https://doug0849.github.io/categories/%E7%9B%B8%E8%AB%87%E5%AE%A4/"/>
+    
+    
+    <category term="AlphaCamp" scheme="https://doug0849.github.io/tags/AlphaCamp/"/>
+    
+    <category term="工作相談室" scheme="https://doug0849.github.io/tags/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E8%AB%87%E5%AE%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>跳軌換跑道關於學習寫CODE這件事</title>
+    <link href="https://doug0849.github.io/2021/07/18/%E8%B7%B3%E8%BB%8C%E6%8F%9B%E8%B7%91%E9%81%93%EF%BC%8C%E9%97%9C%E6%96%BC%E5%AD%B8%E7%BF%92%E5%AF%ABCODE%E9%80%99%E4%BB%B6%E4%BA%8B/"/>
+    <id>https://doug0849.github.io/2021/07/18/%E8%B7%B3%E8%BB%8C%E6%8F%9B%E8%B7%91%E9%81%93%EF%BC%8C%E9%97%9C%E6%96%BC%E5%AD%B8%E7%BF%92%E5%AF%ABCODE%E9%80%99%E4%BB%B6%E4%BA%8B/</id>
+    <published>2021-07-18T02:42:00.000Z</published>
+    <updated>2021-07-18T02:42:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;&lt;p&gt;　　終於在2021年5月底的時候，下定決心要轉換跑道，關於開始走上轉職成為網頁工程師的路上。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="日記" scheme="https://doug0849.github.io/categories/%E6%97%A5%E8%A8%98/"/>
+    
+    
+    <category term="轉職" scheme="https://doug0849.github.io/tags/%E8%BD%89%E8%81%B7/"/>
+    
+    <category term="AlphaCamp" scheme="https://doug0849.github.io/tags/AlphaCamp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>.includes .matches .filter .find .some .findIndex 使用</title>
+    <link href="https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A81/"/>
+    <id>https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A81/</id>
+    <published>2021-06-09T10:46:37.000Z</published>
+    <updated>2021-06-09T10:46:37.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;.includes(變數或值) 只能使用在陣列物件value查核上，核對對象為一個變數或是值&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="JavaScript" scheme="https://doug0849.github.io/categories/JavaScript/"/>
+    
+    
+    <category term="Javascript" scheme="https://doug0849.github.io/tags/Javascript/"/>
+    
+    <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DOM節點選擇方式</title>
+    <link href="https://doug0849.github.io/2021/06/06/DOM%E7%AF%80%E9%BB%9E%E9%81%B8%E6%93%87%E6%96%B9%E5%BC%8F/"/>
+    <id>https://doug0849.github.io/2021/06/06/DOM%E7%AF%80%E9%BB%9E%E9%81%B8%E6%93%87%E6%96%B9%E5%BC%8F/</id>
+    <published>2021-06-06T10:52:12.000Z</published>
+    <updated>2021-06-06T10:52:12.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;HTML&lt;/p&gt;
+&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;father&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt; father &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;my-sister&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt; my-sister&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;me&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt; me &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;son1&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;son1&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;son2&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;son2&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;son3&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;son3&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;my-brother&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt; my-brother&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="JavaScript" scheme="https://doug0849.github.io/categories/JavaScript/"/>
+    
+    
+    <category term="Javascript" scheme="https://doug0849.github.io/tags/Javascript/"/>
+    
+    <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
+    
+  </entry>
+  
+</feed>
