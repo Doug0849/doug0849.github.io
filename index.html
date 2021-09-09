@@ -1,276 +1,1046 @@
 <!DOCTYPE html>
-<html>
+<html lang="en,zh-TW,default">
 <head>
-  <meta charset="utf-8">
-  
-  
-  <title>邊撸鐵邊學CODE的Doug</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"doug0849.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
   <meta name="description" content="關於轉職紀錄，以及技術及工作相談室筆記">
 <meta property="og:type" content="website">
-<meta property="og:title" content="邊撸鐵邊學CODE的Doug">
+<meta property="og:title" content="想要邊撸鐵邊學CODE的Doug">
 <meta property="og:url" content="https://doug0849.github.io/index.html">
-<meta property="og:site_name" content="邊撸鐵邊學CODE的Doug">
+<meta property="og:site_name" content="想要邊撸鐵邊學CODE的Doug">
 <meta property="og:description" content="關於轉職紀錄，以及技術及工作相談室筆記">
-<meta property="og:locale">
+<meta property="og:locale" content="en_US">
 <meta property="article:author" content="Doug 道">
-<meta property="article:tag" content="Doug, 道, 轉職">
+<meta property="article:tag" content="Doug">
+<meta property="article:tag" content="道">
+<meta property="article:tag" content="轉職">
+<meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://doug0849.github.io/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'en'
+  };
+</script>
+
+  <title>想要邊撸鐵邊學CODE的Doug</title>
   
-    <link rel="alternate" href="/atom.xml" title="邊撸鐵邊學CODE的Doug" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">想要邊撸鐵邊學CODE的Doug</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">快樂每一天</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
-  
-  
-<link rel="stylesheet" href="/css/style.css">
 
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
 
-  
-<meta name="generator" content="Hexo 5.4.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">邊撸鐵邊學CODE的Doug</a>
-      </h1>
+          <div class="content index posts-expand">
+            
       
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Suche"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://doug0849.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,zh-TW,default">
+    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/09/09/Hexo%E6%93%8D%E4%BD%9C/">
 
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-test" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/09/08/test/" class="article-date">
-  <time class="dt-published" datetime="2021-09-08T06:36:38.000Z" itemprop="datePublished">2021-09-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/09/08/test/">test</a>
-    </h1>
-  
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Doug 道">
+      <meta itemprop="description" content="關於轉職紀錄，以及技術及工作相談室筆記">
+    </span>
 
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="想要邊撸鐵邊學CODE的Doug">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/09/Hexo%E6%93%8D%E4%BD%9C/" class="post-title-link" itemprop="url">Hexo操作</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-09 22:35:44" itemprop="dateCreated datePublished" datetime="2021-09-09T22:35:44+08:00">2021-09-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
       </header>
+
     
-    <div class="e-content article-entry" itemprop="articleBody">
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <p>一些Markdown語法測試</p>
-<p>引用塊 引言 Test</p>
-<blockquote><p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p>
-<footer><strong>David Levithan</strong><cite>Wide Awake</cite></footer></blockquote>
+          <h3 id="關於draft"><a href="#關於draft" class="headerlink" title="關於draft"></a>關於draft</h3><p>放在/source/_drafts下<br>可執行命令hexo new draft <code>&lt;title&gt;</code> 創建草稿<br>通過執行命令hexo publish <code>&lt;title&gt;</code> 可以把_drafts下的草稿文章推到_posts下</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/09/09/Hexo%E6%93%8D%E4%BD%9C/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
 
-<p>How to use</p>
-<p>Codeblock</p>
-<figure class="highlight plaintext"><figcaption><span>Test JavaScript</span><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/">MDN</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">code snippet</span><br></pre></td></tr></table></figure>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
 
-<p>使用三個反引號<code>來表示另一種codeblock </code> [language] [title] [url] [link text] code snippet ```</p>
-<p>Pull Quote<br>在文章中插入 Pull quote(引用)。</p>
-<blockquote class="pullquote [class]"><p>content</p>
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,zh-TW,default">
+    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Doug 道">
+      <meta itemprop="description" content="關於轉職紀錄，以及技術及工作相談室筆記">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="想要邊撸鐵邊學CODE的Doug">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/" class="post-title-link" itemprop="url">VS Code - Markdown & Hexo 自動補齊語法標籤設定</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-09 19:26:39" itemprop="dateCreated datePublished" datetime="2021-09-09T19:26:39+08:00">2021-09-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/VS-Code/" itemprop="url" rel="index"><span itemprop="name">VS Code</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在VS Code中寫Markdown，每次撰寫時遇到一些插入圖片或是其他語法覺得很麻煩，因為都不會自動補齊，因此上網找了些資訊看VS Code要怎麼調整才能達到這個功能。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,zh-TW,default">
+    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/09/09/toggle%E5%92%8Cappendchild/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Doug 道">
+      <meta itemprop="description" content="關於轉職紀錄，以及技術及工作相談室筆記">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="想要邊撸鐵邊學CODE的Doug">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/09/toggle%E5%92%8Cappendchild/" class="post-title-link" itemprop="url">.toggle() 和 .appendchild()</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-09 18:49:53" itemprop="dateCreated datePublished" datetime="2021-09-09T18:49:53+08:00">2021-09-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="toggle"><a href="#toggle" class="headerlink" title="toggle"></a>toggle</h2><p>範例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element.classList.toggle(&#x27;sample&#x27;) </span><br></pre></td></tr></table></figure>
+
+<p>element ：某元素，使用document.querySelecrot選出<br>.classList ：某元素的class屬性<br>.toggle(‘.sample’) ：</p>
+<p>如果class屬性裡面沒有sample則加上sample，<br>如果class屬性裡面有sample則刪除sample，</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/09/09/toggle%E5%92%8Cappendchild/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,zh-TW,default">
+    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/09/08/ejs%E6%A8%A3%E6%9D%BF%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Doug 道">
+      <meta itemprop="description" content="關於轉職紀錄，以及技術及工作相談室筆記">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="想要邊撸鐵邊學CODE的Doug">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/08/ejs%E6%A8%A3%E6%9D%BF%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" class="post-title-link" itemprop="url">ejs樣板語法技術筆記</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-08 21:14:27" itemprop="dateCreated datePublished" datetime="2021-09-08T21:14:27+08:00">2021-09-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/EJS/" itemprop="url" rel="index"><span itemprop="name">EJS</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>在ejs樣版檔案下的標籤語意</p>
+<p>&lt;%   ‘脚本’ 标签，用于流程控制，无输出。<br>&lt;%_  删除其前面的空格符<br>&lt;%__ 在模板中，透过 __ 或 _p 辅助函数，即可取得翻译后的字符串，前者用于一般使用；而后者用于复数字符串。<br>     可詳<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/internationalization">Hexo官方文檔</a><br>&lt;%=  输出数据到模板（输出是转义 HTML 标签），像是等於innerHTML<br>&lt;%-  输出非转义的数据到模板，像是等於innerText<br>&lt;%#  注释标签，不执行、不输出内容<br>&lt;%%  输出字符串 ‘&lt;%’<br>%&gt;   一般结束标签<br>-%&gt;  删除紧随其后的换行符<br>_%&gt;  将结束标签后面的空格符删除</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,zh-TW,default">
+    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/08/09/DOM%E7%AF%80%E9%BB%9E%E9%81%B8%E6%93%87%E6%96%B9%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Doug 道">
+      <meta itemprop="description" content="關於轉職紀錄，以及技術及工作相談室筆記">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="想要邊撸鐵邊學CODE的Doug">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/08/09/DOM%E7%AF%80%E9%BB%9E%E9%81%B8%E6%93%87%E6%96%B9%E5%BC%8F/" class="post-title-link" itemprop="url">DOM節點選擇方式</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-08-09 18:52:12" itemprop="dateCreated datePublished" datetime="2021-08-09T18:52:12+08:00">2021-08-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <figure class="highlight plaintext"><figcaption><span>HTML</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div class=&quot;father&quot;&gt; father </span><br><span class="line">    &lt;div class=&quot;my-sister&quot;&gt; my-sister&lt;/div&gt; </span><br><span class="line">    &lt;div class=&quot;me&quot;&gt; me </span><br><span class="line">      &lt;div class=&quot;son1&quot;&gt;son1&lt;/div&gt;</span><br><span class="line">      &lt;div class=&quot;son2&quot;&gt;son2&lt;/div&gt;</span><br><span class="line">      &lt;div class=&quot;son3&quot;&gt;son3&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;my-brother&quot;&gt; my-brother&lt;/div&gt; </span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;body&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>JS選擇元素節點方法<br>先使用document.querySelector選出class標籤為me的元素</p>
+<figure class="highlight plaintext"><figcaption><span>Javascript</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const me = document.querySelector(&#x27;.me) </span><br></pre></td></tr></table></figure>
+
+
+<p>選擇me的父元素和選擇me的父元素的父元素</p>
+<figure class="highlight plaintext"><figcaption><span>Javascript</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">me.parentElement   // 會選擇到&lt;div class=&quot;&quot;father&gt;...&lt;/div&gt;</span><br><span class="line">me.parentElement.parentElement   // 會選擇到&lt;body&gt;...&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>選擇me的第一個子元素和選擇me的第二個子元素</p>
+<figure class="highlight plaintext"><figcaption><span>Javascript</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">me.children[0]   // 會選擇到&lt;div class=&quot;son1&quot;&gt;son1&lt;/div&gt;</span><br><span class="line">me.children[1]   // 會選擇到&lt;div class=&quot;son2&quot;&gt;son2&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>選擇me的下一個同層級元素，和選擇me的上一個同層級元素</p>
+<figure class="highlight plaintext"><figcaption><span>Javascript</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">me.nextElementSibling   //  會選擇到&lt;div class=&quot;my-brother&quot;&gt; my-brother&lt;/div&gt; </span><br><span class="line">me.nextElementSibling   //  會選擇到&lt;div class=&quot;my-sister&quot;&gt; my-sister  &lt;/div&gt; </span><br></pre></td></tr></table></figure>
+
+
+<p>選擇me的第一個子元素，選擇me的最後一個子元素</p>
+<figure class="highlight plaintext"><figcaption><span>Javascript</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">me.firstElementChild   // 會選擇到&lt;div class=&quot;son1&quot;&gt;son1&lt;/div&gt;</span><br><span class="line">me.lastElementChild   // 會選擇到&lt;div class=&quot;son3&quot;&gt;son3&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,zh-TW,default">
+    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/07/29/%E9%A0%90%E8%AE%80%E5%AD%B8%E6%9C%9F2-2-S3-A12-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E5%8A%A0%E7%A2%BC%E5%8A%9F%E8%83%BD-%E4%BD%9C%E6%A5%AD%E5%BF%83%E5%BE%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Doug 道">
+      <meta itemprop="description" content="關於轉職紀錄，以及技術及工作相談室筆記">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="想要邊撸鐵邊學CODE的Doug">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/29/%E9%A0%90%E8%AE%80%E5%AD%B8%E6%9C%9F2-2-S3-A12-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E5%8A%A0%E7%A2%BC%E5%8A%9F%E8%83%BD-%E4%BD%9C%E6%A5%AD%E5%BF%83%E5%BE%97/" class="post-title-link" itemprop="url">預讀學期2-2_S3_A12-電影清單加碼功能-作業心得</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-30 00:00:00" itemprop="dateCreated datePublished" datetime="2021-07-30T00:00:00+08:00">2021-07-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AlphaCamp-%E4%BD%9C%E6%A5%AD%E7%B7%B4%E7%BF%92/" itemprop="url" rel="index"><span itemprop="name">AlphaCamp 作業練習</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>之前一直沒有寫相關的作業心得筆記，一方面是覺得難度不高，一方面覺得操作幾次就很熟練了，所以就很懶惰…但進入到學期2-2後，光是S2的製作電影清單，突然感覺難度一下提升超級多，很多內容不是一次兩次就能夠記起來且熟悉，而且函式的拆解跟邏輯複雜度上也提升相當多，演算法也來到了百行之多，這時才發現真的很難一下吸收，所以決定開始來寫學習、作業、技術相關筆記來加深自己的記憶及熟練度。</p>
+<p>任務<br>這次的任務是要把S2製作的My Movie List做進化，且要滿足以下幾個功能<br>要新增一組功能按鈕，可以將畫面呈現為列表模式及卡片模式。<br>畫面能夠順利在 list 和 card 模式間來回切換。<br>不能影響到原有功能（尤其是 More、收藏按鈕、分頁功能要正常運作）<br>由於程式碼篇幅頗長，請運用 description 欄位說明新增的功能，幫助助教能有效注意到重點。在程式碼中也請運用註解來提示助教！<br>驗收重點<br>驗收重點現階段期待你做到⋯⋯開發框架/函式庫(略)程式邏輯與 Coding Style以你目前的程度，我們期待你在「成功做出功能」以後，認真地花點時間優化程式碼品質，強化邏輯清晰度、提高可讀性、減少重複，畢竟我們的程式碼體量愈來愈大了，以下我們列出可能的方向，請你這次務必要「一邊實作一邊刻意優化」：<br>程式邏輯是否清晰<br>每個函式都有明確的職責，一個函式專心做一件事，例如例如 card 模式渲染、 list 模式渲染、判定模式等<br>避免不必要的變數<br>減少暴露在 global 區域的程式碼，也就是說，若你在這份作業中新增了功能，這些功能的程式碼必須被封裝在函式裡。<br>宣告變數時需注意<br>使用 let &amp; const 宣告變數 (不要使用 var)<br>不會變動的內容用 const，要變動的內容才用 let<br>清晰易懂的變數命名<br>變數用名詞、函式用動詞、陣列使用複數型<br>名稱與內涵盡力一致 (不要嫌單字太多、講清楚最重要)<br>新增顯示模式的切換功能後，原有的搜尋功能仍能正常運作 (如：按下 search 能啟動搜尋、執行新的搜尋時，有先清空頁面再呈現搜尋結果)<br>變數資料型態保持前後一致<br>命名是否有意義、可讀性<br>適當運用註解幫助他人快速理解程式碼<br>盡量避免多餘的程式碼 - 尤其是測試過程中的 console.log<br>遵守 JavaScript Standard style (建議安裝自動檢查套件)<br>視覺與使用者動線<br>切換顯示模式時，內容能停留在原本的頁面，不會跳回第一頁<br>若使用搜尋後，再切換顯示模式，仍然能正常顯示搜尋結果<br>視覺上能讓使用者知道現在選的是第幾頁、哪個顯示模式、哪些項目有加入收藏<br>行有餘力：優化品質、擴充規格<br>除了上面的 coding style 驗收重點以外，也可以嘗試思考「擴充性」，例如：<br>想一想：你是怎麼切換清單/卡片模式的，有沒有能優化的空間？<br>進一步想想看，如果未來還要加入第三種、第四種顯示情境，你目前的邏輯設計有擴充空間嗎？會不會到時候要打掉重練？<br>另外，也可以思考一下目前的邏輯如何查找 DOM 元素內容，有沒有更有效率的方式？<br>是否能穩定的切換頁籤而不會影響畫面（通常會和資料流有沒有處理好有關）<br>嘗試對 button 做一些 hover 處理以提升用戶體驗</p>
+<p>Step 1：<br>第一步老樣子，先從HTML下手吧！先將Font Awesome按鈕的樣式置入頁面中，並且調整至適當的位置。</p>
+<p>加入icon<br>說明：<br>要先將Font Awesome的JS先置入head裏頭。之後在Font Awesome裡尋找相關icon的class碼，安排它在Html的位置，也要適時的調整Row或col（Boostrap開發模式），最後別忘了給他們的父層，以及各自都加上屬於自己的id。</p>
+<p>將Font Awesome的JS先置入head裏頭</p>
+<p>安排icon在html的位置</p>
+<p>Step 2：<br>再來製作出清單模式在畫面上應該顯示的樣式。</p>
+<p>清單模式<br>只要先寫出一列的樣板模式即可，因為之後要用JS把設定好的HTML格式資料至入到畫面上。</p>
+<p>Step 3：<br>改造function。<br>首先我們可以複製renderMovieList這個函式，並將它命名為renderMoviesList2之後方便做測試，基本上函式內的邏輯都一樣，只要將新寫的HTML格式資料帶到到rawHTML即可。所以去HTML把你剛剛寫好的格式放進rawHTML吧，記得要把電影名稱或相關要顯示的資料，替換成正確的參數。</p>
+<p>之後可以將最下方renderMovieList改成renderMovieList2，來看看是不是正確顯示在螢幕上。</p>
+<p>rawHTML的template literal置入新的格式</p>
+<p>成功畫面</p>
+<p>Step 4：<br>新增監聽器。<br>在Step 1置入icon的時候，就將各自及父層都設定好了id。<br>所以先回到上頭設定常數，將各自的位置選擇出來。</p>
+<p>把格式按鈕位置選擇出來<br>然後在父層掛上監聽器。<br>這邊我設定的父層為btnShowStyle</p>
+<p>btnShowStyle新增監聽器<br>因為在按鈕上有設置a標籤，所以要先取消超連結本上的預設動作。<br>加入判斷式，確定是選擇到哪一個按鈕。<br>接著變更圖案本身的顏色樣式，因為是使用boostrap系統，所以要將各自的classList做新增或刪除。(使用狀態下為藍色primary，非使用狀態下為灰色secondary)<br>最後面的renderMovieList記得改成renderMovieList2<br>最後來檢查按鈕是否有成功，此時按下按鈕，按鈕要會變色，且會變換顯示的模式</p>
+<p>Step 5：<br>優化顯示模式的語法。<br>由於現在將兩個不同的顯示方式分成兩個函式來寫，會增加後面管理程式碼的困擾，因為只要碰到任何跟渲染畫面”renderMovieList”的時候，都要去判斷要用renderMovieList或是renderMovieList2，包含查找功能，換頁功能都有用到renderMovieList這個函式，為了不去更改原有的程式碼，所以決定把這兩個函式合併。<br>先將renderMovieList2內的程式碼先搬到renderMovieList後面，<br>接著就是加入判斷式，</p>
+<p>這邊思考後，我的想法是先在最上頭新增一個變數 showStyle作為信號開關，</p>
+<p>showStyle作為信號開關</p>
+<p>接著在renderMovieList加上判斷式，若showStyle等於0時，使用cards的顯示方式，否則就顯示清單模式。</p>
+<p>加上判斷式<br>接著回到顯示模式監聽器，加入當選則卡片時showStyle重新賦值為0，選擇清單時，showStyle重新賦值為1。</p>
+<p>依照選擇不同的按鈕，重新賦值showStyle<br>最後檢查一遍把確定所有的renderMovieList不要有出現之前寫的renderMovieList2。<br>現在頁面已經可以順利切換了，而且也優化了程式碼，未來若要新增第三種第四種顯示方式，只要在renderMovieList內新增新的判斷及格式，還有在樣式顯示監聽器內加入新的判斷就可以了。<br>目前原有的功能也要都能夠正常運作，只要選定一種顯示方式，不管用搜尋、換頁都會保持原有的顯示方式。<br>但是發現一個小問題，當我在卡片狀態下然後在第三頁時，當我按下變換樣式顯示頁面內容會回到第一頁，應該要顯示當頁才對。<br>這時候回頭檢視所有的renderMovieList帶入的引數發現，全部都帶入了getMoviesByPage(1)，所以不管搜尋、換頁，只要碰到getMoviesByPage(1)帶入的是1時，全都會回到第一頁。</p>
+<p>Step 6：<br>修正所有的getMoviesByPage(1)，除了搜尋監聽器內的getMoviesByPage(1)。<br>回到最上方設定一個新的變數page 且賦予值 1。</p>
+<p>新變數page 賦予值 1<br>再來將所有的getMoviesByPage的引數帶入page<br>getMoviesByPage(page)<br>這邊要注意，除了搜尋監聽器內的getMoviesByPage(1)，不能修改。</p>
+<p>然後在回到之前頁碼生成的函式內，將原本的定義page為變數的let拿掉。</p>
+<p>原本的 let page = 的let拿掉<br>現在只要切換頁面就會給page重新賦值，page被確定下來，就算換樣式，也還是會保持在原本該顯示的頁數了。</p>
+<p>除了搜尋監聽器內的getMoviesByPage(1)不能改原因<br>因為現在page在globle的狀態，假設一開始先切換到第三頁，page值此時會被賦予3，搜尋監聽器內的getMoviesByPage()引數如果是page的情況下’’renderMovieList(getMoviesByPage(page))’’，這時候搜尋任何關鍵字，搜尋結果是少於三頁的情況下，會發現此刻畫面會變一片空白沒有資料，那是因為我們變成渲染頁數變成第三頁，但是結果少於三頁，所以當然就沒有任何電影顯示出來。<br>所以再次強調<br>除了搜尋監聽器內的getMoviesByPage(1)，不能修改。<br>除了搜尋監聽器內的getMoviesByPage(1)，不能修改。<br>除了搜尋監聽器內的getMoviesByPage(1)，不能修改。</p>
+<p>已完成任務 (已完成的畫刪除線)<br>要新增一組功能按鈕，可以將畫面呈現為列表模式及卡片模式。<br>畫面能夠順利在 list 和 card 模式間來回切換。<br>不能影響到原有功能（尤其是 More、收藏按鈕、分頁功能要正常運作）<br>由於程式碼篇幅頗長，請運用 description 欄位說明新增的功能，幫助助教能有效注意到重點。在程式碼中也請運用註解來提示助教！<br>已完成的視覺與使用者動線驗收重點 (已完成的畫刪除線)<br>切換顯示模式時，內容能停留在原本的頁面，不會跳回第一頁<br>若使用搜尋後，再切換顯示模式，仍然能正常顯示搜尋結果<br>視覺上能讓使用者知道現在選的是第幾頁、哪個顯示模式、哪些項目有加入收藏<br>看來只剩下最後兩項了，加把勁!</p>
+<p>Step 7：<br>讓使用者知道現在選的是第幾頁。<br>隨著改變頁數要改變頁碼的顯示樣式，這代表每當我選了一次頁碼，我勢必要重新渲染一次頁碼，所以表示一定會是從這兩個部分下手<br>renderPaginator(在正確的頁數上改變樣式)<br>Paginator的監聽器(換頁數就重新render)<br>我們先到Paginator監聽器來，這邊比較容易修改，我們只要在最後加上</p>
+<p>新增運算子，及重新渲染頁碼<br>新增data運算子，因為每次點選換頁按鈕都得重新渲染頁面按鈕，更新顯示正在哪一頁上，所以要看是依filteredMovies來重新渲染頁碼或是movies來重新渲染頁碼，如果搜尋情況下filteredMovies會有資料，將會依搜尋結果的情況下去產生頁碼，若否則會依照原本movies的資料長度去產生頁碼。<br>再來我們接著修改函式renderPaginator(在正確的頁數上改變樣式)<br>函式當中，一旦我們置入所有頁碼的HTML格式資料後，我們就可以立刻選取到各li子元素，而因為globle的page會被更新，此時便可以依照global的page去指出是哪一個li子元素裡的a元素標籤應該要被修改樣式。<br>paginator.children[0]為第一頁的li標籤<br>paginator.children[0].firstElementChild為li裡面的a標籤<br>paginator.children[0].firstElementChild.classList.add(‘bg-primary’, ‘text-white’)<br>a標籤新增名稱至class內(boostrap改變樣式)</p>
+<p>指出正確的元素位置，修改樣式<br>最後再回到搜尋監聽器上，當搜尋為空白的時候，我們要顯示全部的電影，但別忘了要記得清空filteredMovies,因為filteredMovies現在已經移出到globle當中，也有很多函式都有使用到他，連續操作搜尋下，萬一filteredMovies保留之前的搜尋結果，將會出現顯示錯誤電影資料。<br>最後再補上一個執行產生頁碼函式。</p>
+<p>記得要清空filteredMovies<br>這樣讓使用者知道現在選的是第幾頁就大功告成啦!</p>
+<p>Step 8：<br>顯示哪些項目有加入收藏。<br>這大概是所有題目內，我覺得最困擾的一個題目了，邏輯性比較複雜。<br>我思考的邏輯是，先製作一個新的function：</p>
+<p>一開始先設定幾個常數：<br>選出所有class為card-title的元素(應該有12個，因為每頁顯示12筆)，並放入panelMovies，之後就可以使用panelMovies[i].innerText來取得畫面上的電影名稱。<br>將我最愛的電影從locoalStorage取出並從JSON轉成Object，並放入favoriteMoviesList<br>將favoriteMoviesList使用map製造出一個新的陣列，條件是每一筆電影資料的電影名稱，並放入favoriteMoviesTitle<br>重複畫面上總共有幾部電影，就重複檢查多少次，for迴圈<br>加入判斷式，若favoriteMoviesTitle裡面含有畫面上第i部的電影名稱，修改”新增至我的最愛按鈕”的顯示樣式。</p>
+<p>新增一個函式來做已收藏確認<br>補充說明：<br>第140行，當選擇到元素標籤時，可以使用setAttribute(’string’,’value’)來設定新的標籤屬性，兩個引述都是字串，屬性無值時為空字串。<br>對陣列使用map()，會將陣列中每一個項目，依照條件，產生一組新的陣列<br>MDN範例說明</p>
+<p>Array.prototype.map() - JavaScript | MDN<br>The method creates a new array populated with the results of calling a provided function on every element in the calling array. callbackFn Function that is called for every element of arr. Each time callbackFn executes, the returned value is added to newArray.<br>Mozilla</p>
+<p>大功告成，完成了所有作業要求了!<br>最後再檢查一遍作業的批改標準吧!<br>詳細的檢查一遍，操作看看，有沒有發現其他的小錯誤，若沒有大致上應該沒有問題啦!<br>Sincerely Media null on Unsplash</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,zh-TW,default">
+    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/07/24/%E9%96%8B%E7%AE%B1%E6%95%B8%E4%BD%8D%E8%BB%9F%E9%AB%94%E5%9C%98%E9%9A%8A-%E6%A8%A1%E6%93%AC%E5%B0%88%E6%A1%88%E9%AB%94%E9%A9%97%E5%B8%B6%E4%BD%A0%E6%89%BE%E5%87%BA%E9%81%A9%E5%90%88%E7%9A%84%E8%81%B7%E8%83%BD-%E6%B5%81%E6%B0%B4%E5%B8%B3%E5%BF%83%E5%BE%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Doug 道">
+      <meta itemprop="description" content="關於轉職紀錄，以及技術及工作相談室筆記">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="想要邊撸鐵邊學CODE的Doug">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/24/%E9%96%8B%E7%AE%B1%E6%95%B8%E4%BD%8D%E8%BB%9F%E9%AB%94%E5%9C%98%E9%9A%8A-%E6%A8%A1%E6%93%AC%E5%B0%88%E6%A1%88%E9%AB%94%E9%A9%97%E5%B8%B6%E4%BD%A0%E6%89%BE%E5%87%BA%E9%81%A9%E5%90%88%E7%9A%84%E8%81%B7%E8%83%BD-%E6%B5%81%E6%B0%B4%E5%B8%B3%E5%BF%83%E5%BE%97/" class="post-title-link" itemprop="url">開箱數位軟體團隊-模擬專案體驗帶你找出適合的職能-流水帳心得</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-24 18:31:43" itemprop="dateCreated datePublished" datetime="2021-07-24T18:31:43+08:00">2021-07-24</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%9B%B8%E8%AB%87%E5%AE%A4/" itemprop="url" rel="index"><span itemprop="name">相談室</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>2021年7月22日，非常感謝AC又舉辦了每月一次的數位職涯相談室啦! 本次邀請到的就是本BLOG 方格子 的前端及全端工程師：Jiang &amp; Kuan 來分享現實職場當中前後端各別負責的工作內容。<br>　　本次座談由兩位主持人 職崖教練 Yenting 及 學習教練 Ken 來開啟這次的相談室啦，一開始不外乎一定要用kahoot來做一些現場調查啦，本次的調查內容大概都會與講座的題目所說的找出適合的職能有所相關，一共有四個題目做調查。</p>
+<p>第一題：你期待在數位相談室獲得什麼價值？<br>了解數位軟體產業的慣例與現況<br>與有經驗的學長姐、助教討論職崖相關問題<br>釐清自己的職崖目標<br>了解現在學習的技術在不同的產業與職能中會如何被應用<br>此題我的答案是 - 了解現在學習的技術在不同的產業與職能中會如何被應用。因為本身在上AC課程的時候大概就有感覺，自己對於網頁的切版排版這件事抗拒很大，相對於撰寫JS的演算法會覺得很麻煩且較無趣，所以其實大概很清楚自己想走的是網頁後端，所以比較想了解現在學習的技術在不同的產業與職能中會如何被應用。</p>
+<p>第二題：你報名/想報名全端Web App 課程的動機是？<br>初步認識寫程式、探索興趣<br>成為科技職涯人才(更好的PM、設計師、管理者或創業家)<br>轉職成為專業網路工程師<br>到海外工作和發展<br>此題我的答案是 - 成為科技職涯人才(更好的PM、設計師、管理者或創業家)，雖然前面有講到希望可以轉職成為後端網路工程師，但其實最最最終目標是希望有一天，我能夠靠著這項技能，成為一位創業家。因為本身其實很懶惰，常常遇到很多問題，希望能找到這些麻煩問題的快速解決路徑，或是不用一直重複的操作同樣的事情。所以未來或許當自己有一定工程師能力後，期望自己能在市場上尋找一個熱門問題，由自己先行開發相關程式透過提供解決這個問題的方式來創造價值。</p>
+<p>第三題：下列何者最接近你理想中的職能?<br>前端工程師<br>後端工程師<br>專案經理<br>網頁設計師<br>此題我的答案是 - 後端工程師。雖然題目只能選一個，但當前目標是後端工程師，未來希望自己能夠成為全端工程師，能夠自己獨力開發一個完整的產品，這也是未來作為獨立創業家的第一步。</p>
+<p>第四題：承上題，你覺得你目前對這個職能有多了解?<br>完全不清楚<br>大概知道需要具備那些技能，但也不是非常清楚<br>很清楚這個職能需要那些技能，目前正在精進中<br>知道這個職能需要的技能，在團隊中扮演的角色<br>此題我的答案是 - 大概知道需要具備那些技能，但也不是非常清楚。其實自己沒有太大的把握能夠清楚說出每一個職位實質上所需具備的技能，及工作內容，因為完全沒有經驗，尚在學習當中，所以覺得透過這次的相談室，一定也能夠有所收穫。</p>
+<p>此次相談室以「模擬專案」流程方式來進行，模擬專案的目的主要是希望透過一個實境場景來帶入實際感，不是單純由分享者分享自己的工作在幹嘛，而是可以知道在一個產品團隊裡面要怎麼去解決問題，在不同的角色分工中會遇到的問題跟衝突，所以會分三個步驟：</p>
+<p>模擬專案流程 by ALPHA Camp<br>Step 1 : 了解&amp;拆解任務 拆解任務、了解要解決的問題、還有產品特性、要解決的對象有哪些，一一分析出來後分工，整個團隊的配置該有哪些部分。<br>Step2 : 選擇你的任務&amp;角色 任務分析後，依自己的專長來完成自己的任務<br>Step3 : 團隊任務衝突 執行任務的時候，一定會有摩擦，在團隊中該如何解決衝突，讓任務順利完成。</p>
+<p>模擬專案任務背景說明： 本次主要負責產品為方格子官網，為何設定在方格子？因為今天請到的分享者就是方格子的前端及全端工程師啦! Jiang &amp; Kuan<br>專案目標：</p>
+<p>專案目標 by ALPHA Camp<br>任務拆解分析：<br>打造吸引人，且操作&amp;體驗順暢的介面呈現。 團隊配置所需－前端工程師<br>確保每次給使用者的資料，能夠正確且即時地呈現出來。 團隊配置所需－後端工程師<br>釐清專案需求，並清楚掌握與定義不同功能要達成的目的，確保成品符合需求。 團隊配置所需－專案經理(PM)</p>
+<p>前端工程師所需負責的工作：<br>確認資料呈現的形式<br>網頁切版<br>樸估開發作業所需的時間與複雜度<br>Jiang分享筆記重點：<br>實作設計師設計出來的分類業面(切版、動態評估)：  切版實作頁面上是滿主要的一個重點，透過實作把頁面做出設計時想要呈現的樣子。  實作頁面時有時候會忽略掉一個點，當要做一個頁面的時候，UI其實是交雜著需要被注入各種資料，可能名字很長數字很大，當中是有一些動態評估在裡面，這都是前端需要考量到的點。<br>評估前端實作上的可行性：確認特定需求在畫面上能不能做出來：  有時候要去意識到的不是當前的需求一定要完成，而是要考量時間的磨合，以及當前公司的系統架構以及資料架構上是不是能夠符合需求，這也就會需要跟後端去做溝通跟評估。  當PM將一個產品設計畫面出來時，要去評估是不是合理的，能不能做到，資料要哪來，再往後無限擴展。<br>評估開發規模的困難度以及時間： 可以思考哪些功能可以事先確認與動工（案例：那些頁面初步的頁面資訊可以先實作）  在實作這些功能時，去思考要用什麼樣最快的方式去製作出基本版本，之後再慢慢推進。  而一些需求功能在還沒有真正被確定前，能夠以經驗來評估有哪些東西是可以先接出來的，有哪些資料是要再做處理的。  且公司在營運這個平台中工程師一定會去建立一些組件（意指網頁常用元件，如導覽列、下拉選單、警告訊息、按鈕…等等），用組件去簡化實作邏輯，然後很快地把該有的元件套進頁面，元件套進頁面的同時會去思考哪些後端資料是需要被帶入使用的，去加快頁面的完整性，而這些已完成或是能夠完成的事情可能就比較不需要再討論，所以可以減少一些在溝通過程中產生的摩擦力。  只要在前期準備的越完整，討論的問題就可以越進階，溝通上的摩擦就能夠減少。<br>跟後端確認資料的串接格式，可行性 如果資料尚有疑慮，如何先出個相對可行的實作版本。  有時候這問題不是那麼重要，重要的問題是當拿到設計畫面時，能夠去思考到後端有沒有帶出這些資料功能，前端並不是只在乎說把頁面做出來就好，而是要去思考實作時，能夠去接觸的資料有哪些? 目前的資料結構長什麼樣子? 是不是適合帶入到現有的元件去載入? 如果不行的時候是不是有什麼建議可以提供給後端?  工程師非常重要的一個環節是會不會去溝通，以及能不能看到設計稿時去思考後面的所有相關問題，這些會去影響到能不能夠把這些任務做出來很重要的環節。<br>其他Ｑ＆Ａ<br>前端工程師需要做動畫呈現嗎？ </p>
+<p>動畫有很多種，有些是簡潔動畫，有些是互動上動畫，但這些其實都不是一定要擁有的技能，但有的話很好。動畫其實是by case 不是by project，這是當有需要才會去面臨到的問題，但我認為比較重要的是要怎麼把基本的畫面切出來，標後版，然後資料可以很乾淨的呈現在畫面上，這是最重要的。有些技能樹，像是要Opea GL、3D動畫那是其次，如果能掌握前面的技能，我相信這些進階的技能在學習上是滿快可以掌握的。動畫在工作上肯定會遇到，但以優先級來說沒有到那麼重點。  </p>
+<p>前端工程師常常會需要跟設計師溝通，如果會這些設計軟體對前端工程師有沒有加分?  應該算有加分，以業界來說有很多接案公司都會希望前端工程師他們也有相對應的技能，去把UI上的原件實現到切版上面去，這是有可能的。 不過我認為這只能算是一個延伸功能，你會了很好，你可能可以去跟設計師討論某些事。  不過其實在我們前端的角度上，通常設計師他設計出來的會是figma, sketch, ????(44分32秒不清楚), 然後會讓我們去看，這個畫面上的這個組件他的規格是什麼? 長寬高, upshadow, position 這些東西反而是我們怎麼跟設計師溝通的方式。PS算是一個次級的一個附加價值，你在你自己技能樹上你有這個功能，未來你可能可以協助設計師。  真正在前端來講，其實很專注在畫面上的資料呈現及動態掌握，你的畫面能不能完整乾淨然後順暢地呈現在使用者面前這是很重要的點。  Ken補充: 雖然在分享過程中有設定一個正確答案的概念，不過其實這個在更多時候，在不同家公司，不同的團隊會有不一樣的合作模式，這也是肯定的事情，不過比較常聽到的合作模式，前端工程師本身並不需要做太多複雜的視覺介面設計，更多時候是像Jiang強調的去了解資訊的呈現乾淨程度。</p>
+<p>後端工程師所需負責的工作：<br>定義資料串接的格式<br>確認資料庫是否能滿足本次需求<br>設計能滿足需求的演算法<br>Kuan分享筆記重點：<br>這個list是今天從PM那接下一個任務後，可能會進行的一個工作流程，在團隊中做為一個後端工程師，在真正敲下鍵盤之前：<br>評估開發複雜度 。<br>API的改動幅度  一開始評估任務的複雜度有多高，是否需要修改API？<br>用比喻的方式來講，我需要修改的匯款單上的欄位就好，還是需要設計一個新的匯款單來符合任務的需。這是越工作越有經驗之後越能做出正確的評估。  </p>
+<p>評估當前的資料(資料庫)是否能滿足新功能 。<br>資料可能不太夠，或資料庫可能要做變動(增加欄位)  比較實際面的就是，資料庫需要增加幾個欄位，這是後端工程師考量的事情。  </p>
+<p>評估效能變動的幅度 。<br>新功能上線後，活應時間會不會變太久？若會，如何做架構調整<br>因為PM對後端不是那麼了解，有一些功能後端工程師必須要去思考，這個功能會不會影響到API回應的時間，可能進到頁面之後前端呈現都是正確的，但後端回應太慢沒有辦法即時回應資料，所以讀取的圈圈就是一直跑，是否會導致這種情況發生?如果會的話就要去做溝通，讓這功能可能只有80%的效果，可是他不會對我們的效能造成影響，或是去溝通功能要做修正，還是架構要做修正。  。新功能是否需要做機器調整，長期流量會不會變大，促銷活動可能有瞬間流量  像是搶演唱會的門票時會有一個高峰流量，提前知道瞬間流量會出來，是不是需要做一些事前的調整，這也是後端工程師工作時的眉角。  </p>
+<p>設計能滿足需求的演算法 。<br>需求是最新的十筆資料，就要正確呈現  假設一個新功能，PM說他想要”近10天”，”最新的十筆資料”，”不能有重複的作者”，後端就要想辦法把這一句話變成一個正確的資料，不能錯、不能重複、也不能超過時間，而且效能要好，這就帶到後端工程師最有價值的三個地方：資料的正確性，系統的穩定性(不能壞不能慢)，以及程式的彈性，寫程式時要注意程式不能寫得太死、寫的太隨便，若今天程式有比較大的彈性，未來PM要新增什麼樣的新功能，就需要害怕，只要簡單的修改後就可以滿足新的需求。  正確、穩定、彈性的工程師就是一個優秀的工程師。 </p>
+<p>與前端共同定義資料的串接格式 。銀行的匯款單(誰?多少錢?那些欄位要大寫?)  此部分滿看公司文化，Kuan的經驗大多數是先由後端先做出一個初步的API，未來在實作過程再討論更進一步的修正。  未來網頁在實作的時候，不管前後工程師，都要盡量當個體貼的工程師，彼此討論修正出對雙方都更方便更彈性的資料，這是很重要的。<br>評估是否需要更動/串接第三方服務 。例如：要串哪一間金流，是否有每月定時扣款功能可以符合訂閱功能  調查某一種功能，要串接哪一家的服務，而此間公司提供的功能的系統是否符合，且服務是比較好，價格是能夠接受的。<br>撰寫測試 指自動化測試，每一次系統部屬上去的時候，他都會跑一次自動化測試，有什麼好處?他真正的價值不是在，確定你剛剛寫的程式是正確的，而是在未來每一次的更動，你都可以確定你前面的寫的程式都是正確的，最害怕的就是寫a壞b，改b壞c，異種瀑布式的修改，這樣一整天工作的心情就會非常糟糕。<br>以上是後端工程式要去評估及實作的一些流程。<br>而在上面提到的一些API資料庫，第三方服務，資料格式測試，這些在比較大的公司會有專業的分工，而較小的公司有可能會統一歸納交給後端工程師，所以可能會跟未來的職掌不太一樣，但也不需要太害怕為什麼需要學這麼多東西，真正重要的是學習這些東西的過程中順便排養出一種解決問題的能力，未來遇到一個新的stack下來，可能沒有處理過，但卻可以用過去的經驗來評估要如何學習這個新東西以及攻克它。 </p>
+<p>PM所需負責的工作：<br>需求確認、盤點<br>規劃開發時程<br>確認資源(人力、時間、$$)<br>Yenting補充分享： 其實很多人會認為PM有技術能的時候可以加分，但這個加分不是在人力不足的時候，自己跳下去開發，而是加分在你知道整件事情的一些原理跟脈絡，所以可以做出一些比較好的人力資源分配或式時間管理。  其實這個道理在其他地方也是一樣的，例如前面提到的前端工程師是否要做畫面設計，也許許多前端工程師他是有這個能力，但當你的團隊裡面其實有一個人很明確的分工，他就是網頁設計師，這就是他的工作的時候，那你就不應該跟他去搶工作，那不然你這樣子就會造成重工其實也很難管理，所以同理得證，有時候及時你是個 full stack ，你今天這個任務分配到後端那你也會前端的時候你要不要跳下去做? 如果沒有被分到的話你就不應該做這件事情，所以這個道理其實是apply在很多不同的角色上面，所以希望大家可以知道，因為當你是一個團隊作戰的時候，你要專注在deliver你自己應該要做什麼事情的時候，這其實才是最應該要先完成的事情，而不是你今天會很多技能，所以你就要做很多事情，團隊運作不應該是這樣子。<br>PM執掌清單：<br>確認並清楚定義專案需求<br>預估中案所需的資源，包含人力、時間、預算<br>規劃開發時程<br>提供初步對專案成果的發想(User Story、Wireframe)<br>測試：檢查工程部開發出來的功能是否有滿足需求(使用者的角度測試，非後端工程測試)<br>擔任產品的內部代言人-&gt;用比較宏觀的角度去看產品，評估哪些功能最有價值優先開發 。知道產品現有的問題 。產品在使用者端的問題 。產品的內部邏輯<br>如何跟工程師配合做一個好的PM：<br>筆記Jiang分享 : PM要能夠掌握整個開發的節奏，要讓工程師明確的知道當前的任務要做什麼，目標在哪，什麼時候要完成，有問題的時候可以討論，PM的彈性跟能不能掌握這個專案的進度是很重要的  筆記Kuan分享: 讓工程師專心做該做的事，工程師會做一個時間的評估，好的PM不應該一直去壓時程，當然PM有他的壓力，但一個好的PM可以把所有的需求梳理成一個很順暢的時間線，分配各個工程師至擅長的位置，工程師最討厭覺得最煩躁的是，我做A做到一半被叫去做B，前面的東西做一半就卡到，或是這個需求沒有先確認完，然後做到一半就做修改。 </p>
+<p>團隊衝突情境1：設計師想要放Fixed title，前端工程師評估實作會太複雜。你會怎麼做?</p>
+<p>先這樣先這樣，總之需求開了，先做再說，先交付任務在討論。<br>這什麼??覺得需求不合理，先跳過不做，完成其他需求。<br>Hmm 我想想，覺得需求不合理，先找設計師討論</p>
+<p> Jiang分享重點筆記：<br>工程師在業界建立起自己能力所及到哪邊，要非常清楚的技術展示在哪個環節，要有辦法去掌握這個東西。<br>當需求進來時，要先思考這個需求會觸及到哪些專案當中程式碼的組件，切版，程式邏輯，可以用畫圓的方式表現，當畫出來後大概就知道這個需求觸及的範圍有多廣，若和原定的距離想差甚遠，就必須去思考怎麼跟設計師溝通，讓設計師了解到當前的問題(例如：實作畫面時有時是使用已經既有的組件，若要去加相關新功能，可能會有排斥現象、邏輯不符、或是有很多副作用跑出來)，與設計師溝通取一個中間值需求，但同時要記得設計師最終想要的目標是什麼，未來有餘裕的時候思考這功能有沒有辦法做到，那需要花多久時間去實踐。除了自己知道要做什麼之外，也要知道別人最終想要什麼，記錄下來未來有機會在慢慢發掘，最後在反饋給自己的團隊，這會是一個正向循環。</p>
+<p>團隊衝突情境2：後端工程師發現「最新」及「近期熱門」分類，出現的文章會很像。</p>
+<p>最新&amp;近期熱門都是很常見的分類，即使有重複，還是把需求做出來比較好，畢竟交付的時間也很緊急。<br>評估後覺得做出來的觀看體驗可能不好，想先找PM討論替代方案。<br>先做其他功能/想辦法找資源做出來</p>
+<p>Kuan分享重點筆記：<br>在評估後覺得做出來的觀看體驗可能不好，想先找PM討論替代方案前會有一個前提，你必須是能夠”觀察出”做出來後的觀看體驗不佳，如果今天是一個按圖施工的後端工程師，可能就不會考慮到這件事，但我相信一個好的工程師，不應該只是按圖施工，而是在實作功能的時候去，去考慮到當初為什麼要做這個功能，要時時刻刻放在心裡，實作這個功能之後有沒有達到使用者，幫助他們找到他們想要看的文章，如果兩個TAB都是一樣的文章，那就是沒有任何意義。<br>PM是否一定要了解完全實作的細節，其實是工程師對PM的溝通，工程師要具備一個將技術白話文的能力，必須讓PM知道現階段做不到，為什麼? 因為需要新的東西或是新的服務，或是現階段資料沒辦法達成，讓PM去理解，那PM就可以把你這個擔憂回報給其他的部門，然後去做不同的處置，那這段期間就可以先做這樣等等。<br>若是選擇最新&amp;近期熱門都是很常見的分類，即使有重複，還是把需求做出來比較好，畢竟交付的時間也很緊急。通常代表現在時程很趕，並且影響不是那麼大，可以將優化的過程放在心裡，在未來時間餘裕的時候將他拿出來做。</p>
+<p>總結<br>本次相談室讓我對前後端工程師以及PM有了更深入的了解，這次的相談室不僅僅只是對某一個職業的敘述跟經驗分享，更是具體的將職場上的情況帶入到你的面前，讓自己可以從更宏觀的角度去理解自己是否適合這個職能/產業/公司。<br>職場上的情況從解析需求問題開始，到團隊分工合作，最後到團隊的衝突如何解決，這當中帶給聽者各種不同角度去思考到的問題，很重要的一點是，團隊分工合作當中，溝通非常的重要，除了自己的職掌外也同時要去了解隊友的狀況，並互相溝通取得平衡，讓彼此能夠互相理解問題的重點，並找到共同解決問題的方式。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,zh-TW,default">
+    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/07/18/%E8%B7%B3%E8%BB%8C%E6%8F%9B%E8%B7%91%E9%81%93%EF%BC%8C%E9%97%9C%E6%96%BC%E5%AD%B8%E7%BF%92%E5%AF%ABCODE%E9%80%99%E4%BB%B6%E4%BA%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Doug 道">
+      <meta itemprop="description" content="關於轉職紀錄，以及技術及工作相談室筆記">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="想要邊撸鐵邊學CODE的Doug">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/07/18/%E8%B7%B3%E8%BB%8C%E6%8F%9B%E8%B7%91%E9%81%93%EF%BC%8C%E9%97%9C%E6%96%BC%E5%AD%B8%E7%BF%92%E5%AF%ABCODE%E9%80%99%E4%BB%B6%E4%BA%8B/" class="post-title-link" itemprop="url">跳軌換跑道關於學習寫CODE這件事</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-07-18 10:42:00" itemprop="dateCreated datePublished" datetime="2021-07-18T10:42:00+08:00">2021-07-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%BD%89%E8%81%B7/" itemprop="url" rel="index"><span itemprop="name">轉職</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote><p>　　終於在2021年5月底的時候，下定決心要轉換跑道，開始走上轉職成為網頁工程師的路上。加入。</p>
 </blockquote>
 
-<p>jsFiddle (不會用，要找範例)<br>在文章中嵌入 jsFiddle。</p>
-<iframe scrolling="no" width="200" height="300" src="https://jsfiddle.net/shorttag/embedded/123/123" frameborder="0" loading="lazy" allowfullscreen></iframe>
-
-<p>Gist(找範例)<br>在文章中嵌入 Gist。<br>直接使用Github Gist</p>
-<script src="https://gist.github.com/Doug0849/8a5dbfe58c84c12f937af928458dff3a.js"></script>
-
-<p>iframe (內嵌影片)<br>在文章中插入 iframe。</p>
-<iframe src="https://translate.google.com.vn/?hl=zh-TW&tab=rT&sl=en&tl=zh-CN&text=gist&op=translate" width="200" height="200" frameborder="0" loading="lazy" allowfullscreen></iframe>
-
-<img src="/asset/blog_images/bg9.PNG" class="image" width="200" height="200" title="title text" alt="alt text">
-
-<p>Link<br>在文章中插入链接，并自动给外部链接添加 target=”_blank” 属性。</p>
-<a href="" title="" target="">text url [external] [title]</a>
-
-<p>插入 youtube 影片</p>
-<div class="video-container"><iframe src="https://www.youtube.com/embed/mgdXi5npArQ" frameborder="0" loading="lazy" allowfullscreen></iframe></div>
-
-<p>Image<br>在文章中插入图片。<br><img src="bg9.PNG"><br>在Hexo中是使用Markdown語法，而在Markdown中插入圖片的語法為</p>
-<figure class="highlight plaintext"><figcaption><span>Markdown</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](bg9.PNG)</span><br></pre></td></tr></table></figure>
-<p>[ ]內為ALT描述 ( )內為連結路徑<br>這張圖是放在跟.md文章同樣的相對路徑下，因為有在_config.yml 設定asset_folder，</p>
-<figure class="highlight plaintext"><figcaption><span>Yaml</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">post_asset_folder: true</span><br></pre></td></tr></table></figure>
-<p>這個功能打開後，當你輸入指令 $hexo new [文章名稱] 時，會在_post當中開啟一個同樣名為文章名稱的資料夾，<br>此時把圖片丟進這個資料夾，文章就可以直接以相對路徑使用</p>
+<p>　　後來開始在網路上查找相關的資訊，思考要如何學習以及入門的時候，搜尋到了AC CAMP，看完了簡介沒兩分鐘馬上決定從這個地方開始出發。</p>
+<p>　　其實本身自己也算是完全沒有任何關於寫code的經驗，所以剛開始是加入學期一，發現AC 的課綱內容真的寫得很清楚明瞭，對我來說我覺得真的不困難，所以很快的就把所有學期一的預讀內容和練習完成，然後還迫不及待的馬上進入了學期二的預讀階段，最後在六月底開班前完成了學期二之一的預讀，也接著開啟學期二之二的預讀了!</p>
+<p>　　在寫這篇文章時，距離下定決心轉換跑道後大概經過了一個半月左右的時間，從零基礎的我，到完成了學期二之一，學了非常多的新知識，新觀念，以及新技術，這都是一個半月前自己沒有想像過的，而在一步步完成這些階段性的課程後，越來越據信心自己能夠成功轉職。</p>
+<p>　　這當中真的非常謝謝AC 的所有教練以及助教，在過去幾周當中，課程內容不僅僅是教你如何認識code寫code，還有很多的關於學習的技巧、心態的調整、學長姐的經驗分享…好多好多，這些真的都讓我受益匪淺，而且AC的學習環境真的設計的很棒，每個單元都有相對的關係，一步步建立起相關的知識、一步步的加深練習難度且不斷地重複操作熟悉，然後又有點像是在玩遊戲一樣，當遇到打不贏的BOSS還有助教可以求救幫助，最後破關斬將所帶來的成就感也讓自己信心大增，當中建立起自信心也不再那麼擔心害怕自己沒辦法成功轉職，保持著良好的心態持續的學習，相信自己能夠達到目標。<br> 　　對於下一個階段的學習，希望自己能夠保持著學習動力繼續完成所有挑戰，而目前也已經在預讀學期二之二了，課程難度真的有感提升超多！期望自己能夠在八月分開課之前完成所有的預讀與練習。</p>
 
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://doug0849.github.io/2021/09/08/test/" data-id="cktb6vtjc0000cgvkfubg2sbs" data-title="test" class="article-share-link">Teilen</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
 
-
-
-  
-    <article id="post-First-Post" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/09/08/First-Post/" class="article-date">
-  <time class="dt-published" datetime="2021-09-08T03:47:26.000Z" itemprop="datePublished">2021-09-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
     
     
-      <header class="article-header">
-        
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
   
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/09/08/First-Post/">First-Post</a>
-    </h1>
+  
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,zh-TW,default">
+    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Doug 道">
+      <meta itemprop="description" content="關於轉職紀錄，以及技術及工作相談室筆記">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="想要邊撸鐵邊學CODE的Doug">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A81/" class="post-title-link" itemprop="url">.includes .matches .filter .find .some .findIndex 使用</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-09 18:46:37" itemprop="dateCreated datePublished" datetime="2021-06-09T18:46:37+08:00">2021-06-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
       </header>
+
     
-    <div class="e-content article-entry" itemprop="articleBody">
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
-        <p>Hi，我是道，技術blog的第一篇測試</p>
+          <p>.includes(變數或值) 只能使用在陣列物件value查核上，核對對象為一個變數或是值</p>
+<p>.matches(‘.class’或’#id’) 查找元素所含有的class或id，或是也可以用 classList.contain()，matches比較簡潔</p>
+<p>.filter(設定條件函示) 是把一個陣列物件裡面符合條件的選出來，不符合的剃除，最後他還是一個陣列</p>
+<p>.find(設定條件函示)是把一個陣列物件裡面，第一個符合條件的挑出來，就停止</p>
+<p>.some(設定條件函示)是把一個陣列物件裡面，查找是否有相符的，有就是true沒有就是false，並不回傳整筆符合資料</p>
+<p>.findIndex(設定條件函示)回傳項目Index，找不到則回傳-1)</p>
 
       
     </div>
-    <footer class="article-footer">
-      <a data-url="https://doug0849.github.io/2021/09/08/First-Post/" data-id="cktb0v7df0000rsvk3gso6p9c" data-title="First-Post" class="article-share-link">Teilen</a>
-      
-      
-      
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Doug 道</p>
+  <div class="site-description" itemprop="description">關於轉職紀錄，以及技術及工作相談室筆記</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Doug 道</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
     </footer>
   </div>
-  
-</article>
-
-
 
   
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
 
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archiv</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/09/">September 2021</a></li></ul>
-    </div>
-  </div>
+<script src="/js/schemes/muse.js"></script>
 
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">letzter Beitrag</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2021/09/08/test/">test</a>
-          </li>
-        
-          <li>
-            <a href="/2021/09/08/First-Post/">First-Post</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+<script src="/js/next-boot.js"></script>
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2021 Doug 道<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
 
 
 
   
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
 
 
 
 
 
-  </div>
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
 </body>
 </html>
