@@ -229,6 +229,15 @@
     <content><![CDATA[<h3 id="關於draft"><a href="#關於draft" class="headerlink" title="關於draft"></a>關於draft</h3><p>放在/source/_drafts下<br>可執行命令hexo new draft <code>&lt;title&gt;</code> 創建草稿<br>通過執行命令hexo publish <code>&lt;title&gt;</code> 可以把_drafts下的草稿文章推到_posts下</p>
 <span id="more"></span>
 <p>會按照new_post_name的配置來命名文章<br>如果有開啟_config裡的post_asset_folder: true，對應的asset資料夾也會一起移動<br>手動操作也是可以的，草稿最後會被解析到model(‘Post’)中，參數published變為0 （預設情况下不會傳給布局頁面進行渲染）<br>_config.yml中如果設定render_drafts: true<br>就會傳給布局頁面進行渲染<br>在generate或deploy時會自動把_drafts/下的文件解析生成到目標文件夾下（但不會移動到/source/_posts下）</p>
+<h3 id="關於New-Post"><a href="#關於New-Post" class="headerlink" title="關於New Post"></a>關於New Post</h3><p>執行命令hexo new title 就可以創建新文章<br>新文章會丟到/source/_posts底下<br>可以在站點_config裡面設定新文章預設命名<br>就可以在_posts底下自動用資料夾分類</p>
+<p>new_post_name: :year/:month/:title.md</p>
+<p>文章將會在_posts/2021/09/底下</p>
+<h3 id="關於產生靜態文件"><a href="#關於產生靜態文件" class="headerlink" title="關於產生靜態文件"></a>關於產生靜態文件</h3><p>執行命令hexo generate<br>這時候Hexo會將你用Markdown寫好的文章、圖片，會全部依照主體layout設定去生成HTML文件，這些檔案位於public底下，每一次執行就會依照source檔案底下有變動的的文章重新生成一次html文檔</p>
+<p>簡易命令寫法 hexo g<br>可以附帶參數 -w 將會隨時監控原始檔案的變動，只要一變動便會重新生成新的html，在本地測試時很好用，開一個終端機執行hexo serve啟動本地伺服器觀察，一個終端機執行 hexo g -w 將會持續幫你更新檔案。</p>
+<h3 id="關於部屬"><a href="#關於部屬" class="headerlink" title="關於部屬"></a>關於部屬</h3><p>執行命令hexo deploy<br>在執行hexo deploy之前要先執行 hexo generate來產生靜態文件，然後在執行hexo deploy就會將靜態文件上傳到指定位置。<br>Hexo預設支援github，只要在github開好repo並設定成github_page，可以在站點_config裡加入設定值</p>
+<p>deploy:<br>  type: git<br>  repo: <a href="https://github.com/%E5%80%8B%E4%BA%BA%E5%B8%B3%E8%99%9F/repo%E5%90%8D%E7%A8%B1">https://github.com/個人帳號/repo名稱</a><br>  branch: master(推送到master分支，若不使用master分支要設定到你repo設定的預設分支上)</p>
+<h3 id="關於本地伺服器"><a href="#關於本地伺服器" class="headerlink" title="關於本地伺服器"></a>關於本地伺服器</h3><p>執行完hexo generate後若不想直接上傳到個人網路空間，<br>可以執行 hexo serve 來啟動本地伺服器，觀察檢查是否有其他問題。<br>本地伺服器位置位於 <a href="https://localhost:4000/">https://localhost:4000</a></p>
+<h3 id="關於站點配置-config-yml"><a href="#關於站點配置-config-yml" class="headerlink" title="關於站點配置_config.yml"></a>關於站點配置_config.yml</h3><p>有很多的基本配置都在這個文件裡，相關的配置變數可以詳官方網站的文件說明。<br><strong><a href="https://hexo.io/zh-cn/docs/configuration">Hexo配置</a></strong></p>
 ]]></content>
       <categories>
         <category>Hexo</category>
