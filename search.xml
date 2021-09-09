@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>預讀學期2-2_S3_A12-電影清單加碼功能-作業心得</title>
+    <url>/2021/07/29/%E9%A0%90%E8%AE%80%E5%AD%B8%E6%9C%9F2-2-S3-A12-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E5%8A%A0%E7%A2%BC%E5%8A%9F%E8%83%BD-%E4%BD%9C%E6%A5%AD%E5%BF%83%E5%BE%97/</url>
+    <content><![CDATA[<p>　　之前一直沒有寫相關的作業心得筆記，一方面是覺得難度不高，一方面覺得操作幾次就很熟練了，所以就很懶惰…但進入到學期2-2後，光是S2的製作電影清單，突然感覺難度一下提升超級多，很多內容不是一次兩次就能夠記起來且熟悉，而且函式的拆解跟邏輯複雜度上也提升相當多，演算法也來到了百行之多，這時才發現真的很難一下吸收，所以決定開始來寫學習、作業、技術相關筆記來加深自己的記憶及熟練度。</p>
+<span id="more"></span>
+
+<p>任務<br>這次的任務是要把S2製作的My Movie List做進化，且要滿足以下幾個功能</p>
+<ol>
+<li>要新增一組功能按鈕，可以將畫面呈現為列表模式及卡片模式。</li>
+<li>畫面能夠順利在 list 和 card 模式間來回切換。</li>
+<li>不能影響到原有功能（尤其是 More、收藏按鈕、分頁功能要正常運作）</li>
+</ol>
+<h2 id="Step-1：將按鈕樣式置入"><a href="#Step-1：將按鈕樣式置入" class="headerlink" title="Step 1：將按鈕樣式置入"></a>Step 1：將按鈕樣式置入</h2><p>第一步老樣子，先從HTML下手吧！先將Font Awesome按鈕的樣式置入頁面中，並且調整至適當的位置。</p>
+<img src="/2021/07/29/%E9%A0%90%E8%AE%80%E5%AD%B8%E6%9C%9F2-2-S3-A12-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E5%8A%A0%E7%A2%BC%E5%8A%9F%E8%83%BD-%E4%BD%9C%E6%A5%AD%E5%BF%83%E5%BE%97/step1.jpg" class="" title="step1.jpg">
+<center>加入icon</center>
+
+<p>說明：<br>要先將Font Awesome的JS先置入head裏頭。之後在Font Awesome裡尋找相關icon的class碼，安排它在Html的位置，也要適時的調整Row或col（Boostrap開發模式），最後別忘了給他們的父層，以及各自都加上屬於自己的id。</p>
+<img src="/2021/07/29/%E9%A0%90%E8%AE%80%E5%AD%B8%E6%9C%9F2-2-S3-A12-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E5%8A%A0%E7%A2%BC%E5%8A%9F%E8%83%BD-%E4%BD%9C%E6%A5%AD%E5%BF%83%E5%BE%97/step2.jpg" class="" title="step2.jpg">
+<center>將Font Awesome的JS先置入head裏頭</center>
+
+<img src="/2021/07/29/%E9%A0%90%E8%AE%80%E5%AD%B8%E6%9C%9F2-2-S3-A12-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E5%8A%A0%E7%A2%BC%E5%8A%9F%E8%83%BD-%E4%BD%9C%E6%A5%AD%E5%BF%83%E5%BE%97/step3.jpg" class="" title="step3.jpg">
+<center>安排icon在html的位置</center>
+
+<hr>
+<h2 id="Step-2：清單模式在畫面上呈現的樣子"><a href="#Step-2：清單模式在畫面上呈現的樣子" class="headerlink" title="Step 2：清單模式在畫面上呈現的樣子"></a>Step 2：清單模式在畫面上呈現的樣子</h2><img src="/2021/07/29/%E9%A0%90%E8%AE%80%E5%AD%B8%E6%9C%9F2-2-S3-A12-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E5%8A%A0%E7%A2%BC%E5%8A%9F%E8%83%BD-%E4%BD%9C%E6%A5%AD%E5%BF%83%E5%BE%97/step4.jpg" class="" title="step4.jpg">
+<center>清單模式</center>
+
+<p>只要先寫出一列的樣板模式即可，因為之後要用JS把設定好的HTML格式資料至入到畫面上。</p>
+<hr>
+<h2 id="Step-3：改造function"><a href="#Step-3：改造function" class="headerlink" title="Step 3：改造function"></a>Step 3：改造function</h2><p>首先我們可以複製renderMovieList這個函式，並將它命名為renderMoviesList2之後方便做測試，基本上函式內的邏輯都一樣，只要將新寫的HTML格式資料帶到到rawHTML即可。所以去HTML把你剛剛寫好的格式放進rawHTML吧，記得要把電影名稱或相關要顯示的資料，替換成正確的參數。</p>
+<p>之後可以將最下方renderMovieList改成renderMovieList2，來看看是不是正確顯示在螢幕上。</p>
+<img src="/2021/07/29/%E9%A0%90%E8%AE%80%E5%AD%B8%E6%9C%9F2-2-S3-A12-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E5%8A%A0%E7%A2%BC%E5%8A%9F%E8%83%BD-%E4%BD%9C%E6%A5%AD%E5%BF%83%E5%BE%97/step5.jpg" class="" title="step5.jpg">
+<center>rawHTML的template literal置入新的格式</center>>
+
+<img src="/2021/07/29/%E9%A0%90%E8%AE%80%E5%AD%B8%E6%9C%9F2-2-S3-A12-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E5%8A%A0%E7%A2%BC%E5%8A%9F%E8%83%BD-%E4%BD%9C%E6%A5%AD%E5%BF%83%E5%BE%97/step4.jpg" class="" title="step4.jpg">
+<center>成功畫面</center>
+
+<hr>
+<h2 id="Step-4：新增監聽器"><a href="#Step-4：新增監聽器" class="headerlink" title="Step 4：新增監聽器"></a>Step 4：新增監聽器</h2><p>在Step 1置入icon的時候，就將自己和父層都設定好了id。<br>所以先回到上頭設定常數，將各自的位置選擇出來。</p>
+<img src="/2021/07/29/%E9%A0%90%E8%AE%80%E5%AD%B8%E6%9C%9F2-2-S3-A12-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E5%8A%A0%E7%A2%BC%E5%8A%9F%E8%83%BD-%E4%BD%9C%E6%A5%AD%E5%BF%83%E5%BE%97/step6.jpg" class="" title="step6.jpg">
+<center>把各自按鈕位置選擇出來</center>
+
+<p>然後在父層掛上監聽器。<br>這邊我設定的父層為btnShowStyle</p>
+<img src="/2021/07/29/%E9%A0%90%E8%AE%80%E5%AD%B8%E6%9C%9F2-2-S3-A12-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E5%8A%A0%E7%A2%BC%E5%8A%9F%E8%83%BD-%E4%BD%9C%E6%A5%AD%E5%BF%83%E5%BE%97/step7.jpg" class="" title="step7.jpg">
+<center>btnShowStyle新增監聽器</center>
+
+<ol>
+<li>因為在按鈕上有設置a標籤，所以要先取消超連結本上的預設動作。</li>
+<li>加入判斷式，確定是選擇到哪一個按鈕。</li>
+<li>接著變更圖案本身的顏色樣式，因為是使用boostrap系統，所以要將各自的classList做新增或刪除。(使用狀態下為藍色primary，非使用狀態下為灰色secondary)</li>
+<li>最後面的renderMovieList記得改成renderMovieList2</li>
+</ol>
+<p>最後來檢查按鈕是否有成功，此時按下按鈕，按鈕要會變色，且會變換顯示的模式</p>
+<hr>
+<h2 id="Step-5：優化顯示模式的語法。"><a href="#Step-5：優化顯示模式的語法。" class="headerlink" title="Step 5：優化顯示模式的語法。"></a>Step 5：優化顯示模式的語法。</h2><p>由於現在將兩個不同的顯示方式分成兩個函式來寫，會增加後面管理程式碼的困擾，因為<strong>只要碰到任何跟渲染畫面”renderMovieList”的時候，都要去判斷要用renderMovieList或是renderMovieList2</strong>，包含查找功能，換頁功能都有用到renderMovieList這個函式，為了不去更改原有的程式碼，所以決定把這兩個函式合併。</p>
+<p>先將renderMovieList2內的程式碼先搬到renderMovieList後面，<br>接著就是加入判斷式，</p>
+<p>這邊思考後，我的想法是先在最上頭新增一個變數 showStyle作為信號開關，</p>
+<img src="/2021/07/29/%E9%A0%90%E8%AE%80%E5%AD%B8%E6%9C%9F2-2-S3-A12-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E5%8A%A0%E7%A2%BC%E5%8A%9F%E8%83%BD-%E4%BD%9C%E6%A5%AD%E5%BF%83%E5%BE%97/step8.jpg" class="" title="step8.jpg">
+<center>showStyle作為信號開關</center>
+
+<p>接著在renderMovieList加上判斷式，若showStyle等於0時，使用cards的顯示方式，否則就顯示清單模式。</p>
+<img src="/2021/07/29/%E9%A0%90%E8%AE%80%E5%AD%B8%E6%9C%9F2-2-S3-A12-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E5%8A%A0%E7%A2%BC%E5%8A%9F%E8%83%BD-%E4%BD%9C%E6%A5%AD%E5%BF%83%E5%BE%97/step9.jpg" class="" title="step9.jpg">
+<center>加上判斷式</center>
+
+<p>接著回到顯示模式監聽器，加入當選則卡片時showStyle重新賦值為0，選擇清單時，showStyle重新賦值為1。</p>
+<img src="/2021/07/29/%E9%A0%90%E8%AE%80%E5%AD%B8%E6%9C%9F2-2-S3-A12-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E5%8A%A0%E7%A2%BC%E5%8A%9F%E8%83%BD-%E4%BD%9C%E6%A5%AD%E5%BF%83%E5%BE%97/step10.jpg" class="" title="step10.jpg">
+<center>依照選擇不同的按鈕，重新賦值showStyle</center>
+
+
+<p>最後檢查一遍把確定所有的renderMovieList不要有出現之前寫的renderMovieList2。</p>
+<p>現在頁面已經可以順利切換了，而且也優化了程式碼，未來若要新增第三種第四種顯示方式，只要在renderMovieList內新增新的判斷及格式，還有在樣式顯示監聽器內加入新的判斷就可以了。</p>
+<p>目前原有的功能也要都能夠正常運作，只要選定一種顯示方式，不管用搜尋、換頁都會保持原有的顯示方式。</p>
+<p>但是發現一個小問題，<strong>當我在卡片狀態下然後在第三頁時，當我按下變換樣式顯示頁面內容會回到第一頁，應該要顯示當頁才對。</strong></p>
+<p>這時候回頭檢視所有的renderMovieList帶入的引數發現，全部都帶入了<strong>getMoviesByPage(1)<strong>，所以不管搜尋、換頁，</strong>只要碰到getMoviesByPage(1)帶入的是1時，全都會回到第一頁。</strong></p>
+<hr>
+<h2 id="Step-6：修正所有的getMoviesByPage-1"><a href="#Step-6：修正所有的getMoviesByPage-1" class="headerlink" title="Step 6：修正所有的getMoviesByPage(1)"></a>Step 6：修正所有的getMoviesByPage(1)</h2><p>除了搜尋監聽器內的getMoviesByPage(1)。</p>
+<p>回到最上方設定一個新的變數page 且賦予值 1。</p>
+<img src="/2021/07/29/%E9%A0%90%E8%AE%80%E5%AD%B8%E6%9C%9F2-2-S3-A12-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E5%8A%A0%E7%A2%BC%E5%8A%9F%E8%83%BD-%E4%BD%9C%E6%A5%AD%E5%BF%83%E5%BE%97/step11.jpg" class="" title="step11.jpg">
+<center>新變數page 賦予值 1</center>
+
+<p>再來將所有的getMoviesByPage的引數帶入page<br>getMoviesByPage(page)<br>這邊要注意，**除了搜尋監聽器內的getMoviesByPage(1)**，不能修改。</p>
+<p>然後在回到之前頁碼生成的函式內，將原本的定義page為變數的let拿掉。</p>
+<img src="/2021/07/29/%E9%A0%90%E8%AE%80%E5%AD%B8%E6%9C%9F2-2-S3-A12-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E5%8A%A0%E7%A2%BC%E5%8A%9F%E8%83%BD-%E4%BD%9C%E6%A5%AD%E5%BF%83%E5%BE%97/step12.jpg" class="" title="step12.jpg">
+<center>原本的 let page = 的let拿掉</center>
+
+<p>現在只要切換頁面就會給page重新賦值，page被確定下來，就算換樣式，也還是會保持在原本該顯示的頁數了。</p>
+<p><strong>除了搜尋監聽器內的getMoviesByPage(1)不能改原因</strong><br>因為現在<strong>page在globle的狀態</strong>，假設一開始先切換到第三頁，page值此時會被賦予3，搜尋監聽器內的getMoviesByPage()引數如果是page的情況下’’renderMovieList(getMoviesByPage(page))’’，這時候搜尋任何關鍵字，搜尋結果是少於三頁的情況下，會發現此刻畫面會變一片空白沒有資料，那是因為我們變成渲染頁數變成第三頁，但是結果少於三頁，所以當然就沒有任何電影顯示出來。<br>所以再次強調</p>
+<p><strong>除了搜尋監聽器內的getMoviesByPage(1)，不能修改。</strong><br><strong>除了搜尋監聽器內的getMoviesByPage(1)，不能修改。</strong><br><strong>除了搜尋監聽器內的getMoviesByPage(1)，不能修改。</strong></p>
+<hr>
+<ol>
+<li><del>已完成任務 (已完成的畫刪除線)</del></li>
+<li><del>要新增一組功能按鈕，可以將畫面呈現為列表模式及卡片模式。</del></li>
+<li><del>畫面能夠順利在 list 和 card 模式間來回切換。</del></li>
+<li><del>不能影響到原有功能（尤其是 More、收藏按鈕、分頁功能要正常運作）<br>由於程式碼篇幅頗長，請運用 description 欄位說明新增的功能，幫助助教能有效注意到重點。在程式碼中也請運用註解來提示助教！</del></li>
+</ol>
+<h2 id="已完成的視覺與使用者動線驗收重點-已完成的畫刪除線"><a href="#已完成的視覺與使用者動線驗收重點-已完成的畫刪除線" class="headerlink" title="已完成的視覺與使用者動線驗收重點 (已完成的畫刪除線)"></a>已完成的視覺與使用者動線驗收重點 (已完成的畫刪除線)</h2><ol>
+<li><del>切換顯示模式時，內容能停留在原本的頁面，不會跳回第一頁</del></li>
+<li><del>若使用搜尋後，再切換顯示模式，仍然能正常顯示搜尋結果</del></li>
+<li>視覺上能讓使用者知道現在選的是第幾頁、<del>哪個顯示模式</del>、哪些項目有加入收藏</li>
+</ol>
+<p>看來只剩下最後兩項了，加把勁!</p>
+<hr>
+<h2 id="Step-7：讓使用者知道現在位在第幾頁。"><a href="#Step-7：讓使用者知道現在位在第幾頁。" class="headerlink" title="Step 7：讓使用者知道現在位在第幾頁。"></a>Step 7：讓使用者知道現在位在第幾頁。</h2><p>隨著改變頁數要改變頁碼的顯示樣式，這代表每當我選了一次頁碼，我勢必要重新渲染一次頁碼，所以表示一定會是從這兩個部分下手</p>
+<ol>
+<li>renderPaginator(在正確的頁數上改變樣式)</li>
+<li>Paginator的監聽器(換頁數就重新render)</li>
+</ol>
+<p>我們先到Paginator監聽器來，這邊比較容易修改，我們只要在最後加上</p>
+<img src="/2021/07/29/%E9%A0%90%E8%AE%80%E5%AD%B8%E6%9C%9F2-2-S3-A12-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E5%8A%A0%E7%A2%BC%E5%8A%9F%E8%83%BD-%E4%BD%9C%E6%A5%AD%E5%BF%83%E5%BE%97/step13.jpg" class="" title="step13.jpg">
+<center>新增運算子，及重新渲染頁碼</center>
+
+<p>新增data運算子，因為每次點選換頁按鈕都得重新渲染頁面按鈕，更新顯示正在哪一頁上，所以要看是依filteredMovies來重新渲染頁碼或是movies來重新渲染頁碼，如果搜尋情況下filteredMovies會有資料，將會依搜尋結果的情況下去產生頁碼，若否則會依照原本movies的資料長度去產生頁碼。</p>
+<p>再來我們接著修改函式renderPaginator(在正確的頁數上改變樣式)<br>函式當中，<strong>一旦我們置入所有頁碼的HTML格式資料後，我們就可以立刻選取到各li子元素</strong>，而因為globle的page會被更新，此時便可以依照global的page去指出是哪一個li子元素裡的a元素標籤應該要被修改樣式。</p>
+<p>paginator.children[0]為第一頁的li標籤<br>paginator.children[0].firstElementChild為li裡面的a標籤<br>paginator.children[0].firstElementChild.classList.add(‘bg-primary’, ‘text-white’)<br>a標籤新增名稱至class內(boostrap改變樣式)</p>
+<img src="/2021/07/29/%E9%A0%90%E8%AE%80%E5%AD%B8%E6%9C%9F2-2-S3-A12-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E5%8A%A0%E7%A2%BC%E5%8A%9F%E8%83%BD-%E4%BD%9C%E6%A5%AD%E5%BF%83%E5%BE%97/step14.jpg" class="" title="step14.jpg">
+<center>指出正確的元素位置，修改樣式</center>
+
+<p>最後再回到搜尋監聽器上，當搜尋為空白的時候，我們要顯示全部的電影，但別忘了要記得清空filteredMovies,因為filteredMovies現在已經移出到globle當中，也有很多函式都有使用到他，連續操作搜尋下，萬一filteredMovies保留之前的搜尋結果，將會出現顯示錯誤電影資料。<br>最後再補上一個執行產生頁碼函式。</p>
+<img src="/2021/07/29/%E9%A0%90%E8%AE%80%E5%AD%B8%E6%9C%9F2-2-S3-A12-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E5%8A%A0%E7%A2%BC%E5%8A%9F%E8%83%BD-%E4%BD%9C%E6%A5%AD%E5%BF%83%E5%BE%97/step15.jpg" class="" title="step15.jpg">
+<center>記得要清空filteredMovies</center>>
+
+<p>這樣<strong>讓使用者知道現在選的是第幾頁</strong>就大功告成啦!</p>
+<hr>
+<h2 id="Step-8：顯示哪些項目有加入收藏。"><a href="#Step-8：顯示哪些項目有加入收藏。" class="headerlink" title="Step 8：顯示哪些項目有加入收藏。"></a>Step 8：顯示哪些項目有加入收藏。</h2><p>這大概是所有題目內，我覺得最困擾的一個題目了，邏輯性比較複雜。<br>我思考的邏輯是，先製作一個新的function：</p>
+<p>一開始先設定幾個常數：</p>
+<ol>
+<li>選出所有class為card-title的元素(應該有12個，因為每頁顯示12筆)，並放入panelMovies，之後就可以使用panelMovies[i].innerText來取得畫面上的電影名稱。</li>
+<li>將我最愛的電影從locoalStorage取出並從JSON轉成Object，並放入favoriteMoviesList</li>
+<li>將favoriteMoviesList使用map製造出一個新的陣列，條件是每一筆電影資料的電影名稱，並放入favoriteMoviesTitle</li>
+<li>重複畫面上總共有幾部電影，就重複檢查多少次，for迴圈<br>加入判斷式，若favoriteMoviesTitle裡面含有畫面上第i部的電影名稱，修改”新增至我的最愛按鈕”的顯示樣式。</li>
+</ol>
+<img src="/2021/07/29/%E9%A0%90%E8%AE%80%E5%AD%B8%E6%9C%9F2-2-S3-A12-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E5%8A%A0%E7%A2%BC%E5%8A%9F%E8%83%BD-%E4%BD%9C%E6%A5%AD%E5%BF%83%E5%BE%97/step16.jpg" class="" title="step16.jpg">
+<center>新增一個函式來做已收藏確認</center>
+
+<p>補充說明：</p>
+<ol>
+<li>第140行，當選擇到元素標籤時，可以使用setAttribute(’string’,’value’)來設定新的標籤屬性，兩個引述都是字串，無屬性值的時候要輸入空字串。</li>
+<li>對陣列使用map()，會將陣列中每一個項目，依照條件，產生一組新的陣列</li>
+</ol>
+<p><strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map">MDN範例說明</a></strong></p>
+<p>Array.prototype.map() - JavaScript | MDN<br>The method creates a new array populated with the results of calling a provided function on every element in the calling array. callbackFn Function that is called for every element of arr. Each time callbackFn executes, the returned value is added to newArray.<br>Mozilla</p>
+<p>大功告成，完成了所有作業要求了!<br>最後再檢查一遍作業的批改標準吧!<br>詳細的檢查一遍，操作看看，有沒有發現其他的小錯誤，若沒有大致上應該沒有問題啦!</p>
+]]></content>
+      <categories>
+        <category>AlphaCamp 作業練習</category>
+      </categories>
+      <tags>
+        <tag>技術筆記</tag>
+        <tag>作業</tag>
+        <tag>AlphaCamp</tag>
+        <tag>setAttribute()</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ejs樣板語法技術筆記</title>
+    <url>/2021/09/08/ejs%E6%A8%A3%E6%9D%BF%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/</url>
+    <content><![CDATA[<p>在ejs樣版檔案下的標籤語意</p>
+<p>&lt;%   ‘脚本’ 标签，用于流程控制，无输出。<br>&lt;%_  删除其前面的空格符<br>&lt;%__ 在模板中，透过 __ 或 _p 辅助函数，即可取得翻译后的字符串，前者用于一般使用；而后者用于复数字符串。<br>     可詳<a href="https://hexo.io/zh-cn/docs/internationalization">Hexo官方文檔</a><br>&lt;%=  输出数据到模板（输出是转义 HTML 标签），像是等於innerHTML<br>&lt;%-  输出非转义的数据到模板，像是等於innerText<br>&lt;%#  注释标签，不执行、不输出内容<br>&lt;%%  输出字符串 ‘&lt;%’<br>%&gt;   一般结束标签<br>-%&gt;  删除紧随其后的换行符<br>_%&gt;  将结束标签后面的空格符删除</p>
+]]></content>
+      <categories>
+        <category>EJS</category>
+      </categories>
+      <tags>
+        <tag>技術筆記</tag>
+        <tag>EJS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>DOM節點選擇方式</title>
+    <url>/2021/06/06/DOM%E7%AF%80%E9%BB%9E%E9%81%B8%E6%93%87%E6%96%B9%E5%BC%8F/</url>
+    <content><![CDATA[<p>HTML</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;father&quot;</span>&gt;</span> father </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;my-sister&quot;</span>&gt;</span> my-sister<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;me&quot;</span>&gt;</span> me </span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;son1&quot;</span>&gt;</span>son1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;son2&quot;</span>&gt;</span>son2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;son3&quot;</span>&gt;</span>son3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;my-brother&quot;</span>&gt;</span> my-brother<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+<p>JS選擇元素節點方法<br>先使用document.querySelector選出class標籤為me的元素</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> me = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.me) </span></span><br></pre></td></tr></table></figure>
+
+
+<p>選擇me的父元素和選擇me的父元素的父元素</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">me.parentElement   <span class="comment">// 會選擇到&lt;div class=&quot;&quot;father&gt;...&lt;/div&gt;</span></span><br><span class="line">me.parentElement.parentElement   <span class="comment">// 會選擇到&lt;body&gt;...&lt;/body&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<p>選擇me的第一個子元素和選擇me的第二個子元素</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">me.children[<span class="number">0</span>]   <span class="comment">// 會選擇到&lt;div class=&quot;son1&quot;&gt;son1&lt;/div&gt;</span></span><br><span class="line">me.children[<span class="number">1</span>]   <span class="comment">// 會選擇到&lt;div class=&quot;son2&quot;&gt;son2&lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>選擇me的下一個同層級元素，和選擇me的上一個同層級元素</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">me.nextElementSibling   <span class="comment">//  會選擇到&lt;div class=&quot;my-brother&quot;&gt; my-brother&lt;/div&gt; </span></span><br><span class="line">me.nextElementSibling   <span class="comment">//  會選擇到&lt;div class=&quot;my-sister&quot;&gt; my-sister  &lt;/div&gt; </span></span><br></pre></td></tr></table></figure>
+
+<p>選擇me的第一個子元素，選擇me的最後一個子元素</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">me.firstElementChild   <span class="comment">// 會選擇到&lt;div class=&quot;son1&quot;&gt;son1&lt;/div&gt;</span></span><br><span class="line">me.lastElementChild   <span class="comment">// 會選擇到&lt;div class=&quot;son3&quot;&gt;son3&lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>技術筆記</tag>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>.toggle() 和 .appendchild()</title>
+    <url>/2021/09/09/toggle%E5%92%8Cappendchild/</url>
+    <content><![CDATA[<h2 id="toggle"><a href="#toggle" class="headerlink" title="toggle"></a>toggle</h2><p>範例</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">element.classList.toggle(&#x27;sample&#x27;) </span><br></pre></td></tr></table></figure>
+
+<p>element ：某元素，使用document.querySelecrot選出<br>.classList ：某元素的class屬性<br>.toggle(‘.sample’) ：</p>
+<p>如果class屬性裡面沒有sample則加上sample，<br>如果class屬性裡面有sample則刪除sample，</p>
+<span id="more"></span>
+
+<p>Node.appendChild(sample) 是將一個節點加到指定的父節點中所有子節點的最後面。如果sample這個節點已經存在document樹當中，那 appendChild(sample) 會將原本sample這個節點位置移動到node這個新的位置（不需要事先移除要移動的節點）。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// TodoList Delete and check</span></span><br><span class="line">list.addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> target = event.target;</span><br><span class="line">  <span class="keyword">const</span> parentElement = target.parentElement</span><br><span class="line">  <span class="comment">//按下垃圾桶，將項目刪除</span></span><br><span class="line">  <span class="keyword">if</span> (target.classList.contains(<span class="string">&quot;delete&quot;</span>)) &#123;</span><br><span class="line">    parentElement.remove();</span><br><span class="line">    <span class="comment">//Todo中項目按下名字，將項目移置done中</span></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target.tagName === <span class="string">&quot;LABEL&quot;</span>) &#123;</span><br><span class="line">    doneList.appendChild(parentElement)</span><br><span class="line">    target.classList.toggle(<span class="string">&quot;checked&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// DoneList Delete and back</span></span><br><span class="line">doneList.addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> target = event.target;</span><br><span class="line">  <span class="keyword">const</span> parentElement = target.parentElement</span><br><span class="line">  <span class="comment">//按下垃圾桶，將項目刪除</span></span><br><span class="line">  <span class="keyword">if</span> (target.classList.contains(<span class="string">&quot;delete&quot;</span>)) &#123;</span><br><span class="line">    parentElement.remove();</span><br><span class="line">    <span class="comment">//Done中項目按下名字，將項目移置Todo中</span></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target.tagName === <span class="string">&quot;LABEL&quot;</span>) &#123;</span><br><span class="line">    list.appendChild(parentElement)</span><br><span class="line">    target.classList.toggle(<span class="string">&quot;checked&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>技術筆記</tag>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VS Code - Markdown &amp; Hexo 自動補齊語法標籤設定</title>
+    <url>/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/</url>
+    <content><![CDATA[<p>在VS Code中寫Markdown，每次撰寫時遇到一些插入圖片或是其他語法覺得很麻煩，因為都不會自動補齊，因此上網找了些資訊看VS Code要怎麼調整才能達到這個功能。</p>
+<span id="more"></span>
+<p>首先點選文件&gt;首選項&gt;用戶片段</p>
+<img src="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/step1.png" class="" title="Step1">
+<p>接著會在上方有一個視窗，要輸入Markdown，點選Markdown.json</p>
+<img src="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/step2.png" class="" title="Step2">
+<p>在markdown.json 上面有一些範例</p>
+<img src="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/step3.png" class="" title="Step3">
+
+<p>Print to console 是標題<br>prefix 是要觸發的關鍵字<br>body 是觸發後的樣子，可以在後面補上(‘$1’)(‘$2’)，$代表執行快捷後光標自動跳到的位置</p>
+<p>再來要編寫適合自己的Markdonw<br>我希望要得到的完整語句是```javascript<br>可以添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;Print to ```javascript&quot;: &#123;</span><br><span class="line">	&quot;prefix&quot;: &quot;```js&quot;,</span><br><span class="line">	&quot;body&quot;: [</span><br><span class="line">		&quot;```Javascript&quot;,</span><br><span class="line">		&quot;$1&quot;,</span><br><span class="line">		&quot;$2&quot;,</span><br><span class="line">		&quot;```&quot;,</span><br><span class="line">	],</span><br><span class="line">	&quot;description&quot;: &quot;js代碼塊&quot;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<p>另外我是使用Hexo的框架，所以也可以自己加上Hexo相關的標籤語法</p>
+<img src="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/step4.png" class="" title="step4">
+
+<p>最後要在VS code的setting.json裡設定開啟Markdown的快捷功能</p>
+<img src="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/step5.png" class="" title="step5">
+</br>
+<img src="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/step6.png" class="" title="step6">
+</br>
+<img src="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/step7.png" class="" title="step7">
+</br>
+大功告成
+</br>
+<img src="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/step8.png" class="" title="step8">
+</br>
+<img src="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/step9.png" class="" title="step9">]]></content>
+      <categories>
+        <category>VS Code</category>
+      </categories>
+      <tags>
+        <tag>技術筆記</tag>
+        <tag>Hexo</tag>
+        <tag>Markdown</tag>
+        <tag>VScode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>跳軌換跑道關於學習寫CODE這件事</title>
+    <url>/2021/07/18/%E8%B7%B3%E8%BB%8C%E6%8F%9B%E8%B7%91%E9%81%93%EF%BC%8C%E9%97%9C%E6%96%BC%E5%AD%B8%E7%BF%92%E5%AF%ABCODE%E9%80%99%E4%BB%B6%E4%BA%8B/</url>
+    <content><![CDATA[<blockquote><p>　　終於在2021年5月底的時候，下定決心要轉換跑道，關於開始走上轉職成為網頁工程師的路上。</p>
+</blockquote>
+<span id="more"></span>
+<p>　　後來開始在網路上查找相關的資訊，思考要如何學習以及入門的時候，搜尋到了AC CAMP，看完了簡介沒兩分鐘馬上決定從這個地方開始出發。</p>
+<p>　　其實本身自己也算是完全沒有任何關於寫code的經驗，所以剛開始是加入學期一，發現AC 的課綱內容真的寫得很清楚明瞭，對我來說我覺得真的不困難，所以很快的就把所有學期一的預讀內容和練習完成，然後還迫不及待的馬上進入了學期二的預讀階段，最後在六月底開班前完成了學期二之一的預讀，也接著開啟學期二之二的預讀了!</p>
+<p>　　在寫這篇文章時，距離下定決心轉換跑道後大概經過了一個半月左右的時間，從零基礎的我，到完成了學期二之一，學了非常多的新知識，新觀念，以及新技術，這都是一個半月前自己沒有想像過的，而在一步步完成這些階段性的課程後，越來越據信心自己能夠成功轉職。</p>
+<p>　　這當中真的非常謝謝AC 的所有教練以及助教，在過去幾周當中，課程內容不僅僅是教你如何認識code寫code，還有很多的關於學習的技巧、心態的調整、學長姐的經驗分享…好多好多，這些真的都讓我受益匪淺，而且AC的學習環境真的設計的很棒，每個單元都有相對的關係，一步步建立起相關的知識、一步步的加深練習難度且不斷地重複操作熟悉，然後又有點像是在玩遊戲一樣，當遇到打不贏的BOSS還有助教可以求救幫助，最後破關斬將所帶來的成就感也讓自己信心大增，當中建立起自信心也不再那麼擔心害怕自己沒辦法成功轉職，保持著良好的心態持續的學習，相信自己能夠達到目標。</p>
+<p>　　對於下一個階段的學習，希望自己能夠保持著學習動力繼續完成所有挑戰，而目前也已經在預讀學期二之二了，課程難度真的有感提升超多！期望自己能夠在八月分開課之前完成所有的預讀與練習。</p>
+]]></content>
+      <categories>
+        <category>日記</category>
+      </categories>
+      <tags>
+        <tag>轉職</tag>
+        <tag>AlphaCamp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>開箱數位軟體團隊-模擬專案體驗帶你找出適合的職能-流水帳心得</title>
+    <url>/2021/07/24/%E9%96%8B%E7%AE%B1%E6%95%B8%E4%BD%8D%E8%BB%9F%E9%AB%94%E5%9C%98%E9%9A%8A-%E6%A8%A1%E6%93%AC%E5%B0%88%E6%A1%88%E9%AB%94%E9%A9%97%E5%B8%B6%E4%BD%A0%E6%89%BE%E5%87%BA%E9%81%A9%E5%90%88%E7%9A%84%E8%81%B7%E8%83%BD-%E6%B5%81%E6%B0%B4%E5%B8%B3%E5%BF%83%E5%BE%97/</url>
+    <content><![CDATA[<blockquote><p>2021年7月22日，非常感謝AC又舉辦了每月一次的數位職涯相談室啦! 本次邀請到的就是本BLOG 方格子 的前端及全端工程師：Jiang &amp; Kuan 來分享現實職場當中前後端各別負責的工作內容。 </p>
+</blockquote>
+<span id="more"></span>
+<p>　　本次座談由兩位主持人 職崖教練 Yenting 及 學習教練 Ken 來開啟這次的相談室啦，一開始不外乎一定要用kahoot來做一些現場調查啦，本次的調查內容大概都會與講座的題目所說的找出適合的職能有所相關，一共有四個題目做調查。</p>
+<p>第一題：你期待在數位相談室獲得什麼價值？<br>了解數位軟體產業的慣例與現況<br>與有經驗的學長姐、助教討論職崖相關問題<br>釐清自己的職崖目標<br>了解現在學習的技術在不同的產業與職能中會如何被應用<br>此題我的答案是 - 了解現在學習的技術在不同的產業與職能中會如何被應用。因為本身在上AC課程的時候大概就有感覺，自己對於網頁的切版排版這件事抗拒很大，相對於撰寫JS的演算法會覺得很麻煩且較無趣，所以其實大概很清楚自己想走的是網頁後端，所以比較想了解現在學習的技術在不同的產業與職能中會如何被應用。</p>
+<p>第二題：你報名/想報名全端Web App 課程的動機是？<br>初步認識寫程式、探索興趣<br>成為科技職涯人才(更好的PM、設計師、管理者或創業家)<br>轉職成為專業網路工程師<br>到海外工作和發展<br>此題我的答案是 - 成為科技職涯人才(更好的PM、設計師、管理者或創業家)，雖然前面有講到希望可以轉職成為後端網路工程師，但其實最最最終目標是希望有一天，我能夠靠著這項技能，成為一位創業家。因為本身其實很懶惰，常常遇到很多問題，希望能找到這些麻煩問題的快速解決路徑，或是不用一直重複的操作同樣的事情。所以未來或許當自己有一定工程師能力後，期望自己能在市場上尋找一個熱門問題，由自己先行開發相關程式透過提供解決這個問題的方式來創造價值。</p>
+<p>第三題：下列何者最接近你理想中的職能?<br>前端工程師<br>後端工程師<br>專案經理<br>網頁設計師<br>此題我的答案是 - 後端工程師。雖然題目只能選一個，但當前目標是後端工程師，未來希望自己能夠成為全端工程師，能夠自己獨力開發一個完整的產品，這也是未來作為獨立創業家的第一步。</p>
+<p>第四題：承上題，你覺得你目前對這個職能有多了解?<br>完全不清楚<br>大概知道需要具備那些技能，但也不是非常清楚<br>很清楚這個職能需要那些技能，目前正在精進中<br>知道這個職能需要的技能，在團隊中扮演的角色<br>此題我的答案是 - 大概知道需要具備那些技能，但也不是非常清楚。其實自己沒有太大的把握能夠清楚說出每一個職位實質上所需具備的技能，及工作內容，因為完全沒有經驗，尚在學習當中，所以覺得透過這次的相談室，一定也能夠有所收穫。</p>
+<p>此次相談室以「模擬專案」流程方式來進行，模擬專案的目的主要是希望透過一個實境場景來帶入實際感，不是單純由分享者分享自己的工作在幹嘛，而是可以知道在一個產品團隊裡面要怎麼去解決問題，在不同的角色分工中會遇到的問題跟衝突，所以會分三個步驟：</p>
+<p>模擬專案流程 by ALPHA Camp<br>Step 1 : 了解&amp;拆解任務 拆解任務、了解要解決的問題、還有產品特性、要解決的對象有哪些，一一分析出來後分工，整個團隊的配置該有哪些部分。<br>Step2 : 選擇你的任務&amp;角色 任務分析後，依自己的專長來完成自己的任務<br>Step3 : 團隊任務衝突 執行任務的時候，一定會有摩擦，在團隊中該如何解決衝突，讓任務順利完成。</p>
+<p>模擬專案任務背景說明： 本次主要負責產品為方格子官網，為何設定在方格子？因為今天請到的分享者就是方格子的前端及全端工程師啦! Jiang &amp; Kuan<br>專案目標：</p>
+<p>專案目標 by ALPHA Camp<br>任務拆解分析：<br>打造吸引人，且操作&amp;體驗順暢的介面呈現。 團隊配置所需－前端工程師<br>確保每次給使用者的資料，能夠正確且即時地呈現出來。 團隊配置所需－後端工程師<br>釐清專案需求，並清楚掌握與定義不同功能要達成的目的，確保成品符合需求。 團隊配置所需－專案經理(PM)</p>
+<p>前端工程師所需負責的工作：<br>確認資料呈現的形式<br>網頁切版<br>樸估開發作業所需的時間與複雜度<br>Jiang分享筆記重點：<br>實作設計師設計出來的分類業面(切版、動態評估)：  切版實作頁面上是滿主要的一個重點，透過實作把頁面做出設計時想要呈現的樣子。  實作頁面時有時候會忽略掉一個點，當要做一個頁面的時候，UI其實是交雜著需要被注入各種資料，可能名字很長數字很大，當中是有一些動態評估在裡面，這都是前端需要考量到的點。<br>評估前端實作上的可行性：確認特定需求在畫面上能不能做出來：  有時候要去意識到的不是當前的需求一定要完成，而是要考量時間的磨合，以及當前公司的系統架構以及資料架構上是不是能夠符合需求，這也就會需要跟後端去做溝通跟評估。  當PM將一個產品設計畫面出來時，要去評估是不是合理的，能不能做到，資料要哪來，再往後無限擴展。<br>評估開發規模的困難度以及時間： 可以思考哪些功能可以事先確認與動工（案例：那些頁面初步的頁面資訊可以先實作）  在實作這些功能時，去思考要用什麼樣最快的方式去製作出基本版本，之後再慢慢推進。  而一些需求功能在還沒有真正被確定前，能夠以經驗來評估有哪些東西是可以先接出來的，有哪些資料是要再做處理的。  且公司在營運這個平台中工程師一定會去建立一些組件（意指網頁常用元件，如導覽列、下拉選單、警告訊息、按鈕…等等），用組件去簡化實作邏輯，然後很快地把該有的元件套進頁面，元件套進頁面的同時會去思考哪些後端資料是需要被帶入使用的，去加快頁面的完整性，而這些已完成或是能夠完成的事情可能就比較不需要再討論，所以可以減少一些在溝通過程中產生的摩擦力。  只要在前期準備的越完整，討論的問題就可以越進階，溝通上的摩擦就能夠減少。<br>跟後端確認資料的串接格式，可行性 如果資料尚有疑慮，如何先出個相對可行的實作版本。  有時候這問題不是那麼重要，重要的問題是當拿到設計畫面時，能夠去思考到後端有沒有帶出這些資料功能，前端並不是只在乎說把頁面做出來就好，而是要去思考實作時，能夠去接觸的資料有哪些? 目前的資料結構長什麼樣子? 是不是適合帶入到現有的元件去載入? 如果不行的時候是不是有什麼建議可以提供給後端?  工程師非常重要的一個環節是會不會去溝通，以及能不能看到設計稿時去思考後面的所有相關問題，這些會去影響到能不能夠把這些任務做出來很重要的環節。<br>其他Ｑ＆Ａ<br>前端工程師需要做動畫呈現嗎？ </p>
+<p>動畫有很多種，有些是簡潔動畫，有些是互動上動畫，但這些其實都不是一定要擁有的技能，但有的話很好。動畫其實是by case 不是by project，這是當有需要才會去面臨到的問題，但我認為比較重要的是要怎麼把基本的畫面切出來，標後版，然後資料可以很乾淨的呈現在畫面上，這是最重要的。有些技能樹，像是要Opea GL、3D動畫那是其次，如果能掌握前面的技能，我相信這些進階的技能在學習上是滿快可以掌握的。動畫在工作上肯定會遇到，但以優先級來說沒有到那麼重點。  </p>
+<p>前端工程師常常會需要跟設計師溝通，如果會這些設計軟體對前端工程師有沒有加分?  應該算有加分，以業界來說有很多接案公司都會希望前端工程師他們也有相對應的技能，去把UI上的原件實現到切版上面去，這是有可能的。 不過我認為這只能算是一個延伸功能，你會了很好，你可能可以去跟設計師討論某些事。  不過其實在我們前端的角度上，通常設計師他設計出來的會是figma, sketch, ????(44分32秒不清楚), 然後會讓我們去看，這個畫面上的這個組件他的規格是什麼? 長寬高, upshadow, position 這些東西反而是我們怎麼跟設計師溝通的方式。PS算是一個次級的一個附加價值，你在你自己技能樹上你有這個功能，未來你可能可以協助設計師。  真正在前端來講，其實很專注在畫面上的資料呈現及動態掌握，你的畫面能不能完整乾淨然後順暢地呈現在使用者面前這是很重要的點。  Ken補充: 雖然在分享過程中有設定一個正確答案的概念，不過其實這個在更多時候，在不同家公司，不同的團隊會有不一樣的合作模式，這也是肯定的事情，不過比較常聽到的合作模式，前端工程師本身並不需要做太多複雜的視覺介面設計，更多時候是像Jiang強調的去了解資訊的呈現乾淨程度。</p>
+<p>後端工程師所需負責的工作：<br>定義資料串接的格式<br>確認資料庫是否能滿足本次需求<br>設計能滿足需求的演算法<br>Kuan分享筆記重點：<br>這個list是今天從PM那接下一個任務後，可能會進行的一個工作流程，在團隊中做為一個後端工程師，在真正敲下鍵盤之前：<br>評估開發複雜度 。<br>API的改動幅度  一開始評估任務的複雜度有多高，是否需要修改API？<br>用比喻的方式來講，我需要修改的匯款單上的欄位就好，還是需要設計一個新的匯款單來符合任務的需。這是越工作越有經驗之後越能做出正確的評估。  </p>
+<p>評估當前的資料(資料庫)是否能滿足新功能 。<br>資料可能不太夠，或資料庫可能要做變動(增加欄位)  比較實際面的就是，資料庫需要增加幾個欄位，這是後端工程師考量的事情。  </p>
+<p>評估效能變動的幅度 。<br>新功能上線後，活應時間會不會變太久？若會，如何做架構調整<br>因為PM對後端不是那麼了解，有一些功能後端工程師必須要去思考，這個功能會不會影響到API回應的時間，可能進到頁面之後前端呈現都是正確的，但後端回應太慢沒有辦法即時回應資料，所以讀取的圈圈就是一直跑，是否會導致這種情況發生?如果會的話就要去做溝通，讓這功能可能只有80%的效果，可是他不會對我們的效能造成影響，或是去溝通功能要做修正，還是架構要做修正。  。新功能是否需要做機器調整，長期流量會不會變大，促銷活動可能有瞬間流量  像是搶演唱會的門票時會有一個高峰流量，提前知道瞬間流量會出來，是不是需要做一些事前的調整，這也是後端工程師工作時的眉角。  </p>
+<p>設計能滿足需求的演算法 。<br>需求是最新的十筆資料，就要正確呈現  假設一個新功能，PM說他想要”近10天”，”最新的十筆資料”，”不能有重複的作者”，後端就要想辦法把這一句話變成一個正確的資料，不能錯、不能重複、也不能超過時間，而且效能要好，這就帶到後端工程師最有價值的三個地方：資料的正確性，系統的穩定性(不能壞不能慢)，以及程式的彈性，寫程式時要注意程式不能寫得太死、寫的太隨便，若今天程式有比較大的彈性，未來PM要新增什麼樣的新功能，就需要害怕，只要簡單的修改後就可以滿足新的需求。  正確、穩定、彈性的工程師就是一個優秀的工程師。 </p>
+<p>與前端共同定義資料的串接格式 。銀行的匯款單(誰?多少錢?那些欄位要大寫?)  此部分滿看公司文化，Kuan的經驗大多數是先由後端先做出一個初步的API，未來在實作過程再討論更進一步的修正。  未來網頁在實作的時候，不管前後工程師，都要盡量當個體貼的工程師，彼此討論修正出對雙方都更方便更彈性的資料，這是很重要的。<br>評估是否需要更動/串接第三方服務 。例如：要串哪一間金流，是否有每月定時扣款功能可以符合訂閱功能  調查某一種功能，要串接哪一家的服務，而此間公司提供的功能的系統是否符合，且服務是比較好，價格是能夠接受的。<br>撰寫測試 指自動化測試，每一次系統部屬上去的時候，他都會跑一次自動化測試，有什麼好處?他真正的價值不是在，確定你剛剛寫的程式是正確的，而是在未來每一次的更動，你都可以確定你前面的寫的程式都是正確的，最害怕的就是寫a壞b，改b壞c，異種瀑布式的修改，這樣一整天工作的心情就會非常糟糕。<br>以上是後端工程式要去評估及實作的一些流程。<br>而在上面提到的一些API資料庫，第三方服務，資料格式測試，這些在比較大的公司會有專業的分工，而較小的公司有可能會統一歸納交給後端工程師，所以可能會跟未來的職掌不太一樣，但也不需要太害怕為什麼需要學這麼多東西，真正重要的是學習這些東西的過程中順便排養出一種解決問題的能力，未來遇到一個新的stack下來，可能沒有處理過，但卻可以用過去的經驗來評估要如何學習這個新東西以及攻克它。 </p>
+<p>PM所需負責的工作：<br>需求確認、盤點<br>規劃開發時程<br>確認資源(人力、時間、$$)<br>Yenting補充分享： 其實很多人會認為PM有技術能的時候可以加分，但這個加分不是在人力不足的時候，自己跳下去開發，而是加分在你知道整件事情的一些原理跟脈絡，所以可以做出一些比較好的人力資源分配或式時間管理。  其實這個道理在其他地方也是一樣的，例如前面提到的前端工程師是否要做畫面設計，也許許多前端工程師他是有這個能力，但當你的團隊裡面其實有一個人很明確的分工，他就是網頁設計師，這就是他的工作的時候，那你就不應該跟他去搶工作，那不然你這樣子就會造成重工其實也很難管理，所以同理得證，有時候及時你是個 full stack ，你今天這個任務分配到後端那你也會前端的時候你要不要跳下去做? 如果沒有被分到的話你就不應該做這件事情，所以這個道理其實是apply在很多不同的角色上面，所以希望大家可以知道，因為當你是一個團隊作戰的時候，你要專注在deliver你自己應該要做什麼事情的時候，這其實才是最應該要先完成的事情，而不是你今天會很多技能，所以你就要做很多事情，團隊運作不應該是這樣子。<br>PM執掌清單：<br>確認並清楚定義專案需求<br>預估中案所需的資源，包含人力、時間、預算<br>規劃開發時程<br>提供初步對專案成果的發想(User Story、Wireframe)<br>測試：檢查工程部開發出來的功能是否有滿足需求(使用者的角度測試，非後端工程測試)<br>擔任產品的內部代言人-&gt;用比較宏觀的角度去看產品，評估哪些功能最有價值優先開發 。知道產品現有的問題 。產品在使用者端的問題 。產品的內部邏輯<br>如何跟工程師配合做一個好的PM：<br>筆記Jiang分享 : PM要能夠掌握整個開發的節奏，要讓工程師明確的知道當前的任務要做什麼，目標在哪，什麼時候要完成，有問題的時候可以討論，PM的彈性跟能不能掌握這個專案的進度是很重要的  筆記Kuan分享: 讓工程師專心做該做的事，工程師會做一個時間的評估，好的PM不應該一直去壓時程，當然PM有他的壓力，但一個好的PM可以把所有的需求梳理成一個很順暢的時間線，分配各個工程師至擅長的位置，工程師最討厭覺得最煩躁的是，我做A做到一半被叫去做B，前面的東西做一半就卡到，或是這個需求沒有先確認完，然後做到一半就做修改。 </p>
+<p>團隊衝突情境1：設計師想要放Fixed title，前端工程師評估實作會太複雜。你會怎麼做?</p>
+<p>先這樣先這樣，總之需求開了，先做再說，先交付任務在討論。<br>這什麼??覺得需求不合理，先跳過不做，完成其他需求。<br>Hmm 我想想，覺得需求不合理，先找設計師討論</p>
+<p> Jiang分享重點筆記：<br>工程師在業界建立起自己能力所及到哪邊，要非常清楚的技術展示在哪個環節，要有辦法去掌握這個東西。<br>當需求進來時，要先思考這個需求會觸及到哪些專案當中程式碼的組件，切版，程式邏輯，可以用畫圓的方式表現，當畫出來後大概就知道這個需求觸及的範圍有多廣，若和原定的距離想差甚遠，就必須去思考怎麼跟設計師溝通，讓設計師了解到當前的問題(例如：實作畫面時有時是使用已經既有的組件，若要去加相關新功能，可能會有排斥現象、邏輯不符、或是有很多副作用跑出來)，與設計師溝通取一個中間值需求，但同時要記得設計師最終想要的目標是什麼，未來有餘裕的時候思考這功能有沒有辦法做到，那需要花多久時間去實踐。除了自己知道要做什麼之外，也要知道別人最終想要什麼，記錄下來未來有機會在慢慢發掘，最後在反饋給自己的團隊，這會是一個正向循環。</p>
+<p>團隊衝突情境2：後端工程師發現「最新」及「近期熱門」分類，出現的文章會很像。</p>
+<p>最新&amp;近期熱門都是很常見的分類，即使有重複，還是把需求做出來比較好，畢竟交付的時間也很緊急。<br>評估後覺得做出來的觀看體驗可能不好，想先找PM討論替代方案。<br>先做其他功能/想辦法找資源做出來</p>
+<p>Kuan分享重點筆記：<br>在評估後覺得做出來的觀看體驗可能不好，想先找PM討論替代方案前會有一個前提，你必須是能夠”觀察出”做出來後的觀看體驗不佳，如果今天是一個按圖施工的後端工程師，可能就不會考慮到這件事，但我相信一個好的工程師，不應該只是按圖施工，而是在實作功能的時候去，去考慮到當初為什麼要做這個功能，要時時刻刻放在心裡，實作這個功能之後有沒有達到使用者，幫助他們找到他們想要看的文章，如果兩個TAB都是一樣的文章，那就是沒有任何意義。<br>PM是否一定要了解完全實作的細節，其實是工程師對PM的溝通，工程師要具備一個將技術白話文的能力，必須讓PM知道現階段做不到，為什麼? 因為需要新的東西或是新的服務，或是現階段資料沒辦法達成，讓PM去理解，那PM就可以把你這個擔憂回報給其他的部門，然後去做不同的處置，那這段期間就可以先做這樣等等。<br>若是選擇最新&amp;近期熱門都是很常見的分類，即使有重複，還是把需求做出來比較好，畢竟交付的時間也很緊急。通常代表現在時程很趕，並且影響不是那麼大，可以將優化的過程放在心裡，在未來時間餘裕的時候將他拿出來做。</p>
+<p>總結<br>本次相談室讓我對前後端工程師以及PM有了更深入的了解，這次的相談室不僅僅只是對某一個職業的敘述跟經驗分享，更是具體的將職場上的情況帶入到你的面前，讓自己可以從更宏觀的角度去理解自己是否適合這個職能/產業/公司。<br>職場上的情況從解析需求問題開始，到團隊分工合作，最後到團隊的衝突如何解決，這當中帶給聽者各種不同角度去思考到的問題，很重要的一點是，團隊分工合作當中，溝通非常的重要，除了自己的職掌外也同時要去了解隊友的狀況，並互相溝通取得平衡，讓彼此能夠互相理解問題的重點，並找到共同解決問題的方式。</p>
+]]></content>
+      <categories>
+        <category>相談室</category>
+      </categories>
+      <tags>
+        <tag>工作相談室</tag>
+        <tag>AlphaCamp</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>.includes .matches .filter .find .some .findIndex 使用</title>
+    <url>/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A81/</url>
+    <content><![CDATA[<p>.includes(變數或值) 只能使用在陣列物件value查核上，核對對象為一個變數或是值</p>
+<span id="more"></span>
+<p>.matches(‘.class’或’#id’) 查找元素所含有的class或id，或是也可以用 classList.contain()，matches比較簡潔</p>
+<p>.filter(設定條件函示) 是把一個陣列物件裡面符合條件的選出來，不符合的剃除，最後他還是一個陣列</p>
+<p>.find(設定條件函示)是把一個陣列物件裡面，第一個符合條件的挑出來，就停止</p>
+<p>.some(設定條件函示)是把一個陣列物件裡面，查找是否有相符的，有就是true沒有就是false，並不回傳整筆符合資料</p>
+<p>.findIndex(設定條件函示)回傳項目Index，找不到則回傳-1)</p>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>技術筆記</tag>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo操作</title>
+    <url>/2021/09/09/Hexo%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h3 id="關於draft"><a href="#關於draft" class="headerlink" title="關於draft"></a>關於draft</h3><p>放在/source/_drafts下<br>可執行命令hexo new draft <code>&lt;title&gt;</code> 創建草稿<br>通過執行命令hexo publish <code>&lt;title&gt;</code> 可以把_drafts下的草稿文章推到_posts下</p>
+<span id="more"></span>
+<p>會按照new_post_name的配置來命名文章<br>如果有開啟_config裡的post_asset_folder: true，對應的asset資料夾也會一起移動<br>手動操作也是可以的，草稿最後會被解析到model(‘Post’)中，參數published變為0 （預設情况下不會傳給布局頁面進行渲染）<br>_config.yml中如果設定render_drafts: true<br>就會傳給布局頁面進行渲染<br>在generate或deploy時會自動把_drafts/下的文件解析生成到目標文件夾下（但不會移動到/source/_posts下）</p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>技術筆記</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>今天是學寫Code的第107天</title>
+    <url>/2021/09/09/%E4%BB%8A%E5%A4%A9%E6%98%AF%E5%AD%B8%E5%AF%ABCode%E7%9A%84%E7%AC%AC107%E5%A4%A9/</url>
+    <content><![CDATA[<h5 id="今天是我學寫code的第107天"><a href="#今天是我學寫code的第107天" class="headerlink" title="今天是我學寫code的第107天"></a><center>今天是我學寫code的第107天</center></h5><p><strong><em><center>(歡呼加鼓掌!)</center></em></strong></p>
+<p>　　在2021年5月25日晚上這一天，對自己下了一個人生的新決定，決定要轉換跑道啦!<br>　　學到至今3個月多一些，加上第一次自己成功在Github上用Hexo架出靜態網頁，就在這邊稍微紀錄一下自己的轉職日記啦! XD</p>
+<span id="more"></span>
+<p>　　再一次說說為什麼在這老大不小的年紀，就在今年年底即將正式年滿32歲的微大叔年紀，竟然毅然決然地決定換跑道吧!</p>
+<p>　　本身原本是從事建築設計產業的，但從大學開始半工半讀一直做到了現，到海外越南工作，到了前幾個月還是下了個決心轉換跑道了。</p>
+<p>　　原因的話，其實一方面是疫情影響的關係導致無法回親愛的臺灣，一方面是建築設計這產業在臺灣的處境真的越來越差，薪資待遇真的讓我覺得糟糕到很離譜，本身就須具備很多專業的知識及技術能力，還得花很多時間學習新的軟件操作及使用，但學這麼多卻完全不見薪水有多大的成長，反而變成理所應當的感覺，而且這產業所背負的責任壓力，時間壓力以及工作量卻又時常相當的大，所以就在想著若是回臺灣後到底要不要繼續這產業，最後最後自己內心的想法是”NO”，所以就就開始思考了，那我想做什麼?</p>
+<p>　　這要回到小時候，其實自己的父親是一位很熱愛電腦的人，他在我小學一二年級的時候，就買了第一台window 95的電腦，於是我從小就熱愛打電腦遊戲，後來父母覺得我們似乎有興趣，也把我們送到電腦補習班學習，但對於那個年紀連除法都不會的我來說，學程式語言真的太難了。後來父母就把我轉送到學習PhotoShop、DreamWeaver、Flash…但老實說現在大概只有PhotoShop功力還行吧，後來長大自己對這方面也比較有興趣又自己買書學了Illustrator，我想也是因為從小培養出對電腦相關的興趣，加上國中畢業時原本想要去念大安高中的資訊科，但那時候母親聽信親戚的話，那時候很多人覺得念技職學校沒未來，大家都要念普通高中然後進好名校，所以堅持不讓我念技職學校，也可能是這原因，又再心理埋下了另一個小小的遺憾，直至今日人生自己做主，所以就下定決心不如開始學習寫程式吧!</p>
+<p>　　剛好越南疫情也相當嚴重，所有工作幾乎都停擺，工作也非常不忙碌，所以有比較多的時間可以專心學習，就這樣<strong>邊打電動邊工作邊學怎麼Programming</strong>到今天<strong>107</strong>天的日子裡，已經會如何使用Express.js以及MongoDB來架設基本的網站，雖說還不是很熟悉，但也算是一個歷程了，再來又自己學習了如何在Github架出靜態網頁，如何用Hexo框架系統在Github架設個人blog，也算是滿滿的成就感啦!(再次為自己歡呼加鼓掌)</p>
+<p>　　再來下個階段目標，因為目前這個Blog還是套用超具人氣的樣板(可是它真的很好用，害我有點懶惰)，接著開始會自己學習把所有Blog頁面重新架設過，並建立出自己風格的Hexo主題，然後陸陸續續把相關練習作品整理起來，在這邊當成最好的履歷表呈現出來，也繼續學習更多複雜精進的技術，另一方面看看是否會幫助到一些跟我一樣半路出家的人，接著希望明年差不多這個時間，看看是否能順利達成轉職目標，就讓我們繼續看下去吧!</p>
+]]></content>
+      <categories>
+        <category>日記</category>
+      </categories>
+      <tags>
+        <tag>轉職</tag>
+      </tags>
+  </entry>
+</search>
