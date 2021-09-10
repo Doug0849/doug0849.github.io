@@ -328,6 +328,90 @@
       </tags>
   </entry>
   <entry>
+    <title>如何用Hexo在Github上架設blog</title>
+    <url>/2021/09/08/%E5%A6%82%E4%BD%95%E7%94%A8Hexo%E5%9C%A8Github%E4%B8%8A%E6%9E%B6%E8%A8%ADblog/</url>
+    <content><![CDATA[<h1 id="廢話前言"><a href="#廢話前言" class="headerlink" title="廢話前言"></a>廢話前言</h1><h2 id="想要架設部落格作為記錄自己生活或相關筆記嗎"><a href="#想要架設部落格作為記錄自己生活或相關筆記嗎" class="headerlink" title="想要架設部落格作為記錄自己生活或相關筆記嗎?"></a>想要架設部落格作為記錄自己生活或相關筆記嗎?</h2><p>會想架設部落格的主要原因是自己正在上Javascript課程，課程有提到要開個部落格來作為自己的技術筆記、心得、或一些自己想記錄的東西作為備忘，畢竟學海無涯，有很多東西學會後久久不使用真的會忘記。</p>
+<p>後來使用了一些大眾市面上的blog，但終究覺得不合用，一方面更想要有自己的風格，一方面對於自己來說希望更加方便撰寫紀錄及發布。而我這個初心者才知道，原來可以在Github撰寫靜態網頁(蠢)，所以就開始研究到底該如何在Github上架設一個簡易的靜態blog之旅。</p>
+<span id="more"></span>
+<p>起初還真的不知道要怎麼做，只知道如何在Github上呈現index.html，然後再自己手動寫連結…甚至最後想說是不是全部手刻HTML(蠢x2)，後來想想這不對啊!! 這也太麻煩且浪費時間了，不如用市面上的blog就好，不然完全本末倒置(笑，所以就開始試著搜尋網路上有沒有更適合的作法。<br>後來發現網路上有很多已經完成的樣板，只要下在別人寫好的主體下來加以修改撰寫，在推上Github，就可以完成自己的個人BLOG了。一開始搜尋到的是jekyll但它是ruby撰寫的，所以我也沒有環境系統，所以搞了老半天，但經過一翻嘗試還是有很多問題，覺得搞得一個頭兩個大的時候，讓我搜尋到了Hexo!!</p>
+<blockquote><p>Hexo 是一個快速、簡單且強大的網誌框架。Hexo 使用 Markdown（或其他標記語言）解析您的文章，並在幾秒鐘內，透過漂亮的主題產生靜態檔案。</p>
+<footer><strong>@Hexo</strong><cite><a href="https://hexo.io/zh-cn/docs/">hexo.io/zh-cn/docs</a></cite></footer></blockquote>
+
+
+
+<p>他主要又是以Javascript, Node.js 來操作，完全符合我現在在上課的內容，所以環境架設也都已經完成了，做了點嘗試沒想到一下就成功架上Github，中間也沒有遇到太多問題，所以最後決定使用Hexo作為主要的撰寫框架工具啦!順便在這邊紀錄使用的情況，及寫下相關技術筆記。</p>
+<hr>
+<h1 id="第一步：安裝必備程式"><a href="#第一步：安裝必備程式" class="headerlink" title="第一步：安裝必備程式"></a>第一步：安裝必備程式</h1><h2 id="程式清單："><a href="#程式清單：" class="headerlink" title="程式清單："></a>程式清單：</h2><ul>
+<li><a href="https://git-scm.com/downloads">Git</a> 終端機 (Windows推薦)</li>
+<li><a href="https://nodejs.org/en/">Node.js</a> 讓你可以在終端機上以Javascript指令來操作電腦</li>
+<li><a href="https://code.visualstudio.com/">Visual Studio Code</a>方便你在個人電腦上編程<br>詳細可以參閱 <a href="https://hexo.io/zh-tw/docs/index.html">Hexo官方文件</a></li>
+</ul>
+<p>如果完全沒有使用過Git Bash終端機及使用GitHub的同學<br>就是要先有自己的Github帳號啦! 之後要在Git Bash裡設定你的識別資料</p>
+<p>範例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name &quot;John Doe&quot;</span><br><span class="line">$ git config --global user.email johndoe@example.com</span><br></pre></td></tr></table></figure>
+
+<p>user.name 為你的Github帳戶<br>user.email 為你的Github帳戶設定的email</p>
+<h1 id="第二步：在電腦上開設專屬Blog資料夾，初始化Hexo檔案"><a href="#第二步：在電腦上開設專屬Blog資料夾，初始化Hexo檔案" class="headerlink" title="第二步：在電腦上開設專屬Blog資料夾，初始化Hexo檔案"></a>第二步：在電腦上開設專屬Blog資料夾，初始化Hexo檔案</h1><ol>
+<li>安裝完後請打開 Git Bash 終端機 </li>
+<li>在終端機上輸入 npm install -g hexo-cli ，來安裝hexo</li>
+<li>一旦 Hexo 安裝完成後，執行下列指令，Hexo 就會在指定資料夾中建立所有需要的檔案。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt; // folder輸入你要建立的資料夾名稱</span><br><span class="line">                     // 若想要在別的硬碟裡面建立，記得先使用終端機輸入cd 移動到你要建立blog資料夾的位置</span><br><span class="line">$ cd &lt;folder&gt; // folder輸入你剛剛建立好的資料夾名稱</span><br><span class="line">$ npm install // 安裝初始化npm</span><br><span class="line">$ git init // 若想要在電腦上使用git版本控制，記得要順便安裝git，不理解或不想用可忽略</span><br></pre></td></tr></table></figure>
+
+<p>建立完成後，專案資料夾會有下列檔案：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+
+<h2 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h2><p>此檔案為網站配置檔案(站點配置)，可以在這個檔案配置大部分的設定。</p>
+<h2 id="source-資料夾"><a href="#source-資料夾" class="headerlink" title="source 資料夾"></a>source 資料夾</h2><p>原始檔案資料夾是放置內容的地方。檔案或資料夾名稱開頭為 _ (底線) 的資料還有設定隱藏檔案會被忽略。<br>因為在你把網頁推到伺服器端的時候，Hexo或先把所有原始檔案渲染成Html檔案，在推上伺服器，所以不重要或想要忽略的檔案，可以設定隱藏或是在檔案名稱開頭加上_ (底線)。<br>但除了 _posts 資料夾，因為_posts資料夾內會存放所有你的文章Markdonw檔案。<br>而渲染完成的 檔案會被放到 public 資料夾，而其他檔案會被拷貝過去。</p>
+<h2 id="themes-資料夾"><a href="#themes-資料夾" class="headerlink" title="themes 資料夾"></a>themes 資料夾</h2><p>主題資料夾，裡面可以放各式各樣的主題，可以放自己的或網路上別人製作好提供的，然後 Hexo 會根據你_config.yml裡面主題設定要使用哪一個主題來渲染最後完成的HTML檔案。</p>
+<h1 id="第三步：在GitHub上建立一個新的Repository"><a href="#第三步：在GitHub上建立一個新的Repository" class="headerlink" title="第三步：在GitHub上建立一個新的Repository"></a>第三步：在GitHub上建立一個新的Repository</h1><ol>
+<li><p>先到Github開一個新的Repository</p>
+<img src="/2021/09/08/%E5%A6%82%E4%BD%95%E7%94%A8Hexo%E5%9C%A8Github%E4%B8%8A%E6%9E%B6%E8%A8%ADblog/1.jpg" class="" title="1.jpg"></li>
+<li><p>輸入Repo名稱 &gt; 選擇公開 &gt;建立</p>
+<img src="/2021/09/08/%E5%A6%82%E4%BD%95%E7%94%A8Hexo%E5%9C%A8Github%E4%B8%8A%E6%9E%B6%E8%A8%ADblog/2.jpg" class="" title="2.jpg"></li>
+</ol>
+<h1 id="第四步：安裝hexo-deployer-git，並部屬至Github"><a href="#第四步：安裝hexo-deployer-git，並部屬至Github" class="headerlink" title="第四步：安裝hexo-deployer-git，並部屬至Github"></a>第四步：安裝hexo-deployer-git，並部屬至Github</h1><p>回到終端機輸入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ npm hexo-deployer-git</span><br></pre></td></tr></table></figure>
+
+<h1 id="設定-config-yml"><a href="#設定-config-yml" class="headerlink" title="設定_config.yml"></a>設定_config.yml</h1><p>使用 VS CODE 打開剛剛建立好的HEXO資料夾</p>
+<img src="/2021/09/08/%E5%A6%82%E4%BD%95%E7%94%A8Hexo%E5%9C%A8Github%E4%B8%8A%E6%9E%B6%E8%A8%ADblog/3.jpg" class="" title="3.jpg">
+
+<p>開啟_config.yml</p>
+<img src="/2021/09/08/%E5%A6%82%E4%BD%95%E7%94%A8Hexo%E5%9C%A8Github%E4%B8%8A%E6%9E%B6%E8%A8%ADblog/4.jpg" class="" title="4.jpg">
+
+<p>裡面有很多相關設定，不一一介紹，主要只以可以成功部屬到Github需要設定的參數為主，其他沒提到的，可以到 <a href="https://hexo.io/zh-tw/docs/configuration">Hexo 官方文檔</a> 查詢。</p>
+<p><strong>以下設定以我自己為範例</strong></p>
+<p>url: doug0849.github.io<br>設定GitHub的repo設定網址</p>
+<p>設定主題<br>theme: landscape </p>
+<p>預設應該是landscape，若網路上下載了別人的主題，可以放到themes底下，設定好資料夾名稱，將這個參數改為資料夾名稱即可。</p>
+<p>最後設定部屬參數<br>在最後加上以下參數<br>deploy:<br>  type: git<br>  repo: <a href="https://github.com/Doug0849/doug0849.github.io.git">https://github.com/Doug0849/doug0849.github.io.git</a><br>  branch: main</p>
+<p>type輸入git<br>repo請輸入你完整的repo位置<br>branch: 改為main</p>
+<p>回到終端機執行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<h1 id="第五步：別忘了要把repo設定成Github-Page"><a href="#第五步：別忘了要把repo設定成Github-Page" class="headerlink" title="第五步：別忘了要把repo設定成Github Page"></a>第五步：別忘了要把repo設定成Github Page</h1><img src="/2021/09/08/%E5%A6%82%E4%BD%95%E7%94%A8Hexo%E5%9C%A8Github%E4%B8%8A%E6%9E%B6%E8%A8%ADblog/5.jpg" class="" title="5.jpg">
+
+<h1 id="第六步：訪問-https-你的帳戶名稱-github-io"><a href="#第六步：訪問-https-你的帳戶名稱-github-io" class="headerlink" title="第六步：訪問 https://你的帳戶名稱.github.io/"></a>第六步：訪問 https://你的帳戶名稱.github.io/</h1><p>基本上這樣就能在github上看到你的個人blog啦!<br>如果剛上傳應該不會馬上看到，可能過個五分鐘內就會顯示，<br>剩下就是設定其他相關參數，及寫下你的第一篇文章。</p>
+<h1 id="第七步：發文"><a href="#第七步：發文" class="headerlink" title="第七步：發文"></a>第七步：發文</h1><p>這邊只做簡易說明<br>使用終端機輸入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo new [title]</span><br></pre></td></tr></table></figure>
+
+<p>到_posts底下會看到一個你命名為 [title] 的 Markdown 檔案<br>就可以使用 Markdown 語法來撰寫你的文章<br>寫完後在終端機執行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>等個5分鐘，再次訪問 https://你的帳戶名稱.github.io/<br>看看文章有沒有PO上去啦!</p>
+<p>其他簡單的操作說明可以看<br><a href="https://doug0849.github.io/2021/09/09/Hexo%E6%93%8D%E4%BD%9C/">其他Hexo 操作</a></p>
+<p>詳細的其他說明一樣看<br><a href="https://hexo.io/zh-tw/docs/configuration">Hexo 官方文檔</a> 查詢。</p>
+]]></content>
+      <categories>
+        <category>技術筆記</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>技術筆記</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AC數位職涯相談室#4-開箱數位軟體團隊-模擬專案體驗帶你找出適合的職能-流水帳心得</title>
     <url>/2021/07/24/%E9%96%8B%E7%AE%B1%E6%95%B8%E4%BD%8D%E8%BB%9F%E9%AB%94%E5%9C%98%E9%9A%8A-%E6%A8%A1%E6%93%AC%E5%B0%88%E6%A1%88%E9%AB%94%E9%A9%97%E5%B8%B6%E4%BD%A0%E6%89%BE%E5%87%BA%E9%81%A9%E5%90%88%E7%9A%84%E8%81%B7%E8%83%BD-%E6%B5%81%E6%B0%B4%E5%B8%B3%E5%BF%83%E5%BE%97/</url>
     <content><![CDATA[<blockquote><p>2021年7月22日，非常感謝AC又舉辦了每月一次的數位職涯相談室啦! 本次邀請到的就是BLOG新翹楚 <strong>方格子</strong> 的前端及全端工程師：<u><strong>Jiang &amp; Kuan</strong></u>來分享現實職場當中前後端各別負責的工作內容。 </p>
@@ -527,7 +611,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo添加留言板</title>
+    <title>Hexo Next主題添加留言板</title>
     <url>/2021/09/10/Hexo%E6%B7%BB%E5%8A%A0%E7%95%99%E8%A8%80%E6%9D%BF/</url>
     <content><![CDATA[<h2 id="本篇使用的是utterances留言板"><a href="#本篇使用的是utterances留言板" class="headerlink" title="本篇使用的是utterances留言板"></a>本篇使用的是utterances留言板</h2><p>utterances是由TypeScript所構成的留言區套件，透過串接GitHub issue的方式來完成留言區功能(但需要GitHub帳號)，簡而言之就是它可以在文章底下留言，並且同步到GitHub專案留下一個issue留言。</p>
 <span id="more"></span>
