@@ -361,7 +361,7 @@
     <url>/2021/09/10/%E5%BB%BA%E7%AB%8BNode-js%E6%9C%AC%E6%A9%9F%E4%BC%BA%E6%9C%8D%E5%99%A8/</url>
     <content><![CDATA[<p>開一個測試資料夾先，在裡面建立一個app.js的檔案，並用編輯器開啟</p>
 <img src="/2021/09/10/%E5%BB%BA%E7%AB%8BNode-js%E6%9C%AC%E6%A9%9F%E4%BC%BA%E6%9C%8D%E5%99%A8/1.jpg" class="">
-
+<span id="more"></span>
 <h1 id="定義基本設定"><a href="#定義基本設定" class="headerlink" title="定義基本設定"></a>定義基本設定</h1><p>接著在app.js裡寫入以下程式碼</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> hostName = <span class="string">&#x27;localhost&#x27;</span></span><br><span class="line"><span class="keyword">const</span> port = <span class="number">3000</span></span><br></pre></td></tr></table></figure>
 <p>轉譯為：<br>先載入Node.js的 http 模組塊<br>並定義主機名稱，因為是在自己的電腦上所以通常慣例我們都叫localhost<br>再來定義連接埠號 port = 3000</p>
