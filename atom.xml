@@ -24,13 +24,7 @@
     <updated>2021-09-09T22:43:19.000Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;本篇使用的是utterances留言板&quot;&gt;&lt;a href=&quot;#本篇使用的是utterances留言板&quot; class=&quot;headerlink&quot;</summary>
-        
-      
+    <summary type="html">&lt;h2 id=&quot;本篇使用的是utterances留言板&quot;&gt;&lt;a href=&quot;#本篇使用的是utterances留言板&quot; class=&quot;headerlink&quot; title=&quot;本篇使用的是utterances留言板&quot;&gt;&lt;/a&gt;本篇使用的是utterances留言板&lt;/h2&gt;&lt;p&gt;utterances是由TypeScript所構成的留言區套件，透過串接GitHub issue的方式來完成留言區功能(但需要GitHub帳號)，簡而言之就是它可以在文章底下留言，並且同步到GitHub專案留下一個issue留言。&lt;/p&gt;</summary>
     
     
     
