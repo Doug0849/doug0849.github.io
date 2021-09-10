@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en,zh-TW,default">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P7J0KE07RD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P7J0KE07RD');
+</script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"doug0849.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"ture","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="開一個測試資料夾先，在裡面建立一個app.js的檔案，並用編輯器開啟   定義基本設定接著在app.js裡寫入以下程式碼 123const http &#x3D; require(&amp;#x27;http&amp;#x27;)const hostName &#x3D; &amp;#x27;localhost&amp;#x27;const port &#x3D; 3000 轉譯為：先載入Node.js的 http 模組塊並定義主機名稱，因為是在自己的電腦上">
+<meta property="og:type" content="article">
+<meta property="og:title" content="建立一個Node.js本機伺服器">
+<meta property="og:url" content="https://doug0849.github.io/2021/09/10/%E5%BB%BA%E7%AB%8BNode-js%E6%9C%AC%E6%A9%9F%E4%BC%BA%E6%9C%8D%E5%99%A8/index.html">
+<meta property="og:site_name" content="想要邊撸鐵邊學CODE的DOUG">
+<meta property="og:description" content="開一個測試資料夾先，在裡面建立一個app.js的檔案，並用編輯器開啟   定義基本設定接著在app.js裡寫入以下程式碼 123const http &#x3D; require(&amp;#x27;http&amp;#x27;)const hostName &#x3D; &amp;#x27;localhost&amp;#x27;const port &#x3D; 3000 轉譯為：先載入Node.js的 http 模組塊並定義主機名稱，因為是在自己的電腦上">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/10/%E5%BB%BA%E7%AB%8BNode-js%E6%9C%AC%E6%A9%9F%E4%BC%BA%E6%9C%8D%E5%99%A8/1.jpg">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/10/%E5%BB%BA%E7%AB%8BNode-js%E6%9C%AC%E6%A9%9F%E4%BC%BA%E6%9C%8D%E5%99%A8/2.jpg">
+<meta property="article:published_time" content="2021-09-10T16:20:47.000Z">
+<meta property="article:modified_time" content="2021-09-10T16:20:47.000Z">
+<meta property="article:author" content="Doug 道">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="Node.js">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://doug0849.github.io/2021/09/10/%E5%BB%BA%E7%AB%8BNode-js%E6%9C%AC%E6%A9%9F%E4%BC%BA%E6%9C%8D%E5%99%A8/1.jpg">
+
+<link rel="canonical" href="https://doug0849.github.io/2021/09/10/%E5%BB%BA%E7%AB%8BNode-js%E6%9C%AC%E6%A9%9F%E4%BC%BA%E6%9C%8D%E5%99%A8/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>建立一個Node.js本機伺服器 | 想要邊撸鐵邊學CODE的DOUG</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="想要邊撸鐵邊學CODE的DOUG" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">想要邊撸鐵邊學CODE的DOUG</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">快樂每一天</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/09/10/%E5%BB%BA%E7%AB%8BNode-js%E6%9C%AC%E6%A9%9F%E4%BC%BA%E6%9C%8D%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Doug 道">
+      <meta itemprop="description" content="關於轉職紀錄、技術筆記、隨寫">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="想要邊撸鐵邊學CODE的DOUG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          建立一個Node.js本機伺服器
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-11 00:20:47" itemprop="dateCreated datePublished" datetime="2021-09-11T00:20:47+08:00">2021-09-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">技術筆記</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>開一個測試資料夾先，在裡面建立一個app.js的檔案，並用編輯器開啟</p>
+<img src="/2021/09/10/%E5%BB%BA%E7%AB%8BNode-js%E6%9C%AC%E6%A9%9F%E4%BC%BA%E6%9C%8D%E5%99%A8/1.jpg" class="">
+
+<h1 id="定義基本設定"><a href="#定義基本設定" class="headerlink" title="定義基本設定"></a>定義基本設定</h1><p>接著在app.js裡寫入以下程式碼</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> hostName = <span class="string">&#x27;localhost&#x27;</span></span><br><span class="line"><span class="keyword">const</span> port = <span class="number">3000</span></span><br></pre></td></tr></table></figure>
+<p>轉譯為：<br>先載入Node.js的 http 模組塊<br>並定義主機名稱，因為是在自己的電腦上所以通常慣例我們都叫localhost<br>再來定義連接埠號 port = 3000</p>
+<p>接著要使用http模塊的createServer方式來建立伺服器，然後透過參數server來表達，<br>createServer需要有一個函數，他有兩個參數request(請求)跟response(回應)。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req,res</span>) =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="定義伺服器回應-HTTP-response"><a href="#定義伺服器回應-HTTP-response" class="headerlink" title="定義伺服器回應 HTTP response"></a>定義伺服器回應 HTTP response</h1><h2 id="觀念說明"><a href="#觀念說明" class="headerlink" title="觀念說明"></a>觀念說明</h2><p>大部分跟http伺服器有關的都會有兩個參數，request(請求)跟response(回應)，<br>因為伺服器總得接收到request,然後才會給出response，不然無法進行，<br><strong>req是由瀏覽器</strong><br><strong>req是由瀏覽器</strong><br><strong>req是由瀏覽器</strong>向<strong>伺服器</strong>發出的<strong>請求</strong></p>
+<p><strong>res則是經由我們設定回覆</strong>給<strong>瀏覽器</strong>的東西<br><strong>res則是經由我們設定回覆</strong>給<strong>瀏覽器</strong>的東西<br><strong>res則是經由我們設定回覆</strong>給<strong>瀏覽器</strong>的東西</p>
+<p>伺服器在回應時，通常會定義以下幾個資訊</p>
+<ol>
+<li>回應的 HTTP 狀態碼 (status code)</li>
+<li>設定回應的內容類型 Response Headers &gt; Content-Type</li>
+<li>把回應的內容傳送回去給瀏覽器 Response body &gt; <code>&lt;html&gt;...&lt;/html&gt;</code></li>
+</ol>
+<hr>
+<p><strong>插播</strong><br>HTTP 是 (HyperText Transfer Protocol 的縮寫)<br>HTTP 傳輸通訊協定就是<strong>電腦之間互相索取文件的溝通語言</strong><br>當瀏覽器發出請求通常會定義幾個資訊，Method、URL、Header、Message Body</p>
+<hr>
+<p>回正題，伺服器端回應HTTP response，通常會定義以下幾個資訊</p>
+<ol>
+<li>Status code(狀態碼)<br>可以想像成客戶端與伺服器端之間的招呼語，重要的是開頭第一個數字：</li>
+</ol>
+<ul>
+<li>2XX：成功回應，例如 200</li>
+<li>3XX：重新轉向，例如 301 (永久轉向)、302 (暫時轉向)</li>
+<li>4XX：客户端錯誤回應，例如 404 Not Found (找不到資源)</li>
+<li>5XX：伺服器的問題，例如 500 Internal Server Error</li>
+</ul>
+<p>我們先設定成功代碼</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req,res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.statusCode = <span class="number">200</span></span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>設定回應的內容<strong>類型</strong>，Response Headers &gt; Content-Type<br>一般都是用用瀏覽器看網頁，所以大部分內容類型是 HTML 文件 (text/html) 。<br>但有些時候伺服器回傳的可能是純文字 (text/plain) 、PDF 檔 (application/pdf) 、影片檔 (video/mpeg4) 、或者是經常用來傳送資料的 JSON 檔 (application/json) …。</li>
+</ol>
+<p>在來設定回應的內容類型，先以純文字來作回應</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req,res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.statusCode = <span class="number">200</span></span><br><span class="line">  res.setHeader(<span class="string">&#x27;Content-Type&#x27;</span>,<span class="string">&#x27;text/plain&#x27;</span>)</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>設定要回應給瀏覽器的<strong>內容</strong><br>因為已經定義為純文字內容，所以先以純文字做回應，可以用**res.end()**來做回應</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req,res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.statusCode = <span class="number">200</span></span><br><span class="line">  res.setHeader(<span class="string">&#x27;Content-Type&#x27;</span>,<span class="string">&#x27;text/plain&#x27;</span>)</span><br><span class="line">  res.end(<span class="string">&#x27;Hi! This is my first Node.js server!&#x27;</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="啟動伺服器"><a href="#啟動伺服器" class="headerlink" title="啟動伺服器"></a>啟動伺服器</h1><p>最後我們要啟動伺服器，要求他<strong>監聽</strong>瀏覽器傳來的<strong>request(請求)</strong><br>在node.js中我們可以使用在伺服器上使用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server.lisetn(port,serverName,<span class="function">() =&gt;</span> &#123;&#125;)</span><br></pre></td></tr></table></figure>
+<p>這個方法啟動伺服器需要port參數，serverName,和一個匿名函式</p>
+<p>最後把一開始定義好的參數帶進去，並在匿名函式內可以console.log一段顯示訊息</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.statusCode = <span class="number">200</span></span><br><span class="line">  res.setHeader(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;text/plain&#x27;</span>)</span><br><span class="line">  res.end(<span class="string">&#x27;Hi! This is my first Node.js server!&#x27;</span>) </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">server.listen(port, hostName, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`Server is running on http://<span class="subst">$&#123;hostName&#125;</span>:3000!`</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>接著回到在終端機上執行這個app.js<br>並且會得到伺服器啟動的訊息</p>
+<img src="/2021/09/10/%E5%BB%BA%E7%AB%8BNode-js%E6%9C%AC%E6%A9%9F%E4%BC%BA%E6%9C%8D%E5%99%A8/2.jpg" class="">
+
+<p>然後用瀏覽器開啟拜訪 <a target="_blank" rel="noopener" href="http://localhost:3000/">http://localhost:3000</a> 就可以成功拜訪剛剛建立的伺服器。</p>
+
+
+<p>也就是你透過<strong>瀏覽器</strong> &gt; <strong>向你的電腦架設出來的伺服器發出請求</strong> &gt; <strong>你的電腦回覆給瀏覽器</strong> 這樣一連串的動作。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+              <a href="/tags/Node-js/" rel="tag"># Node.js</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/09/10/GitBash%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4%E6%93%8D%E4%BD%9C/" rel="prev" title="Git Bash基本指令操作">
+      <i class="fa fa-chevron-left"></i> Git Bash基本指令操作
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+<script src="https://utteranc.es/client.js"
+        repo="doug0849/doug0849.github.io"
+        issue-term="pathname"
+        theme="photon-dark"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9A%E7%BE%A9%E5%9F%BA%E6%9C%AC%E8%A8%AD%E5%AE%9A"><span class="nav-number">1.</span> <span class="nav-text">定義基本設定</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9A%E7%BE%A9%E4%BC%BA%E6%9C%8D%E5%99%A8%E5%9B%9E%E6%87%89-HTTP-response"><span class="nav-number">2.</span> <span class="nav-text">定義伺服器回應 HTTP response</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%80%E5%BF%B5%E8%AA%AA%E6%98%8E"><span class="nav-number">2.1.</span> <span class="nav-text">觀念說明</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%95%9F%E5%8B%95%E4%BC%BA%E6%9C%8D%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">啟動伺服器</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Doug 道"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Doug 道</p>
+  <div class="site-description" itemprop="description">關於轉職紀錄、技術筆記、隨寫</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Doug 道</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

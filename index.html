@@ -200,6 +200,293 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,zh-TW,default">
+    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/09/10/%E5%BB%BA%E7%AB%8BNode-js%E6%9C%AC%E6%A9%9F%E4%BC%BA%E6%9C%8D%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Doug 道">
+      <meta itemprop="description" content="關於轉職紀錄、技術筆記、隨寫">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="想要邊撸鐵邊學CODE的DOUG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/10/%E5%BB%BA%E7%AB%8BNode-js%E6%9C%AC%E6%A9%9F%E4%BC%BA%E6%9C%8D%E5%99%A8/" class="post-title-link" itemprop="url">建立一個Node.js本機伺服器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-11 00:20:47" itemprop="dateCreated datePublished" datetime="2021-09-11T00:20:47+08:00">2021-09-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">技術筆記</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>開一個測試資料夾先，在裡面建立一個app.js的檔案，並用編輯器開啟</p>
+<img src="/2021/09/10/%E5%BB%BA%E7%AB%8BNode-js%E6%9C%AC%E6%A9%9F%E4%BC%BA%E6%9C%8D%E5%99%A8/1.jpg" class="">
+
+<h1 id="定義基本設定"><a href="#定義基本設定" class="headerlink" title="定義基本設定"></a>定義基本設定</h1><p>接著在app.js裡寫入以下程式碼</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> hostName = <span class="string">&#x27;localhost&#x27;</span></span><br><span class="line"><span class="keyword">const</span> port = <span class="number">3000</span></span><br></pre></td></tr></table></figure>
+<p>轉譯為：<br>先載入Node.js的 http 模組塊<br>並定義主機名稱，因為是在自己的電腦上所以通常慣例我們都叫localhost<br>再來定義連接埠號 port = 3000</p>
+<p>接著要使用http模塊的createServer方式來建立伺服器，然後透過參數server來表達，<br>createServer需要有一個函數，他有兩個參數request(請求)跟response(回應)。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req,res</span>) =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="定義伺服器回應-HTTP-response"><a href="#定義伺服器回應-HTTP-response" class="headerlink" title="定義伺服器回應 HTTP response"></a>定義伺服器回應 HTTP response</h1><h2 id="觀念說明"><a href="#觀念說明" class="headerlink" title="觀念說明"></a>觀念說明</h2><p>大部分跟http伺服器有關的都會有兩個參數，request(請求)跟response(回應)，<br>因為伺服器總得接收到request,然後才會給出response，不然無法進行，<br><strong>req是由瀏覽器</strong><br><strong>req是由瀏覽器</strong><br><strong>req是由瀏覽器</strong>向<strong>伺服器</strong>發出的<strong>請求</strong></p>
+<p><strong>res則是經由我們設定回覆</strong>給<strong>瀏覽器</strong>的東西<br><strong>res則是經由我們設定回覆</strong>給<strong>瀏覽器</strong>的東西<br><strong>res則是經由我們設定回覆</strong>給<strong>瀏覽器</strong>的東西</p>
+<p>伺服器在回應時，通常會定義以下幾個資訊</p>
+<ol>
+<li>回應的 HTTP 狀態碼 (status code)</li>
+<li>設定回應的內容類型 Response Headers &gt; Content-Type</li>
+<li>把回應的內容傳送回去給瀏覽器 Response body &gt; <code>&lt;html&gt;...&lt;/html&gt;</code></li>
+</ol>
+<hr>
+<p><strong>插播</strong><br>HTTP 是 (HyperText Transfer Protocol 的縮寫)<br>HTTP 傳輸通訊協定就是<strong>電腦之間互相索取文件的溝通語言</strong><br>當瀏覽器發出請求通常會定義幾個資訊，Method、URL、Header、Message Body</p>
+<hr>
+<p>回正題，伺服器端回應HTTP response，通常會定義以下幾個資訊</p>
+<ol>
+<li>Status code(狀態碼)<br>可以想像成客戶端與伺服器端之間的招呼語，重要的是開頭第一個數字：</li>
+</ol>
+<ul>
+<li>2XX：成功回應，例如 200</li>
+<li>3XX：重新轉向，例如 301 (永久轉向)、302 (暫時轉向)</li>
+<li>4XX：客户端錯誤回應，例如 404 Not Found (找不到資源)</li>
+<li>5XX：伺服器的問題，例如 500 Internal Server Error</li>
+</ul>
+<p>我們先設定成功代碼</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req,res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.statusCode = <span class="number">200</span></span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>設定回應的內容<strong>類型</strong>，Response Headers &gt; Content-Type<br>一般都是用用瀏覽器看網頁，所以大部分內容類型是 HTML 文件 (text/html) 。<br>但有些時候伺服器回傳的可能是純文字 (text/plain) 、PDF 檔 (application/pdf) 、影片檔 (video/mpeg4) 、或者是經常用來傳送資料的 JSON 檔 (application/json) …。</li>
+</ol>
+<p>在來設定回應的內容類型，先以純文字來作回應</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req,res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.statusCode = <span class="number">200</span></span><br><span class="line">  res.setHeader(<span class="string">&#x27;Content-Type&#x27;</span>,<span class="string">&#x27;text/plain&#x27;</span>)</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>設定要回應給瀏覽器的<strong>內容</strong><br>因為已經定義為純文字內容，所以先以純文字做回應，可以用**res.end()**來做回應</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req,res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.statusCode = <span class="number">200</span></span><br><span class="line">  res.setHeader(<span class="string">&#x27;Content-Type&#x27;</span>,<span class="string">&#x27;text/plain&#x27;</span>)</span><br><span class="line">  res.end(<span class="string">&#x27;Hi! This is my first Node.js server!&#x27;</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="啟動伺服器"><a href="#啟動伺服器" class="headerlink" title="啟動伺服器"></a>啟動伺服器</h1><p>最後我們要啟動伺服器，要求他<strong>監聽</strong>瀏覽器傳來的<strong>request(請求)</strong><br>在node.js中我們可以使用在伺服器上使用</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server.lisetn(port,serverName,<span class="function">() =&gt;</span> &#123;&#125;)</span><br></pre></td></tr></table></figure>
+<p>這個方法啟動伺服器需要port參數，serverName,和一個匿名函式</p>
+<p>最後把一開始定義好的參數帶進去，並在匿名函式內可以console.log一段顯示訊息</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.statusCode = <span class="number">200</span></span><br><span class="line">  res.setHeader(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;text/plain&#x27;</span>)</span><br><span class="line">  res.end(<span class="string">&#x27;Hi! This is my first Node.js server!&#x27;</span>) </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">server.listen(port, hostName, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`Server is running on http://<span class="subst">$&#123;hostName&#125;</span>:3000!`</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>接著回到在終端機上執行這個app.js<br>並且會得到伺服器啟動的訊息</p>
+<img src="/2021/09/10/%E5%BB%BA%E7%AB%8BNode-js%E6%9C%AC%E6%A9%9F%E4%BC%BA%E6%9C%8D%E5%99%A8/2.jpg" class="">
+
+<p>然後用瀏覽器開啟拜訪 <a target="_blank" rel="noopener" href="http://localhost:3000/">http://localhost:3000</a> 就可以成功拜訪剛剛建立的伺服器。</p>
+
+
+<p>也就是你透過<strong>瀏覽器</strong> &gt; <strong>向你的電腦架設出來的伺服器發出請求</strong> &gt; <strong>你的電腦回覆給瀏覽器</strong> 這樣一連串的動作。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,zh-TW,default">
+    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/09/10/GitBash%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4%E6%93%8D%E4%BD%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Doug 道">
+      <meta itemprop="description" content="關於轉職紀錄、技術筆記、隨寫">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="想要邊撸鐵邊學CODE的DOUG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/10/GitBash%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4%E6%93%8D%E4%BD%9C/" class="post-title-link" itemprop="url">Git Bash基本指令操作</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-11 00:07:44" itemprop="dateCreated datePublished" datetime="2021-09-11T00:07:44+08:00">2021-09-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">技術筆記</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/Git-Bash/" itemprop="url" rel="index"><span itemprop="name">Git Bash</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Git-Bash基本操作"><a href="#Git-Bash基本操作" class="headerlink" title="Git Bash基本操作"></a>Git Bash基本操作</h1><h2 id="當前資料夾新建一個資料夾"><a href="#當前資料夾新建一個資料夾" class="headerlink" title="當前資料夾新建一個資料夾"></a>當前資料夾新建一個資料夾</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir [資料夾名稱]</span><br></pre></td></tr></table></figure>
+
+<h2 id="當前資料夾建立一個檔案"><a href="#當前資料夾建立一個檔案" class="headerlink" title="當前資料夾建立一個檔案"></a>當前資料夾建立一個檔案</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ touch [檔案名稱.副檔名]</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/09/10/GitBash%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4%E6%93%8D%E4%BD%9C/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,zh-TW,default">
+    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/09/10/%E9%97%9C%E6%96%BCNode-js/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Doug 道">
+      <meta itemprop="description" content="關於轉職紀錄、技術筆記、隨寫">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="想要邊撸鐵邊學CODE的DOUG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/10/%E9%97%9C%E6%96%BCNode-js/" class="post-title-link" itemprop="url">關於Node.js</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-10 21:09:13" itemprop="dateCreated datePublished" datetime="2021-09-10T21:09:13+08:00">2021-09-10</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">技術筆記</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <center><img src="/2021/09/10/%E9%97%9C%E6%96%BCNode-js/1.jpg" class="" title="1.jpg"></center>
+
+<h1 id="Node-js簡介"><a href="#Node-js簡介" class="headerlink" title="Node.js簡介"></a>Node.js簡介</h1><p>　　Node.js是一個JavaScript的執行環境(run-time environment)，以往 JavaScript 只可以在瀏覽器上被執行，但在2009年Node.js被<u><strong>Ryan Dahl</strong></u>開發出來後，當我們在電腦上安裝了 Node.js 就可以在電腦上直接執行副檔名為 .js 的 JavaScript 的檔案。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/09/10/%E9%97%9C%E6%96%BCNode-js/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,zh-TW,default">
     <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/09/10/Hexo%E6%B7%BB%E5%8A%A0%E7%95%99%E8%A8%80%E6%9D%BF/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -739,239 +1026,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,zh-TW,default">
-    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/07/29/%E9%A0%90%E8%AE%80%E5%AD%B8%E6%9C%9F2-2-S3-A12-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E5%8A%A0%E7%A2%BC%E5%8A%9F%E8%83%BD-%E4%BD%9C%E6%A5%AD%E5%BF%83%E5%BE%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Doug 道">
-      <meta itemprop="description" content="關於轉職紀錄、技術筆記、隨寫">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="想要邊撸鐵邊學CODE的DOUG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/29/%E9%A0%90%E8%AE%80%E5%AD%B8%E6%9C%9F2-2-S3-A12-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E5%8A%A0%E7%A2%BC%E5%8A%9F%E8%83%BD-%E4%BD%9C%E6%A5%AD%E5%BF%83%E5%BE%97/" class="post-title-link" itemprop="url">預讀學期2-2_S3_A12-電影清單加碼功能-作業心得</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-30 00:00:00" itemprop="dateCreated datePublished" datetime="2021-07-30T00:00:00+08:00">2021-07-30</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/AlphaCamp/" itemprop="url" rel="index"><span itemprop="name">AlphaCamp</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><strong><a href="https://doug0849.github.io/movielist-exercise/">練習完成檔案連結</a></strong></p>
-<p>　　之前一直沒有寫相關的作業心得筆記，一方面是覺得難度不高，一方面覺得操作幾次就很熟練了，所以就很懶惰…但進入到學期2-2後，光是S2的製作電影清單，突然感覺難度一下提升超級多，很多內容不是一次兩次就能夠記起來且熟悉，而且函式的拆解跟邏輯複雜度上也提升相當多，演算法也來到了百行之多，這時才發現真的很難一下吸收，所以決定開始來寫學習、作業、技術相關筆記來加深自己的記憶及熟練度。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/07/29/%E9%A0%90%E8%AE%80%E5%AD%B8%E6%9C%9F2-2-S3-A12-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E5%8A%A0%E7%A2%BC%E5%8A%9F%E8%83%BD-%E4%BD%9C%E6%A5%AD%E5%BF%83%E5%BE%97/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,zh-TW,default">
-    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/07/24/%E9%96%8B%E7%AE%B1%E6%95%B8%E4%BD%8D%E8%BB%9F%E9%AB%94%E5%9C%98%E9%9A%8A-%E6%A8%A1%E6%93%AC%E5%B0%88%E6%A1%88%E9%AB%94%E9%A9%97%E5%B8%B6%E4%BD%A0%E6%89%BE%E5%87%BA%E9%81%A9%E5%90%88%E7%9A%84%E8%81%B7%E8%83%BD-%E6%B5%81%E6%B0%B4%E5%B8%B3%E5%BF%83%E5%BE%97/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Doug 道">
-      <meta itemprop="description" content="關於轉職紀錄、技術筆記、隨寫">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="想要邊撸鐵邊學CODE的DOUG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/24/%E9%96%8B%E7%AE%B1%E6%95%B8%E4%BD%8D%E8%BB%9F%E9%AB%94%E5%9C%98%E9%9A%8A-%E6%A8%A1%E6%93%AC%E5%B0%88%E6%A1%88%E9%AB%94%E9%A9%97%E5%B8%B6%E4%BD%A0%E6%89%BE%E5%87%BA%E9%81%A9%E5%90%88%E7%9A%84%E8%81%B7%E8%83%BD-%E6%B5%81%E6%B0%B4%E5%B8%B3%E5%BF%83%E5%BE%97/" class="post-title-link" itemprop="url">AC數位職涯相談室#4-開箱數位軟體團隊-模擬專案體驗帶你找出適合的職能-流水帳心得</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-24 18:31:43" itemprop="dateCreated datePublished" datetime="2021-07-24T18:31:43+08:00">2021-07-24</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/AlphaCamp/" itemprop="url" rel="index"><span itemprop="name">AlphaCamp</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/AlphaCamp/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E8%AB%87%E5%AE%A4/" itemprop="url" rel="index"><span itemprop="name">工作相談室</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote><p>2021年7月22日，非常感謝AC又舉辦了每月一次的數位職涯相談室啦! 本次邀請到的就是BLOG新翹楚 <strong>方格子</strong> 的前端及全端工程師：<u><strong>Jiang &amp; Kuan</strong></u>來分享現實職場當中前後端各別負責的工作內容。 </p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/07/24/%E9%96%8B%E7%AE%B1%E6%95%B8%E4%BD%8D%E8%BB%9F%E9%AB%94%E5%9C%98%E9%9A%8A-%E6%A8%A1%E6%93%AC%E5%B0%88%E6%A1%88%E9%AB%94%E9%A9%97%E5%B8%B6%E4%BD%A0%E6%89%BE%E5%87%BA%E9%81%A9%E5%90%88%E7%9A%84%E8%81%B7%E8%83%BD-%E6%B5%81%E6%B0%B4%E5%B8%B3%E5%BF%83%E5%BE%97/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,zh-TW,default">
-    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/07/18/%E8%B7%B3%E8%BB%8C%E6%8F%9B%E8%B7%91%E9%81%93%EF%BC%8C%E9%97%9C%E6%96%BC%E5%AD%B8%E7%BF%92%E5%AF%ABCODE%E9%80%99%E4%BB%B6%E4%BA%8B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Doug 道">
-      <meta itemprop="description" content="關於轉職紀錄、技術筆記、隨寫">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="想要邊撸鐵邊學CODE的DOUG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/18/%E8%B7%B3%E8%BB%8C%E6%8F%9B%E8%B7%91%E9%81%93%EF%BC%8C%E9%97%9C%E6%96%BC%E5%AD%B8%E7%BF%92%E5%AF%ABCODE%E9%80%99%E4%BB%B6%E4%BA%8B/" class="post-title-link" itemprop="url">跳軌換跑道關於學習寫CODE這件事</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-07-18 10:42:00" itemprop="dateCreated datePublished" datetime="2021-07-18T10:42:00+08:00">2021-07-18</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%97%A5%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">日記</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%97%A5%E8%A8%98/%E8%BD%89%E8%81%B7/" itemprop="url" rel="index"><span itemprop="name">轉職</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote><p>　　終於在2021年5月底的時候，下定決心要轉換跑道，關於開始走上轉職成為網頁工程師的路上。</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/07/18/%E8%B7%B3%E8%BB%8C%E6%8F%9B%E8%B7%91%E9%81%93%EF%BC%8C%E9%97%9C%E6%96%BC%E5%AD%B8%E7%BF%92%E5%AF%ABCODE%E9%80%99%E4%BB%B6%E4%BA%8B/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1043,20 +1097,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

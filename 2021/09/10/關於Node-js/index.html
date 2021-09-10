@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en,zh-TW,default">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P7J0KE07RD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P7J0KE07RD');
+</script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"doug0849.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"ture","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Node.js簡介　　Node.js是一個JavaScript的執行環境(run-time environment)，以往 JavaScript 只可以在瀏覽器上被執行，但在2009年Node.js被Ryan Dahl開發出來後，當我們在電腦上安裝了 Node.js 就可以在電腦上直接執行副檔名為 .js 的 JavaScript 的檔案。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="關於Node.js">
+<meta property="og:url" content="https://doug0849.github.io/2021/09/10/%E9%97%9C%E6%96%BCNode-js/index.html">
+<meta property="og:site_name" content="想要邊撸鐵邊學CODE的DOUG">
+<meta property="og:description" content="Node.js簡介　　Node.js是一個JavaScript的執行環境(run-time environment)，以往 JavaScript 只可以在瀏覽器上被執行，但在2009年Node.js被Ryan Dahl開發出來後，當我們在電腦上安裝了 Node.js 就可以在電腦上直接執行副檔名為 .js 的 JavaScript 的檔案。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/10/%E9%97%9C%E6%96%BCNode-js/1.jpg">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/10/%E9%97%9C%E6%96%BCNode-js/2.jpg">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/10/%E9%97%9C%E6%96%BCNode-js/3.jpg">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/10/%E9%97%9C%E6%96%BCNode-js/4.jpg">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/10/%E9%97%9C%E6%96%BCNode-js/5.jpg">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/10/%E9%97%9C%E6%96%BCNode-js/6.jpg">
+<meta property="article:published_time" content="2021-09-10T13:09:13.000Z">
+<meta property="article:modified_time" content="2021-09-10T13:09:13.000Z">
+<meta property="article:author" content="Doug 道">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="Node.js">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://doug0849.github.io/2021/09/10/%E9%97%9C%E6%96%BCNode-js/1.jpg">
+
+<link rel="canonical" href="https://doug0849.github.io/2021/09/10/%E9%97%9C%E6%96%BCNode-js/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>關於Node.js | 想要邊撸鐵邊學CODE的DOUG</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="想要邊撸鐵邊學CODE的DOUG" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">想要邊撸鐵邊學CODE的DOUG</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">快樂每一天</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/09/10/%E9%97%9C%E6%96%BCNode-js/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Doug 道">
+      <meta itemprop="description" content="關於轉職紀錄、技術筆記、隨寫">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="想要邊撸鐵邊學CODE的DOUG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          關於Node.js
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-10 21:09:13" itemprop="dateCreated datePublished" datetime="2021-09-10T21:09:13+08:00">2021-09-10</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">技術筆記</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <center><img src="/2021/09/10/%E9%97%9C%E6%96%BCNode-js/1.jpg" class="" title="1.jpg"></center>
+
+<h1 id="Node-js簡介"><a href="#Node-js簡介" class="headerlink" title="Node.js簡介"></a>Node.js簡介</h1><p>　　Node.js是一個JavaScript的執行環境(run-time environment)，以往 JavaScript 只可以在瀏覽器上被執行，但在2009年Node.js被<u><strong>Ryan Dahl</strong></u>開發出來後，當我們在電腦上安裝了 Node.js 就可以在電腦上直接執行副檔名為 .js 的 JavaScript 的檔案。</p>
+<span id="more"></span>
+<p>　　有了 Node.js，JavaScript 就成為其他的程式語言一樣 (例如：PHP、Python、Ruby、Java) ，擁有能夠開發網路應用程式的能力。有了 Node.js，JavaScript 就可以直接建立、讀取、修改和刪除電腦內的檔案，還可以執行和資料庫連線。 Node.js 也添加了網路應用程式需要的功能，例如作為伺服器處理客戶端發出請求 (request) 並給予回應 (response) 等。</p>
+<p>　　<strong>Ryan Dahl</strong>的設計靈感源自Flickr的一款上傳進度欄，在上傳過程中，瀏覽器並不清楚有多少檔案已經傳送到伺服器，除非向伺服器進行查詢，導致瀏覽器不止是要上傳照片，還要詢問伺服器上傳到多少，導致整個變得很慢，所以<strong>Ryan Dahl</strong>想出了一個更簡便的方法，他開始嘗試利用 JavaScript 的特性，使用了當時性能卓越的 Google Chrome JavaScript 引擎 V8 ，打造了 Node.js。</p>
+<p>　　Node.js非常擅長<strong>DIRT</strong>(data-intensive real-time) 直接翻譯是「數據密集以及實時」的應用，像是影音串流平台、聊天交友軟體、叫車平台都是需要實時處理大量數據的應用程式。很多知名的網站或是網路應用程式，後台都有使用到Javascript，例如：Paypal,Netflix,Uber。</p>
+<h1 id="Node-js安裝"><a href="#Node-js安裝" class="headerlink" title="Node.js安裝"></a>Node.js安裝</h1><p>　　安裝 Node.js 可以直接從 Node.js 的官方網站 <a target="_blank" rel="noopener" href="https://nodejs.org/">https://nodejs.org</a> 下載安裝，可是因為實務開發上常常碰到不同專案會使用到不同版本 Node.js ，所以實務上比較常使用的是 Node Version Manager (nvm)，因為他可以簡易的切換Node.js的版本，就省得自己手動刪除再重新安裝，然後無窮無盡的做這件事情。</p>
+<p>　　搜尋Nvm(Node Version Manager)，會在Github上出現兩種版本，一種是給MacOS使用，一種是給Windows使用。</p>
+<ol>
+<li>安裝nvm-windows</li>
+</ol>
+<p>　　因為我是Windows系統，所以到 <a target="_blank" rel="noopener" href="https://github.com/coreybutler/nvm-windows/releases">nvm-windows</a> 的github下載</p>
+<img src="/2021/09/10/%E9%97%9C%E6%96%BCNode-js/2.jpg" class="">
+
+<p>　　下載完成後執行安裝程序，一直下一步到安裝完成就好了，但如果要更改安裝路徑，路徑的資料夾名稱不能有空白，不然會有問題。</p>
+<p>　　安裝完後打開終端機 (Git Bash)。如果原本終端機已經打開，記得要重開。打開後輸入指令來確定安裝成功：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm version</span><br></pre></td></tr></table></figure>
+
+<img src="/2021/09/10/%E9%97%9C%E6%96%BCNode-js/3.jpg" class="">
+
+<ol start="2">
+<li>用nvm安裝Node.js</li>
+</ol>
+<p>可以先在指令欄內輸入 nvm list available 來查看可以安裝的 Node.js的版本</p>
+<img src="/2021/09/10/%E9%97%9C%E6%96%BCNode-js/4.jpg" class="">
+
+<p>建議安裝有寫 <b>LTS (Long Term Support)</b> 的版本，意思是官方會持續維護這個版本比較長一段時間，會比較穩定。</p>
+<p>接著輸入 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install 14.17.6</span><br></pre></td></tr></table></figure>
+<p>就會安裝如圖最新的LTS版本了，安裝完基本上他會自動執行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm use 17.17.6</span><br></pre></td></tr></table></figure>
+<p>來使用這個版本的Node.js，若未來要切換版本，同樣也可以輸入這個指令</p>
+<p>若要查看當前使用的版本可以輸入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+
+<img src="/2021/09/10/%E9%97%9C%E6%96%BCNode-js/5.jpg" class="">
+
+<ol start="3">
+<li>在終端機上執行操作JavaScript</li>
+</ol>
+<p>安裝完Node.js後，就可以輸入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node</span><br></pre></td></tr></table></figure>
+<p>進入node模式<br>接著就能輸入JavaScript的指令了</p>
+<img src="/2021/09/10/%E9%97%9C%E6%96%BCNode-js/6.jpg" class="">
+
+<p>按ctrl+c，兩次即可退出node模式<br>另外在終端機複製的指令是 ctrl + insert 貼上是 shift + insert<br>(insert就是方向鍵上面，最左上那一顆)</p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+              <a href="/tags/Node-js/" rel="tag"># Node.js</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/09/10/Hexo%E6%B7%BB%E5%8A%A0%E7%95%99%E8%A8%80%E6%9D%BF/" rel="prev" title="Hexo Next主題添加留言板">
+      <i class="fa fa-chevron-left"></i> Hexo Next主題添加留言板
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/09/10/GitBash%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4%E6%93%8D%E4%BD%9C/" rel="next" title="Git Bash基本指令操作">
+      Git Bash基本指令操作 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+<script src="https://utteranc.es/client.js"
+        repo="doug0849/doug0849.github.io"
+        issue-term="pathname"
+        theme="photon-dark"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Node-js%E7%B0%A1%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">Node.js簡介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Node-js%E5%AE%89%E8%A3%9D"><span class="nav-number">2.</span> <span class="nav-text">Node.js安裝</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Doug 道"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Doug 道</p>
+  <div class="site-description" itemprop="description">關於轉職紀錄、技術筆記、隨寫</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Doug 道</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

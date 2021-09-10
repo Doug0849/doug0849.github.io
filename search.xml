@@ -28,7 +28,7 @@
         <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>Javascript</tag>
+        <tag>JavaScript</tag>
         <tag>技術筆記</tag>
       </tags>
   </entry>
@@ -48,8 +48,442 @@
         <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>Javascript</tag>
+        <tag>JavaScript</tag>
         <tag>技術筆記</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git Bash基本指令操作</title>
+    <url>/2021/09/10/GitBash%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="Git-Bash基本操作"><a href="#Git-Bash基本操作" class="headerlink" title="Git Bash基本操作"></a>Git Bash基本操作</h1><h2 id="當前資料夾新建一個資料夾"><a href="#當前資料夾新建一個資料夾" class="headerlink" title="當前資料夾新建一個資料夾"></a>當前資料夾新建一個資料夾</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ mkdir [資料夾名稱]</span><br></pre></td></tr></table></figure>
+
+<h2 id="當前資料夾建立一個檔案"><a href="#當前資料夾建立一個檔案" class="headerlink" title="當前資料夾建立一個檔案"></a>當前資料夾建立一個檔案</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ touch [檔案名稱.副檔名]</span><br></pre></td></tr></table></figure>
+<span id="more"></span>
+
+<h2 id="顯示當前資料夾檔案-list"><a href="#顯示當前資料夾檔案-list" class="headerlink" title="顯示當前資料夾檔案 (list)"></a>顯示當前資料夾檔案 (list)</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ ls</span><br></pre></td></tr></table></figure>
+
+<h2 id="顯示目前資料夾路徑-print-working-directory"><a href="#顯示目前資料夾路徑-print-working-directory" class="headerlink" title="顯示目前資料夾路徑 (print working directory)"></a>顯示目前資料夾路徑 (print working directory)</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ pwd </span><br></pre></td></tr></table></figure>
+
+<h2 id="移動到資料夾-change-directory"><a href="#移動到資料夾-change-directory" class="headerlink" title="移動到資料夾 (change directory)"></a>移動到資料夾 (change directory)</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd [資料夾名稱]</span><br></pre></td></tr></table></figure>
+
+<h2 id="回到上一層資料夾"><a href="#回到上一層資料夾" class="headerlink" title="回到上一層資料夾"></a>回到上一層資料夾</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ cd ..</span><br></pre></td></tr></table></figure>
+
+<h2 id="用檔案總管開啟當前資料夾"><a href="#用檔案總管開啟當前資料夾" class="headerlink" title="用檔案總管開啟當前資料夾"></a>用檔案總管開啟當前資料夾</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ start .</span><br></pre></td></tr></table></figure>
+
+<h2 id="用檔案總管開啟父層資料夾"><a href="#用檔案總管開啟父層資料夾" class="headerlink" title="用檔案總管開啟父層資料夾"></a>用檔案總管開啟父層資料夾</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ start ..</span><br></pre></td></tr></table></figure>
+
+<h2 id="刪除檔案"><a href="#刪除檔案" class="headerlink" title="刪除檔案"></a>刪除檔案</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ rm [檔案名稱.副檔名]</span><br></pre></td></tr></table></figure>
+
+<h2 id="刪除資料夾-r-recusive-是递归的意思"><a href="#刪除資料夾-r-recusive-是递归的意思" class="headerlink" title="刪除資料夾 (-r recusive 是递归的意思)"></a>刪除資料夾 (-r recusive 是递归的意思)</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ rm -r [資料夾名稱]</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除一个文件夹，-r-recursive-是遞迴的意思-，-先刪除資料夾裡內容再刪除資料夾"><a href="#删除一个文件夹，-r-recursive-是遞迴的意思-，-先刪除資料夾裡內容再刪除資料夾" class="headerlink" title="删除一个文件夹， r (recursive 是遞迴的意思)， 先刪除資料夾裡內容再刪除資料夾"></a>删除一个文件夹， r (recursive 是遞迴的意思)， 先刪除資料夾裡內容再刪除資料夾</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ rm -r</span><br></pre></td></tr></table></figure>
+
+<h2 id="用編輯器開啟當前資料夾"><a href="#用編輯器開啟當前資料夾" class="headerlink" title="用編輯器開啟當前資料夾"></a>用編輯器開啟當前資料夾</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ code .</span><br></pre></td></tr></table></figure>
+
+<h2 id="用編輯器開啟父層資料夾"><a href="#用編輯器開啟父層資料夾" class="headerlink" title="用編輯器開啟父層資料夾"></a>用編輯器開啟父層資料夾</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ code ..</span><br></pre></td></tr></table></figure>
+
+<h2 id="清空畫面所有訊息-快捷鍵ctrl-l"><a href="#清空畫面所有訊息-快捷鍵ctrl-l" class="headerlink" title="清空畫面所有訊息 (快捷鍵ctrl + l)"></a>清空畫面所有訊息 (快捷鍵ctrl + l)</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ reset</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>技術筆記</category>
+        <category>Git Bash</category>
+      </categories>
+      <tags>
+        <tag>技術筆記</tag>
+        <tag>Git Bash</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo操作</title>
+    <url>/2021/09/09/Hexo%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<h3 id="關於draft"><a href="#關於draft" class="headerlink" title="關於draft"></a>關於draft</h3><p>放在/source/_drafts下<br>可執行命令hexo new draft <code>&lt;title&gt;</code> 創建草稿<br>通過執行命令hexo publish <code>&lt;title&gt;</code> 可以把_drafts下的草稿文章推到_posts下</p>
+<span id="more"></span>
+<p>會按照new_post_name的配置來命名文章<br>如果有開啟_config裡的post_asset_folder: true，對應的asset資料夾也會一起移動<br>手動操作也是可以的，草稿最後會被解析到model(‘Post’)中，參數published變為0 （預設情况下不會傳給布局頁面進行渲染）<br>_config.yml中如果設定render_drafts: true<br>就會傳給布局頁面進行渲染<br>在generate或deploy時會自動把_drafts/下的文件解析生成到目標文件夾下（但不會移動到/source/_posts下）</p>
+<h3 id="關於New-Post"><a href="#關於New-Post" class="headerlink" title="關於New Post"></a>關於New Post</h3><p>執行命令hexo new title 就可以創建新文章<br>新文章會丟到/source/_posts底下<br>可以在站點_config裡面設定新文章預設命名<br>就可以在_posts底下自動用資料夾分類</p>
+<p>new_post_name: :year/:month/:title.md</p>
+<p>文章將會在_posts/2021/09/底下</p>
+<h3 id="關於產生靜態文件"><a href="#關於產生靜態文件" class="headerlink" title="關於產生靜態文件"></a>關於產生靜態文件</h3><p>執行命令hexo generate<br>這時候Hexo會將你用Markdown寫好的文章、圖片，會全部依照主體layout設定去生成HTML文件，這些檔案位於public底下，每一次執行就會依照source檔案底下有變動的的文章重新生成一次html文檔</p>
+<p>簡易命令寫法 hexo g<br>可以附帶參數 -w 將會隨時監控原始檔案的變動，只要一變動便會重新生成新的html，在本地測試時很好用，開一個終端機執行hexo serve啟動本地伺服器觀察，一個終端機執行 hexo g -w 將會持續幫你更新檔案。</p>
+<h3 id="關於部屬"><a href="#關於部屬" class="headerlink" title="關於部屬"></a>關於部屬</h3><p>執行命令hexo deploy<br>在執行hexo deploy之前要先執行 hexo generate來產生靜態文件，然後在執行hexo deploy就會將靜態文件上傳到指定位置。<br>Hexo預設支援github，只要在github開好repo並設定成github_page，可以在站點_config裡加入設定值</p>
+<p>deploy:<br>  type: git<br>  repo: <a href="https://github.com/%E5%80%8B%E4%BA%BA%E5%B8%B3%E8%99%9F/repo%E5%90%8D%E7%A8%B1">https://github.com/個人帳號/repo名稱</a><br>  branch: master(推送到master分支，若不使用master分支要設定到你repo設定的預設分支上)</p>
+<p>執行hexo deploy -m “commit message”<br>大概等於git commit -m “message”，但是這邊不使用git push檔案，因為會將所有原始資料上傳至Github造成檔案混亂，最好另外開一個branch來做檔案備份，或自己手動在本地電腦備份。</p>
+<h3 id="關於本地伺服器"><a href="#關於本地伺服器" class="headerlink" title="關於本地伺服器"></a>關於本地伺服器</h3><p>執行完hexo generate後若不想直接上傳到個人網路空間，<br>可以執行 hexo serve 來啟動本地伺服器，觀察檢查是否有其他問題。<br>本地伺服器位置位於 <a href="https://localhost:4000/">https://localhost:4000</a></p>
+<h3 id="關於站點配置-config-yml"><a href="#關於站點配置-config-yml" class="headerlink" title="關於站點配置_config.yml"></a>關於站點配置_config.yml</h3><p>有很多的基本配置都在這個文件裡，相關的配置變數可以詳官方網站的文件說明。<br><strong><a href="https://hexo.io/zh-cn/docs/configuration">Hexo配置</a></strong></p>
+]]></content>
+      <categories>
+        <category>技術筆記</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>技術筆記</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo Next主題添加留言板</title>
+    <url>/2021/09/10/Hexo%E6%B7%BB%E5%8A%A0%E7%95%99%E8%A8%80%E6%9D%BF/</url>
+    <content><![CDATA[<h2 id="本篇使用的是utterances留言板"><a href="#本篇使用的是utterances留言板" class="headerlink" title="本篇使用的是utterances留言板"></a>本篇使用的是utterances留言板</h2><p>utterances是由TypeScript所構成的留言區套件，透過串接GitHub issue的方式來完成留言區功能(但需要GitHub帳號)，簡而言之就是它可以在文章底下留言，並且同步到GitHub專案留下一個issue留言。</p>
+<span id="more"></span>
+<h2 id="為什麼選擇用-utterances-留言板"><a href="#為什麼選擇用-utterances-留言板" class="headerlink" title="為什麼選擇用 utterances 留言板?"></a>為什麼選擇用 utterances 留言板?</h2><p>因為Blog全部架在GitHub上，感覺統一管理比較方便。</p>
+<h2 id="套件引用"><a href="#套件引用" class="headerlink" title="套件引用"></a>套件引用</h2><ul>
+<li>utterances: <a href="https://utteranc.es/">https://utteranc.es/</a></li>
+</ul>
+<h2 id="Step-1"><a href="#Step-1" class="headerlink" title="Step 1"></a>Step 1</h2><p>進入 utterances 後找到 <strong>configuration</strong></p>
+<img src="/2021/09/10/Hexo%E6%B7%BB%E5%8A%A0%E7%95%99%E8%A8%80%E6%9D%BF/1.jpg" class="" title="1.jpg">
+
+<h2 id="Step-2"><a href="#Step-2" class="headerlink" title="Step 2"></a>Step 2</h2><p>先點擊 utterances app 進到下個頁面</p>
+<img src="/2021/09/10/Hexo%E6%B7%BB%E5%8A%A0%E7%95%99%E8%A8%80%E6%9D%BF/2.jpg" class="" title="2.jpg">
+
+<h2 id="Step-3"><a href="#Step-3" class="headerlink" title="Step 3"></a>Step 3</h2><p>點擊安裝，然後再到個人GitHub的Setting裡的Applications設定utterances<br>看是要所有的Repo都可以引用這個套件，或是只有選擇的Repo可以使用，這邊我是選擇指有特定的選擇Repo可用</p>
+<img src="/2021/09/10/Hexo%E6%B7%BB%E5%8A%A0%E7%95%99%E8%A8%80%E6%9D%BF/3.jpg" class="" title="3.jpg">
+
+<h2 id="Step-4"><a href="#Step-4" class="headerlink" title="Step 4"></a>Step 4</h2><p>回到 utterances頁，輸入你的repo資料<br>我自己的範例是 doug0849/doug0849.github.io</p>
+<img src="/2021/09/10/Hexo%E6%B7%BB%E5%8A%A0%E7%95%99%E8%A8%80%E6%9D%BF/1.jpg" class="" title="1.jpg">
+
+<h2 id="Step-5"><a href="#Step-5" class="headerlink" title="Step 5"></a>Step 5</h2><p>再來 Blog Post ↔️ Issue Mapping 大概就是當有人留言後會出現的樣式，選第一個即可。</p>
+<img src="/2021/09/10/Hexo%E6%B7%BB%E5%8A%A0%E7%95%99%E8%A8%80%E6%9D%BF/4.jpg" class="" title="4.jpg">
+
+<h2 id="Step-6"><a href="#Step-6" class="headerlink" title="Step 6"></a>Step 6</h2><p>選一個你喜歡的樣式風格</p>
+<img src="/2021/09/10/Hexo%E6%B7%BB%E5%8A%A0%E7%95%99%E8%A8%80%E6%9D%BF/5.jpg" class="" title="5.jpg">
+
+<h2 id="Step-7"><a href="#Step-7" class="headerlink" title="Step 7"></a>Step 7</h2><p>複製JavaScript 到你模板裡要放Comment的位置</p>
+<img src="/2021/09/10/Hexo%E6%B7%BB%E5%8A%A0%E7%95%99%E8%A8%80%E6%9D%BF/6.jpg" class="" title="6.jpg">
+
+<p>每個模板的位置不太一樣，必須要找到正確的地方引入此段JS<br>以Hexo Next 模板來說，請丟到 Next 主題資料夾下 &gt; layout &gt; _partials &gt; comments.swig<br>開啟 comments.swig 找到</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if page.comments %&#125;</span><br></pre></td></tr></table></figure>
+<p>把它丟在它下面</p>
+<img src="/2021/09/10/Hexo%E6%B7%BB%E5%8A%A0%E7%95%99%E8%A8%80%E6%9D%BF/7.jpg" class="" title="7.jpg">
+
+<p>最後到主題_config.yml最後補上</p>
+<p>utterances:<br>  enable: true</p>
+<p>這樣就完成啦!</p>
+]]></content>
+      <categories>
+        <category>技術筆記</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>技術筆記</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>VS Code - Markdown &amp; Hexo 自動補齊語法標籤設定</title>
+    <url>/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/</url>
+    <content><![CDATA[<p>在VS Code中寫Markdown，每次撰寫時遇到一些插入圖片或是其他語法覺得很麻煩，因為都不會自動補齊，因此上網找了些資訊看VS Code要怎麼調整才能達到這個功能。</p>
+<span id="more"></span>
+<p>首先點選文件&gt;首選項&gt;用戶片段</p>
+<img src="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/step1.png" class="" title="Step1">
+<p>接著會在上方有一個視窗，要輸入Markdown，點選Markdown.json</p>
+<img src="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/step2.png" class="" title="Step2">
+<p>在markdown.json 上面有一些範例</p>
+<img src="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/step3.png" class="" title="Step3">
+
+<p>Print to console 是標題<br>prefix 是要觸發的關鍵字<br>body 是觸發後的樣子，可以在後面補上(‘$1’)(‘$2’)，$代表執行快捷後光標自動跳到的位置</p>
+<p>再來要編寫適合自己的Markdonw<br>我希望要得到的完整語句是```javascript<br>可以添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;Print to ```javascript&quot;: &#123;</span><br><span class="line">	&quot;prefix&quot;: &quot;```js&quot;,</span><br><span class="line">	&quot;body&quot;: [</span><br><span class="line">		&quot;```Javascript&quot;,</span><br><span class="line">		&quot;$1&quot;,</span><br><span class="line">		&quot;$2&quot;,</span><br><span class="line">		&quot;```&quot;,</span><br><span class="line">	],</span><br><span class="line">	&quot;description&quot;: &quot;js代碼塊&quot;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<p>另外我是使用Hexo的框架，所以也可以自己加上Hexo相關的標籤語法</p>
+<img src="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/step4.png" class="" title="step4">
+
+<p>最後要在VS code的setting.json裡設定開啟Markdown的快捷功能</p>
+<img src="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/step5.png" class="" title="step5">
+</br>
+<img src="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/step6.png" class="" title="step6">
+</br>
+<img src="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/step7.png" class="" title="step7">
+</br>
+大功告成
+</br>
+<img src="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/step8.png" class="" title="step8">
+</br>
+<img src="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/step9.png" class="" title="step9">]]></content>
+      <categories>
+        <category>VS Code</category>
+      </categories>
+      <tags>
+        <tag>技術筆記</tag>
+        <tag>Hexo</tag>
+        <tag>Markdown</tag>
+        <tag>VScode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ejs樣板語法技術筆記</title>
+    <url>/2021/09/08/ejs%E6%A8%A3%E6%9D%BF%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/</url>
+    <content><![CDATA[<p>在ejs樣版檔案下的標籤語意</p>
+<p>&lt;%   ‘脚本’ 标签，用于流程控制，无输出。<br>&lt;%_  删除其前面的空格符<br>&lt;%__ 在模板中，透过 __ 或 _p 辅助函数，即可取得翻译后的字符串，前者用于一般使用；而后者用于复数字符串。<br>     可詳<a href="https://hexo.io/zh-cn/docs/internationalization">Hexo官方文檔</a><br>&lt;%=  输出数据到模板（输出是转义 HTML 标签），像是等於innerHTML<br>&lt;%-  输出非转义的数据到模板，像是等於innerText<br>&lt;%#  注释标签，不执行、不输出内容<br>&lt;%%  输出字符串 ‘&lt;%’<br>%&gt;   一般结束标签<br>-%&gt;  删除紧随其后的换行符<br>_%&gt;  将结束标签后面的空格符删除</p>
+]]></content>
+      <categories>
+        <category>技術筆記</category>
+        <category>EJS</category>
+      </categories>
+      <tags>
+        <tag>技術筆記</tag>
+        <tag>EJS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>.toggle() 和 .appendchild()</title>
+    <url>/2021/09/09/toggle%E5%92%8Cappendchild/</url>
+    <content><![CDATA[<h2 id="toggle"><a href="#toggle" class="headerlink" title="toggle"></a>toggle</h2><p>範例</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">element.classList.toggle(&#x27;sample&#x27;) </span><br></pre></td></tr></table></figure>
+
+<p>element ：某元素，使用document.querySelecrot選出<br>.classList ：某元素的class屬性<br>.toggle(‘.sample’) ：</p>
+<p>如果class屬性裡面沒有sample則加上sample，<br>如果class屬性裡面有sample則刪除sample，</p>
+<span id="more"></span>
+
+<p>Node.appendChild(sample) 是將一個節點加到指定的父節點中所有子節點的最後面。如果sample這個節點已經存在document樹當中，那 appendChild(sample) 會將原本sample這個節點位置移動到node這個新的位置（不需要事先移除要移動的節點）。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// TodoList Delete and check</span></span><br><span class="line">list.addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> target = event.target;</span><br><span class="line">  <span class="keyword">const</span> parentElement = target.parentElement</span><br><span class="line">  <span class="comment">//按下垃圾桶，將項目刪除</span></span><br><span class="line">  <span class="keyword">if</span> (target.classList.contains(<span class="string">&quot;delete&quot;</span>)) &#123;</span><br><span class="line">    parentElement.remove();</span><br><span class="line">    <span class="comment">//Todo中項目按下名字，將項目移置done中</span></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target.tagName === <span class="string">&quot;LABEL&quot;</span>) &#123;</span><br><span class="line">    doneList.appendChild(parentElement)</span><br><span class="line">    target.classList.toggle(<span class="string">&quot;checked&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// DoneList Delete and back</span></span><br><span class="line">doneList.addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> target = event.target;</span><br><span class="line">  <span class="keyword">const</span> parentElement = target.parentElement</span><br><span class="line">  <span class="comment">//按下垃圾桶，將項目刪除</span></span><br><span class="line">  <span class="keyword">if</span> (target.classList.contains(<span class="string">&quot;delete&quot;</span>)) &#123;</span><br><span class="line">    parentElement.remove();</span><br><span class="line">    <span class="comment">//Done中項目按下名字，將項目移置Todo中</span></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target.tagName === <span class="string">&quot;LABEL&quot;</span>) &#123;</span><br><span class="line">    list.appendChild(parentElement)</span><br><span class="line">    target.classList.toggle(<span class="string">&quot;checked&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>技術筆記</category>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>技術筆記</tag>
+        <tag>Javascript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>今天是學寫Code的第107天</title>
+    <url>/2021/09/09/%E4%BB%8A%E5%A4%A9%E6%98%AF%E5%AD%B8%E5%AF%ABCode%E7%9A%84%E7%AC%AC107%E5%A4%A9/</url>
+    <content><![CDATA[<h5 id="今天是我學寫code的第107天"><a href="#今天是我學寫code的第107天" class="headerlink" title="今天是我學寫code的第107天"></a><center>今天是我學寫code的第107天</center></h5><p><strong><em><center>(歡呼加鼓掌!)</center></em></strong></p>
+<p>　　在2021年5月25日晚上這一天，對自己下了一個人生的新決定，決定要轉換跑道啦!<br>　　學到至今3個月多一些，加上第一次自己成功在Github上用Hexo架出靜態網頁，就在這邊稍微紀錄一下自己的轉職日記啦! XD</p>
+<img src="/2021/09/09/%E4%BB%8A%E5%A4%A9%E6%98%AF%E5%AD%B8%E5%AF%ABCode%E7%9A%84%E7%AC%AC107%E5%A4%A9/1.jpg" class="" title="1.jpg">
+<span id="more"></span>
+<p>　　再一次說說為什麼在這老大不小的年紀，就在今年年底即將正式年滿32歲的微大叔年紀，竟然毅然決然地決定換跑道吧!</p>
+<p>　　本身原本是從事建築設計產業的，但從大學開始半工半讀一直做到了現，到海外越南工作，到了前幾個月還是下了個決心轉換跑道了。</p>
+<p>　　原因的話，其實一方面是疫情影響的關係導致無法回親愛的臺灣，一方面是建築設計這產業在臺灣的處境真的越來越差，薪資待遇真的讓我覺得糟糕到很離譜，本身就須具備很多專業的知識及技術能力，還得花很多時間學習新的軟件操作及使用，但學這麼多卻完全不見薪水有多大的成長，反而變成理所應當的感覺，而且這產業所背負的責任壓力，時間壓力以及工作量卻又時常相當的大，所以就在想著若是回臺灣後到底要不要繼續這產業，最後最後自己內心的想法是”<strong>NO</strong>“，所以就就開始思考了，那我想做什麼?</p>
+<img src="/2021/09/09/%E4%BB%8A%E5%A4%A9%E6%98%AF%E5%AD%B8%E5%AF%ABCode%E7%9A%84%E7%AC%AC107%E5%A4%A9/2.jpg" class="" title="2.jpg">
+
+<p>　　這要回到小時候，其實自己的父親是一位很熱愛電腦的人，他在我小學一二年級的時候，就買了第一台window 95的電腦，後來甚至自己維修電腦做小生意賺錢，於是我從小就熱愛打電腦遊戲，後來父母覺得我們似乎有興趣，也把我們送到電腦補習班學習，但對於那個年紀連除法都不會的我來說，學程式語言真的太難了。後來父母就把我轉送到學習PhotoShop、DreamWeaver、Flash…但老實說現在大概只有PhotoShop功力還行吧，後來長大自己對這方面也比較有興趣又自己買書學了Illustrator，我想也是因為從小培養出對電腦相關的興趣，加上國中畢業時原本想要去念大安高中的資訊科，但那時候母親聽信親戚的話，那時候很多人覺得念技職學校沒未來，大家都要念普通高中然後進好名校，所以堅持不讓我念技職學校，也可能是這原因，又再心理埋下了另一個小小的遺憾，直至今日人生自己做主，所以就下定決心不如開始學習寫程式吧!</p>
+<img src="/2021/09/09/%E4%BB%8A%E5%A4%A9%E6%98%AF%E5%AD%B8%E5%AF%ABCode%E7%9A%84%E7%AC%AC107%E5%A4%A9/3.jpg" class="" title="3.jpg">
+
+<p>　　剛好越南疫情也相當嚴重，所有工作幾乎都停擺，工作也非常不忙碌，所以有比較多的時間可以專心學習，就這樣<strong>邊打電動邊工作邊學怎麼Programming</strong>到今天<strong>107</strong>天的日子裡，已經會如何使用Express.js以及MongoDB來架設基本的網站，雖說還不是很熟悉，但也算是一個歷程了，再來又自己學習了如何在Github架出靜態網頁，如何用Hexo框架系統在Github架設個人blog，也算是滿滿的成就感啦!(再次為自己歡呼加鼓掌)</p>
+<img src="/2021/09/09/%E4%BB%8A%E5%A4%A9%E6%98%AF%E5%AD%B8%E5%AF%ABCode%E7%9A%84%E7%AC%AC107%E5%A4%A9/4.jpg" class="" title="4.jpg">
+
+<p>　　再來下個階段目標，因為目前這個Blog還是套用超具人氣的樣板(可是它真的很好用，害我有點懶惰)，接著開始會自己學習把所有Blog頁面重新架設過，並建立出自己風格的Hexo主題，然後陸陸續續把相關練習作品整理起來，在這邊當成最好的履歷表呈現出來，也繼續學習更多複雜精進的技術，另一方面看看是否會幫助到一些跟我一樣半路出家的人，接著希望明年差不多這個時間，看看是否能順利達成轉職目標，就讓我們繼續看下去吧!</p>
+<img src="/2021/09/09/%E4%BB%8A%E5%A4%A9%E6%98%AF%E5%AD%B8%E5%AF%ABCode%E7%9A%84%E7%AC%AC107%E5%A4%A9/5.jpg" class="" title="5.jpg">]]></content>
+      <categories>
+        <category>日記</category>
+        <category>轉職</category>
+      </categories>
+      <tags>
+        <tag>轉職</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>如何用Hexo在Github上架設blog</title>
+    <url>/2021/09/08/%E5%A6%82%E4%BD%95%E7%94%A8Hexo%E5%9C%A8Github%E4%B8%8A%E6%9E%B6%E8%A8%ADblog/</url>
+    <content><![CDATA[<h1 id="廢話前言"><a href="#廢話前言" class="headerlink" title="廢話前言"></a>廢話前言</h1><h2 id="想要架設部落格作為記錄自己生活或相關筆記嗎"><a href="#想要架設部落格作為記錄自己生活或相關筆記嗎" class="headerlink" title="想要架設部落格作為記錄自己生活或相關筆記嗎?"></a>想要架設部落格作為記錄自己生活或相關筆記嗎?</h2><p>會想架設部落格的主要原因是自己正在上Javascript課程，課程有提到要開個部落格來作為自己的技術筆記、心得、或一些自己想記錄的東西作為備忘，畢竟學海無涯，有很多東西學會後久久不使用真的會忘記。</p>
+<p>後來使用了一些大眾市面上的blog，但終究覺得不合用，一方面更想要有自己的風格，一方面對於自己來說希望更加方便撰寫紀錄及發布。而我這個初心者才知道，原來可以在Github撰寫靜態網頁(蠢)，所以就開始研究到底該如何在Github上架設一個簡易的靜態blog之旅。</p>
+<span id="more"></span>
+<p>起初還真的不知道要怎麼做，只知道如何在Github上呈現index.html，然後再自己手動寫連結…甚至最後想說是不是全部手刻HTML(蠢x2)，後來想想這不對啊!! 這也太麻煩且浪費時間了，不如用市面上的blog就好，不然完全本末倒置(笑，所以就開始試著搜尋網路上有沒有更適合的作法。<br>後來發現網路上有很多已經完成的樣板，只要下在別人寫好的主體下來加以修改撰寫，在推上Github，就可以完成自己的個人BLOG了。一開始搜尋到的是jekyll但它是ruby撰寫的，所以我也沒有環境系統，所以搞了老半天，但經過一翻嘗試還是有很多問題，覺得搞得一個頭兩個大的時候，讓我搜尋到了Hexo!!</p>
+<blockquote><p>Hexo 是一個快速、簡單且強大的網誌框架。Hexo 使用 Markdown（或其他標記語言）解析您的文章，並在幾秒鐘內，透過漂亮的主題產生靜態檔案。</p>
+<footer><strong>@Hexo</strong><cite><a href="https://hexo.io/zh-cn/docs/">hexo.io/zh-cn/docs</a></cite></footer></blockquote>
+
+
+
+<p>他主要又是以Javascript, Node.js 來操作，完全符合我現在在上課的內容，所以環境架設也都已經完成了，做了點嘗試沒想到一下就成功架上Github，中間也沒有遇到太多問題，所以最後決定使用Hexo作為主要的撰寫框架工具啦!順便在這邊紀錄使用的情況，及寫下相關技術筆記。</p>
+<hr>
+<h1 id="第一步：安裝必備程式"><a href="#第一步：安裝必備程式" class="headerlink" title="第一步：安裝必備程式"></a>第一步：安裝必備程式</h1><h2 id="程式清單："><a href="#程式清單：" class="headerlink" title="程式清單："></a>程式清單：</h2><ul>
+<li><a href="https://git-scm.com/downloads">Git</a> 終端機 (Windows推薦)</li>
+<li><a href="https://nodejs.org/en/">Node.js</a> 讓你可以在終端機上以Javascript指令來操作電腦</li>
+<li><a href="https://code.visualstudio.com/">Visual Studio Code</a>方便你在個人電腦上編程<br>詳細可以參閱 <a href="https://hexo.io/zh-tw/docs/index.html">Hexo官方文件</a></li>
+</ul>
+<p>如果完全沒有使用過Git Bash終端機及使用GitHub的同學<br>就是要先有自己的Github帳號啦! 之後要在Git Bash裡設定你的識別資料</p>
+<p>範例</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name &quot;John Doe&quot;</span><br><span class="line">$ git config --global user.email johndoe@example.com</span><br></pre></td></tr></table></figure>
+
+<p>user.name 為你的Github帳戶<br>user.email 為你的Github帳戶設定的email</p>
+<h1 id="第二步：在電腦上開設專屬Blog資料夾，初始化Hexo檔案"><a href="#第二步：在電腦上開設專屬Blog資料夾，初始化Hexo檔案" class="headerlink" title="第二步：在電腦上開設專屬Blog資料夾，初始化Hexo檔案"></a>第二步：在電腦上開設專屬Blog資料夾，初始化Hexo檔案</h1><ol>
+<li>安裝完後請打開 Git Bash 終端機 </li>
+<li>在終端機上輸入 npm install -g hexo-cli ，來安裝hexo</li>
+<li>一旦 Hexo 安裝完成後，執行下列指令，Hexo 就會在指定資料夾中建立所有需要的檔案。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt; // folder輸入你要建立的資料夾名稱</span><br><span class="line">                     // 若想要在別的硬碟裡面建立，記得先使用終端機輸入cd 移動到你要建立blog資料夾的位置</span><br><span class="line">$ cd &lt;folder&gt; // folder輸入你剛剛建立好的資料夾名稱</span><br><span class="line">$ npm install // 安裝初始化npm</span><br><span class="line">$ git init // 若想要在電腦上使用git版本控制，記得要順便安裝git，不理解或不想用可忽略</span><br></pre></td></tr></table></figure>
+
+<p>建立完成後，專案資料夾會有下列檔案：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
+
+<h2 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h2><p>此檔案為網站配置檔案(站點配置)，可以在這個檔案配置大部分的設定。</p>
+<h2 id="source-資料夾"><a href="#source-資料夾" class="headerlink" title="source 資料夾"></a>source 資料夾</h2><p>原始檔案資料夾是放置內容的地方。檔案或資料夾名稱開頭為 _ (底線) 的資料還有設定隱藏檔案會被忽略。<br>因為在你把網頁推到伺服器端的時候，Hexo或先把所有原始檔案渲染成Html檔案，在推上伺服器，所以不重要或想要忽略的檔案，可以設定隱藏或是在檔案名稱開頭加上_ (底線)。<br>但除了 _posts 資料夾，因為_posts資料夾內會存放所有你的文章Markdonw檔案。<br>而渲染完成的 檔案會被放到 public 資料夾，而其他檔案會被拷貝過去。</p>
+<h2 id="themes-資料夾"><a href="#themes-資料夾" class="headerlink" title="themes 資料夾"></a>themes 資料夾</h2><p>主題資料夾，裡面可以放各式各樣的主題，可以放自己的或網路上別人製作好提供的，然後 Hexo 會根據你_config.yml裡面主題設定要使用哪一個主題來渲染最後完成的HTML檔案。</p>
+<h1 id="第三步：在GitHub上建立一個新的Repository"><a href="#第三步：在GitHub上建立一個新的Repository" class="headerlink" title="第三步：在GitHub上建立一個新的Repository"></a>第三步：在GitHub上建立一個新的Repository</h1><ol>
+<li><p>先到Github開一個新的Repository</p>
+<img src="/2021/09/08/%E5%A6%82%E4%BD%95%E7%94%A8Hexo%E5%9C%A8Github%E4%B8%8A%E6%9E%B6%E8%A8%ADblog/1.jpg" class="" title="1.jpg"></li>
+<li><p>輸入Repo名稱 &gt; 選擇公開 &gt;建立</p>
+<img src="/2021/09/08/%E5%A6%82%E4%BD%95%E7%94%A8Hexo%E5%9C%A8Github%E4%B8%8A%E6%9E%B6%E8%A8%ADblog/2.jpg" class="" title="2.jpg"></li>
+</ol>
+<h1 id="第四步：安裝hexo-deployer-git，並部屬至Github"><a href="#第四步：安裝hexo-deployer-git，並部屬至Github" class="headerlink" title="第四步：安裝hexo-deployer-git，並部屬至Github"></a>第四步：安裝hexo-deployer-git，並部屬至Github</h1><p>回到終端機輸入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ npm hexo-deployer-git</span><br></pre></td></tr></table></figure>
+
+<h1 id="設定-config-yml"><a href="#設定-config-yml" class="headerlink" title="設定_config.yml"></a>設定_config.yml</h1><p>使用 VS CODE 打開剛剛建立好的HEXO資料夾</p>
+<img src="/2021/09/08/%E5%A6%82%E4%BD%95%E7%94%A8Hexo%E5%9C%A8Github%E4%B8%8A%E6%9E%B6%E8%A8%ADblog/3.jpg" class="" title="3.jpg">
+
+<p>開啟_config.yml</p>
+<img src="/2021/09/08/%E5%A6%82%E4%BD%95%E7%94%A8Hexo%E5%9C%A8Github%E4%B8%8A%E6%9E%B6%E8%A8%ADblog/4.jpg" class="" title="4.jpg">
+
+<p>裡面有很多相關設定，不一一介紹，主要只以可以成功部屬到Github需要設定的參數為主，其他沒提到的，可以到 <a href="https://hexo.io/zh-tw/docs/configuration">Hexo 官方文檔</a> 查詢。</p>
+<p><strong>以下設定以我自己為範例</strong></p>
+<p>url: doug0849.github.io<br>設定GitHub的repo設定網址</p>
+<p>設定主題<br>theme: landscape </p>
+<p>預設應該是landscape，若網路上下載了別人的主題，可以放到themes底下，設定好資料夾名稱，將這個參數改為資料夾名稱即可。</p>
+<p>最後設定部屬參數<br>在最後加上以下參數<br>deploy:<br>  type: git<br>  repo: <a href="https://github.com/Doug0849/doug0849.github.io.git">https://github.com/Doug0849/doug0849.github.io.git</a><br>  branch: main</p>
+<p>type輸入git<br>repo請輸入你完整的repo位置<br>branch: 改為main</p>
+<p>回到終端機執行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<h1 id="第五步：別忘了要把repo設定成Github-Page"><a href="#第五步：別忘了要把repo設定成Github-Page" class="headerlink" title="第五步：別忘了要把repo設定成Github Page"></a>第五步：別忘了要把repo設定成Github Page</h1><img src="/2021/09/08/%E5%A6%82%E4%BD%95%E7%94%A8Hexo%E5%9C%A8Github%E4%B8%8A%E6%9E%B6%E8%A8%ADblog/5.jpg" class="" title="5.jpg">
+
+<h1 id="第六步：訪問-https-你的帳戶名稱-github-io"><a href="#第六步：訪問-https-你的帳戶名稱-github-io" class="headerlink" title="第六步：訪問 https://你的帳戶名稱.github.io/"></a>第六步：訪問 https://你的帳戶名稱.github.io/</h1><p>基本上這樣就能在github上看到你的個人blog啦!<br>如果剛上傳應該不會馬上看到，可能過個五分鐘內就會顯示，<br>剩下就是設定其他相關參數，及寫下你的第一篇文章。</p>
+<h1 id="第七步：發文"><a href="#第七步：發文" class="headerlink" title="第七步：發文"></a>第七步：發文</h1><p>這邊只做簡易說明<br>使用終端機輸入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo new [title]</span><br></pre></td></tr></table></figure>
+
+<p>到_posts底下會看到一個你命名為 [title] 的 Markdown 檔案<br>就可以使用 Markdown 語法來撰寫你的文章<br>寫完後在終端機執行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>等個5分鐘，再次訪問 https://你的帳戶名稱.github.io/<br>看看文章有沒有PO上去啦!</p>
+<p>其他簡單的操作說明可以看<br><a href="https://doug0849.github.io/2021/09/09/Hexo%E6%93%8D%E4%BD%9C/">其他Hexo 操作</a></p>
+<p>詳細的其他說明一樣看<br><a href="https://hexo.io/zh-tw/docs/configuration">Hexo 官方文檔</a> 查詢。</p>
+]]></content>
+      <categories>
+        <category>技術筆記</category>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>技術筆記</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>建立一個Node.js本機伺服器</title>
+    <url>/2021/09/10/%E5%BB%BA%E7%AB%8BNode-js%E6%9C%AC%E6%A9%9F%E4%BC%BA%E6%9C%8D%E5%99%A8/</url>
+    <content><![CDATA[<p>開一個測試資料夾先，在裡面建立一個app.js的檔案，並用編輯器開啟</p>
+<img src="/2021/09/10/%E5%BB%BA%E7%AB%8BNode-js%E6%9C%AC%E6%A9%9F%E4%BC%BA%E6%9C%8D%E5%99%A8/1.jpg" class="">
+
+<h1 id="定義基本設定"><a href="#定義基本設定" class="headerlink" title="定義基本設定"></a>定義基本設定</h1><p>接著在app.js裡寫入以下程式碼</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">&#x27;http&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> hostName = <span class="string">&#x27;localhost&#x27;</span></span><br><span class="line"><span class="keyword">const</span> port = <span class="number">3000</span></span><br></pre></td></tr></table></figure>
+<p>轉譯為：<br>先載入Node.js的 http 模組塊<br>並定義主機名稱，因為是在自己的電腦上所以通常慣例我們都叫localhost<br>再來定義連接埠號 port = 3000</p>
+<p>接著要使用http模塊的createServer方式來建立伺服器，然後透過參數server來表達，<br>createServer需要有一個函數，他有兩個參數request(請求)跟response(回應)。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req,res</span>) =&gt;</span> &#123;</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="定義伺服器回應-HTTP-response"><a href="#定義伺服器回應-HTTP-response" class="headerlink" title="定義伺服器回應 HTTP response"></a>定義伺服器回應 HTTP response</h1><h2 id="觀念說明"><a href="#觀念說明" class="headerlink" title="觀念說明"></a>觀念說明</h2><p>大部分跟http伺服器有關的都會有兩個參數，request(請求)跟response(回應)，<br>因為伺服器總得接收到request,然後才會給出response，不然無法進行，<br><strong>req是由瀏覽器</strong><br><strong>req是由瀏覽器</strong><br><strong>req是由瀏覽器</strong>向<strong>伺服器</strong>發出的<strong>請求</strong></p>
+<p><strong>res則是經由我們設定回覆</strong>給<strong>瀏覽器</strong>的東西<br><strong>res則是經由我們設定回覆</strong>給<strong>瀏覽器</strong>的東西<br><strong>res則是經由我們設定回覆</strong>給<strong>瀏覽器</strong>的東西</p>
+<p>伺服器在回應時，通常會定義以下幾個資訊</p>
+<ol>
+<li>回應的 HTTP 狀態碼 (status code)</li>
+<li>設定回應的內容類型 Response Headers &gt; Content-Type</li>
+<li>把回應的內容傳送回去給瀏覽器 Response body &gt; <code>&lt;html&gt;...&lt;/html&gt;</code></li>
+</ol>
+<hr>
+<p><strong>插播</strong><br>HTTP 是 (HyperText Transfer Protocol 的縮寫)<br>HTTP 傳輸通訊協定就是<strong>電腦之間互相索取文件的溝通語言</strong><br>當瀏覽器發出請求通常會定義幾個資訊，Method、URL、Header、Message Body</p>
+<hr>
+<p>回正題，伺服器端回應HTTP response，通常會定義以下幾個資訊</p>
+<ol>
+<li>Status code(狀態碼)<br>可以想像成客戶端與伺服器端之間的招呼語，重要的是開頭第一個數字：</li>
+</ol>
+<ul>
+<li>2XX：成功回應，例如 200</li>
+<li>3XX：重新轉向，例如 301 (永久轉向)、302 (暫時轉向)</li>
+<li>4XX：客户端錯誤回應，例如 404 Not Found (找不到資源)</li>
+<li>5XX：伺服器的問題，例如 500 Internal Server Error</li>
+</ul>
+<p>我們先設定成功代碼</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req,res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.statusCode = <span class="number">200</span></span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>設定回應的內容<strong>類型</strong>，Response Headers &gt; Content-Type<br>一般都是用用瀏覽器看網頁，所以大部分內容類型是 HTML 文件 (text/html) 。<br>但有些時候伺服器回傳的可能是純文字 (text/plain) 、PDF 檔 (application/pdf) 、影片檔 (video/mpeg4) 、或者是經常用來傳送資料的 JSON 檔 (application/json) …。</li>
+</ol>
+<p>在來設定回應的內容類型，先以純文字來作回應</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req,res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.statusCode = <span class="number">200</span></span><br><span class="line">  res.setHeader(<span class="string">&#x27;Content-Type&#x27;</span>,<span class="string">&#x27;text/plain&#x27;</span>)</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>設定要回應給瀏覽器的<strong>內容</strong><br>因為已經定義為純文字內容，所以先以純文字做回應，可以用**res.end()**來做回應</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req,res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.statusCode = <span class="number">200</span></span><br><span class="line">  res.setHeader(<span class="string">&#x27;Content-Type&#x27;</span>,<span class="string">&#x27;text/plain&#x27;</span>)</span><br><span class="line">  res.end(<span class="string">&#x27;Hi! This is my first Node.js server!&#x27;</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h1 id="啟動伺服器"><a href="#啟動伺服器" class="headerlink" title="啟動伺服器"></a>啟動伺服器</h1><p>最後我們要啟動伺服器，要求他<strong>監聽</strong>瀏覽器傳來的<strong>request(請求)</strong><br>在node.js中我們可以使用在伺服器上使用</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">server.lisetn(port,serverName,<span class="function">() =&gt;</span> &#123;&#125;)</span><br></pre></td></tr></table></figure>
+<p>這個方法啟動伺服器需要port參數，serverName,和一個匿名函式</p>
+<p>最後把一開始定義好的參數帶進去，並在匿名函式內可以console.log一段顯示訊息</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> server = http.createServer(<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.statusCode = <span class="number">200</span></span><br><span class="line">  res.setHeader(<span class="string">&#x27;Content-Type&#x27;</span>, <span class="string">&#x27;text/plain&#x27;</span>)</span><br><span class="line">  res.end(<span class="string">&#x27;Hi! This is my first Node.js server!&#x27;</span>) </span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">server.listen(port, hostName, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`Server is running on http://<span class="subst">$&#123;hostName&#125;</span>:3000!`</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>接著回到在終端機上執行這個app.js<br>並且會得到伺服器啟動的訊息</p>
+<img src="/2021/09/10/%E5%BB%BA%E7%AB%8BNode-js%E6%9C%AC%E6%A9%9F%E4%BC%BA%E6%9C%8D%E5%99%A8/2.jpg" class="">
+
+<p>然後用瀏覽器開啟拜訪 <a href="http://localhost:3000/">http://localhost:3000</a> 就可以成功拜訪剛剛建立的伺服器。</p>
+
+
+<p>也就是你透過<strong>瀏覽器</strong> &gt; <strong>向你的電腦架設出來的伺服器發出請求</strong> &gt; <strong>你的電腦回覆給瀏覽器</strong> 這樣一連串的動作。</p>
+]]></content>
+      <categories>
+        <category>技術筆記</category>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>Node.js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>關於Node.js</title>
+    <url>/2021/09/10/%E9%97%9C%E6%96%BCNode-js/</url>
+    <content><![CDATA[<center><img src="/2021/09/10/%E9%97%9C%E6%96%BCNode-js/1.jpg" class="" title="1.jpg"></center>
+
+<h1 id="Node-js簡介"><a href="#Node-js簡介" class="headerlink" title="Node.js簡介"></a>Node.js簡介</h1><p>　　Node.js是一個JavaScript的執行環境(run-time environment)，以往 JavaScript 只可以在瀏覽器上被執行，但在2009年Node.js被<u><strong>Ryan Dahl</strong></u>開發出來後，當我們在電腦上安裝了 Node.js 就可以在電腦上直接執行副檔名為 .js 的 JavaScript 的檔案。</p>
+<span id="more"></span>
+<p>　　有了 Node.js，JavaScript 就成為其他的程式語言一樣 (例如：PHP、Python、Ruby、Java) ，擁有能夠開發網路應用程式的能力。有了 Node.js，JavaScript 就可以直接建立、讀取、修改和刪除電腦內的檔案，還可以執行和資料庫連線。 Node.js 也添加了網路應用程式需要的功能，例如作為伺服器處理客戶端發出請求 (request) 並給予回應 (response) 等。</p>
+<p>　　<strong>Ryan Dahl</strong>的設計靈感源自Flickr的一款上傳進度欄，在上傳過程中，瀏覽器並不清楚有多少檔案已經傳送到伺服器，除非向伺服器進行查詢，導致瀏覽器不止是要上傳照片，還要詢問伺服器上傳到多少，導致整個變得很慢，所以<strong>Ryan Dahl</strong>想出了一個更簡便的方法，他開始嘗試利用 JavaScript 的特性，使用了當時性能卓越的 Google Chrome JavaScript 引擎 V8 ，打造了 Node.js。</p>
+<p>　　Node.js非常擅長<strong>DIRT</strong>(data-intensive real-time) 直接翻譯是「數據密集以及實時」的應用，像是影音串流平台、聊天交友軟體、叫車平台都是需要實時處理大量數據的應用程式。很多知名的網站或是網路應用程式，後台都有使用到Javascript，例如：Paypal,Netflix,Uber。</p>
+<h1 id="Node-js安裝"><a href="#Node-js安裝" class="headerlink" title="Node.js安裝"></a>Node.js安裝</h1><p>　　安裝 Node.js 可以直接從 Node.js 的官方網站 <a href="https://nodejs.org/">https://nodejs.org</a> 下載安裝，可是因為實務開發上常常碰到不同專案會使用到不同版本 Node.js ，所以實務上比較常使用的是 Node Version Manager (nvm)，因為他可以簡易的切換Node.js的版本，就省得自己手動刪除再重新安裝，然後無窮無盡的做這件事情。</p>
+<p>　　搜尋Nvm(Node Version Manager)，會在Github上出現兩種版本，一種是給MacOS使用，一種是給Windows使用。</p>
+<ol>
+<li>安裝nvm-windows</li>
+</ol>
+<p>　　因為我是Windows系統，所以到 <a href="https://github.com/coreybutler/nvm-windows/releases">nvm-windows</a> 的github下載</p>
+<img src="/2021/09/10/%E9%97%9C%E6%96%BCNode-js/2.jpg" class="">
+
+<p>　　下載完成後執行安裝程序，一直下一步到安裝完成就好了，但如果要更改安裝路徑，路徑的資料夾名稱不能有空白，不然會有問題。</p>
+<p>　　安裝完後打開終端機 (Git Bash)。如果原本終端機已經打開，記得要重開。打開後輸入指令來確定安裝成功：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ nvm version</span><br></pre></td></tr></table></figure>
+
+<img src="/2021/09/10/%E9%97%9C%E6%96%BCNode-js/3.jpg" class="">
+
+<ol start="2">
+<li>用nvm安裝Node.js</li>
+</ol>
+<p>可以先在指令欄內輸入 nvm list available 來查看可以安裝的 Node.js的版本</p>
+<img src="/2021/09/10/%E9%97%9C%E6%96%BCNode-js/4.jpg" class="">
+
+<p>建議安裝有寫 <b>LTS (Long Term Support)</b> 的版本，意思是官方會持續維護這個版本比較長一段時間，會比較穩定。</p>
+<p>接著輸入 </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nvm install 14.17.6</span><br></pre></td></tr></table></figure>
+<p>就會安裝如圖最新的LTS版本了，安裝完基本上他會自動執行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nvm use 17.17.6</span><br></pre></td></tr></table></figure>
+<p>來使用這個版本的Node.js，若未來要切換版本，同樣也可以輸入這個指令</p>
+<p>若要查看當前使用的版本可以輸入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+
+<img src="/2021/09/10/%E9%97%9C%E6%96%BCNode-js/5.jpg" class="">
+
+<ol start="3">
+<li>在終端機上執行操作JavaScript</li>
+</ol>
+<p>安裝完Node.js後，就可以輸入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">node</span><br></pre></td></tr></table></figure>
+<p>進入node模式<br>接著就能輸入JavaScript的指令了</p>
+<img src="/2021/09/10/%E9%97%9C%E6%96%BCNode-js/6.jpg" class="">
+
+<p>按ctrl+c，兩次即可退出node模式<br>另外在終端機複製的指令是 ctrl + insert 貼上是 shift + insert<br>(insert就是方向鍵上面，最左上那一顆)</p>
+]]></content>
+      <categories>
+        <category>技術筆記</category>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>Node.js</tag>
       </tags>
   </entry>
   <entry>
@@ -219,276 +653,13 @@
 ]]></content>
       <categories>
         <category>AlphaCamp</category>
+        <category>Task</category>
       </categories>
       <tags>
         <tag>技術筆記</tag>
         <tag>AlphaCamp</tag>
         <tag>作業</tag>
         <tag>setAttribute()</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo操作</title>
-    <url>/2021/09/09/Hexo%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<h3 id="關於draft"><a href="#關於draft" class="headerlink" title="關於draft"></a>關於draft</h3><p>放在/source/_drafts下<br>可執行命令hexo new draft <code>&lt;title&gt;</code> 創建草稿<br>通過執行命令hexo publish <code>&lt;title&gt;</code> 可以把_drafts下的草稿文章推到_posts下</p>
-<span id="more"></span>
-<p>會按照new_post_name的配置來命名文章<br>如果有開啟_config裡的post_asset_folder: true，對應的asset資料夾也會一起移動<br>手動操作也是可以的，草稿最後會被解析到model(‘Post’)中，參數published變為0 （預設情况下不會傳給布局頁面進行渲染）<br>_config.yml中如果設定render_drafts: true<br>就會傳給布局頁面進行渲染<br>在generate或deploy時會自動把_drafts/下的文件解析生成到目標文件夾下（但不會移動到/source/_posts下）</p>
-<h3 id="關於New-Post"><a href="#關於New-Post" class="headerlink" title="關於New Post"></a>關於New Post</h3><p>執行命令hexo new title 就可以創建新文章<br>新文章會丟到/source/_posts底下<br>可以在站點_config裡面設定新文章預設命名<br>就可以在_posts底下自動用資料夾分類</p>
-<p>new_post_name: :year/:month/:title.md</p>
-<p>文章將會在_posts/2021/09/底下</p>
-<h3 id="關於產生靜態文件"><a href="#關於產生靜態文件" class="headerlink" title="關於產生靜態文件"></a>關於產生靜態文件</h3><p>執行命令hexo generate<br>這時候Hexo會將你用Markdown寫好的文章、圖片，會全部依照主體layout設定去生成HTML文件，這些檔案位於public底下，每一次執行就會依照source檔案底下有變動的的文章重新生成一次html文檔</p>
-<p>簡易命令寫法 hexo g<br>可以附帶參數 -w 將會隨時監控原始檔案的變動，只要一變動便會重新生成新的html，在本地測試時很好用，開一個終端機執行hexo serve啟動本地伺服器觀察，一個終端機執行 hexo g -w 將會持續幫你更新檔案。</p>
-<h3 id="關於部屬"><a href="#關於部屬" class="headerlink" title="關於部屬"></a>關於部屬</h3><p>執行命令hexo deploy<br>在執行hexo deploy之前要先執行 hexo generate來產生靜態文件，然後在執行hexo deploy就會將靜態文件上傳到指定位置。<br>Hexo預設支援github，只要在github開好repo並設定成github_page，可以在站點_config裡加入設定值</p>
-<p>deploy:<br>  type: git<br>  repo: <a href="https://github.com/%E5%80%8B%E4%BA%BA%E5%B8%B3%E8%99%9F/repo%E5%90%8D%E7%A8%B1">https://github.com/個人帳號/repo名稱</a><br>  branch: master(推送到master分支，若不使用master分支要設定到你repo設定的預設分支上)</p>
-<p>執行hexo deploy -m “commit message”<br>大概等於git commit -m “message”，但是這邊不使用git push檔案，因為會將所有原始資料上傳至Github造成檔案混亂，最好另外開一個branch來做檔案備份，或自己手動在本地電腦備份。</p>
-<h3 id="關於本地伺服器"><a href="#關於本地伺服器" class="headerlink" title="關於本地伺服器"></a>關於本地伺服器</h3><p>執行完hexo generate後若不想直接上傳到個人網路空間，<br>可以執行 hexo serve 來啟動本地伺服器，觀察檢查是否有其他問題。<br>本地伺服器位置位於 <a href="https://localhost:4000/">https://localhost:4000</a></p>
-<h3 id="關於站點配置-config-yml"><a href="#關於站點配置-config-yml" class="headerlink" title="關於站點配置_config.yml"></a>關於站點配置_config.yml</h3><p>有很多的基本配置都在這個文件裡，相關的配置變數可以詳官方網站的文件說明。<br><strong><a href="https://hexo.io/zh-cn/docs/configuration">Hexo配置</a></strong></p>
-]]></content>
-      <categories>
-        <category>技術筆記</category>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>技術筆記</tag>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo Next主題添加留言板</title>
-    <url>/2021/09/10/Hexo%E6%B7%BB%E5%8A%A0%E7%95%99%E8%A8%80%E6%9D%BF/</url>
-    <content><![CDATA[<h2 id="本篇使用的是utterances留言板"><a href="#本篇使用的是utterances留言板" class="headerlink" title="本篇使用的是utterances留言板"></a>本篇使用的是utterances留言板</h2><p>utterances是由TypeScript所構成的留言區套件，透過串接GitHub issue的方式來完成留言區功能(但需要GitHub帳號)，簡而言之就是它可以在文章底下留言，並且同步到GitHub專案留下一個issue留言。</p>
-<span id="more"></span>
-<h2 id="為什麼選擇用-utterances-留言板"><a href="#為什麼選擇用-utterances-留言板" class="headerlink" title="為什麼選擇用 utterances 留言板?"></a>為什麼選擇用 utterances 留言板?</h2><p>因為Blog全部架在GitHub上，感覺統一管理比較方便。</p>
-<h2 id="套件引用"><a href="#套件引用" class="headerlink" title="套件引用"></a>套件引用</h2><ul>
-<li>utterances: <a href="https://utteranc.es/">https://utteranc.es/</a></li>
-</ul>
-<h2 id="Step-1"><a href="#Step-1" class="headerlink" title="Step 1"></a>Step 1</h2><p>進入 utterances 後找到 <strong>configuration</strong></p>
-<img src="/2021/09/10/Hexo%E6%B7%BB%E5%8A%A0%E7%95%99%E8%A8%80%E6%9D%BF/1.jpg" class="" title="1.jpg">
-
-<h2 id="Step-2"><a href="#Step-2" class="headerlink" title="Step 2"></a>Step 2</h2><p>先點擊 utterances app 進到下個頁面</p>
-<img src="/2021/09/10/Hexo%E6%B7%BB%E5%8A%A0%E7%95%99%E8%A8%80%E6%9D%BF/2.jpg" class="" title="2.jpg">
-
-<h2 id="Step-3"><a href="#Step-3" class="headerlink" title="Step 3"></a>Step 3</h2><p>點擊安裝，然後再到個人GitHub的Setting裡的Applications設定utterances<br>看是要所有的Repo都可以引用這個套件，或是只有選擇的Repo可以使用，這邊我是選擇指有特定的選擇Repo可用</p>
-<img src="/2021/09/10/Hexo%E6%B7%BB%E5%8A%A0%E7%95%99%E8%A8%80%E6%9D%BF/3.jpg" class="" title="3.jpg">
-
-<h2 id="Step-4"><a href="#Step-4" class="headerlink" title="Step 4"></a>Step 4</h2><p>回到 utterances頁，輸入你的repo資料<br>我自己的範例是 doug0849/doug0849.github.io</p>
-<img src="/2021/09/10/Hexo%E6%B7%BB%E5%8A%A0%E7%95%99%E8%A8%80%E6%9D%BF/1.jpg" class="" title="1.jpg">
-
-<h2 id="Step-5"><a href="#Step-5" class="headerlink" title="Step 5"></a>Step 5</h2><p>再來 Blog Post ↔️ Issue Mapping 大概就是當有人留言後會出現的樣式，選第一個即可。</p>
-<img src="/2021/09/10/Hexo%E6%B7%BB%E5%8A%A0%E7%95%99%E8%A8%80%E6%9D%BF/4.jpg" class="" title="4.jpg">
-
-<h2 id="Step-6"><a href="#Step-6" class="headerlink" title="Step 6"></a>Step 6</h2><p>選一個你喜歡的樣式風格</p>
-<img src="/2021/09/10/Hexo%E6%B7%BB%E5%8A%A0%E7%95%99%E8%A8%80%E6%9D%BF/5.jpg" class="" title="5.jpg">
-
-<h2 id="Step-7"><a href="#Step-7" class="headerlink" title="Step 7"></a>Step 7</h2><p>複製JavaScript 到你模板裡要放Comment的位置</p>
-<img src="/2021/09/10/Hexo%E6%B7%BB%E5%8A%A0%E7%95%99%E8%A8%80%E6%9D%BF/6.jpg" class="" title="6.jpg">
-
-<p>每個模板的位置不太一樣，必須要找到正確的地方引入此段JS<br>以Hexo Next 模板來說，請丟到 Next 主題資料夾下 &gt; layout &gt; _partials &gt; comments.swig<br>開啟 comments.swig 找到</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;%- if page.comments %&#125;</span><br></pre></td></tr></table></figure>
-<p>把它丟在它下面</p>
-<img src="/2021/09/10/Hexo%E6%B7%BB%E5%8A%A0%E7%95%99%E8%A8%80%E6%9D%BF/7.jpg" class="" title="7.jpg">
-
-<p>最後到主題_config.yml最後補上</p>
-<p>utterances:<br>  enable: true</p>
-<p>這樣就完成啦!</p>
-]]></content>
-      <categories>
-        <category>技術筆記</category>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>技術筆記</tag>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VS Code - Markdown &amp; Hexo 自動補齊語法標籤設定</title>
-    <url>/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/</url>
-    <content><![CDATA[<p>在VS Code中寫Markdown，每次撰寫時遇到一些插入圖片或是其他語法覺得很麻煩，因為都不會自動補齊，因此上網找了些資訊看VS Code要怎麼調整才能達到這個功能。</p>
-<span id="more"></span>
-<p>首先點選文件&gt;首選項&gt;用戶片段</p>
-<img src="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/step1.png" class="" title="Step1">
-<p>接著會在上方有一個視窗，要輸入Markdown，點選Markdown.json</p>
-<img src="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/step2.png" class="" title="Step2">
-<p>在markdown.json 上面有一些範例</p>
-<img src="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/step3.png" class="" title="Step3">
-
-<p>Print to console 是標題<br>prefix 是要觸發的關鍵字<br>body 是觸發後的樣子，可以在後面補上(‘$1’)(‘$2’)，$代表執行快捷後光標自動跳到的位置</p>
-<p>再來要編寫適合自己的Markdonw<br>我希望要得到的完整語句是```javascript<br>可以添加</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&quot;Print to ```javascript&quot;: &#123;</span><br><span class="line">	&quot;prefix&quot;: &quot;```js&quot;,</span><br><span class="line">	&quot;body&quot;: [</span><br><span class="line">		&quot;```Javascript&quot;,</span><br><span class="line">		&quot;$1&quot;,</span><br><span class="line">		&quot;$2&quot;,</span><br><span class="line">		&quot;```&quot;,</span><br><span class="line">	],</span><br><span class="line">	&quot;description&quot;: &quot;js代碼塊&quot;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-
-<p>另外我是使用Hexo的框架，所以也可以自己加上Hexo相關的標籤語法</p>
-<img src="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/step4.png" class="" title="step4">
-
-<p>最後要在VS code的setting.json裡設定開啟Markdown的快捷功能</p>
-<img src="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/step5.png" class="" title="step5">
-</br>
-<img src="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/step6.png" class="" title="step6">
-</br>
-<img src="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/step7.png" class="" title="step7">
-</br>
-大功告成
-</br>
-<img src="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/step8.png" class="" title="step8">
-</br>
-<img src="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/step9.png" class="" title="step9">]]></content>
-      <categories>
-        <category>VS Code</category>
-      </categories>
-      <tags>
-        <tag>技術筆記</tag>
-        <tag>Hexo</tag>
-        <tag>Markdown</tag>
-        <tag>VScode</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ejs樣板語法技術筆記</title>
-    <url>/2021/09/08/ejs%E6%A8%A3%E6%9D%BF%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/</url>
-    <content><![CDATA[<p>在ejs樣版檔案下的標籤語意</p>
-<p>&lt;%   ‘脚本’ 标签，用于流程控制，无输出。<br>&lt;%_  删除其前面的空格符<br>&lt;%__ 在模板中，透过 __ 或 _p 辅助函数，即可取得翻译后的字符串，前者用于一般使用；而后者用于复数字符串。<br>     可詳<a href="https://hexo.io/zh-cn/docs/internationalization">Hexo官方文檔</a><br>&lt;%=  输出数据到模板（输出是转义 HTML 标签），像是等於innerHTML<br>&lt;%-  输出非转义的数据到模板，像是等於innerText<br>&lt;%#  注释标签，不执行、不输出内容<br>&lt;%%  输出字符串 ‘&lt;%’<br>%&gt;   一般结束标签<br>-%&gt;  删除紧随其后的换行符<br>_%&gt;  将结束标签后面的空格符删除</p>
-]]></content>
-      <categories>
-        <category>技術筆記</category>
-        <category>EJS</category>
-      </categories>
-      <tags>
-        <tag>技術筆記</tag>
-        <tag>EJS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>.toggle() 和 .appendchild()</title>
-    <url>/2021/09/09/toggle%E5%92%8Cappendchild/</url>
-    <content><![CDATA[<h2 id="toggle"><a href="#toggle" class="headerlink" title="toggle"></a>toggle</h2><p>範例</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">element.classList.toggle(&#x27;sample&#x27;) </span><br></pre></td></tr></table></figure>
-
-<p>element ：某元素，使用document.querySelecrot選出<br>.classList ：某元素的class屬性<br>.toggle(‘.sample’) ：</p>
-<p>如果class屬性裡面沒有sample則加上sample，<br>如果class屬性裡面有sample則刪除sample，</p>
-<span id="more"></span>
-
-<p>Node.appendChild(sample) 是將一個節點加到指定的父節點中所有子節點的最後面。如果sample這個節點已經存在document樹當中，那 appendChild(sample) 會將原本sample這個節點位置移動到node這個新的位置（不需要事先移除要移動的節點）。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// TodoList Delete and check</span></span><br><span class="line">list.addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> target = event.target;</span><br><span class="line">  <span class="keyword">const</span> parentElement = target.parentElement</span><br><span class="line">  <span class="comment">//按下垃圾桶，將項目刪除</span></span><br><span class="line">  <span class="keyword">if</span> (target.classList.contains(<span class="string">&quot;delete&quot;</span>)) &#123;</span><br><span class="line">    parentElement.remove();</span><br><span class="line">    <span class="comment">//Todo中項目按下名字，將項目移置done中</span></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target.tagName === <span class="string">&quot;LABEL&quot;</span>) &#123;</span><br><span class="line">    doneList.appendChild(parentElement)</span><br><span class="line">    target.classList.toggle(<span class="string">&quot;checked&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// DoneList Delete and back</span></span><br><span class="line">doneList.addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> target = event.target;</span><br><span class="line">  <span class="keyword">const</span> parentElement = target.parentElement</span><br><span class="line">  <span class="comment">//按下垃圾桶，將項目刪除</span></span><br><span class="line">  <span class="keyword">if</span> (target.classList.contains(<span class="string">&quot;delete&quot;</span>)) &#123;</span><br><span class="line">    parentElement.remove();</span><br><span class="line">    <span class="comment">//Done中項目按下名字，將項目移置Todo中</span></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target.tagName === <span class="string">&quot;LABEL&quot;</span>) &#123;</span><br><span class="line">    list.appendChild(parentElement)</span><br><span class="line">    target.classList.toggle(<span class="string">&quot;checked&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>技術筆記</category>
-        <category>JavaScript</category>
-      </categories>
-      <tags>
-        <tag>Javascript</tag>
-        <tag>技術筆記</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>今天是學寫Code的第107天</title>
-    <url>/2021/09/09/%E4%BB%8A%E5%A4%A9%E6%98%AF%E5%AD%B8%E5%AF%ABCode%E7%9A%84%E7%AC%AC107%E5%A4%A9/</url>
-    <content><![CDATA[<h5 id="今天是我學寫code的第107天"><a href="#今天是我學寫code的第107天" class="headerlink" title="今天是我學寫code的第107天"></a><center>今天是我學寫code的第107天</center></h5><p><strong><em><center>(歡呼加鼓掌!)</center></em></strong></p>
-<p>　　在2021年5月25日晚上這一天，對自己下了一個人生的新決定，決定要轉換跑道啦!<br>　　學到至今3個月多一些，加上第一次自己成功在Github上用Hexo架出靜態網頁，就在這邊稍微紀錄一下自己的轉職日記啦! XD</p>
-<img src="/2021/09/09/%E4%BB%8A%E5%A4%A9%E6%98%AF%E5%AD%B8%E5%AF%ABCode%E7%9A%84%E7%AC%AC107%E5%A4%A9/1.jpg" class="" title="1.jpg">
-<span id="more"></span>
-<p>　　再一次說說為什麼在這老大不小的年紀，就在今年年底即將正式年滿32歲的微大叔年紀，竟然毅然決然地決定換跑道吧!</p>
-<p>　　本身原本是從事建築設計產業的，但從大學開始半工半讀一直做到了現，到海外越南工作，到了前幾個月還是下了個決心轉換跑道了。</p>
-<p>　　原因的話，其實一方面是疫情影響的關係導致無法回親愛的臺灣，一方面是建築設計這產業在臺灣的處境真的越來越差，薪資待遇真的讓我覺得糟糕到很離譜，本身就須具備很多專業的知識及技術能力，還得花很多時間學習新的軟件操作及使用，但學這麼多卻完全不見薪水有多大的成長，反而變成理所應當的感覺，而且這產業所背負的責任壓力，時間壓力以及工作量卻又時常相當的大，所以就在想著若是回臺灣後到底要不要繼續這產業，最後最後自己內心的想法是”<strong>NO</strong>“，所以就就開始思考了，那我想做什麼?</p>
-<img src="/2021/09/09/%E4%BB%8A%E5%A4%A9%E6%98%AF%E5%AD%B8%E5%AF%ABCode%E7%9A%84%E7%AC%AC107%E5%A4%A9/2.jpg" class="" title="2.jpg">
-
-<p>　　這要回到小時候，其實自己的父親是一位很熱愛電腦的人，他在我小學一二年級的時候，就買了第一台window 95的電腦，後來甚至自己維修電腦做小生意賺錢，於是我從小就熱愛打電腦遊戲，後來父母覺得我們似乎有興趣，也把我們送到電腦補習班學習，但對於那個年紀連除法都不會的我來說，學程式語言真的太難了。後來父母就把我轉送到學習PhotoShop、DreamWeaver、Flash…但老實說現在大概只有PhotoShop功力還行吧，後來長大自己對這方面也比較有興趣又自己買書學了Illustrator，我想也是因為從小培養出對電腦相關的興趣，加上國中畢業時原本想要去念大安高中的資訊科，但那時候母親聽信親戚的話，那時候很多人覺得念技職學校沒未來，大家都要念普通高中然後進好名校，所以堅持不讓我念技職學校，也可能是這原因，又再心理埋下了另一個小小的遺憾，直至今日人生自己做主，所以就下定決心不如開始學習寫程式吧!</p>
-<img src="/2021/09/09/%E4%BB%8A%E5%A4%A9%E6%98%AF%E5%AD%B8%E5%AF%ABCode%E7%9A%84%E7%AC%AC107%E5%A4%A9/3.jpg" class="" title="3.jpg">
-
-<p>　　剛好越南疫情也相當嚴重，所有工作幾乎都停擺，工作也非常不忙碌，所以有比較多的時間可以專心學習，就這樣<strong>邊打電動邊工作邊學怎麼Programming</strong>到今天<strong>107</strong>天的日子裡，已經會如何使用Express.js以及MongoDB來架設基本的網站，雖說還不是很熟悉，但也算是一個歷程了，再來又自己學習了如何在Github架出靜態網頁，如何用Hexo框架系統在Github架設個人blog，也算是滿滿的成就感啦!(再次為自己歡呼加鼓掌)</p>
-<img src="/2021/09/09/%E4%BB%8A%E5%A4%A9%E6%98%AF%E5%AD%B8%E5%AF%ABCode%E7%9A%84%E7%AC%AC107%E5%A4%A9/4.jpg" class="" title="4.jpg">
-
-<p>　　再來下個階段目標，因為目前這個Blog還是套用超具人氣的樣板(可是它真的很好用，害我有點懶惰)，接著開始會自己學習把所有Blog頁面重新架設過，並建立出自己風格的Hexo主題，然後陸陸續續把相關練習作品整理起來，在這邊當成最好的履歷表呈現出來，也繼續學習更多複雜精進的技術，另一方面看看是否會幫助到一些跟我一樣半路出家的人，接著希望明年差不多這個時間，看看是否能順利達成轉職目標，就讓我們繼續看下去吧!</p>
-<img src="/2021/09/09/%E4%BB%8A%E5%A4%A9%E6%98%AF%E5%AD%B8%E5%AF%ABCode%E7%9A%84%E7%AC%AC107%E5%A4%A9/5.jpg" class="" title="5.jpg">]]></content>
-      <categories>
-        <category>日記</category>
-        <category>轉職</category>
-      </categories>
-      <tags>
-        <tag>轉職</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何用Hexo在Github上架設blog</title>
-    <url>/2021/09/08/%E5%A6%82%E4%BD%95%E7%94%A8Hexo%E5%9C%A8Github%E4%B8%8A%E6%9E%B6%E8%A8%ADblog/</url>
-    <content><![CDATA[<h1 id="廢話前言"><a href="#廢話前言" class="headerlink" title="廢話前言"></a>廢話前言</h1><h2 id="想要架設部落格作為記錄自己生活或相關筆記嗎"><a href="#想要架設部落格作為記錄自己生活或相關筆記嗎" class="headerlink" title="想要架設部落格作為記錄自己生活或相關筆記嗎?"></a>想要架設部落格作為記錄自己生活或相關筆記嗎?</h2><p>會想架設部落格的主要原因是自己正在上Javascript課程，課程有提到要開個部落格來作為自己的技術筆記、心得、或一些自己想記錄的東西作為備忘，畢竟學海無涯，有很多東西學會後久久不使用真的會忘記。</p>
-<p>後來使用了一些大眾市面上的blog，但終究覺得不合用，一方面更想要有自己的風格，一方面對於自己來說希望更加方便撰寫紀錄及發布。而我這個初心者才知道，原來可以在Github撰寫靜態網頁(蠢)，所以就開始研究到底該如何在Github上架設一個簡易的靜態blog之旅。</p>
-<span id="more"></span>
-<p>起初還真的不知道要怎麼做，只知道如何在Github上呈現index.html，然後再自己手動寫連結…甚至最後想說是不是全部手刻HTML(蠢x2)，後來想想這不對啊!! 這也太麻煩且浪費時間了，不如用市面上的blog就好，不然完全本末倒置(笑，所以就開始試著搜尋網路上有沒有更適合的作法。<br>後來發現網路上有很多已經完成的樣板，只要下在別人寫好的主體下來加以修改撰寫，在推上Github，就可以完成自己的個人BLOG了。一開始搜尋到的是jekyll但它是ruby撰寫的，所以我也沒有環境系統，所以搞了老半天，但經過一翻嘗試還是有很多問題，覺得搞得一個頭兩個大的時候，讓我搜尋到了Hexo!!</p>
-<blockquote><p>Hexo 是一個快速、簡單且強大的網誌框架。Hexo 使用 Markdown（或其他標記語言）解析您的文章，並在幾秒鐘內，透過漂亮的主題產生靜態檔案。</p>
-<footer><strong>@Hexo</strong><cite><a href="https://hexo.io/zh-cn/docs/">hexo.io/zh-cn/docs</a></cite></footer></blockquote>
-
-
-
-<p>他主要又是以Javascript, Node.js 來操作，完全符合我現在在上課的內容，所以環境架設也都已經完成了，做了點嘗試沒想到一下就成功架上Github，中間也沒有遇到太多問題，所以最後決定使用Hexo作為主要的撰寫框架工具啦!順便在這邊紀錄使用的情況，及寫下相關技術筆記。</p>
-<hr>
-<h1 id="第一步：安裝必備程式"><a href="#第一步：安裝必備程式" class="headerlink" title="第一步：安裝必備程式"></a>第一步：安裝必備程式</h1><h2 id="程式清單："><a href="#程式清單：" class="headerlink" title="程式清單："></a>程式清單：</h2><ul>
-<li><a href="https://git-scm.com/downloads">Git</a> 終端機 (Windows推薦)</li>
-<li><a href="https://nodejs.org/en/">Node.js</a> 讓你可以在終端機上以Javascript指令來操作電腦</li>
-<li><a href="https://code.visualstudio.com/">Visual Studio Code</a>方便你在個人電腦上編程<br>詳細可以參閱 <a href="https://hexo.io/zh-tw/docs/index.html">Hexo官方文件</a></li>
-</ul>
-<p>如果完全沒有使用過Git Bash終端機及使用GitHub的同學<br>就是要先有自己的Github帳號啦! 之後要在Git Bash裡設定你的識別資料</p>
-<p>範例</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name &quot;John Doe&quot;</span><br><span class="line">$ git config --global user.email johndoe@example.com</span><br></pre></td></tr></table></figure>
-
-<p>user.name 為你的Github帳戶<br>user.email 為你的Github帳戶設定的email</p>
-<h1 id="第二步：在電腦上開設專屬Blog資料夾，初始化Hexo檔案"><a href="#第二步：在電腦上開設專屬Blog資料夾，初始化Hexo檔案" class="headerlink" title="第二步：在電腦上開設專屬Blog資料夾，初始化Hexo檔案"></a>第二步：在電腦上開設專屬Blog資料夾，初始化Hexo檔案</h1><ol>
-<li>安裝完後請打開 Git Bash 終端機 </li>
-<li>在終端機上輸入 npm install -g hexo-cli ，來安裝hexo</li>
-<li>一旦 Hexo 安裝完成後，執行下列指令，Hexo 就會在指定資料夾中建立所有需要的檔案。</li>
-</ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt; // folder輸入你要建立的資料夾名稱</span><br><span class="line">                     // 若想要在別的硬碟裡面建立，記得先使用終端機輸入cd 移動到你要建立blog資料夾的位置</span><br><span class="line">$ cd &lt;folder&gt; // folder輸入你剛剛建立好的資料夾名稱</span><br><span class="line">$ npm install // 安裝初始化npm</span><br><span class="line">$ git init // 若想要在電腦上使用git版本控制，記得要順便安裝git，不理解或不想用可忽略</span><br></pre></td></tr></table></figure>
-
-<p>建立完成後，專案資料夾會有下列檔案：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── scaffolds</span><br><span class="line">├── source</span><br><span class="line">|   ├── _drafts</span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes</span><br></pre></td></tr></table></figure>
-
-<h2 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h2><p>此檔案為網站配置檔案(站點配置)，可以在這個檔案配置大部分的設定。</p>
-<h2 id="source-資料夾"><a href="#source-資料夾" class="headerlink" title="source 資料夾"></a>source 資料夾</h2><p>原始檔案資料夾是放置內容的地方。檔案或資料夾名稱開頭為 _ (底線) 的資料還有設定隱藏檔案會被忽略。<br>因為在你把網頁推到伺服器端的時候，Hexo或先把所有原始檔案渲染成Html檔案，在推上伺服器，所以不重要或想要忽略的檔案，可以設定隱藏或是在檔案名稱開頭加上_ (底線)。<br>但除了 _posts 資料夾，因為_posts資料夾內會存放所有你的文章Markdonw檔案。<br>而渲染完成的 檔案會被放到 public 資料夾，而其他檔案會被拷貝過去。</p>
-<h2 id="themes-資料夾"><a href="#themes-資料夾" class="headerlink" title="themes 資料夾"></a>themes 資料夾</h2><p>主題資料夾，裡面可以放各式各樣的主題，可以放自己的或網路上別人製作好提供的，然後 Hexo 會根據你_config.yml裡面主題設定要使用哪一個主題來渲染最後完成的HTML檔案。</p>
-<h1 id="第三步：在GitHub上建立一個新的Repository"><a href="#第三步：在GitHub上建立一個新的Repository" class="headerlink" title="第三步：在GitHub上建立一個新的Repository"></a>第三步：在GitHub上建立一個新的Repository</h1><ol>
-<li><p>先到Github開一個新的Repository</p>
-<img src="/2021/09/08/%E5%A6%82%E4%BD%95%E7%94%A8Hexo%E5%9C%A8Github%E4%B8%8A%E6%9E%B6%E8%A8%ADblog/1.jpg" class="" title="1.jpg"></li>
-<li><p>輸入Repo名稱 &gt; 選擇公開 &gt;建立</p>
-<img src="/2021/09/08/%E5%A6%82%E4%BD%95%E7%94%A8Hexo%E5%9C%A8Github%E4%B8%8A%E6%9E%B6%E8%A8%ADblog/2.jpg" class="" title="2.jpg"></li>
-</ol>
-<h1 id="第四步：安裝hexo-deployer-git，並部屬至Github"><a href="#第四步：安裝hexo-deployer-git，並部屬至Github" class="headerlink" title="第四步：安裝hexo-deployer-git，並部屬至Github"></a>第四步：安裝hexo-deployer-git，並部屬至Github</h1><p>回到終端機輸入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ npm hexo-deployer-git</span><br></pre></td></tr></table></figure>
-
-<h1 id="設定-config-yml"><a href="#設定-config-yml" class="headerlink" title="設定_config.yml"></a>設定_config.yml</h1><p>使用 VS CODE 打開剛剛建立好的HEXO資料夾</p>
-<img src="/2021/09/08/%E5%A6%82%E4%BD%95%E7%94%A8Hexo%E5%9C%A8Github%E4%B8%8A%E6%9E%B6%E8%A8%ADblog/3.jpg" class="" title="3.jpg">
-
-<p>開啟_config.yml</p>
-<img src="/2021/09/08/%E5%A6%82%E4%BD%95%E7%94%A8Hexo%E5%9C%A8Github%E4%B8%8A%E6%9E%B6%E8%A8%ADblog/4.jpg" class="" title="4.jpg">
-
-<p>裡面有很多相關設定，不一一介紹，主要只以可以成功部屬到Github需要設定的參數為主，其他沒提到的，可以到 <a href="https://hexo.io/zh-tw/docs/configuration">Hexo 官方文檔</a> 查詢。</p>
-<p><strong>以下設定以我自己為範例</strong></p>
-<p>url: doug0849.github.io<br>設定GitHub的repo設定網址</p>
-<p>設定主題<br>theme: landscape </p>
-<p>預設應該是landscape，若網路上下載了別人的主題，可以放到themes底下，設定好資料夾名稱，將這個參數改為資料夾名稱即可。</p>
-<p>最後設定部屬參數<br>在最後加上以下參數<br>deploy:<br>  type: git<br>  repo: <a href="https://github.com/Doug0849/doug0849.github.io.git">https://github.com/Doug0849/doug0849.github.io.git</a><br>  branch: main</p>
-<p>type輸入git<br>repo請輸入你完整的repo位置<br>branch: 改為main</p>
-<p>回到終端機執行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<h1 id="第五步：別忘了要把repo設定成Github-Page"><a href="#第五步：別忘了要把repo設定成Github-Page" class="headerlink" title="第五步：別忘了要把repo設定成Github Page"></a>第五步：別忘了要把repo設定成Github Page</h1><img src="/2021/09/08/%E5%A6%82%E4%BD%95%E7%94%A8Hexo%E5%9C%A8Github%E4%B8%8A%E6%9E%B6%E8%A8%ADblog/5.jpg" class="" title="5.jpg">
-
-<h1 id="第六步：訪問-https-你的帳戶名稱-github-io"><a href="#第六步：訪問-https-你的帳戶名稱-github-io" class="headerlink" title="第六步：訪問 https://你的帳戶名稱.github.io/"></a>第六步：訪問 https://你的帳戶名稱.github.io/</h1><p>基本上這樣就能在github上看到你的個人blog啦!<br>如果剛上傳應該不會馬上看到，可能過個五分鐘內就會顯示，<br>剩下就是設定其他相關參數，及寫下你的第一篇文章。</p>
-<h1 id="第七步：發文"><a href="#第七步：發文" class="headerlink" title="第七步：發文"></a>第七步：發文</h1><p>這邊只做簡易說明<br>使用終端機輸入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo new [title]</span><br></pre></td></tr></table></figure>
-
-<p>到_posts底下會看到一個你命名為 [title] 的 Markdown 檔案<br>就可以使用 Markdown 語法來撰寫你的文章<br>寫完後在終端機執行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>等個5分鐘，再次訪問 https://你的帳戶名稱.github.io/<br>看看文章有沒有PO上去啦!</p>
-<p>其他簡單的操作說明可以看<br><a href="https://doug0849.github.io/2021/09/09/Hexo%E6%93%8D%E4%BD%9C/">其他Hexo 操作</a></p>
-<p>詳細的其他說明一樣看<br><a href="https://hexo.io/zh-tw/docs/configuration">Hexo 官方文檔</a> 查詢。</p>
-]]></content>
-      <categories>
-        <category>技術筆記</category>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>技術筆記</tag>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
