@@ -251,18 +251,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="此文章僅記錄作業需要特別注意處"><a href="#此文章僅記錄作業需要特別注意處" class="headerlink" title="此文章僅記錄作業需要特別注意處"></a>此文章僅記錄作業需要特別注意處</h1><h2 id="Array-prototype-push"><a href="#Array-prototype-push" class="headerlink" title="Array.prototype.push()"></a>Array.prototype.push()</h2><p>當用<strong>常數</strong>宣告了一個陣列容器的時候，若要加入物件或其他東西要使用Array.prototype.push()</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> movies = []</span><br><span class="line"></span><br><span class="line">axios</span><br><span class="line">  .get(INDEX_URL)</span><br><span class="line">  .then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">    movies.push(...response.data.results)</span><br><span class="line">    renderMovieList(movies)</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function">(<span class="params">err</span>) =&gt;</span> <span class="built_in">console</span>.log(err))</span><br></pre></td></tr></table></figure>
-
-<h2 id="展開運算子"><a href="#展開運算子" class="headerlink" title="展開運算子"></a>展開運算子</h2><p>…response.data.results 前面的… 是展開運算子，會將陣列內容展開</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> movies = []; <span class="comment">//空陣列，空容器</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//目標：用 push 方法把 movies 從空陣列變成 [1,2,3]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//方法一</span></span><br><span class="line">movies.push(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>); <span class="comment">//傳入 3 個參數：1,2,3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//方法二</span></span><br><span class="line">movies.push(...[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]); <span class="comment">//把陣列用展開運算子打開，打開後就和方法一一模一樣</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//方法三</span></span><br><span class="line"><span class="keyword">const</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; <span class="comment">//做一個陣列</span></span><br><span class="line">movies.push(...numbers); <span class="comment">//和方法二同樣意思</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="關於dataset"><a href="#關於dataset" class="headerlink" title="關於dataset"></a>關於dataset</h2><p>可以在元素標籤上設定data資料，在使用JS去取得點擊目標元素上的dataset資料</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;user&quot;</span> <span class="attr">data-id</span>=<span class="string">&quot;1234567890&quot;</span> <span class="attr">data-user</span>=<span class="string">&quot;ac-genie&quot;</span> <span class="attr">data-date-of-birth</span>&gt;</span>AC Genie<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>然後我們可以呼叫 dataset. 來取得這些屬性的值，你會發現這些值的型態都是字串*：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> el = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;#user&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(el.dataset.user)</span><br><span class="line"><span class="comment">//ac-genie</span></span><br><span class="line"><span class="built_in">console</span>.log(el.dataset.id)</span><br><span class="line"><span class="comment">//1234567890</span></span><br><span class="line"><span class="built_in">console</span>.log(el.dataset.dateOfBirth)</span><br><span class="line"><span class="comment">//(空字串)</span></span><br></pre></td></tr></table></figure>
-
+          <h1 id="此文章僅記錄作業時提醒自己遇到的問題及需要注意處"><a href="#此文章僅記錄作業時提醒自己遇到的問題及需要注意處" class="headerlink" title="此文章僅記錄作業時提醒自己遇到的問題及需要注意處"></a>此文章僅記錄作業時提醒自己遇到的問題及需要注意處</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/09/11/%E5%AD%B8%E6%9C%9F2-2-S2-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E7%B7%B4%E7%BF%92%E5%AF%A6%E4%BD%9C/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1066,6 +1063,17 @@
       </div>
   </nav>
 </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/doug0849" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;doug0849" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:etaomonk@gmail.com" title="E-Mail → mailto:etaomonk@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/dlchou89" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;dlchou89" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
 
 
 

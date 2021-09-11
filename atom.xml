@@ -24,13 +24,7 @@
     <updated>2021-09-10T18:12:50.000Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;此文章僅記錄作業需要特別注意處&quot;&gt;&lt;a href=&quot;#此文章僅記錄作業需要特別注意處&quot; class=&quot;headerlink&quot; title=&quot;此文章僅記錄作業需要特別注意處&quot;&gt;&lt;/a&gt;此文章僅記錄作業需要特別注意處&lt;/h1&gt;&lt;h2</summary>
-        
-      
+    <summary type="html">&lt;h1 id=&quot;此文章僅記錄作業時提醒自己遇到的問題及需要注意處&quot;&gt;&lt;a href=&quot;#此文章僅記錄作業時提醒自己遇到的問題及需要注意處&quot; class=&quot;headerlink&quot; title=&quot;此文章僅記錄作業時提醒自己遇到的問題及需要注意處&quot;&gt;&lt;/a&gt;此文章僅記錄作業時提醒自己遇到的問題及需要注意處&lt;/h1&gt;</summary>
     
     
     
@@ -350,56 +344,6 @@
   </entry>
   
   <entry>
-    <title>JavaScript-Array相關</title>
-    <link href="https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-Array%E7%9B%B8%E9%97%9C/"/>
-    <id>https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-Array%E7%9B%B8%E9%97%9C/</id>
-    <published>2021-06-09T10:46:37.000Z</published>
-    <updated>2021-06-09T10:46:37.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
-&lt;h1 id=&quot;陣列操作方式&quot;&gt;&lt;a href=&quot;#陣列操作方式&quot; class=&quot;headerlink&quot; title=&quot;陣列操作方式&quot;&gt;&lt;/a&gt;陣列操作方式&lt;/h1&gt;&lt;h2 id=&quot;map&quot;&gt;&lt;a href=&quot;#map&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="技術筆記" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
-    
-    <category term="JavaScript" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/"/>
-    
-    
-    <category term="JavaScript" scheme="https://doug0849.github.io/tags/JavaScript/"/>
-    
-    <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
-    
-    <category term="Array" scheme="https://doug0849.github.io/tags/Array/"/>
-    
-    <category term="陣列" scheme="https://doug0849.github.io/tags/%E9%99%A3%E5%88%97/"/>
-    
-    <category term="map" scheme="https://doug0849.github.io/tags/map/"/>
-    
-    <category term="filter" scheme="https://doug0849.github.io/tags/filter/"/>
-    
-    <category term="find" scheme="https://doug0849.github.io/tags/find/"/>
-    
-    <category term="some" scheme="https://doug0849.github.io/tags/some/"/>
-    
-    <category term="findIndex" scheme="https://doug0849.github.io/tags/findIndex/"/>
-    
-    <category term="every" scheme="https://doug0849.github.io/tags/every/"/>
-    
-    <category term="Array.prototype.push()" scheme="https://doug0849.github.io/tags/Array-prototype-push/"/>
-    
-    <category term="...展開運算子" scheme="https://doug0849.github.io/tags/%E5%B1%95%E9%96%8B%E9%81%8B%E7%AE%97%E5%AD%90/"/>
-    
-  </entry>
-  
-  <entry>
     <title>JavaScript-CSS相關</title>
     <link href="https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-CSS%E7%9B%B8%E9%97%9C/"/>
     <id>https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-CSS%E7%9B%B8%E9%97%9C/</id>
@@ -423,9 +367,9 @@
     <category term="JavaScript" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/"/>
     
     
-    <category term="JavaScript" scheme="https://doug0849.github.io/tags/JavaScript/"/>
-    
     <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
+    
+    <category term="JavaScript" scheme="https://doug0849.github.io/tags/JavaScript/"/>
     
     <category term="toggle" scheme="https://doug0849.github.io/tags/toggle/"/>
     
@@ -448,15 +392,65 @@
     <category term="JavaScript" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/"/>
     
     
-    <category term="JavaScript" scheme="https://doug0849.github.io/tags/JavaScript/"/>
-    
     <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
+    
+    <category term="JavaScript" scheme="https://doug0849.github.io/tags/JavaScript/"/>
     
     <category term="function" scheme="https://doug0849.github.io/tags/function/"/>
     
+    <category term="IIFE" scheme="https://doug0849.github.io/tags/IIFE/"/>
+    
     <category term="函式" scheme="https://doug0849.github.io/tags/%E5%87%BD%E5%BC%8F/"/>
     
-    <category term="IIFE" scheme="https://doug0849.github.io/tags/IIFE/"/>
+  </entry>
+  
+  <entry>
+    <title>JavaScript-Array相關</title>
+    <link href="https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-Array%E7%9B%B8%E9%97%9C/"/>
+    <id>https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-Array%E7%9B%B8%E9%97%9C/</id>
+    <published>2021-06-09T10:46:37.000Z</published>
+    <updated>2021-06-09T10:46:37.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
+&lt;h1 id=&quot;陣列操作方式&quot;&gt;&lt;a href=&quot;#陣列操作方式&quot; class=&quot;headerlink&quot; title=&quot;陣列操作方式&quot;&gt;&lt;/a&gt;陣列操作方式&lt;/h1&gt;&lt;h2 id=&quot;map&quot;&gt;&lt;a href=&quot;#map&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="技術筆記" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
+    
+    <category term="JavaScript" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/"/>
+    
+    
+    <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
+    
+    <category term="JavaScript" scheme="https://doug0849.github.io/tags/JavaScript/"/>
+    
+    <category term="Array.prototype.push()" scheme="https://doug0849.github.io/tags/Array-prototype-push/"/>
+    
+    <category term="...展開運算子" scheme="https://doug0849.github.io/tags/%E5%B1%95%E9%96%8B%E9%81%8B%E7%AE%97%E5%AD%90/"/>
+    
+    <category term="filter" scheme="https://doug0849.github.io/tags/filter/"/>
+    
+    <category term="find" scheme="https://doug0849.github.io/tags/find/"/>
+    
+    <category term="some" scheme="https://doug0849.github.io/tags/some/"/>
+    
+    <category term="findIndex" scheme="https://doug0849.github.io/tags/findIndex/"/>
+    
+    <category term="map" scheme="https://doug0849.github.io/tags/map/"/>
+    
+    <category term="every" scheme="https://doug0849.github.io/tags/every/"/>
+    
+    <category term="陣列" scheme="https://doug0849.github.io/tags/%E9%99%A3%E5%88%97/"/>
+    
+    <category term="Array" scheme="https://doug0849.github.io/tags/Array/"/>
     
   </entry>
   
@@ -485,15 +479,17 @@
     <category term="JavaScript" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/"/>
     
     
-    <category term="JavaScript" scheme="https://doug0849.github.io/tags/JavaScript/"/>
-    
     <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
     
-    <category term="DOM" scheme="https://doug0849.github.io/tags/DOM/"/>
+    <category term="JavaScript" scheme="https://doug0849.github.io/tags/JavaScript/"/>
+    
+    <category term="matches" scheme="https://doug0849.github.io/tags/matches/"/>
     
     <category term="querySelector" scheme="https://doug0849.github.io/tags/querySelector/"/>
     
     <category term="parentElement" scheme="https://doug0849.github.io/tags/parentElement/"/>
+    
+    <category term="DOM" scheme="https://doug0849.github.io/tags/DOM/"/>
     
     <category term="children" scheme="https://doug0849.github.io/tags/children/"/>
     
@@ -504,8 +500,6 @@
     <category term="lastElementChild" scheme="https://doug0849.github.io/tags/lastElementChild/"/>
     
     <category term="appendChild" scheme="https://doug0849.github.io/tags/appendChild/"/>
-    
-    <category term="matches" scheme="https://doug0849.github.io/tags/matches/"/>
     
     <category term="contains" scheme="https://doug0849.github.io/tags/contains/"/>
     
