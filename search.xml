@@ -999,8 +999,7 @@
 </ol>
 <p>每設一個 breakpoint 意味需要準備多一份 CSS 樣式，要抓得多細是看設計的需求。</p>
 <p>除了幾個在設備間切換的主要分界點，也會設定次要分界點來調整比較細微的 CSS 變化，像是元素的邊距、避免文字超過頁面寬度，或是調整圖片尺寸。</p>
-<p>media queries</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width</span>: <span class="number">600px</span>) &#123;...//styles&#125;</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">min-width</span>: <span class="number">600px</span>) <span class="keyword">and</span> (<span class="attribute">max-width</span>: <span class="number">900px</span>) &#123;...//styles&#125;</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">min-width</span>: <span class="number">900px</span>) &#123;...//styles&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="media-queries使用"><a href="#media-queries使用" class="headerlink" title="media queries使用"></a>media queries使用</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width</span>: <span class="number">600px</span>) &#123;...//styles&#125;</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">min-width</span>: <span class="number">600px</span>) <span class="keyword">and</span> (<span class="attribute">max-width</span>: <span class="number">900px</span>) &#123;...//styles&#125;</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">min-width</span>: <span class="number">900px</span>) &#123;...//styles&#125;</span><br></pre></td></tr></table></figure>
 <p>可以使用 and、or 或 not 等運算子。</p>
 <h2 id="import-其他文件"><a href="#import-其他文件" class="headerlink" title="@import 其他文件"></a>@import 其他文件</h2><p>如果樣式太多想要把文件拆開，可以使用 @import 來導入其他文件，仍然可以在同一份 CSS 裡統一管理網站樣式。</p>
 <p>運用 url() 來載入文件，仍然可以串接 media type and feature：<br>@import url(‘styles.css’) screen and (max-width: 670px);</p>
@@ -1065,6 +1064,29 @@
         <tag>技術筆記</tag>
         <tag>CSS</tag>
         <tag>優先級</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>隨記-越南疫情近況</title>
+    <url>/2021/09/12/%E9%9A%A8%E8%A8%98-%E8%B6%8A%E5%8D%97%E7%96%AB%E6%83%85%E8%BF%91%E6%B3%81/</url>
+    <content><![CDATA[<pre><code>今天是自從2019年2月20我來越南工作開始算起的第935天，最近越南疫情稍微有好轉一些了，自從宣布封城開始經過兩星期左右，而確診病數也確實看到明顯下降了，值得開心。
+
+昨天的新聞報導胡志明的確診病例為5629例，跟高峰期每天的8000多相比少了很多，總算看得到點點希望了，政府也宣布，部分地區會在16號開始解除封閉，胡志明可能還要再等等，也許是10月吧，到那時候我大概就會立刻提離職，然後準備收拾行曩回臺灣去了，身在臺灣的各位朋友們!!真的很幸福啊!! 回臺灣後大概會計畫邊休息邊玩邊走走看看，然後持續進行著轉職的計畫囉。
+
+關於健身，今年4月份工作很忙，然後就沒體力去，到了5月份準備要去運動，結果那個周末就直接宣布健身房停止營業，所以也是從那時候就開始就不敢出門了，越南爆發時間大概是跟臺灣第一次疫情爆發差不多時間，然後就從那個時候一直關到今天沒出門，頂多上下樓去辦公室，後來正式宣布Work From Home的時候就幾乎沒踏出家門了，除非下樓拿快遞的食材之類的，日子大概不外乎就是工作、打電動、看漫畫、睡覺、上課、學技術，每天無限循環。
+
+最近每天也沒什麼新鮮事，就是每天在寫寫技術筆記，繼續上課補強，或是自己看些技術文章，還有日夜顛倒，對，嚴重的日夜顛倒，搞得身體不太舒服，看看我這篇發文時間就知道了，所以準備來去睡覺了，稅前隨手寫個日記醬，搭晚安。
+
+&#123;% asset_img 1.jpg %&#125;
+</code></pre>
+]]></content>
+      <categories>
+        <category>日記</category>
+        <category>越南</category>
+      </categories>
+      <tags>
+        <tag>日記</tag>
+        <tag>越南</tag>
       </tags>
   </entry>
 </search>
