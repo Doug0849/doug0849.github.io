@@ -200,6 +200,105 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,zh-TW,default">
+    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/09/11/%E7%94%A8hexo%E6%8F%90%E4%BA%A4%E9%83%A8%E8%90%BD%E6%A0%BC%E7%9A%84sitemap%E5%88%B0google-Search-Console/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Doug 道">
+      <meta itemprop="description" content="關於轉職紀錄、技術筆記、隨寫">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="想要邊撸鐵邊學CODE的DOUG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/09/11/%E7%94%A8hexo%E6%8F%90%E4%BA%A4%E9%83%A8%E8%90%BD%E6%A0%BC%E7%9A%84sitemap%E5%88%B0google-Search-Console/" class="post-title-link" itemprop="url">用hexo提交部落格的sitemap到Google Search Console</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-11 07:46:55" itemprop="dateCreated datePublished" datetime="2021-09-11T07:46:55+08:00">2021-09-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">技術筆記</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Google Search Console工具可以用來查看使用者搜尋什麼關鍵字而觸及到你</p>
+<p>想提升搜尋引擎最佳化 <strong>SEO</strong> (Search Engine Optimization，SEO) ，<br>可以把網站的sitemap提交到Google Search Console ，就可以在後台了解：</p>
+<ol>
+<li>網頁搜尋總點擊次數</li>
+<li>使用者點擊錯誤的網址數量</li>
+<li>使用者會搜尋什麼關鍵字而到你的網站</li>
+<li>使用者是從哪些國家搜尋的</li>
+<li>行動裝置可用性</li>
+</ol>
+<p>…等等相關。</p>
+<p>其中，還可以查看「連結」：查看外部連結，哪些最熱門，來你的部落格的人又是點擊了哪些外部連結。</p>
+<h2 id="產生-Sitemap-xml"><a href="#產生-Sitemap-xml" class="headerlink" title="產生 Sitemap.xml"></a>產生 Sitemap.xml</h2><p>在 Hexo 有一個 Plugin 叫做 hexo-generator-sitemap，可以幫助生產網站的 Sitemap.xml，就可以拿這份檔案去提交了唷！來看以下簡單三個步驟。</p>
+<h3 id="安裝-Install"><a href="#安裝-Install" class="headerlink" title="安裝 Install"></a>安裝 Install</h3><ol>
+<li><p>在部落格資料夾使用終端機輸入</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure></li>
+<li><p>設定 Config</p>
+</li>
+</ol>
+<p>打開你的部落格資料夾，打開根目錄的 _config.yml，在最後面貼上：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">sitemap:</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">sitemap.xml</span></span><br><span class="line">    <span class="attr">template:</span> <span class="string">./sitemap_template.xml</span> <span class="comment"># 這行非必填，除非你想設定自訂的樣板</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>重新編譯一次，發布新內容：</li>
+</ol>
+<p>hexo g -d<br>檢查看看有沒有順利產生 Sitemap.xml？</p>
+<p><a href="https://doug0849.github.io/sitemap.xml">https://doug0849.github.io/sitemap.xml</a> =&gt; 我的<br>提交至 Google Search Console<br>打開 Google Search Console</p>
+<p>進入「索引 &gt; Sitemap」</p>
+<p>「新增 Sitemap」：sitemap.xml</p>
+<p>如果成功，就可以在頁面下方的列表看見紀錄與狀態了。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,zh-TW,default">
     <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/09/11/%E5%AD%B8%E6%9C%9F2-2-S2-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E7%B7%B4%E7%BF%92%E5%AF%A6%E4%BD%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -895,85 +994,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,zh-TW,default">
-    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/09/08/%E5%A6%82%E4%BD%95%E7%94%A8Hexo%E5%9C%A8Github%E4%B8%8A%E6%9E%B6%E8%A8%ADblog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Doug 道">
-      <meta itemprop="description" content="關於轉職紀錄、技術筆記、隨寫">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="想要邊撸鐵邊學CODE的DOUG">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/09/08/%E5%A6%82%E4%BD%95%E7%94%A8Hexo%E5%9C%A8Github%E4%B8%8A%E6%9E%B6%E8%A8%ADblog/" class="post-title-link" itemprop="url">如何用Hexo在Github上架設blog</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2021-09-08 15:18:18" itemprop="dateCreated datePublished" datetime="2021-09-08T15:18:18+08:00">2021-09-08</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">技術筆記</span></a>
-                </span>
-                  , 
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="廢話前言"><a href="#廢話前言" class="headerlink" title="廢話前言"></a>廢話前言</h1><h2 id="想要架設部落格作為記錄自己生活或相關筆記嗎"><a href="#想要架設部落格作為記錄自己生活或相關筆記嗎" class="headerlink" title="想要架設部落格作為記錄自己生活或相關筆記嗎?"></a>想要架設部落格作為記錄自己生活或相關筆記嗎?</h2><p>會想架設部落格的主要原因是自己正在上Javascript課程，課程有提到要開個部落格來作為自己的技術筆記、心得、或一些自己想記錄的東西作為備忘，畢竟學海無涯，有很多東西學會後久久不使用真的會忘記。</p>
-<p>後來使用了一些大眾市面上的blog，但終究覺得不合用，一方面更想要有自己的風格，一方面對於自己來說希望更加方便撰寫紀錄及發布。而我這個初心者才知道，原來可以在Github撰寫靜態網頁(蠢)，所以就開始研究到底該如何在Github上架設一個簡易的靜態blog之旅。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/09/08/%E5%A6%82%E4%BD%95%E7%94%A8Hexo%E5%9C%A8Github%E4%B8%8A%E6%9E%B6%E8%A8%ADblog/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1045,7 +1065,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1058,7 +1078,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">38</span>
+        <span class="site-state-item-count">40</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
