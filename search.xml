@@ -935,6 +935,8 @@
     <url>/2021/09/11/%E7%94%A8hexo%E6%8F%90%E4%BA%A4%E9%83%A8%E8%90%BD%E6%A0%BC%E7%9A%84sitemap%E5%88%B0google-Search-Console/</url>
     <content><![CDATA[<p>Google Search Console工具可以用來查看使用者搜尋什麼關鍵字而觸及到你</p>
 <p>想提升搜尋引擎最佳化 <strong>SEO</strong> (Search Engine Optimization，SEO) ，<br>可以把網站的sitemap提交到Google Search Console ，就可以在後台了解：</p>
+<span id="more"></span>
+
 <ol>
 <li>網頁搜尋總點擊次數</li>
 <li>使用者點擊錯誤的網址數量</li>

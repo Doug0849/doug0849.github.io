@@ -253,34 +253,14 @@
       
           <p>Google Search Console工具可以用來查看使用者搜尋什麼關鍵字而觸及到你</p>
 <p>想提升搜尋引擎最佳化 <strong>SEO</strong> (Search Engine Optimization，SEO) ，<br>可以把網站的sitemap提交到Google Search Console ，就可以在後台了解：</p>
-<ol>
-<li>網頁搜尋總點擊次數</li>
-<li>使用者點擊錯誤的網址數量</li>
-<li>使用者會搜尋什麼關鍵字而到你的網站</li>
-<li>使用者是從哪些國家搜尋的</li>
-<li>行動裝置可用性</li>
-</ol>
-<p>…等等相關。</p>
-<p>其中，還可以查看「連結」：查看外部連結，哪些最熱門，來你的部落格的人又是點擊了哪些外部連結。</p>
-<h2 id="產生-Sitemap-xml"><a href="#產生-Sitemap-xml" class="headerlink" title="產生 Sitemap.xml"></a>產生 Sitemap.xml</h2><p>在 Hexo 有一個 Plugin 叫做 hexo-generator-sitemap，可以幫助生產網站的 Sitemap.xml，就可以拿這份檔案去提交了唷！來看以下簡單三個步驟。</p>
-<h3 id="安裝-Install"><a href="#安裝-Install" class="headerlink" title="安裝 Install"></a>安裝 Install</h3><ol>
-<li><p>在部落格資料夾使用終端機輸入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure></li>
-<li><p>設定 Config</p>
-</li>
-</ol>
-<p>打開你的部落格資料夾，打開根目錄的 _config.yml，在最後面貼上：</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">sitemap:</span></span><br><span class="line">    <span class="attr">path:</span> <span class="string">sitemap.xml</span></span><br><span class="line">    <span class="attr">template:</span> <span class="string">./sitemap_template.xml</span> <span class="comment"># 這行非必填，除非你想設定自訂的樣板</span></span><br></pre></td></tr></table></figure>
-
-<ol start="3">
-<li>重新編譯一次，發布新內容：</li>
-</ol>
-<p>hexo g -d<br>檢查看看有沒有順利產生 Sitemap.xml？</p>
-<p><a href="https://doug0849.github.io/sitemap.xml">https://doug0849.github.io/sitemap.xml</a> =&gt; 我的<br>提交至 Google Search Console<br>打開 Google Search Console</p>
-<p>進入「索引 &gt; Sitemap」</p>
-<p>「新增 Sitemap」：sitemap.xml</p>
-<p>如果成功，就可以在頁面下方的列表看見紀錄與狀態了。</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/09/11/%E7%94%A8hexo%E6%8F%90%E4%BA%A4%E9%83%A8%E8%90%BD%E6%A0%BC%E7%9A%84sitemap%E5%88%B0google-Search-Console/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
