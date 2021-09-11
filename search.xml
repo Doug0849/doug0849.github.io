@@ -767,7 +767,12 @@
 <h2 id="some"><a href="#some" class="headerlink" title=".some"></a>.some</h2><p>.some(設定條件函示) 是把一個陣列物件裡面，查找是否有相符的，並不回傳整筆符合資料，只回傳true或false，布林值</p>
 <h2 id="findIndex"><a href="#findIndex" class="headerlink" title=".findIndex"></a>.findIndex</h2><p>.findIndex(設定條件函示) 回傳項目Index，找不到則回傳-1)</p>
 <h2 id="every"><a href="#every" class="headerlink" title=".every"></a>.every</h2><p>.every(設定條件含是) 是對所有的物件做條件比對，最後統一回傳一個true or false，簡而言之不是零分，就是一百分。</p>
-]]></content>
+<hr>
+<h2 id="Array-prototype-push"><a href="#Array-prototype-push" class="headerlink" title="Array.prototype.push()"></a>Array.prototype.push()</h2><p>當用<strong>常數</strong>宣告了一個陣列容器的時候，若要加入物件或其他東西要使用Array.prototype.push()</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> movies = []</span><br><span class="line"></span><br><span class="line">axios</span><br><span class="line">  .get(INDEX_URL)</span><br><span class="line">  .then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">    movies.push(...response.data.results)</span><br><span class="line">    renderMovieList(movies)</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function">(<span class="params">err</span>) =&gt;</span> <span class="built_in">console</span>.log(err))</span><br></pre></td></tr></table></figure>
+
+<h2 id="…展開運算子"><a href="#…展開運算子" class="headerlink" title="…展開運算子"></a>…展開運算子</h2><p>…response.data.results 前面的… 是展開運算子，會將陣列內容展開</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> movies = []; <span class="comment">//空陣列，空容器</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//目標：用 push 方法把 movies 從空陣列變成 [1,2,3]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//方法一</span></span><br><span class="line">movies.push(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>); <span class="comment">//傳入 3 個參數：1,2,3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//方法二</span></span><br><span class="line">movies.push(...[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]); <span class="comment">//把陣列用展開運算子打開，打開後就和方法一一模一樣</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//方法三</span></span><br><span class="line"><span class="keyword">const</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; <span class="comment">//做一個陣列</span></span><br><span class="line">movies.push(...numbers); <span class="comment">//和方法二同樣意思</span></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>技術筆記</category>
         <category>JavaScript</category>
@@ -783,6 +788,8 @@
         <tag>some</tag>
         <tag>findIndex</tag>
         <tag>every</tag>
+        <tag>Array.prototype.push()</tag>
+        <tag>...展開運算子</tag>
       </tags>
   </entry>
   <entry>
@@ -898,7 +905,7 @@
   <entry>
     <title>學期2-2_S2-電影清單練習實作</title>
     <url>/2021/09/11/%E5%AD%B8%E6%9C%9F2-2-S2-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E7%B7%B4%E7%BF%92%E5%AF%A6%E4%BD%9C/</url>
-    <content><![CDATA[<h1 id="此文章僅記錄作業需要特別注意處"><a href="#此文章僅記錄作業需要特別注意處" class="headerlink" title="此文章僅記錄作業需要特別注意處"></a>此文章僅記錄作業需要特別注意處</h1><h2 id="Array-prototype-push"><a href="#Array-prototype-push" class="headerlink" title="Array.prototype.push()"></a>Array.prototype.push()</h2><p>當用常數宣告了一個陣列容器的時候，若要加入物件或其他東西要使用Array.prototype.push()</p>
+    <content><![CDATA[<h1 id="此文章僅記錄作業需要特別注意處"><a href="#此文章僅記錄作業需要特別注意處" class="headerlink" title="此文章僅記錄作業需要特別注意處"></a>此文章僅記錄作業需要特別注意處</h1><h2 id="Array-prototype-push"><a href="#Array-prototype-push" class="headerlink" title="Array.prototype.push()"></a>Array.prototype.push()</h2><p>當用<strong>常數</strong>宣告了一個陣列容器的時候，若要加入物件或其他東西要使用Array.prototype.push()</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> movies = []</span><br><span class="line"></span><br><span class="line">axios</span><br><span class="line">  .get(INDEX_URL)</span><br><span class="line">  .then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">    movies.push(...response.data.results)</span><br><span class="line">    renderMovieList(movies)</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function">(<span class="params">err</span>) =&gt;</span> <span class="built_in">console</span>.log(err))</span><br></pre></td></tr></table></figure>
 
 <h2 id="展開運算子"><a href="#展開運算子" class="headerlink" title="展開運算子"></a>展開運算子</h2><p>…response.data.results 前面的… 是展開運算子，會將陣列內容展開</p>
