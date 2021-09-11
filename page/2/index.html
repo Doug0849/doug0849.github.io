@@ -757,6 +757,145 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,zh-TW,default">
+    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/06/09/css%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Doug 道">
+      <meta itemprop="description" content="關於轉職紀錄、技術筆記、隨寫">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="想要邊撸鐵邊學CODE的DOUG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/09/css%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">CSS語法使用</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-09 10:30:46" itemprop="dateCreated datePublished" datetime="2021-06-09T10:30:46+08:00">2021-06-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">技術筆記</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/CSS/" itemprop="url" rel="index"><span itemprop="name">CSS</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="觀念隨記"><a href="#觀念隨記" class="headerlink" title="觀念隨記"></a>觀念隨記</h1><p>階層式樣式表（英語：Cascading Style Sheets，縮寫：CSS；又稱串樣式列表、級聯樣式表、串接樣式表、階層式樣式表）</p>
+<p>用戶體驗 (UX) 研究表示，在<strong>桌機</strong>的閱讀體驗中，理想上<strong>每行的字元應該在 50 到 75 之間</strong>才能維持良好的易讀性。更有其他研究表示，其實這個範圍<strong>可以擴大到 85 個字元。</strong></p>
+<hr>
+<h2 id="網頁-單位-px-em-rem"><a href="#網頁-單位-px-em-rem" class="headerlink" title="網頁 ( 單位 ) px, em, rem, %"></a>網頁 ( 單位 ) px, em, rem, %</h2><p>px：絕對單位，代表螢幕中每個「點」( pixel )。<br>em：相對單位，每個子元素透過「倍數」乘以父元素的 px 值。<br>rem：相對單位，每個元素透過「倍數」乘以根元素的 px 值。<br>%：相對單位，每個子元素透過「百分比」乘以父元素的 px 值</p>
+<hr>
+<h1 id="RWD重點筆記"><a href="#RWD重點筆記" class="headerlink" title="RWD重點筆記"></a>RWD重點筆記</h1><ol>
+<li>由小螢幕到大螢幕，mobile first。</li>
+<li>使用media query以不同Breakpoint來設定不同階層的樣式</li>
+<li>Breakpoint會設在各種螢幕尺寸變化的中間，例如常見的有：320px、480px、720px、768px、960px、1024px。</li>
+</ol>
+<p>每設一個 breakpoint 意味需要準備多一份 CSS 樣式，要抓得多細是看設計的需求。</p>
+<p>除了幾個在設備間切換的主要分界點，也會設定次要分界點來調整比較細微的 CSS 變化，像是元素的邊距、避免文字超過頁面寬度，或是調整圖片尺寸。</p>
+<p>media queries</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">max-width</span>: <span class="number">600px</span>) &#123;...//styles&#125;</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">min-width</span>: <span class="number">600px</span>) <span class="keyword">and</span> (<span class="attribute">max-width</span>: <span class="number">900px</span>) &#123;...//styles&#125;</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span> (<span class="attribute">min-width</span>: <span class="number">900px</span>) &#123;...//styles&#125;</span><br></pre></td></tr></table></figure>
+<p>可以使用 and、or 或 not 等運算子。</p>
+<h2 id="import-其他文件"><a href="#import-其他文件" class="headerlink" title="@import 其他文件"></a>@import 其他文件</h2><p>如果樣式太多想要把文件拆開，可以使用 @import 來導入其他文件，仍然可以在同一份 CSS 裡統一管理網站樣式。</p>
+<p>運用 url() 來載入文件，仍然可以串接 media type and feature：<br>@import url(‘styles.css’) screen and (max-width: 670px);</p>
+<hr>
+<h1 id="關於CSS整體優先級"><a href="#關於CSS整體優先級" class="headerlink" title="關於CSS整體優先級"></a>關於CSS整體優先級</h1><h2 id="瀏覽器開發商的優先級"><a href="#瀏覽器開發商的優先級" class="headerlink" title="瀏覽器開發商的優先級"></a>瀏覽器開發商的優先級</h2><p>style sheets 的來源可以分為三種：(由上而下)</p>
+<ol>
+<li>User agent origin：由「瀏覽器廠商」制定。</li>
+</ol>
+<ul>
+<li>所以後來產生了重置樣式的工具 <a target="_blank" rel="noopener" href="https://meyerweb.com/eric/tools/css/reset/">Reset CSS</a>、<a target="_blank" rel="noopener" href="https://necolas.github.io/normalize.css/">Normalize CSS</a> 等，就是用來解決不同廠牌瀏覽器下造成的預設樣式偏差的問題，讓開發者得以在一致的基礎上，建構網頁 CSS 樣式設計。</li>
+</ul>
+<ol start="2">
+<li>User origin：由「瀏覽器使用者」制定。</li>
+</ol>
+<ul>
+<li>可以覆蓋掉 user agent origin 的樣式。通常能在你的瀏覽器右上角找到設定的地方，以 Firefox 為例，使用者可「偏好設定 &gt; 語言與外觀」中，自訂字型、字體大小等樣式</li>
+</ul>
+<ol start="3">
+<li>Author origin：由「網頁開發者」制定。</li>
+</ol>
+<ul>
+<li>優先級最高，可以覆蓋掉上述兩個來源的定義。而載入 CSS 樣式到 HTML 的方法有很多種。</li>
+</ul>
+<hr>
+<h2 id="style-sheets-優先級"><a href="#style-sheets-優先級" class="headerlink" title="style sheets 優先級"></a>style sheets 優先級</h2><ol>
+<li>HTML文檔內直接設定元素標籤的</li>
+<li>HTML文檔內由上而下，越下面大於越上面</li>
+<li>載入的CSS樣式表，越優先載入的大於後面載入的，例如</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;style.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">  <span class="selector-tag">div</span> &#123;</span></span><br><span class="line"><span class="css">    <span class="attribute">background-color</span>: orange; <span class="comment">/* 第二優先 */</span></span></span><br><span class="line"><span class="css">  &#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;background-color: red&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span> <span class="comment">&lt;!-- 最優先 --&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><figcaption><span>style.css</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@import</span> url(style-<span class="number">2</span>.css)</span><br><span class="line">  div &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: pink;  <span class="comment">/*第三，優先於style-2*/</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight css"><figcaption><span>style-2.css</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@import</span> url(style-<span class="number">2</span>.css)</span><br><span class="line">  div &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: red; <span class="comment">/*最後*/</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="CSS-選擇器的優先級"><a href="#CSS-選擇器的優先級" class="headerlink" title="CSS 選擇器的優先級"></a>CSS 選擇器的優先級</h2><p>網頁開發者制定樣式是透過多種 CSS 選擇器，選取到特定的元素來指定樣式。<br>在談論 CSS 優先級問題時，我們會把選擇器分成以下三個等級：</p>
+<p>等級一：以 ID 選擇器為代表，例如#article。<br>等級二：以 Class 選擇器為代表，另外包括屬性選擇器、偽類選擇器，例如 .container 、[type=”radio”]、:hover。<br>等級三：以 Element 選擇器為代表，另外包括偽元素選擇器，例如 div、::before。<br>優先級是，等級一 &gt; 二 &gt; 三，CSS選擇器有一個分數機制，可以看成一個數學比大小的問題。<br>一個類別都有一個分數<br>等級一:ID類別:0分(百位) - 等級二:class類別:0分(十位) - 等級三:Element類別: 0分(個位)</p>
+<p>每當選擇器列出多一個class名稱時，例如 .container<br>這時候class就會+1分<br>等級一:ID類別:0分(百位) - 等級二:class類別:1分(十位) - 等級三:Element類別: 0分(個位)<br>總分10分</p>
+<p>再來選擇器多一個element元素名稱時，例如 div<br>這時候Element就會+1分<br>等級一:ID類別:0分(百位) - 等級二:class類別:1分(十位) - 等級三:Element類別: 1分(個位)<br>總分11分</p>
+<p>這時候這兩個選擇器有不一樣樣式內容，這時候div.container會優先於.container</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-class">.container</span> &#123;...&#125;</span><br><span class="line"><span class="selector-class">.container</span> &#123;...&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="CSS優先級總結"><a href="#CSS優先級總結" class="headerlink" title="CSS優先級總結"></a>CSS優先級總結</h2><p>總而言之，言而總之</p>
+<img src="/2021/06/09/css%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8/CSS_level.png" class="">
+
+<h2 id="CSS撰寫注意三件事"><a href="#CSS撰寫注意三件事" class="headerlink" title="CSS撰寫注意三件事"></a>CSS撰寫注意三件事</h2><p>避免掉入 CSS 樣式優先集泥潭中的原則就是<strong>千萬不要因為「某個選擇器看起來很厲害」、「某個選擇器可以一擊必殺」隨意使用</strong>，請把以下三點放在心上：</p>
+<ol>
+<li>不使用 !important：除非你有很好的理由，否則千萬別輕易放大絕招，導致日後難維護。</li>
+<li>遵守內容和樣式分離：盡量不要在 HTML 中另外撰寫 style 區塊及使用 inline style ，除非你有個很好的理由，例如用 JavaScript 動態控制樣式變化的時候。</li>
+<li>讓選擇器的優先級放低：撰寫樣式時，盡量選用 Class 或 Element 的級別的選擇器，<strong>非必要不用 id</strong> 或<strong>複雜的選擇器組合</strong>，保留多一點彈性的空間給後續的樣式來覆蓋。</li>
+</ol>
+<h2 id="複習選擇器的好幫手："><a href="#複習選擇器的好幫手：" class="headerlink" title="複習選擇器的好幫手："></a>複習選擇器的好幫手：</h2><p>Envato Tuts+ - <strong><a target="_blank" rel="noopener" href="https://code.tutsplus.com/zh-hant/tutorials/the-30-css-selectors-you-must-memorize--net-16048">30個你必須記住的CSS選擇器</a></strong><br><strong><a target="_blank" rel="noopener" href="https://flukeout.github.io/">CSS Diner</a></strong> (一款小遊戲，你需要輸入正確的選擇器來選到指定器皿或食物)</p>
+<hr>
+<h1 id="語法使用隨記"><a href="#語法使用隨記" class="headerlink" title="語法使用隨記"></a>語法使用隨記</h1><h2 id="行高-line-height"><a href="#行高-line-height" class="headerlink" title="行高 line-height"></a>行高 line-height</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Reverts to the default value of the browser. */</span></span><br><span class="line"><span class="attribute">line-height</span>: normal;</span><br><span class="line"><span class="comment">/* 可以使用無單位: 航高會是以倍數乘字體大小 */</span></span><br><span class="line"><span class="attribute">line-height</span>: <span class="number">1.6</span>;</span><br><span class="line"><span class="comment">/* 可以使用px單位 */</span></span><br><span class="line"><span class="attribute">line-height</span>: <span class="number">30px</span>;</span><br><span class="line"><span class="comment">/* 可以使用em單位 */</span></span><br><span class="line"><span class="attribute">line-height</span>: <span class="number">0.8em</span>;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,zh-TW,default">
     <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/06/06/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-DOM%E7%9B%B8%E9%97%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -929,20 +1068,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-count">43</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
