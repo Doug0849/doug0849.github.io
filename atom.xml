@@ -6,7 +6,7 @@
   <link href="https://doug0849.github.io/atom.xml" rel="self"/>
   
   <link href="https://doug0849.github.io/"/>
-  <updated>2021-09-10T16:20:47.000Z</updated>
+  <updated>2021-09-10T18:12:50.000Z</updated>
   <id>https://doug0849.github.io/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>學期2-2_S2-電影清單練習實作</title>
+    <link href="https://doug0849.github.io/2021/09/11/%E5%AD%B8%E6%9C%9F2-2-S2-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E7%B7%B4%E7%BF%92%E5%AF%A6%E4%BD%9C/"/>
+    <id>https://doug0849.github.io/2021/09/11/%E5%AD%B8%E6%9C%9F2-2-S2-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E7%B7%B4%E7%BF%92%E5%AF%A6%E4%BD%9C/</id>
+    <published>2021-09-10T18:12:50.000Z</published>
+    <updated>2021-09-10T18:12:50.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;此文章僅記錄作業需要特別注意處&quot;&gt;&lt;a href=&quot;#此文章僅記錄作業需要特別注意處&quot; class=&quot;headerlink&quot; title=&quot;此文章僅記錄作業需要特別注意處&quot;&gt;&lt;/a&gt;此文章僅記錄作業需要特別注意處&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="AlphaCamp" scheme="https://doug0849.github.io/categories/AlphaCamp/"/>
+    
+    <category term="Task" scheme="https://doug0849.github.io/categories/AlphaCamp/Task/"/>
+    
+    
+    <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
+    
+    <category term="AlphaCamp" scheme="https://doug0849.github.io/tags/AlphaCamp/"/>
+    
+    <category term="作業" scheme="https://doug0849.github.io/tags/%E4%BD%9C%E6%A5%AD/"/>
+    
+    <category term="Array.prototype.push()" scheme="https://doug0849.github.io/tags/Array-prototype-push/"/>
+    
+    <category term="...展開運算子" scheme="https://doug0849.github.io/tags/%E5%B1%95%E9%96%8B%E9%81%8B%E7%AE%97%E5%AD%90/"/>
+    
+  </entry>
   
   <entry>
     <title>建立一個Node.js本機伺服器</title>
@@ -185,33 +220,6 @@
   </entry>
   
   <entry>
-    <title>.toggle() 和 .appendchild()</title>
-    <link href="https://doug0849.github.io/2021/09/09/toggle%E5%92%8Cappendchild/"/>
-    <id>https://doug0849.github.io/2021/09/09/toggle%E5%92%8Cappendchild/</id>
-    <published>2021-09-09T10:49:53.000Z</published>
-    <updated>2021-09-09T10:49:53.000Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;toggle&quot;&gt;&lt;a href=&quot;#toggle&quot; class=&quot;headerlink&quot; title=&quot;toggle&quot;&gt;&lt;/a&gt;toggle&lt;/h2&gt;&lt;p&gt;範例&lt;/p&gt;
-&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;element.classList.toggle(&amp;#x27;sample&amp;#x27;) &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;p&gt;element ：某元素，使用document.querySelecrot選出&lt;br&gt;.classList ：某元素的class屬性&lt;br&gt;.toggle(‘.sample’) ：&lt;/p&gt;
-&lt;p&gt;如果class屬性裡面沒有sample則加上sample，&lt;br&gt;如果class屬性裡面有sample則刪除sample，&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技術筆記" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
-    
-    <category term="JavaScript" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/"/>
-    
-    
-    <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
-    
-    <category term="Javascript" scheme="https://doug0849.github.io/tags/Javascript/"/>
-    
-  </entry>
-  
-  <entry>
     <title>ejs樣板語法技術筆記</title>
     <link href="https://doug0849.github.io/2021/09/08/ejs%E6%A8%A3%E6%9D%BF%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
     <id>https://doug0849.github.io/2021/09/08/ejs%E6%A8%A3%E6%9D%BF%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/</id>
@@ -342,14 +350,21 @@
   </entry>
   
   <entry>
-    <title>.includes .matches .filter .find .some .findIndex 使用</title>
-    <link href="https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A81/"/>
-    <id>https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A81/</id>
+    <title>JavaScript-Array相關</title>
+    <link href="https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-Array%E7%9B%B8%E9%97%9C/"/>
+    <id>https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-Array%E7%9B%B8%E9%97%9C/</id>
     <published>2021-06-09T10:46:37.000Z</published>
     <updated>2021-06-09T10:46:37.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;.includes(變數或值) 只能使用在陣列物件value查核上，核對對象為一個變數或是值&lt;/p&gt;</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
+&lt;h1 id=&quot;陣列操作方式&quot;&gt;&lt;a href=&quot;#陣列操作方式&quot; class=&quot;headerlink&quot; title=&quot;陣列操作方式&quot;&gt;&lt;/a&gt;陣列操作方式&lt;/h1&gt;&lt;h2 id=&quot;map&quot;&gt;&lt;a href=&quot;#map&quot;</summary>
+        
+      
     
     
     
@@ -361,19 +376,41 @@
     <category term="JavaScript" scheme="https://doug0849.github.io/tags/JavaScript/"/>
     
     <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
+    
+    <category term="Array" scheme="https://doug0849.github.io/tags/Array/"/>
+    
+    <category term="陣列" scheme="https://doug0849.github.io/tags/%E9%99%A3%E5%88%97/"/>
+    
+    <category term="map" scheme="https://doug0849.github.io/tags/map/"/>
+    
+    <category term="filter" scheme="https://doug0849.github.io/tags/filter/"/>
+    
+    <category term="find" scheme="https://doug0849.github.io/tags/find/"/>
+    
+    <category term="some" scheme="https://doug0849.github.io/tags/some/"/>
+    
+    <category term="findIndex" scheme="https://doug0849.github.io/tags/findIndex/"/>
+    
+    <category term="every" scheme="https://doug0849.github.io/tags/every/"/>
     
   </entry>
   
   <entry>
-    <title>DOM節點選擇方式</title>
-    <link href="https://doug0849.github.io/2021/06/06/DOM%E7%AF%80%E9%BB%9E%E9%81%B8%E6%93%87%E6%96%B9%E5%BC%8F/"/>
-    <id>https://doug0849.github.io/2021/06/06/DOM%E7%AF%80%E9%BB%9E%E9%81%B8%E6%93%87%E6%96%B9%E5%BC%8F/</id>
-    <published>2021-06-06T10:52:12.000Z</published>
-    <updated>2021-06-06T10:52:12.000Z</updated>
+    <title>JavaScript-CSS相關</title>
+    <link href="https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-CSS%E7%9B%B8%E9%97%9C/"/>
+    <id>https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-CSS%E7%9B%B8%E9%97%9C/</id>
+    <published>2021-06-09T10:46:37.000Z</published>
+    <updated>2021-06-09T10:46:37.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;HTML&lt;/p&gt;
-&lt;figure class=&quot;highlight html&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;father&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt; father &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;my-sister&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt; my-sister&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;me&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt; me &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;son1&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;son1&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;son2&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;son2&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;son3&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;son3&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt; &lt;span class=&quot;attr&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;string&quot;&gt;&amp;quot;my-brother&amp;quot;&lt;/span&gt;&amp;gt;&lt;/span&gt; my-brother&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;name&quot;&gt;div&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;name&quot;&gt;body&lt;/span&gt;&amp;gt;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+      
+      
+        
+        
+    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
+&lt;h1 id=&quot;利用toggle來新增或移除元素標籤的class名稱&quot;&gt;&lt;a href=&quot;#利用toggle來新增或移除元素標籤的class名稱&quot; class=&quot;headerlink&quot;</summary>
+        
+      
     
     
     
@@ -385,6 +422,90 @@
     <category term="JavaScript" scheme="https://doug0849.github.io/tags/JavaScript/"/>
     
     <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
+    
+    <category term="toggle" scheme="https://doug0849.github.io/tags/toggle/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript語法使用-Function相關</title>
+    <link href="https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-Function%E7%9B%B8%E9%97%9C/"/>
+    <id>https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-Function%E7%9B%B8%E9%97%9C/</id>
+    <published>2021-06-09T10:46:37.000Z</published>
+    <updated>2021-06-09T10:46:37.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;關於-function&quot;&gt;&lt;a href=&quot;#關於-function&quot; class=&quot;headerlink&quot; title=&quot;關於 function&quot;&gt;&lt;/a&gt;關於 function&lt;/h2&gt;&lt;p&gt;這篇由W3HEXSCHOOL發布的有關function的特性的講解可以參考&lt;br&gt;&lt;a href=&quot;https://w3c.hexschool.com/blog/cb6e361&quot;&gt;連結在這&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技術筆記" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
+    
+    <category term="JavaScript" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/"/>
+    
+    
+    <category term="JavaScript" scheme="https://doug0849.github.io/tags/JavaScript/"/>
+    
+    <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
+    
+    <category term="function" scheme="https://doug0849.github.io/tags/function/"/>
+    
+    <category term="函式" scheme="https://doug0849.github.io/tags/%E5%87%BD%E5%BC%8F/"/>
+    
+    <category term="IIFE" scheme="https://doug0849.github.io/tags/IIFE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript語法使用-DOM相關</title>
+    <link href="https://doug0849.github.io/2021/06/06/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-DOM%E7%9B%B8%E9%97%9C/"/>
+    <id>https://doug0849.github.io/2021/06/06/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-DOM%E7%9B%B8%E9%97%9C/</id>
+    <published>2021-06-06T10:52:12.000Z</published>
+    <updated>2021-06-06T10:52:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
+
+&lt;h1 id=&quot;JS選擇元素節點方法&quot;&gt;&lt;a href=&quot;#JS選擇元素節點方法&quot; class=&quot;headerlink&quot; title=&quot;JS選擇元素節點方法&quot;&gt;&lt;/a&gt;JS選擇元素節點方法&lt;/h1&gt;&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="技術筆記" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
+    
+    <category term="JavaScript" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/"/>
+    
+    
+    <category term="JavaScript" scheme="https://doug0849.github.io/tags/JavaScript/"/>
+    
+    <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
+    
+    <category term="DOM" scheme="https://doug0849.github.io/tags/DOM/"/>
+    
+    <category term="querySelector" scheme="https://doug0849.github.io/tags/querySelector/"/>
+    
+    <category term="parentElement" scheme="https://doug0849.github.io/tags/parentElement/"/>
+    
+    <category term="children" scheme="https://doug0849.github.io/tags/children/"/>
+    
+    <category term="nextElementSibling" scheme="https://doug0849.github.io/tags/nextElementSibling/"/>
+    
+    <category term="firstElementChild" scheme="https://doug0849.github.io/tags/firstElementChild/"/>
+    
+    <category term="lastElementChild" scheme="https://doug0849.github.io/tags/lastElementChild/"/>
+    
+    <category term="appendChild" scheme="https://doug0849.github.io/tags/appendChild/"/>
+    
+    <category term="matches" scheme="https://doug0849.github.io/tags/matches/"/>
+    
+    <category term="contains" scheme="https://doug0849.github.io/tags/contains/"/>
+    
+    <category term="dataset" scheme="https://doug0849.github.io/tags/dataset/"/>
     
   </entry>
   

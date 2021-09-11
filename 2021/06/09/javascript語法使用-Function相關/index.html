@@ -29,21 +29,24 @@
     var CONFIG = {"hostname":"doug0849.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"ture","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="toggle範例 1element.classList.toggle(&amp;#x27;sample&amp;#x27;)   element ：某元素，使用document.querySelecrot選出.classList ：某元素的class屬性.toggle(‘.sample’) ： 如果class屬性裡面沒有sample則加上sample，如果class屬性裡面有sample則刪除sample，">
+  <meta name="description" content="關於 function這篇由W3HEXSCHOOL發布的有關function的特性的講解可以參考連結在這">
 <meta property="og:type" content="article">
-<meta property="og:title" content=".toggle() 和 .appendchild()">
-<meta property="og:url" content="https://doug0849.github.io/2021/09/09/toggle%E5%92%8Cappendchild/index.html">
+<meta property="og:title" content="JavaScript語法使用-Function相關">
+<meta property="og:url" content="https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-Function%E7%9B%B8%E9%97%9C/index.html">
 <meta property="og:site_name" content="想要邊撸鐵邊學CODE的DOUG">
-<meta property="og:description" content="toggle範例 1element.classList.toggle(&amp;#x27;sample&amp;#x27;)   element ：某元素，使用document.querySelecrot選出.classList ：某元素的class屬性.toggle(‘.sample’) ： 如果class屬性裡面沒有sample則加上sample，如果class屬性裡面有sample則刪除sample，">
+<meta property="og:description" content="關於 function這篇由W3HEXSCHOOL發布的有關function的特性的講解可以參考連結在這">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-09-09T10:49:53.000Z">
-<meta property="article:modified_time" content="2021-09-09T10:49:53.000Z">
+<meta property="article:published_time" content="2021-06-09T10:46:37.000Z">
+<meta property="article:modified_time" content="2021-06-09T10:46:37.000Z">
 <meta property="article:author" content="Doug 道">
+<meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="技術筆記">
-<meta property="article:tag" content="Javascript">
+<meta property="article:tag" content="function">
+<meta property="article:tag" content="函式">
+<meta property="article:tag" content="IIFE">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://doug0849.github.io/2021/09/09/toggle%E5%92%8Cappendchild/">
+<link rel="canonical" href="https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-Function%E7%9B%B8%E9%97%9C/">
 
 
 <script id="page-configurations">
@@ -56,7 +59,7 @@
   };
 </script>
 
-  <title>.toggle() 和 .appendchild() | 想要邊撸鐵邊學CODE的DOUG</title>
+  <title>JavaScript語法使用-Function相關 | 想要邊撸鐵邊學CODE的DOUG</title>
   
 
 
@@ -201,7 +204,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/09/09/toggle%E5%92%8Cappendchild/">
+    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-Function%E7%9B%B8%E9%97%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -214,7 +217,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          .toggle() 和 .appendchild()
+          JavaScript語法使用-Function相關
         </h1>
 
         <div class="post-meta">
@@ -224,7 +227,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-09-09 18:49:53" itemprop="dateCreated datePublished" datetime="2021-09-09T18:49:53+08:00">2021-09-09</time>
+              <time title="Created: 2021-06-09 18:46:37" itemprop="dateCreated datePublished" datetime="2021-06-09T18:46:37+08:00">2021-06-09</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -251,16 +254,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="toggle"><a href="#toggle" class="headerlink" title="toggle"></a>toggle</h2><p>範例</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element.classList.toggle(&#x27;sample&#x27;) </span><br></pre></td></tr></table></figure>
-
-<p>element ：某元素，使用document.querySelecrot選出<br>.classList ：某元素的class屬性<br>.toggle(‘.sample’) ：</p>
-<p>如果class屬性裡面沒有sample則加上sample，<br>如果class屬性裡面有sample則刪除sample，</p>
+        <h2 id="關於-function"><a href="#關於-function" class="headerlink" title="關於 function"></a>關於 function</h2><p>這篇由W3HEXSCHOOL發布的有關function的特性的講解可以參考<br><a target="_blank" rel="noopener" href="https://w3c.hexschool.com/blog/cb6e361">連結在這</a></p>
 <span id="more"></span>
+<p>MDN 的簡短說明</p>
+<blockquote class="pullquote"><p>Function 建構函式可建立一個新的 Function 物件。在 JavaScript 中，所有的函式實際上都是 Function 物件。</p>
+</blockquote>
 
-<p>Node.appendChild(sample) 是將一個節點加到指定的父節點中所有子節點的最後面。如果sample這個節點已經存在document樹當中，那 appendChild(sample) 會將原本sample這個節點位置移動到node這個新的位置（不需要事先移除要移動的節點）。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// TodoList Delete and check</span></span><br><span class="line">list.addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> target = event.target;</span><br><span class="line">  <span class="keyword">const</span> parentElement = target.parentElement</span><br><span class="line">  <span class="comment">//按下垃圾桶，將項目刪除</span></span><br><span class="line">  <span class="keyword">if</span> (target.classList.contains(<span class="string">&quot;delete&quot;</span>)) &#123;</span><br><span class="line">    parentElement.remove();</span><br><span class="line">    <span class="comment">//Todo中項目按下名字，將項目移置done中</span></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target.tagName === <span class="string">&quot;LABEL&quot;</span>) &#123;</span><br><span class="line">    doneList.appendChild(parentElement)</span><br><span class="line">    target.classList.toggle(<span class="string">&quot;checked&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// DoneList Delete and back</span></span><br><span class="line">doneList.addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> target = event.target;</span><br><span class="line">  <span class="keyword">const</span> parentElement = target.parentElement</span><br><span class="line">  <span class="comment">//按下垃圾桶，將項目刪除</span></span><br><span class="line">  <span class="keyword">if</span> (target.classList.contains(<span class="string">&quot;delete&quot;</span>)) &#123;</span><br><span class="line">    parentElement.remove();</span><br><span class="line">    <span class="comment">//Done中項目按下名字，將項目移置Todo中</span></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target.tagName === <span class="string">&quot;LABEL&quot;</span>) &#123;</span><br><span class="line">    list.appendChild(parentElement)</span><br><span class="line">    target.classList.toggle(<span class="string">&quot;checked&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>Kuro 大大在先前 IT 鐵人賽 - <a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10191549">Day 10 函式 Functions 的基本概念 中也有提到</a></p>
+<blockquote class="pullquote"><p>在前面介紹變數型別的時候曾經說過，除了基本型別以外的都是物件。<br>當我們透過 typeof 去檢查一個「函式 (function) 」的時候，雖然你會得到 “function” 的結果，<br>讓你以為 function 也是 JavaScript 定義的一種型別，但實際上它仍屬於 Object 的一種。<br>你可以把它想像成是一種可以被呼叫 (be invoked) 的特殊物件 (值)。</p>
+</blockquote>
 
+<h2 id="IIFE-立即執行函式"><a href="#IIFE-立即執行函式" class="headerlink" title="IIFE (立即執行函式)"></a>IIFE (立即執行函式)</h2><p>接下來談談 IIFE 全名為 Immediately Invoked Function Expression，意思就是定義完這個函式後馬上就執行的意思，此外它又可以稱之為 Self-Executing Anonymous Function，中文意思是自我執行匿名函式，而 IIFE 的好處是可以避免汙染到全域(global)。</p>
+<p>IIFE 的話則是可以改用箭頭函式撰寫</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function">() =&gt;</span> &#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;Hi&#x27;</span>)</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+
+<p>箭頭函式的使用注意</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">filteredMovies = []</span><br><span class="line">filteredMovies = movies.filter( <span class="function"><span class="params">movie</span> =&gt;</span> movie.title.toLowerCase().includes(keyword)) <span class="comment">// OK，前面參數沒帶小括號可以，後面沒帶花括號也可以</span></span><br><span class="line">filteredMovies = movies.filter( <span class="function">(<span class="params">movie</span>) =&gt;</span> movie.title.toLowerCase().includes(keyword)) <span class="comment">// OK，前面參數沒帶小括號可以，後面沒帶花括號也可以</span></span><br><span class="line">filteredMovies = movies.filter( <span class="function"><span class="params">movie</span> =&gt;</span> &#123; <span class="keyword">return</span> movie.title.toLowerCase().includes(keyword)&#125;) <span class="comment">// OK，前面參數帶小括號可以，後面沒帶花括號要加上return</span></span><br><span class="line">filteredMovies = movies.filter( <span class="function">(<span class="params">movie</span>) =&gt;</span> &#123; <span class="keyword">return</span> movie.title.toLowerCase().includes(keyword)&#125;) <span class="comment">// OK，前面參數沒帶小括號可以，後面沒帶花括號要加上return</span></span><br><span class="line"><span class="comment">// 結論，有花括要帶上return</span></span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -288,8 +297,11 @@
 
       <footer class="post-footer">
           <div class="post-tags">
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
               <a href="/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" rel="tag"># 技術筆記</a>
-              <a href="/tags/Javascript/" rel="tag"># Javascript</a>
+              <a href="/tags/function/" rel="tag"># function</a>
+              <a href="/tags/%E5%87%BD%E5%BC%8F/" rel="tag"># 函式</a>
+              <a href="/tags/IIFE/" rel="tag"># IIFE</a>
           </div>
 
         
@@ -298,12 +310,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/09/08/ejs%E6%A8%A3%E6%9D%BF%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" rel="prev" title="ejs樣板語法技術筆記">
-      <i class="fa fa-chevron-left"></i> ejs樣板語法技術筆記
+    <a href="/2021/06/06/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-DOM%E7%9B%B8%E9%97%9C/" rel="prev" title="JavaScript語法使用-DOM相關">
+      <i class="fa fa-chevron-left"></i> JavaScript語法使用-DOM相關
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/09/09/Markdown%E8%87%AA%E5%8B%95%E8%A3%9C%E9%BD%8A%E8%AA%9E%E6%B3%95%E8%A8%AD%E5%AE%9A/" rel="next" title="VS Code - Markdown & Hexo 自動補齊語法標籤設定">
-      VS Code - Markdown & Hexo 自動補齊語法標籤設定 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-CSS%E7%9B%B8%E9%97%9C/" rel="next" title="JavaScript-CSS相關">
+      JavaScript-CSS相關 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -370,7 +382,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#toggle"><span class="nav-number">1.</span> <span class="nav-text">toggle</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%9C%E6%96%BC-function"><span class="nav-number">1.</span> <span class="nav-text">關於 function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IIFE-%E7%AB%8B%E5%8D%B3%E5%9F%B7%E8%A1%8C%E5%87%BD%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">IIFE (立即執行函式)</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -386,7 +398,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -399,7 +411,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">38</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

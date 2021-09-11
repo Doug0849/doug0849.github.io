@@ -1,58 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>DOM節點選擇方式</title>
-    <url>/2021/06/06/DOM%E7%AF%80%E9%BB%9E%E9%81%B8%E6%93%87%E6%96%B9%E5%BC%8F/</url>
-    <content><![CDATA[<p>HTML</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;father&quot;</span>&gt;</span> father </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;my-sister&quot;</span>&gt;</span> my-sister<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;me&quot;</span>&gt;</span> me </span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;son1&quot;</span>&gt;</span>son1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;son2&quot;</span>&gt;</span>son2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;son3&quot;</span>&gt;</span>son3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;my-brother&quot;</span>&gt;</span> my-brother<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<span id="more"></span>
-<p>JS選擇元素節點方法<br>先使用document.querySelector選出class標籤為me的元素</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> me = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.me&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
-
-<p>選擇me的父元素和選擇me的父元素的父元素</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">me.parentElement   <span class="comment">// 會選擇到&lt;div class=&quot;&quot;father&gt;...&lt;/div&gt;</span></span><br><span class="line">me.parentElement.parentElement   <span class="comment">// 會選擇到&lt;body&gt;...&lt;/body&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-<p>選擇me的第一個子元素和選擇me的第二個子元素</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">me.children[<span class="number">0</span>]   <span class="comment">// 會選擇到&lt;div class=&quot;son1&quot;&gt;son1&lt;/div&gt;</span></span><br><span class="line">me.children[<span class="number">1</span>]   <span class="comment">// 會選擇到&lt;div class=&quot;son2&quot;&gt;son2&lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>選擇me的下一個同層級元素，和選擇me的上一個同層級元素</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">me.nextElementSibling   <span class="comment">//  會選擇到&lt;div class=&quot;my-brother&quot;&gt; my-brother&lt;/div&gt; </span></span><br><span class="line">me.nextElementSibling   <span class="comment">//  會選擇到&lt;div class=&quot;my-sister&quot;&gt; my-sister  &lt;/div&gt; </span></span><br></pre></td></tr></table></figure>
-
-<p>選擇me的第一個子元素，選擇me的最後一個子元素</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">me.firstElementChild   <span class="comment">// 會選擇到&lt;div class=&quot;son1&quot;&gt;son1&lt;/div&gt;</span></span><br><span class="line">me.lastElementChild   <span class="comment">// 會選擇到&lt;div class=&quot;son3&quot;&gt;son3&lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>技術筆記</category>
-        <category>JavaScript</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>技術筆記</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>.includes .matches .filter .find .some .findIndex 使用</title>
-    <url>/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A81/</url>
-    <content><![CDATA[<p>.includes(變數或值) 只能使用在陣列物件value查核上，核對對象為一個變數或是值</p>
-<span id="more"></span>
-<p>.matches(‘.class’或’#id’) 查找元素所含有的class或id，或是也可以用 classList.contain()，matches比較簡潔</p>
-<p>.filter(設定條件函示) 是把一個陣列物件裡面符合條件的選出來，不符合的剃除，最後他還是一個陣列</p>
-<p>.find(設定條件函示)是把一個陣列物件裡面，第一個符合條件的挑出來，就停止</p>
-<p>.some(設定條件函示)是把一個陣列物件裡面，查找是否有相符的，有就是true沒有就是false，並不回傳整筆符合資料</p>
-<p>.findIndex(設定條件函示)回傳項目Index，找不到則回傳-1)</p>
-]]></content>
-      <categories>
-        <category>技術筆記</category>
-        <category>JavaScript</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>技術筆記</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Git Bash基本指令操作</title>
     <url>/2021/09/10/GitBash%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<h1 id="Git-Bash基本操作"><a href="#Git-Bash基本操作" class="headerlink" title="Git Bash基本操作"></a>Git Bash基本操作</h1><h2 id="當前資料夾新建一個資料夾"><a href="#當前資料夾新建一個資料夾" class="headerlink" title="當前資料夾新建一個資料夾"></a>當前資料夾新建一個資料夾</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ mkdir [資料夾名稱]</span><br></pre></td></tr></table></figure>
@@ -220,28 +168,6 @@
       <tags>
         <tag>技術筆記</tag>
         <tag>EJS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>.toggle() 和 .appendchild()</title>
-    <url>/2021/09/09/toggle%E5%92%8Cappendchild/</url>
-    <content><![CDATA[<h2 id="toggle"><a href="#toggle" class="headerlink" title="toggle"></a>toggle</h2><p>範例</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">element.classList.toggle(&#x27;sample&#x27;) </span><br></pre></td></tr></table></figure>
-
-<p>element ：某元素，使用document.querySelecrot選出<br>.classList ：某元素的class屬性<br>.toggle(‘.sample’) ：</p>
-<p>如果class屬性裡面沒有sample則加上sample，<br>如果class屬性裡面有sample則刪除sample，</p>
-<span id="more"></span>
-
-<p>Node.appendChild(sample) 是將一個節點加到指定的父節點中所有子節點的最後面。如果sample這個節點已經存在document樹當中，那 appendChild(sample) 會將原本sample這個節點位置移動到node這個新的位置（不需要事先移除要移動的節點）。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// TodoList Delete and check</span></span><br><span class="line">list.addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> target = event.target;</span><br><span class="line">  <span class="keyword">const</span> parentElement = target.parentElement</span><br><span class="line">  <span class="comment">//按下垃圾桶，將項目刪除</span></span><br><span class="line">  <span class="keyword">if</span> (target.classList.contains(<span class="string">&quot;delete&quot;</span>)) &#123;</span><br><span class="line">    parentElement.remove();</span><br><span class="line">    <span class="comment">//Todo中項目按下名字，將項目移置done中</span></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target.tagName === <span class="string">&quot;LABEL&quot;</span>) &#123;</span><br><span class="line">    doneList.appendChild(parentElement)</span><br><span class="line">    target.classList.toggle(<span class="string">&quot;checked&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// DoneList Delete and back</span></span><br><span class="line">doneList.addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> target = event.target;</span><br><span class="line">  <span class="keyword">const</span> parentElement = target.parentElement</span><br><span class="line">  <span class="comment">//按下垃圾桶，將項目刪除</span></span><br><span class="line">  <span class="keyword">if</span> (target.classList.contains(<span class="string">&quot;delete&quot;</span>)) &#123;</span><br><span class="line">    parentElement.remove();</span><br><span class="line">    <span class="comment">//Done中項目按下名字，將項目移置Todo中</span></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target.tagName === <span class="string">&quot;LABEL&quot;</span>) &#123;</span><br><span class="line">    list.appendChild(parentElement)</span><br><span class="line">    target.classList.toggle(<span class="string">&quot;checked&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>技術筆記</category>
-        <category>JavaScript</category>
-      </categories>
-      <tags>
-        <tag>技術筆記</tag>
-        <tag>Javascript</tag>
       </tags>
   </entry>
   <entry>
@@ -827,6 +753,173 @@
       <tags>
         <tag>AlphaCamp</tag>
         <tag>工作相談室</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript-Array相關</title>
+    <url>/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-Array%E7%9B%B8%E9%97%9C/</url>
+    <content><![CDATA[<span id="more"></span>
+<h1 id="陣列操作方式"><a href="#陣列操作方式" class="headerlink" title="陣列操作方式"></a>陣列操作方式</h1><h2 id="map"><a href="#map" class="headerlink" title=".map"></a>.map</h2><p>.map 會把原本的物件，會依造函式內容將每一個物件做操作後重新創造出一個新物件</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> array1 = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// pass a function to map</span></span><br><span class="line"><span class="keyword">const</span> map1 = array1.map(<span class="function"><span class="params">x</span> =&gt;</span> x * <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(map1);</span><br><span class="line"><span class="comment">// expected output: Array [2, 8, 18, 32]</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="filter"><a href="#filter" class="headerlink" title=".filter"></a>.filter</h2><p>.filter(設定條件函示) 是把一個陣列物件裡面符合條件的選出來，不符合的剃除，然後產生一個新的陣列物件，不影響原本陣列物件</p>
+<h2 id="find"><a href="#find" class="headerlink" title=".find"></a>.find</h2><p>.find(設定條件函示) 是把一個陣列物件裡面，第一個符合條件的物件選出來，就停止了</p>
+<h2 id="some"><a href="#some" class="headerlink" title=".some"></a>.some</h2><p>.some(設定條件函示) 是把一個陣列物件裡面，查找是否有相符的，並不回傳整筆符合資料，只回傳true或false，布林值</p>
+<h2 id="findIndex"><a href="#findIndex" class="headerlink" title=".findIndex"></a>.findIndex</h2><p>.findIndex(設定條件函示) 回傳項目Index，找不到則回傳-1)</p>
+<h2 id="every"><a href="#every" class="headerlink" title=".every"></a>.every</h2><p>.every(設定條件含是) 是對所有的物件做條件比對，最後統一回傳一個true or false，簡而言之不是零分，就是一百分。</p>
+]]></content>
+      <categories>
+        <category>技術筆記</category>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>技術筆記</tag>
+        <tag>Array</tag>
+        <tag>陣列</tag>
+        <tag>map</tag>
+        <tag>filter</tag>
+        <tag>find</tag>
+        <tag>some</tag>
+        <tag>findIndex</tag>
+        <tag>every</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript-CSS相關</title>
+    <url>/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-CSS%E7%9B%B8%E9%97%9C/</url>
+    <content><![CDATA[<span id="more"></span>
+<h1 id="利用toggle來新增或移除元素標籤的class名稱"><a href="#利用toggle來新增或移除元素標籤的class名稱" class="headerlink" title="利用toggle來新增或移除元素標籤的class名稱"></a>利用toggle來新增或移除元素標籤的class名稱</h1><h2 id="toggle"><a href="#toggle" class="headerlink" title="toggle"></a>toggle</h2><p>範例</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">element.classList.toggle(&#x27;sample&#x27;) </span><br></pre></td></tr></table></figure>
+
+<p>element ：某元素，使用document.querySelecrot選出<br>.classList ：某元素的class屬性<br>.toggle(‘.sample’) ：</p>
+<p>如果class屬性裡面沒有sample則加上sample，<br>如果class屬性裡面有sample則刪除sample，</p>
+]]></content>
+      <categories>
+        <category>技術筆記</category>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>技術筆記</tag>
+        <tag>toggle</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript語法使用-DOM相關</title>
+    <url>/2021/06/06/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-DOM%E7%9B%B8%E9%97%9C/</url>
+    <content><![CDATA[<span id="more"></span>
+
+<h1 id="JS選擇元素節點方法"><a href="#JS選擇元素節點方法" class="headerlink" title="JS選擇元素節點方法"></a>JS選擇元素節點方法</h1><h2 id="使用基本指令選擇document-querySelector來選擇"><a href="#使用基本指令選擇document-querySelector來選擇" class="headerlink" title="使用基本指令選擇document.querySelector來選擇"></a>使用基本指令選擇document.querySelector來選擇</h2><p>HTML</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;father&quot;</span>&gt;</span> father </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;my-sister&quot;</span>&gt;</span> my-sister<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;me&quot;</span>&gt;</span> me </span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;son1&quot;</span>&gt;</span>son1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;son2&quot;</span>&gt;</span>son2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;son3&quot;</span>&gt;</span>son3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;my-brother&quot;</span>&gt;</span> my-brother<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>選出class標籤為me的元素</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> me = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.me&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="parentElement"><a href="#parentElement" class="headerlink" title="parentElement"></a>parentElement</h2><p>選擇me的父元素和選擇me的父元素的父元素</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">me.parentElement   <span class="comment">// 會選擇到&lt;div class=&quot;&quot;father&gt;...&lt;/div&gt;</span></span><br><span class="line">me.parentElement.parentElement   <span class="comment">// 會選擇到&lt;body&gt;...&lt;/body&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="children-i"><a href="#children-i" class="headerlink" title="children[i]"></a>children[i]</h2><p>選擇me的第一個子元素和選擇me的第二個子元素</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">me.children[<span class="number">0</span>]   <span class="comment">// 會選擇到&lt;div class=&quot;son1&quot;&gt;son1&lt;/div&gt;</span></span><br><span class="line">me.children[<span class="number">1</span>]   <span class="comment">// 會選擇到&lt;div class=&quot;son2&quot;&gt;son2&lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="nextElementSibling"><a href="#nextElementSibling" class="headerlink" title="nextElementSibling"></a>nextElementSibling</h2><p>選擇me的下一個同層級元素，和選擇me的上一個同層級元素</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">me.nextElementSibling   <span class="comment">//  會選擇到&lt;div class=&quot;my-brother&quot;&gt; my-brother&lt;/div&gt; </span></span><br><span class="line">me.nextElementSibling   <span class="comment">//  會選擇到&lt;div class=&quot;my-sister&quot;&gt; my-sister  &lt;/div&gt; </span></span><br></pre></td></tr></table></figure>
+
+<h2 id="firstElementChild-lastElementChild"><a href="#firstElementChild-lastElementChild" class="headerlink" title="firstElementChild, lastElementChild"></a>firstElementChild, lastElementChild</h2><p>選擇me的第一個子元素，選擇me的最後一個子元素</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">me.firstElementChild   <span class="comment">// 會選擇到&lt;div class=&quot;son1&quot;&gt;son1&lt;/div&gt;</span></span><br><span class="line">me.lastElementChild   <span class="comment">// 會選擇到&lt;div class=&quot;son3&quot;&gt;son3&lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="appendChild"><a href="#appendChild" class="headerlink" title="appendChild"></a>appendChild</h1><p>Node.appendChild(sample)<br>是將一個節點加到指定的父節點下面所有子節點的最後面。<br>如果sample這個節點已經存在document樹當中，那 appendChild(sample) 會將原本sample這個節點位置移動到node這個新的位置（不需要事先移除要移動的節點）。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// TodoList Delete and check</span></span><br><span class="line">list.addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> target = event.target;</span><br><span class="line">  <span class="keyword">const</span> parentElement = target.parentElement</span><br><span class="line">  <span class="comment">//按下垃圾桶，將項目刪除</span></span><br><span class="line">  <span class="keyword">if</span> (target.classList.contains(<span class="string">&quot;delete&quot;</span>)) &#123;</span><br><span class="line">    parentElement.remove();</span><br><span class="line">    <span class="comment">//Todo中項目按下名字，將項目移置done中</span></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target.tagName === <span class="string">&quot;LABEL&quot;</span>) &#123;</span><br><span class="line">    doneList.appendChild(parentElement) <span class="comment">//會移到doneList中，並且刪除原本自己位置的標籤</span></span><br><span class="line">    target.classList.toggle(<span class="string">&quot;checked&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// DoneList Delete and back</span></span><br><span class="line">doneList.addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> target = event.target;</span><br><span class="line">  <span class="keyword">const</span> parentElement = target.parentElement</span><br><span class="line">  <span class="comment">//按下垃圾桶，將項目刪除</span></span><br><span class="line">  <span class="keyword">if</span> (target.classList.contains(<span class="string">&quot;delete&quot;</span>)) &#123;</span><br><span class="line">    parentElement.remove();</span><br><span class="line">    <span class="comment">//Done中項目按下名字，將項目移置Todo中</span></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target.tagName === <span class="string">&quot;LABEL&quot;</span>) &#123;</span><br><span class="line">    list.appendChild(parentElement) <span class="comment">//會返回移到List中，並且刪除原本自己位置的標籤</span></span><br><span class="line">    target.classList.toggle(<span class="string">&quot;checked&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="利用matches或classList-contains來比對目標對象"><a href="#利用matches或classList-contains來比對目標對象" class="headerlink" title="利用matches或classList.contains來比對目標對象"></a>利用matches或classList.contains來比對目標對象</h1><h2 id="matches"><a href="#matches" class="headerlink" title=".matches"></a>.matches</h2><p>target.matches(‘.class’或’#id’) 轉譯：目標對象元素是否含有.class或#id，回傳true或fals</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 刪除函式</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeTodo</span>(<span class="params">target</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (target.matches(<span class="string">&quot;.delete&quot;</span>)) &#123;</span><br><span class="line">    target.parentElement.remove();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="classList-contains"><a href="#classList-contains" class="headerlink" title=".classList.contains"></a>.classList.contains</h2><p>或是也可以用<br>target.classList.contains(‘string’) 轉譯：目標對象元素class屬性裡是否含有’string’值，回傳true或fals</p>
+<hr>
+<h2 id="關於dataset"><a href="#關於dataset" class="headerlink" title="關於dataset"></a>關於dataset</h2><p>可以在元素標籤上設定data資料，在使用JS去取得點擊目標元素上的dataset資料</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;user&quot;</span> <span class="attr">data-id</span>=<span class="string">&quot;1234567890&quot;</span> <span class="attr">data-user</span>=<span class="string">&quot;ac-genie&quot;</span> <span class="attr">data-date-of-birth</span>&gt;</span>AC Genie<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>然後我們可以呼叫 dataset. 來取得這些屬性的值，你會發現這些值的型態都是字串*：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> el = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;#user&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(el.dataset.user)</span><br><span class="line"><span class="comment">//ac-genie</span></span><br><span class="line"><span class="built_in">console</span>.log(el.dataset.id)</span><br><span class="line"><span class="comment">//1234567890</span></span><br><span class="line"><span class="built_in">console</span>.log(el.dataset.dateOfBirth)</span><br><span class="line"><span class="comment">//(空字串)</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>技術筆記</category>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>技術筆記</tag>
+        <tag>DOM</tag>
+        <tag>querySelector</tag>
+        <tag>parentElement</tag>
+        <tag>children</tag>
+        <tag>nextElementSibling</tag>
+        <tag>firstElementChild</tag>
+        <tag>lastElementChild</tag>
+        <tag>appendChild</tag>
+        <tag>matches</tag>
+        <tag>contains</tag>
+        <tag>dataset</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript語法使用-Function相關</title>
+    <url>/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-Function%E7%9B%B8%E9%97%9C/</url>
+    <content><![CDATA[<h2 id="關於-function"><a href="#關於-function" class="headerlink" title="關於 function"></a>關於 function</h2><p>這篇由W3HEXSCHOOL發布的有關function的特性的講解可以參考<br><a href="https://w3c.hexschool.com/blog/cb6e361">連結在這</a></p>
+<span id="more"></span>
+<p>MDN 的簡短說明</p>
+<blockquote class="pullquote"><p>Function 建構函式可建立一個新的 Function 物件。在 JavaScript 中，所有的函式實際上都是 Function 物件。</p>
+</blockquote>
+
+<p>Kuro 大大在先前 IT 鐵人賽 - <a href="https://ithelp.ithome.com.tw/articles/10191549">Day 10 函式 Functions 的基本概念 中也有提到</a></p>
+<blockquote class="pullquote"><p>在前面介紹變數型別的時候曾經說過，除了基本型別以外的都是物件。<br>當我們透過 typeof 去檢查一個「函式 (function) 」的時候，雖然你會得到 “function” 的結果，<br>讓你以為 function 也是 JavaScript 定義的一種型別，但實際上它仍屬於 Object 的一種。<br>你可以把它想像成是一種可以被呼叫 (be invoked) 的特殊物件 (值)。</p>
+</blockquote>
+
+<h2 id="IIFE-立即執行函式"><a href="#IIFE-立即執行函式" class="headerlink" title="IIFE (立即執行函式)"></a>IIFE (立即執行函式)</h2><p>接下來談談 IIFE 全名為 Immediately Invoked Function Expression，意思就是定義完這個函式後馬上就執行的意思，此外它又可以稱之為 Self-Executing Anonymous Function，中文意思是自我執行匿名函式，而 IIFE 的好處是可以避免汙染到全域(global)。</p>
+<p>IIFE 的話則是可以改用箭頭函式撰寫</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">(<span class="function">() =&gt;</span> &#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&#x27;Hi&#x27;</span>)</span><br><span class="line">&#125;)()</span><br></pre></td></tr></table></figure>
+
+<p>箭頭函式的使用注意</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">filteredMovies = []</span><br><span class="line">filteredMovies = movies.filter( <span class="function"><span class="params">movie</span> =&gt;</span> movie.title.toLowerCase().includes(keyword)) <span class="comment">// OK，前面參數沒帶小括號可以，後面沒帶花括號也可以</span></span><br><span class="line">filteredMovies = movies.filter( <span class="function">(<span class="params">movie</span>) =&gt;</span> movie.title.toLowerCase().includes(keyword)) <span class="comment">// OK，前面參數沒帶小括號可以，後面沒帶花括號也可以</span></span><br><span class="line">filteredMovies = movies.filter( <span class="function"><span class="params">movie</span> =&gt;</span> &#123; <span class="keyword">return</span> movie.title.toLowerCase().includes(keyword)&#125;) <span class="comment">// OK，前面參數帶小括號可以，後面沒帶花括號要加上return</span></span><br><span class="line">filteredMovies = movies.filter( <span class="function">(<span class="params">movie</span>) =&gt;</span> &#123; <span class="keyword">return</span> movie.title.toLowerCase().includes(keyword)&#125;) <span class="comment">// OK，前面參數沒帶小括號可以，後面沒帶花括號要加上return</span></span><br><span class="line"><span class="comment">// 結論，有花括要帶上return</span></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>技術筆記</category>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>技術筆記</tag>
+        <tag>function</tag>
+        <tag>函式</tag>
+        <tag>IIFE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>學期2-2_S2-電影清單練習實作</title>
+    <url>/2021/09/11/%E5%AD%B8%E6%9C%9F2-2-S2-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E7%B7%B4%E7%BF%92%E5%AF%A6%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="此文章僅記錄作業需要特別注意處"><a href="#此文章僅記錄作業需要特別注意處" class="headerlink" title="此文章僅記錄作業需要特別注意處"></a>此文章僅記錄作業需要特別注意處</h1><h2 id="Array-prototype-push"><a href="#Array-prototype-push" class="headerlink" title="Array.prototype.push()"></a>Array.prototype.push()</h2><p>當用常數宣告了一個陣列容器的時候，若要加入物件或其他東西要使用Array.prototype.push()</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> movies = []</span><br><span class="line"></span><br><span class="line">axios</span><br><span class="line">  .get(INDEX_URL)</span><br><span class="line">  .then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">    movies.push(...response.data.results)</span><br><span class="line">    renderMovieList(movies)</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function">(<span class="params">err</span>) =&gt;</span> <span class="built_in">console</span>.log(err))</span><br></pre></td></tr></table></figure>
+
+<h2 id="展開運算子"><a href="#展開運算子" class="headerlink" title="展開運算子"></a>展開運算子</h2><p>…response.data.results 前面的… 是展開運算子，會將陣列內容展開</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> movies = []; <span class="comment">//空陣列，空容器</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//目標：用 push 方法把 movies 從空陣列變成 [1,2,3]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//方法一</span></span><br><span class="line">movies.push(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>); <span class="comment">//傳入 3 個參數：1,2,3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//方法二</span></span><br><span class="line">movies.push(...[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]); <span class="comment">//把陣列用展開運算子打開，打開後就和方法一一模一樣</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//方法三</span></span><br><span class="line"><span class="keyword">const</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; <span class="comment">//做一個陣列</span></span><br><span class="line">movies.push(...numbers); <span class="comment">//和方法二同樣意思</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="關於dataset"><a href="#關於dataset" class="headerlink" title="關於dataset"></a>關於dataset</h2><p>可以在元素標籤上設定data資料，在使用JS去取得點擊目標元素上的dataset資料</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;user&quot;</span> <span class="attr">data-id</span>=<span class="string">&quot;1234567890&quot;</span> <span class="attr">data-user</span>=<span class="string">&quot;ac-genie&quot;</span> <span class="attr">data-date-of-birth</span>&gt;</span>AC Genie<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>然後我們可以呼叫 dataset. 來取得這些屬性的值，你會發現這些值的型態都是字串*：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> el = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;#user&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(el.dataset.user)</span><br><span class="line"><span class="comment">//ac-genie</span></span><br><span class="line"><span class="built_in">console</span>.log(el.dataset.id)</span><br><span class="line"><span class="comment">//1234567890</span></span><br><span class="line"><span class="built_in">console</span>.log(el.dataset.dateOfBirth)</span><br><span class="line"><span class="comment">//(空字串)</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>AlphaCamp</category>
+        <category>Task</category>
+      </categories>
+      <tags>
+        <tag>技術筆記</tag>
+        <tag>AlphaCamp</tag>
+        <tag>作業</tag>
+        <tag>Array.prototype.push()</tag>
+        <tag>...展開運算子</tag>
       </tags>
   </entry>
 </search>

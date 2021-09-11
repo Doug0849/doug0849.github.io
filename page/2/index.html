@@ -437,7 +437,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,zh-TW,default">
-    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A81/">
+    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-Array%E7%9B%B8%E9%97%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -451,7 +451,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A81/" class="post-title-link" itemprop="url">.includes .matches .filter .find .some .findIndex 使用</a>
+            <a href="/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-Array%E7%9B%B8%E9%97%9C/" class="post-title-link" itemprop="url">JavaScript-Array相關</a>
         </h2>
 
         <div class="post-meta">
@@ -488,10 +488,165 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>.includes(變數或值) 只能使用在陣列物件value查核上，核對對象為一個變數或是值</p>
+          <span id="more"></span>
+<h1 id="陣列操作方式"><a href="#陣列操作方式" class="headerlink" title="陣列操作方式"></a>陣列操作方式</h1><h2 id="map"><a href="#map" class="headerlink" title=".map"></a>.map</h2><p>.map 會把原本的物件，會依造函式內容將每一個物件做操作後重新創造出一個新物件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> array1 = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">9</span>, <span class="number">16</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// pass a function to map</span></span><br><span class="line"><span class="keyword">const</span> map1 = array1.map(<span class="function"><span class="params">x</span> =&gt;</span> x * <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(map1);</span><br><span class="line"><span class="comment">// expected output: Array [2, 8, 18, 32]</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="filter"><a href="#filter" class="headerlink" title=".filter"></a>.filter</h2><p>.filter(設定條件函示) 是把一個陣列物件裡面符合條件的選出來，不符合的剃除，然後產生一個新的陣列物件，不影響原本陣列物件</p>
+<h2 id="find"><a href="#find" class="headerlink" title=".find"></a>.find</h2><p>.find(設定條件函示) 是把一個陣列物件裡面，第一個符合條件的物件選出來，就停止了</p>
+<h2 id="some"><a href="#some" class="headerlink" title=".some"></a>.some</h2><p>.some(設定條件函示) 是把一個陣列物件裡面，查找是否有相符的，並不回傳整筆符合資料，只回傳true或false，布林值</p>
+<h2 id="findIndex"><a href="#findIndex" class="headerlink" title=".findIndex"></a>.findIndex</h2><p>.findIndex(設定條件函示) 回傳項目Index，找不到則回傳-1)</p>
+<h2 id="every"><a href="#every" class="headerlink" title=".every"></a>.every</h2><p>.every(設定條件含是) 是對所有的物件做條件比對，最後統一回傳一個true or false，簡而言之不是零分，就是一百分。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,zh-TW,default">
+    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-CSS%E7%9B%B8%E9%97%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Doug 道">
+      <meta itemprop="description" content="關於轉職紀錄、技術筆記、隨寫">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="想要邊撸鐵邊學CODE的DOUG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-CSS%E7%9B%B8%E9%97%9C/" class="post-title-link" itemprop="url">JavaScript-CSS相關</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-09 18:46:37" itemprop="dateCreated datePublished" datetime="2021-06-09T18:46:37+08:00">2021-06-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">技術筆記</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <span id="more"></span>
+<h1 id="利用toggle來新增或移除元素標籤的class名稱"><a href="#利用toggle來新增或移除元素標籤的class名稱" class="headerlink" title="利用toggle來新增或移除元素標籤的class名稱"></a>利用toggle來新增或移除元素標籤的class名稱</h1><h2 id="toggle"><a href="#toggle" class="headerlink" title="toggle"></a>toggle</h2><p>範例</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element.classList.toggle(&#x27;sample&#x27;) </span><br></pre></td></tr></table></figure>
+
+<p>element ：某元素，使用document.querySelecrot選出<br>.classList ：某元素的class屬性<br>.toggle(‘.sample’) ：</p>
+<p>如果class屬性裡面沒有sample則加上sample，<br>如果class屬性裡面有sample則刪除sample，</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,zh-TW,default">
+    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-Function%E7%9B%B8%E9%97%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Doug 道">
+      <meta itemprop="description" content="關於轉職紀錄、技術筆記、隨寫">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="想要邊撸鐵邊學CODE的DOUG">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-Function%E7%9B%B8%E9%97%9C/" class="post-title-link" itemprop="url">JavaScript語法使用-Function相關</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-06-09 18:46:37" itemprop="dateCreated datePublished" datetime="2021-06-09T18:46:37+08:00">2021-06-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">技術筆記</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="關於-function"><a href="#關於-function" class="headerlink" title="關於 function"></a>關於 function</h2><p>這篇由W3HEXSCHOOL發布的有關function的特性的講解可以參考<br><a target="_blank" rel="noopener" href="https://w3c.hexschool.com/blog/cb6e361">連結在這</a></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A81/#more" rel="contents">
+              <a class="btn" href="/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-Function%E7%9B%B8%E9%97%9C/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -515,7 +670,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en,zh-TW,default">
-    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/06/06/DOM%E7%AF%80%E9%BB%9E%E9%81%B8%E6%93%87%E6%96%B9%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/06/06/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-DOM%E7%9B%B8%E9%97%9C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -529,7 +684,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/06/06/DOM%E7%AF%80%E9%BB%9E%E9%81%B8%E6%93%87%E6%96%B9%E5%BC%8F/" class="post-title-link" itemprop="url">DOM節點選擇方式</a>
+            <a href="/2021/06/06/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-DOM%E7%9B%B8%E9%97%9C/" class="post-title-link" itemprop="url">JavaScript語法使用-DOM相關</a>
         </h2>
 
         <div class="post-meta">
@@ -566,16 +721,42 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>HTML</p>
+          <span id="more"></span>
+
+<h1 id="JS選擇元素節點方法"><a href="#JS選擇元素節點方法" class="headerlink" title="JS選擇元素節點方法"></a>JS選擇元素節點方法</h1><h2 id="使用基本指令選擇document-querySelector來選擇"><a href="#使用基本指令選擇document-querySelector來選擇" class="headerlink" title="使用基本指令選擇document.querySelector來選擇"></a>使用基本指令選擇document.querySelector來選擇</h2><p>HTML</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;father&quot;</span>&gt;</span> father </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;my-sister&quot;</span>&gt;</span> my-sister<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;me&quot;</span>&gt;</span> me </span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;son1&quot;</span>&gt;</span>son1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;son2&quot;</span>&gt;</span>son2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;son3&quot;</span>&gt;</span>son3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;my-brother&quot;</span>&gt;</span> my-brother<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/06/06/DOM%E7%AF%80%E9%BB%9E%E9%81%B8%E6%93%87%E6%96%B9%E5%BC%8F/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+
+<p>選出class標籤為me的元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> me = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.me&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="parentElement"><a href="#parentElement" class="headerlink" title="parentElement"></a>parentElement</h2><p>選擇me的父元素和選擇me的父元素的父元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">me.parentElement   <span class="comment">// 會選擇到&lt;div class=&quot;&quot;father&gt;...&lt;/div&gt;</span></span><br><span class="line">me.parentElement.parentElement   <span class="comment">// 會選擇到&lt;body&gt;...&lt;/body&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="children-i"><a href="#children-i" class="headerlink" title="children[i]"></a>children[i]</h2><p>選擇me的第一個子元素和選擇me的第二個子元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">me.children[<span class="number">0</span>]   <span class="comment">// 會選擇到&lt;div class=&quot;son1&quot;&gt;son1&lt;/div&gt;</span></span><br><span class="line">me.children[<span class="number">1</span>]   <span class="comment">// 會選擇到&lt;div class=&quot;son2&quot;&gt;son2&lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="nextElementSibling"><a href="#nextElementSibling" class="headerlink" title="nextElementSibling"></a>nextElementSibling</h2><p>選擇me的下一個同層級元素，和選擇me的上一個同層級元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">me.nextElementSibling   <span class="comment">//  會選擇到&lt;div class=&quot;my-brother&quot;&gt; my-brother&lt;/div&gt; </span></span><br><span class="line">me.nextElementSibling   <span class="comment">//  會選擇到&lt;div class=&quot;my-sister&quot;&gt; my-sister  &lt;/div&gt; </span></span><br></pre></td></tr></table></figure>
+
+<h2 id="firstElementChild-lastElementChild"><a href="#firstElementChild-lastElementChild" class="headerlink" title="firstElementChild, lastElementChild"></a>firstElementChild, lastElementChild</h2><p>選擇me的第一個子元素，選擇me的最後一個子元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">me.firstElementChild   <span class="comment">// 會選擇到&lt;div class=&quot;son1&quot;&gt;son1&lt;/div&gt;</span></span><br><span class="line">me.lastElementChild   <span class="comment">// 會選擇到&lt;div class=&quot;son3&quot;&gt;son3&lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="appendChild"><a href="#appendChild" class="headerlink" title="appendChild"></a>appendChild</h1><p>Node.appendChild(sample)<br>是將一個節點加到指定的父節點下面所有子節點的最後面。<br>如果sample這個節點已經存在document樹當中，那 appendChild(sample) 會將原本sample這個節點位置移動到node這個新的位置（不需要事先移除要移動的節點）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// TodoList Delete and check</span></span><br><span class="line">list.addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> target = event.target;</span><br><span class="line">  <span class="keyword">const</span> parentElement = target.parentElement</span><br><span class="line">  <span class="comment">//按下垃圾桶，將項目刪除</span></span><br><span class="line">  <span class="keyword">if</span> (target.classList.contains(<span class="string">&quot;delete&quot;</span>)) &#123;</span><br><span class="line">    parentElement.remove();</span><br><span class="line">    <span class="comment">//Todo中項目按下名字，將項目移置done中</span></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target.tagName === <span class="string">&quot;LABEL&quot;</span>) &#123;</span><br><span class="line">    doneList.appendChild(parentElement) <span class="comment">//會移到doneList中，並且刪除原本自己位置的標籤</span></span><br><span class="line">    target.classList.toggle(<span class="string">&quot;checked&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// DoneList Delete and back</span></span><br><span class="line">doneList.addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function"><span class="keyword">function</span> (<span class="params">event</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> target = event.target;</span><br><span class="line">  <span class="keyword">const</span> parentElement = target.parentElement</span><br><span class="line">  <span class="comment">//按下垃圾桶，將項目刪除</span></span><br><span class="line">  <span class="keyword">if</span> (target.classList.contains(<span class="string">&quot;delete&quot;</span>)) &#123;</span><br><span class="line">    parentElement.remove();</span><br><span class="line">    <span class="comment">//Done中項目按下名字，將項目移置Todo中</span></span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span> (target.tagName === <span class="string">&quot;LABEL&quot;</span>) &#123;</span><br><span class="line">    list.appendChild(parentElement) <span class="comment">//會返回移到List中，並且刪除原本自己位置的標籤</span></span><br><span class="line">    target.classList.toggle(<span class="string">&quot;checked&quot;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h1 id="利用matches或classList-contains來比對目標對象"><a href="#利用matches或classList-contains來比對目標對象" class="headerlink" title="利用matches或classList.contains來比對目標對象"></a>利用matches或classList.contains來比對目標對象</h1><h2 id="matches"><a href="#matches" class="headerlink" title=".matches"></a>.matches</h2><p>target.matches(‘.class’或’#id’) 轉譯：目標對象元素是否含有.class或#id，回傳true或fals</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 刪除函式</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">removeTodo</span>(<span class="params">target</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (target.matches(<span class="string">&quot;.delete&quot;</span>)) &#123;</span><br><span class="line">    target.parentElement.remove();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="classList-contains"><a href="#classList-contains" class="headerlink" title=".classList.contains"></a>.classList.contains</h2><p>或是也可以用<br>target.classList.contains(‘string’) 轉譯：目標對象元素class屬性裡是否含有’string’值，回傳true或fals</p>
+<hr>
+<h2 id="關於dataset"><a href="#關於dataset" class="headerlink" title="關於dataset"></a>關於dataset</h2><p>可以在元素標籤上設定data資料，在使用JS去取得點擊目標元素上的dataset資料</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;user&quot;</span> <span class="attr">data-id</span>=<span class="string">&quot;1234567890&quot;</span> <span class="attr">data-user</span>=<span class="string">&quot;ac-genie&quot;</span> <span class="attr">data-date-of-birth</span>&gt;</span>AC Genie<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>然後我們可以呼叫 dataset. 來取得這些屬性的值，你會發現這些值的型態都是字串*：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> el = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;#user&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(el.dataset.user)</span><br><span class="line"><span class="comment">//ac-genie</span></span><br><span class="line"><span class="built_in">console</span>.log(el.dataset.id)</span><br><span class="line"><span class="comment">//1234567890</span></span><br><span class="line"><span class="built_in">console</span>.log(el.dataset.dateOfBirth)</span><br><span class="line"><span class="comment">//(空字串)</span></span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -661,7 +842,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -674,7 +855,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">38</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
