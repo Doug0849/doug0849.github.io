@@ -1164,7 +1164,7 @@
     <title>S2：切版練習：毛小孩星球</title>
     <url>/2021/09/14/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-%E6%AF%9B%E5%B0%8F%E5%AD%A9%E6%98%9F%E7%90%83/</url>
     <content><![CDATA[<h1 id="完成作品CodePen連結"><a href="#完成作品CodePen連結" class="headerlink" title="完成作品CodePen連結"></a><a href="https://codepen.io/doug0849/pen/MWovwyr">完成作品CodePen連結</a></h1><p><strong>此文章所做的筆記，僅為提醒自己要多加注意的地方。</strong></p>
-<span id="more"></span>
+<h1 id="本文引用之圖片均來自Alpha-Camp"><a href="#本文引用之圖片均來自Alpha-Camp" class="headerlink" title="本文引用之圖片均來自Alpha Camp"></a>本文引用之圖片均來自<a href="https://tw.alphacamp.co/">Alpha Camp</a></h1><span id="more"></span>
 <h1 id="作業筆記"><a href="#作業筆記" class="headerlink" title="作業筆記"></a>作業筆記</h1><h2 id="起手式-Rest-default-CSS-還原瀏覽器預設設定"><a href="#起手式-Rest-default-CSS-還原瀏覽器預設設定" class="headerlink" title="起手式 Rest default CSS 還原瀏覽器預設設定"></a>起手式 Rest default CSS 還原瀏覽器預設設定</h2><p>每家瀏覽器都有預設不同的 CSS 樣式，造成前端工程師網頁開發上一個頭痛的問題：<br>開發時用 CSS 設計好整齊美麗的排版，在 Google Chrome 上看起沒問題，用 IE 打開卻全變了樣，且市面上還有 Firefox、Safari、Opera 等其他家瀏覽器，</p>
 <p>所以實務開發中，CSS起手式通常會是 Reset CSS，先將各大瀏覽器的預設樣式還原，有個乾淨的開始，再來制訂專案的樣式。</p>
 <p>可以直接使用開源的 CSS Reset 工具如：</p>
