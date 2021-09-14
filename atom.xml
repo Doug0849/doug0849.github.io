@@ -6,7 +6,7 @@
   <link href="https://doug0849.github.io/atom.xml" rel="self"/>
   
   <link href="https://doug0849.github.io/"/>
-  <updated>2021-09-11T17:58:29.000Z</updated>
+  <updated>2021-09-13T18:37:41.000Z</updated>
   <id>https://doug0849.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>S2：切版練習：毛小孩星球</title>
+    <link href="https://doug0849.github.io/2021/09/14/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-%E6%AF%9B%E5%B0%8F%E5%AD%A9%E6%98%9F%E7%90%83/"/>
+    <id>https://doug0849.github.io/2021/09/14/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-%E6%AF%9B%E5%B0%8F%E5%AD%A9%E6%98%9F%E7%90%83/</id>
+    <published>2021-09-13T18:37:41.000Z</published>
+    <updated>2021-09-13T18:37:41.000Z</updated>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;完成作品CodePen連結&quot;&gt;&lt;a href=&quot;#完成作品CodePen連結&quot; class=&quot;headerlink&quot; title=&quot;完成作品CodePen連結&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://codepen.io/doug0849/pen/MWovwyr&quot;&gt;完成作品CodePen連結&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;此文章所做的筆記，僅為提醒自己要多加注意的地方。&lt;/strong&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="AlphaCamp" scheme="https://doug0849.github.io/categories/AlphaCamp/"/>
+    
+    <category term="Task" scheme="https://doug0849.github.io/categories/AlphaCamp/Task/"/>
+    
+    
+    <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
+    
+    <category term="AlphaCamp" scheme="https://doug0849.github.io/tags/AlphaCamp/"/>
+    
+    <category term="作業" scheme="https://doug0849.github.io/tags/%E4%BD%9C%E6%A5%AD/"/>
+    
+    <category term="CSS" scheme="https://doug0849.github.io/tags/CSS/"/>
+    
+    <category term="切版" scheme="https://doug0849.github.io/tags/%E5%88%87%E7%89%88/"/>
+    
+  </entry>
   
   <entry>
     <title>隨記-越南疫情近況</title>
@@ -67,8 +96,8 @@
   
   <entry>
     <title>學期2-2_S2-電影清單練習實作</title>
-    <link href="https://doug0849.github.io/2021/09/11/%E5%AD%B8%E6%9C%9F2-2-S2-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E7%B7%B4%E7%BF%92%E5%AF%A6%E4%BD%9C/"/>
-    <id>https://doug0849.github.io/2021/09/11/%E5%AD%B8%E6%9C%9F2-2-S2-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E7%B7%B4%E7%BF%92%E5%AF%A6%E4%BD%9C/</id>
+    <link href="https://doug0849.github.io/2021/09/11/S2-2-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E7%B7%B4%E7%BF%92%E5%AF%A6%E4%BD%9C/"/>
+    <id>https://doug0849.github.io/2021/09/11/S2-2-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E7%B7%B4%E7%BF%92%E5%AF%A6%E4%BD%9C/</id>
     <published>2021-09-10T18:12:50.000Z</published>
     <updated>2021-09-10T18:12:50.000Z</updated>
     
@@ -513,13 +542,7 @@
     <updated>2021-06-09T02:30:46.000Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;觀念隨記&quot;&gt;&lt;a href=&quot;#觀念隨記&quot; class=&quot;headerlink&quot; title=&quot;觀念隨記&quot;&gt;&lt;/a&gt;觀念隨記&lt;/h1&gt;&lt;p&gt;階層式樣式表（英語：Cascading Style</summary>
-        
-      
+    <summary type="html">&lt;h1 id=&quot;以下圖源均來自：&quot;&gt;&lt;a href=&quot;#以下圖源均來自：&quot; class=&quot;headerlink&quot; title=&quot;以下圖源均來自：&quot;&gt;&lt;/a&gt;以下圖源均來自：&lt;a href=&quot;https://tw.alphacamp.co/&quot; title=&quot;&quot; target=&quot;&quot;&gt;Alpha Camp課程&lt;/a&gt;&lt;/h1&gt;&lt;h1 id=&quot;觀念隨記&quot;&gt;&lt;a href=&quot;#觀念隨記&quot; class=&quot;headerlink&quot; title=&quot;觀念隨記&quot;&gt;&lt;/a&gt;觀念隨記&lt;/h1&gt;&lt;p&gt;階層式樣式表（英語：Cascading Style Sheets，縮寫：CSS；又稱串樣式列表、級聯樣式表、串接樣式表、階層式樣式表）&lt;/p&gt;</summary>
     
     
     
@@ -533,59 +556,6 @@
     <category term="CSS" scheme="https://doug0849.github.io/tags/CSS/"/>
     
     <category term="優先級" scheme="https://doug0849.github.io/tags/%E5%84%AA%E5%85%88%E7%B4%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript語法使用-DOM相關</title>
-    <link href="https://doug0849.github.io/2021/06/06/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-DOM%E7%9B%B8%E9%97%9C/"/>
-    <id>https://doug0849.github.io/2021/06/06/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-DOM%E7%9B%B8%E9%97%9C/</id>
-    <published>2021-06-06T10:52:12.000Z</published>
-    <updated>2021-06-06T10:52:12.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
-
-&lt;h1 id=&quot;JS選擇元素節點方法&quot;&gt;&lt;a href=&quot;#JS選擇元素節點方法&quot; class=&quot;headerlink&quot; title=&quot;JS選擇元素節點方法&quot;&gt;&lt;/a&gt;JS選擇元素節點方法&lt;/h1&gt;&lt;h2</summary>
-        
-      
-    
-    
-    
-    <category term="技術筆記" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
-    
-    <category term="JavaScript" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/"/>
-    
-    
-    <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
-    
-    <category term="JavaScript" scheme="https://doug0849.github.io/tags/JavaScript/"/>
-    
-    <category term="matches" scheme="https://doug0849.github.io/tags/matches/"/>
-    
-    <category term="querySelector" scheme="https://doug0849.github.io/tags/querySelector/"/>
-    
-    <category term="parentElement" scheme="https://doug0849.github.io/tags/parentElement/"/>
-    
-    <category term="DOM" scheme="https://doug0849.github.io/tags/DOM/"/>
-    
-    <category term="children" scheme="https://doug0849.github.io/tags/children/"/>
-    
-    <category term="nextElementSibling" scheme="https://doug0849.github.io/tags/nextElementSibling/"/>
-    
-    <category term="firstElementChild" scheme="https://doug0849.github.io/tags/firstElementChild/"/>
-    
-    <category term="lastElementChild" scheme="https://doug0849.github.io/tags/lastElementChild/"/>
-    
-    <category term="appendChild" scheme="https://doug0849.github.io/tags/appendChild/"/>
-    
-    <category term="contains" scheme="https://doug0849.github.io/tags/contains/"/>
-    
-    <category term="dataset" scheme="https://doug0849.github.io/tags/dataset/"/>
     
   </entry>
   

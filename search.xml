@@ -756,34 +756,6 @@
       </tags>
   </entry>
   <entry>
-    <title>學期2-2_S2-電影清單練習實作</title>
-    <url>/2021/09/11/%E5%AD%B8%E6%9C%9F2-2-S2-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E7%B7%B4%E7%BF%92%E5%AF%A6%E4%BD%9C/</url>
-    <content><![CDATA[<h1 id="此文章僅記錄作業時提醒自己遇到的問題及需要注意處"><a href="#此文章僅記錄作業時提醒自己遇到的問題及需要注意處" class="headerlink" title="此文章僅記錄作業時提醒自己遇到的問題及需要注意處"></a>此文章僅記錄作業時提醒自己遇到的問題及需要注意處</h1><span id="more"></span>
-<h2 id="Array-prototype-push"><a href="#Array-prototype-push" class="headerlink" title="Array.prototype.push()"></a>Array.prototype.push()</h2><p>當用<strong>常數</strong>宣告了一個陣列容器的時候，若要加入物件或其他東西要使用Array.prototype.push()</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> movies = []</span><br><span class="line"></span><br><span class="line">axios</span><br><span class="line">  .get(INDEX_URL)</span><br><span class="line">  .then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">    movies.push(...response.data.results)</span><br><span class="line">    renderMovieList(movies)</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function">(<span class="params">err</span>) =&gt;</span> <span class="built_in">console</span>.log(err))</span><br></pre></td></tr></table></figure>
-
-<h2 id="展開運算子"><a href="#展開運算子" class="headerlink" title="展開運算子"></a>展開運算子</h2><p>…response.data.results 前面的… 是展開運算子，會將陣列內容展開</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> movies = []; <span class="comment">//空陣列，空容器</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//目標：用 push 方法把 movies 從空陣列變成 [1,2,3]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//方法一</span></span><br><span class="line">movies.push(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>); <span class="comment">//傳入 3 個參數：1,2,3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//方法二</span></span><br><span class="line">movies.push(...[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]); <span class="comment">//把陣列用展開運算子打開，打開後就和方法一一模一樣</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//方法三</span></span><br><span class="line"><span class="keyword">const</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; <span class="comment">//做一個陣列</span></span><br><span class="line">movies.push(...numbers); <span class="comment">//和方法二同樣意思</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="關於dataset"><a href="#關於dataset" class="headerlink" title="關於dataset"></a>關於dataset</h2><p>可以在元素標籤上設定data資料，在使用JS去取得點擊目標元素上的dataset資料</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;user&quot;</span> <span class="attr">data-id</span>=<span class="string">&quot;1234567890&quot;</span> <span class="attr">data-user</span>=<span class="string">&quot;ac-genie&quot;</span> <span class="attr">data-date-of-birth</span>&gt;</span>AC Genie<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>然後我們可以呼叫 dataset. 來取得這些屬性的值，你會發現這些值的型態都是字串*：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> el = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;#user&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(el.dataset.user)</span><br><span class="line"><span class="comment">//ac-genie</span></span><br><span class="line"><span class="built_in">console</span>.log(el.dataset.id)</span><br><span class="line"><span class="comment">//1234567890</span></span><br><span class="line"><span class="built_in">console</span>.log(el.dataset.dateOfBirth)</span><br><span class="line"><span class="comment">//(空字串)</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>AlphaCamp</category>
-        <category>Task</category>
-      </categories>
-      <tags>
-        <tag>技術筆記</tag>
-        <tag>AlphaCamp</tag>
-        <tag>作業</tag>
-        <tag>Array.prototype.push()</tag>
-        <tag>...展開運算子</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JavaScript-CSS相關</title>
     <url>/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-CSS%E7%9B%B8%E9%97%9C/</url>
     <content><![CDATA[<span id="more"></span>
@@ -987,10 +959,36 @@
   <entry>
     <title>CSS語法使用</title>
     <url>/2021/06/09/css%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="觀念隨記"><a href="#觀念隨記" class="headerlink" title="觀念隨記"></a>觀念隨記</h1><p>階層式樣式表（英語：Cascading Style Sheets，縮寫：CSS；又稱串樣式列表、級聯樣式表、串接樣式表、階層式樣式表）</p>
+    <content><![CDATA[<h1 id="以下圖源均來自："><a href="#以下圖源均來自：" class="headerlink" title="以下圖源均來自："></a>以下圖源均來自：<a href="https://tw.alphacamp.co/" title="" target="">Alpha Camp課程</a></h1><h1 id="觀念隨記"><a href="#觀念隨記" class="headerlink" title="觀念隨記"></a>觀念隨記</h1><p>階層式樣式表（英語：Cascading Style Sheets，縮寫：CSS；又稱串樣式列表、級聯樣式表、串接樣式表、階層式樣式表）</p>
+<span id="more"></span>
 <p>用戶體驗 (UX) 研究表示，在<strong>桌機</strong>的閱讀體驗中，理想上<strong>每行的字元應該在 50 到 75 之間</strong>才能維持良好的易讀性。更有其他研究表示，其實這個範圍<strong>可以擴大到 85 個字元。</strong></p>
+<p>認識 display 屬性<br>所有的 HTML 元素都會有一個預設的 display 值，預設值通常是 block 或 inline 其中一個。</p>
+<table>
+<thead>
+<tr>
+<th>預設值為 block 的元素</th>
+<th>預設值為 inline 的元素</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>div, header, section, nav, p, h1, h2, h3, h4, h5, h6, ol, ul, li, form, table</td>
+<td>span, img, a, em, strong…</td>
+</tr>
+</tbody></table>
 <hr>
-<h2 id="網頁-單位-px-em-rem"><a href="#網頁-單位-px-em-rem" class="headerlink" title="網頁 ( 單位 ) px, em, rem, %"></a>網頁 ( 單位 ) px, em, rem, %</h2><p>px：絕對單位，代表螢幕中每個「點」( pixel )。<br>em：相對單位，每個子元素透過「倍數」乘以父元素的 px 值。<br>rem：相對單位，每個元素透過「倍數」乘以根元素的 px 值。<br>%：相對單位，每個子元素透過「百分比」乘以父元素的 px 值</p>
+<h2 id="Rest-default-CSS"><a href="#Rest-default-CSS" class="headerlink" title="Rest default CSS"></a>Rest default CSS</h2><p>每家瀏覽器都有預設不同的 CSS 樣式，造成前端工程師網頁開發上一個頭痛的問題：<br>開發時用 CSS 設計好整齊美麗的排版，在 Google Chrome 上看起沒問題，用 IE 打開卻全變了樣，且市面上還有 Firefox、Safari、Opera 等其他家瀏覽器，</p>
+<p>所以實務開發中，CSS起手式通常會是 Reset CSS，先將各大瀏覽器的預設樣式還原，有個乾淨的開始，再來制訂專案的樣式。</p>
+<p>可以直接使用開源的 CSS Reset 工具如：</p>
+<ol>
+<li><a href="https://meyerweb.com/eric/tools/css/reset/" title="" target="">Reset CSS</a> ，這是 CSS 大師 Eric Meyer 整理出的版本</li>
+<li><a href="https://necolas.github.io/normalize.css/" title="" target="">Normalize.css</a> 這是 Bootstrap 目前已經內建使用的版本</li>
+<li>或是自行制訂</li>
+</ol>
+<hr>
+<h2 id="網頁-單位-px-em-rem"><a href="#網頁-單位-px-em-rem" class="headerlink" title="網頁 ( 單位 ) px, em, rem, %"></a>網頁 ( 單位 ) px, em, rem, %</h2><h3 id="px："><a href="#px：" class="headerlink" title="px："></a>px：</h3><p>絕對單位代表螢幕中每個「點」( pixel )。</p>
+<h3 id="em："><a href="#em：" class="headerlink" title="em："></a>em：</h3><p>相對單位，每個子元素透過「倍數」乘以父元素的 px 值。</p>
+<h3 id="rem："><a href="#rem：" class="headerlink" title="rem："></a>rem：</h3><p>相對單位，每個元素透過「倍數」乘以根元素(瀏覽器預設)也就是html元素標籤的 px 值，通常瀏覽器預設為 16 px。<br>使用 rem 的好處是，專案一複雜，很容易忘記父元素是多少大小，用 rem 不用特別去記。或當父元素字體大小突然被改動時，用 rem 不會受到連帶影響。</p>
+<h3 id="："><a href="#：" class="headerlink" title="%："></a>%：</h3><p>相對單位，每個子元素透過「百分比」乘以父元素的 px 值</p>
 <hr>
 <h1 id="RWD重點筆記"><a href="#RWD重點筆記" class="headerlink" title="RWD重點筆記"></a>RWD重點筆記</h1><ol>
 <li>由小螢幕到大螢幕，mobile first。</li>
@@ -1044,6 +1042,7 @@
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">div</span><span class="selector-class">.container</span> &#123;...&#125;</span><br><span class="line"><span class="selector-class">.container</span> &#123;...&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <h2 id="CSS優先級總結"><a href="#CSS優先級總結" class="headerlink" title="CSS優先級總結"></a>CSS優先級總結</h2><p>總而言之，言而總之</p>
 <img src="/2021/06/09/css%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8/CSS_level.png" class="">
+<center>圖源：<a href="https://tw.alphacamp.co/" title="" target="">Alpha Camp課程</a> </center>
 
 <h2 id="CSS撰寫注意三件事"><a href="#CSS撰寫注意三件事" class="headerlink" title="CSS撰寫注意三件事"></a>CSS撰寫注意三件事</h2><p>避免掉入 CSS 樣式優先集泥潭中的原則就是<strong>千萬不要因為「某個選擇器看起來很厲害」、「某個選擇器可以一擊必殺」隨意使用</strong>，請把以下三點放在心上：</p>
 <ol>
@@ -1053,9 +1052,85 @@
 </ol>
 <h2 id="複習選擇器的好幫手："><a href="#複習選擇器的好幫手：" class="headerlink" title="複習選擇器的好幫手："></a>複習選擇器的好幫手：</h2><p>Envato Tuts+ - <strong><a href="https://code.tutsplus.com/zh-hant/tutorials/the-30-css-selectors-you-must-memorize--net-16048">30個你必須記住的CSS選擇器</a></strong><br><strong><a href="https://flukeout.github.io/">CSS Diner</a></strong> (一款小遊戲，你需要輸入正確的選擇器來選到指定器皿或食物)</p>
 <hr>
-<h1 id="語法使用隨記"><a href="#語法使用隨記" class="headerlink" title="語法使用隨記"></a>語法使用隨記</h1><h2 id="行高-line-height"><a href="#行高-line-height" class="headerlink" title="行高 line-height"></a>行高 line-height</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Reverts to the default value of the browser. */</span></span><br><span class="line"><span class="attribute">line-height</span>: normal;</span><br><span class="line"><span class="comment">/* 可以使用無單位: 航高會是以倍數乘字體大小 */</span></span><br><span class="line"><span class="attribute">line-height</span>: <span class="number">1.6</span>;</span><br><span class="line"><span class="comment">/* 可以使用px單位 */</span></span><br><span class="line"><span class="attribute">line-height</span>: <span class="number">30px</span>;</span><br><span class="line"><span class="comment">/* 可以使用em單位 */</span></span><br><span class="line"><span class="attribute">line-height</span>: <span class="number">0.8em</span>;</span><br></pre></td></tr></table></figure>
+<h1 id="語法使用隨記"><a href="#語法使用隨記" class="headerlink" title="語法使用隨記"></a>語法使用隨記</h1><hr>
+<h2 id="行高-line-height"><a href="#行高-line-height" class="headerlink" title="行高 line-height"></a>行高 line-height</h2><h3 id="用line-height設定文字的垂直置中"><a href="#用line-height設定文字的垂直置中" class="headerlink" title="用line-height設定文字的垂直置中"></a>用line-height設定文字的垂直置中</h3><p>只要將元素的line-height設定跟容器的高度一樣即可。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* Reverts to the default value of the browser. */</span></span><br><span class="line"><span class="attribute">line-height</span>: normal;</span><br><span class="line"><span class="comment">/* 可以使用無單位: 航高會是以倍數乘字體大小 */</span></span><br><span class="line"><span class="attribute">line-height</span>: <span class="number">1.6</span>;</span><br><span class="line"><span class="comment">/* 可以使用px單位 */</span></span><br><span class="line"><span class="attribute">line-height</span>: <span class="number">30px</span>;</span><br><span class="line"><span class="comment">/* 可以使用em單位 */</span></span><br><span class="line"><span class="attribute">line-height</span>: <span class="number">0.8em</span>;</span><br></pre></td></tr></table></figure>
 
-]]></content>
+<hr>
+<h2 id="固定元素位置於網頁最上層，position-fixed"><a href="#固定元素位置於網頁最上層，position-fixed" class="headerlink" title="固定元素位置於網頁最上層，position: fixed"></a>固定元素位置於網頁最上層，position: fixed</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">header</span> &#123;</span><br><span class="line">  <span class="comment">/*固定置頂*/</span></span><br><span class="line">  <span class="attribute">position</span>: fixed;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">999</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以透過position的fixed來控制元素固定於原本位置，接著使用z-index以數字大小來控制此元素的圖層優先順序。0最後面，數字越大越上面。</p>
+<hr>
+<h2 id="絕對定位-position-absolute"><a href="#絕對定位-position-absolute" class="headerlink" title="絕對定位 position:absolute"></a>絕對定位 position:absolute</h2><p>絕對定位 position: absolute 指的是子元素根據父元素做定位。<br>接著可以使用Top來設定元素位於父元素的垂直位置，</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.navbar</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span> ; <span class="comment">/*會貼齊父元素的最上緣*/</span></span><br><span class="line">  <span class="attribute">top</span>: <span class="number">100%</span>; <span class="comment">/*會貼齊父元素的最下緣*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>absolute是<strong>相對於自己最近的父元素來定位的</strong>，<br>如果<strong>不給.father相對定位</strong>，那麼.father:before 和 .father::after的<strong>絕對定位absolute就是相對於body來定位的</strong>。<br><strong>relative是相對於自己來定位的</strong>，例如：.father{position:relative;top:-50px;},這時.hamburger會以他原本的位置上移50px。</p>
+<hr>
+<h2 id="Grid-system"><a href="#Grid-system" class="headerlink" title="Grid system"></a>Grid system</h2><h3 id="進階：grid-template-columns-和-grid-template-rows-的值"><a href="#進階：grid-template-columns-和-grid-template-rows-的值" class="headerlink" title="進階：grid-template-columns 和 grid-template-rows 的值"></a>進階：grid-template-columns 和 grid-template-rows 的值</h3><p>grid-template-columns 和 grid-template-rows 的值除了使用基本的網頁單位 px, em, rem, %, 來設定之外，<br>還可以使用以下幾種較為彈性的設定單位</p>
+<h3 id="對齊系統"><a href="#對齊系統" class="headerlink" title="對齊系統"></a>對齊系統</h3><p>和 flexbox 佈局系統一樣，grid 系統有 align-items, justify-items, align-content, justify-content 屬性可以對子元素操作。</p>
+<h3 id="fr："><a href="#fr：" class="headerlink" title="fr："></a>fr：</h3><p>fraction 這個單位和分幾份有關。1fr 意味著能分到容器剩餘空間的一個等分、2fr 的分到兩等份，以此類推，因此 fr 相較於 px 是一個比較具有彈性的單位。</p>
+<img src="/2021/06/09/css%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8/fr.png" class="">
+
+<h3 id="minmax-："><a href="#minmax-：" class="headerlink" title="minmax()："></a>minmax()：</h3><p>minmax(min, max) 能夠給定尺寸最小和最大值，讓尺寸的決定變得相對彈性。</p>
+<img src="/2021/06/09/css%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8/minmax.png" class="">
+
+<h3 id="repeat-："><a href="#repeat-：" class="headerlink" title="repeat()："></a>repeat()：</h3><p>透過 repeat() 的使用可以大量快速的設定重複區塊：</p>
+<img src="/2021/06/09/css%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8/repeat.png" class="">
+
+<h3 id="auto"><a href="#auto" class="headerlink" title="auto()"></a>auto()</h3><p>auto 有兩種行為，會受到左右的單位影響。</p>
+<ol>
+<li>auto 元素的尺寸簡單來說是：內容多大就有多大，但留意它會依照同一列 / 同一行最大尺寸的格子進行調整，例如未來如果有第二行、第二列，而它的寬度是 100px，那目前這個很窄的2號格子也會被撐寬為 100px。<img src="/2021/06/09/css%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8/auto1.png" class=""></li>
+<li>搭配其他固定尺寸的單位使用，2號格子的尺寸會自動延伸，填滿容器內的剩餘空間。<img src="/2021/06/09/css%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8/auto2.png" class=""></li>
+</ol>
+<h3 id="grid-auto-flow-與-grid-auto-rows"><a href="#grid-auto-flow-與-grid-auto-rows" class="headerlink" title="grid-auto-flow 與 grid-auto-rows"></a>grid-auto-flow 與 grid-auto-rows</h3><p>grid-auto-flow 是控制當沒有宣告子元素要被擺在網格的特定位置時，子元素將根據特定的流向被自動擺放到網格當中。<br>grid-auto-flow 的預設值為 row ，意思是子元素將<strong>逐列</strong>被擺放到網格中。<br>假設第一行有兩列，放滿後會被推向下一行，若是有設定grid-auto-rows高，那麼會自動生成下一行高，並把元素推下一行的第一列。</p>
+<img src="/2021/06/09/css%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8/grid-auto-rows.png" class="">
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  grid-<span class="attribute">auto</span>-flow: row;</span><br><span class="line">  grid-<span class="attribute">auto</span>-rows: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>換個方向可以手動更改grid-auto-flow 為 column，子元素將逐行被放到網格中。<br>假設第一行只有一列，第二行也只有一列，<br>子元素會由上而下，放滿後會被推向下一列第一行，若是有設定grid-auto-columns寬，那麼自動生成的下一列寬，並把元素推下一列的第一行。</p>
+<img src="/2021/06/09/css%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8/grid-auto-columns.png" class="">
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  grid-<span class="attribute">auto</span>-flow: column;</span><br><span class="line">  grid-<span class="attribute">auto</span>-<span class="attribute">columns</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<hr>
+<h2 id="偽類-pseudo"><a href="#偽類-pseudo" class="headerlink" title="偽類 pseudo"></a>偽類 pseudo</h2><h3 id="pseudo-elements使用方法及簡易範例"><a href="#pseudo-elements使用方法及簡易範例" class="headerlink" title="pseudo-elements使用方法及簡易範例"></a>pseudo-elements使用方法及簡易範例</h3><p>偽元素寫法是在選擇器後面加上兩個冒號和一個關鍵字<br>關鍵字，如：</p>
+<p>p::first-line - 選取第一行。<br>p::first-letter - 選取第一個字。<br>p::before - 在選取的元素前面插入東西。<br>p::after - 在選取的元素後面插入東西。<br>p::selection - 選取反白後的文字。</p>
+<p>例如 p::first-line 選擇器是 p 標籤，關鍵字是 first-line，通過p::first-line就可以選到段落中的第一行文字來控制它的樣式。</p>
+<h3 id="before-和-after"><a href="#before-和-after" class="headerlink" title="::before 和 ::after"></a>::before 和 ::after</h3><p>這兩個是最常用的，兩者預設值都是 display:inline-block，然後會繼承原本元素屬性，通常會搭配 content 屬性來添加內容。<br>範例</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>大家好，我是AC Genie<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<img src="/2021/06/09/css%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8/pseudo-before-after1.png" class="">
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line"><span class="attribute">content</span>: <span class="string">&quot;♥&quot;</span>;</span><br><span class="line"><span class="attribute">color</span>: red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line"><span class="attribute">content</span>: <span class="string">&quot;^_^&quot;</span>;</span><br><span class="line"><span class="attribute">color</span>: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<img src="/2021/06/09/css%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8/pseudo-before-after2.png" class="">
+
+<h3 id="pseudo-class使用介紹及簡易範例"><a href="#pseudo-class使用介紹及簡易範例" class="headerlink" title="pseudo-class使用介紹及簡易範例"></a>pseudo-class使用介紹及簡易範例</h3><p>一開始學最常用的就是 :hover，是用來控制滑鼠滑過時元素的樣式，但 hover 前面只有一個冒號，和兩個冒號::的偽元素不同，<br>偽類 (pseudo-class) 這種類別與<strong>元素</strong>的<strong>某個「狀態」</strong>有關，例如：</p>
+<p>:visited - 點擊過的超連結。<br>:checked - 被勾選的元素。<br>:hover - 滑鼠滑過的地方。<br>:focus - 滑鼠所在的表單輸入框。<br>:first-child - 第一個子元素。<br>:last-child - 最後一個子元素。<br>:nth-child() - 特定子元素。<br>單個冒號 (:) 是這種類別的特殊標記。</p>
+<p>範例</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;example&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>一<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>二<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>三<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>四<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>使用偽類 :nth-child()，搭配關鍵字 odd 指定單數的子元素給橘紅色背景、 even 指定雙數的子元素給綠色背景，p:nth-child(odd) 也可以寫作 p:nth-child(2n+1)，p:nth-child(even) 也可以寫作 p:nth-child(2n) 。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.example</span> <span class="selector-tag">p</span><span class="selector-pseudo">:nth-child</span>(odd) &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: OrangeRed;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.example</span> <span class="selector-tag">p</span><span class="selector-pseudo">:nth-child</span>(even) &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: LightSeaGreen;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<img src="/2021/06/09/css%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8/pseudo-element.png" class="">
+
+
+<p>使用:not(:last-child)可以取消選擇最後一個元素<br>範例</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.example</span> <span class="selector-tag">p</span><span class="selector-pseudo">:not</span>(<span class="selector-pseudo">:last-child</span>) &#123;</span><br><span class="line">    <span class="attribute">background-color</span>: OrangeRed;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>意思則是 所有的p元素橘紅色背景，除了最後一個p元素</p>
+<img src="/2021/06/09/css%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8/pseudo-element2.png" class="">
+
+<hr>
+<h2 id="transition"><a href="#transition" class="headerlink" title="transition"></a>transition</h2><p>transition 屬性是一個縮寫，冒號後面可以放四個屬性值：<br>transition: property duration timing-function delay;</p>
+<p>依序代表：<br>transition-property：載明哪個屬性要使用這個效果，例如我們的目標是和顯示有關的 display 屬性。<br>transition-duration：這個效果持續發生的時間，單位是秒，如果是 0 點幾，0 可以不寫。例如我們希望持續 0.2 秒的話可寫 .2s 。<br>transition-timing-function：效果的變化速度，可以寫屬性名稱，例如 ease-in 是緩慢的開始，也可以自由定義 cubic-bezier 函數，<a href="https://easings.net/">easing.net</a> 提供一張好用的速查表，可前往試用後複製想要的函數。<br>transition-delay：先延遲多久之後再開始這個效果，單位和寫法同transition-duration。</p>
+<p>使用方法可參考：<br><a href="https://www.w3schools.com/css/css3_transitions.asp">W3C</a><br><a href="https://codepen.io/doug0849/pen/MWovwyr?editors=1100">作業-毛小孩星球</a></p>
+<h2 id="transform"><a href="#transform" class="headerlink" title="transform"></a>transform</h2><p><a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/transform">transform</a> 的 MDN 文件，裡面有屬性變化效果的範例。<br>transform 這個屬性可以平移、旋轉、縮放和傾斜元素。<br>使用方法可參考：<br><a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/transform">MDN</a><br><a href="https://codepen.io/doug0849/pen/MWovwyr?editors=1100">作業-毛小孩星球</a></p>
+<h2 id="transform-origin"><a href="#transform-origin" class="headerlink" title="transform-origin"></a>transform-origin</h2><p>使用transform-origin來設定變化的原點<br>使用方法可參考：<br><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin">MDN</a><br><a href="https://codepen.io/doug0849/pen/MWovwyr?editors=1100">作業-毛小孩星球</a></p>
+<hr>
+<h2 id="隱藏元素方法-visibility-hidden-及-display-none"><a href="#隱藏元素方法-visibility-hidden-及-display-none" class="headerlink" title="隱藏元素方法 visibility: hidden 及 display: none"></a>隱藏元素方法 visibility: hidden 及 display: none</h2><p>display: none 與 visibility: hidden 都是隱藏元素的方法，差別在於 display: none 會一口氣使操作對象從文字流中拔除，而 visibility: hidden 則像是用一塊白布蓋起來的感覺，畫面上不顯示，但還是會佔一個空間：</p>
+<p>將 visibility: hidden 搭配上 position: absolute; ，故元素會從文字流中移除，完全和 display: none 是一樣的效果。<br>在我們的情境中這兩種做法都可以，一併介紹給大家知道。<br>未來你可以根據需求判斷要用哪一個方法比較合適。</p>
+<img src="/2021/06/09/css%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8/hidden.png" class="">]]></content>
       <categories>
         <category>技術筆記</category>
         <category>CSS</category>
@@ -1083,6 +1158,143 @@
       <tags>
         <tag>日記</tag>
         <tag>越南</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>S2：切版練習：毛小孩星球</title>
+    <url>/2021/09/14/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-%E6%AF%9B%E5%B0%8F%E5%AD%A9%E6%98%9F%E7%90%83/</url>
+    <content><![CDATA[<h1 id="完成作品CodePen連結"><a href="#完成作品CodePen連結" class="headerlink" title="完成作品CodePen連結"></a><a href="https://codepen.io/doug0849/pen/MWovwyr">完成作品CodePen連結</a></h1><p><strong>此文章所做的筆記，僅為提醒自己要多加注意的地方。</strong></p>
+<span id="more"></span>
+<h1 id="作業筆記"><a href="#作業筆記" class="headerlink" title="作業筆記"></a>作業筆記</h1><h2 id="起手式-Rest-default-CSS-還原瀏覽器預設設定"><a href="#起手式-Rest-default-CSS-還原瀏覽器預設設定" class="headerlink" title="起手式 Rest default CSS 還原瀏覽器預設設定"></a>起手式 Rest default CSS 還原瀏覽器預設設定</h2><p>每家瀏覽器都有預設不同的 CSS 樣式，造成前端工程師網頁開發上一個頭痛的問題：<br>開發時用 CSS 設計好整齊美麗的排版，在 Google Chrome 上看起沒問題，用 IE 打開卻全變了樣，且市面上還有 Firefox、Safari、Opera 等其他家瀏覽器，</p>
+<p>所以實務開發中，CSS起手式通常會是 Reset CSS，先將各大瀏覽器的預設樣式還原，有個乾淨的開始，再來制訂專案的樣式。</p>
+<p>可以直接使用開源的 CSS Reset 工具如：</p>
+<ol>
+<li><a href="https://meyerweb.com/eric/tools/css/reset/" title="" target="">Reset CSS</a> ，這是 CSS 大師 Eric Meyer 整理出的版本</li>
+<li><a href="https://necolas.github.io/normalize.css/" title="" target="">Normalize.css</a> 這是 Bootstrap 目前已經內建使用的版本</li>
+<li>或是自行制訂</li>
+</ol>
+<h2 id="header-固定置頂"><a href="#header-固定置頂" class="headerlink" title="header 固定置頂"></a>header 固定置頂</h2><p>常常看到很多網頁，可以將header固定在最上方，不會因為頁面下滑消失。<br>我們可以使用 <strong>position: fixed</strong> 來固定元素位置。</p>
+<p>再通過 z-index 可以定義元素的層級，<strong>愈大的數字會放在愈上層，愈小的數字會放在愈下層</strong>，而視窗位於 0 的位置。<br>將數值設定為 999 ，基本 header 元素就很難被其他元素覆蓋掉，導覽列就會固定在最上層。</p>
+<h2 id="em-vs-rem"><a href="#em-vs-rem" class="headerlink" title="em vs. rem"></a>em vs. rem</h2><p>rem 和 em 同樣是相對單位，只是參照的對象不同。 em 參照的對象是父元素， rem 是 root em 的意思， 參照的是根元素，就是 html 層級的字體大小，一般瀏覽器的預設值是 16 px。<br>使用 rem 的好處是，專案一複雜，很容易忘記父元素是多少大小，用 rem 不用特別去記。或當父元素字體大小突然被改動時，用 rem 也不會受到連帶影響。</p>
+<h2 id="絕對定位-position-absolute"><a href="#絕對定位-position-absolute" class="headerlink" title="絕對定位 position:absolute"></a>絕對定位 position:absolute</h2><img src="/2021/09/14/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-%E6%AF%9B%E5%B0%8F%E5%AD%A9%E6%98%9F%E7%90%83/navbar.png" class="">
+
+<p>絕對定位 position: absolute 指的是子元素根據父元素做定位，但父元素CSS要設定position: relative，否則會根據html body標籤來設定位置。<br>在這個案例中，父元素是 header(跟body位置一樣寬且置頂)，子元素是 nav。<br>假設 top 是 0，子元素會貼齊父元素的最頂端。<br>看手機設計稿，此案導覽列是貼齊在 header 的下面，所以要設定 top:100%。子元素移動到父元素正下方。</p>
+<p>本案<strong>導覽列</strong>原本是<strong>沒有特別設定寬度</strong>的，<strong>瀏覽器預設為 auto</strong>。<br>一般情況下，導覽列因為是 block element，因此會想辦法佔滿父元素的寬度和高度空間。<br>然而，在<strong>設定為絕對定位後，元素已經完全脫離文字流了</strong>，本身<strong>寬度和高度大小會透過內容決定</strong>，<br>所以目前 .nav 的寬度只有 4 個字元寬。手動將寬度設為 100% 和父元素同寬，文字就會置中。</p>
+<h2 id="使用line-height-來設定文字的垂直置中"><a href="#使用line-height-來設定文字的垂直置中" class="headerlink" title="使用line-height 來設定文字的垂直置中"></a>使用line-height 來設定文字的垂直置中</h2><p>要做文字的垂直置中的效果，可能會直覺想到 position 或是 flexbox，<br>這邊因為只有文字，所以可以使用 line-height 這方法來讓 logo 文字垂直置中。</p>
+<p><strong>將文字的 line-height 設定和父元素同高即可。</strong></p>
+<h2 id="使用input-checkbox來製作漢堡排使導覽列收合"><a href="#使用input-checkbox來製作漢堡排使導覽列收合" class="headerlink" title="使用input-checkbox來製作漢堡排使導覽列收合"></a>使用input-checkbox來製作漢堡排使導覽列收合</h2><h3 id="1-先加入html標籤"><a href="#1-先加入html標籤" class="headerlink" title="1.先加入html標籤"></a>1.先加入html標籤</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span> <span class="attr">class</span>=<span class="string">&quot;navbar-brand&quot;</span>&gt;</span>毛小孩星球<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--   加入input-checkbox --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">class</span>=<span class="string">&quot;nav-toggle&quot;</span> <span class="attr">id</span>=<span class="string">&quot;nav-toggle&quot;</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--  加上導覽列  --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">nav</span> <span class="attr">class</span>=<span class="string">&quot;nav&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">&quot;nav-list&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;nav-item&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#activity&quot;</span> <span class="attr">class</span>=<span class="string">&quot;nav-link&quot;</span>&gt;</span>近期活動<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;nav-item&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#album&quot;</span> <span class="attr">class</span>=<span class="string">&quot;nav-link&quot;</span>&gt;</span>狗兒相片<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;nav-item&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#adoption&quot;</span> <span class="attr">class</span>=<span class="string">&quot;nav-link&quot;</span>&gt;</span>領養資訊<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-原先的nav先設定不顯示"><a href="#2-原先的nav先設定不顯示" class="headerlink" title="2.原先的nav先設定不顯示"></a>2.原先的nav先設定不顯示</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line">  <span class="comment">/*依據 Header 定位*/</span></span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#ffffff</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="comment">/*原本先不顯示*/</span></span><br><span class="line">  <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-使用-pseudo-class-控制「被勾選」時樣式，及使用-選定同一層後方元素"><a href="#3-使用-pseudo-class-控制「被勾選」時樣式，及使用-選定同一層後方元素" class="headerlink" title="3.使用 pseudo-class 控制「被勾選」時樣式，及使用 ~ 選定同一層後方元素"></a>3.使用 pseudo-class 控制「被勾選」時樣式，及使用 ~ 選定同一層後方元素</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.nav-toggle</span><span class="selector-pseudo">:checked</span> ~ <span class="selector-class">.nva</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: block ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這樣就可以製作出一個陽春版的漢堡排。</p>
+<h3 id="4-使用-transition-和-transform-優化收合的轉場效果"><a href="#4-使用-transition-和-transform-優化收合的轉場效果" class="headerlink" title="4.使用 transition 和 transform 優化收合的轉場效果"></a>4.使用 transition 和 transform 優化收合的轉場效果</h3><ul>
+<li>transition 屬性是一個縮寫，冒號後面可以放四個屬性值：<br>transition: property duration timing-function delay;依序代表：<ul>
+<li>transition-property：載明哪個屬性要使用這個效果，例如我們的目標是和顯示有關的 display 屬性。</li>
+<li>transition-duration：這個效果持續發生的時間，單位是秒，如果是 0 點幾，0 可以不寫。例如我們希望持續 0.2 秒的話可寫 .2s 。</li>
+<li>transition-timing-function：效果的變化速度，可以寫屬性名稱，例如 ease-in 是緩慢的開始，也可以自由定義 cubic-bezier 函數，<a href="https://easings.net/">easing.net</a> 提供一張好用的速查表，可前往試用後複製想要的函數。</li>
+<li>transition-delay：先延遲多久之後再開始這個效果，單位和寫法同transition-duration。</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>再nav加入 transition<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line"><span class="comment">/*依據 Header 定位*/</span></span><br><span class="line"><span class="attribute">position</span>: absolute;</span><br><span class="line"><span class="attribute">top</span>: <span class="number">100%</span>;</span><br><span class="line"><span class="attribute">background</span>: <span class="number">#ffffff</span>;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line"><span class="comment">/*原本先不顯示*/</span></span><br><span class="line"><span class="attribute">display</span>: none;</span><br><span class="line"><span class="comment">/*設定display的過渡動畫變化效果*/</span></span><br><span class="line"><span class="attribute">transition</span>: display .<span class="number">2s</span> ease-out;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>最後發現沒有變化<br>畫面沒有變化是因為 display 只有 100% 完全顯示和 0% 完全不顯示兩個狀態，無法做到漸變的效果。</p>
+<ol start="2">
+<li>transform<br>為了解決這個問題，我們再來多認識一個 CSS 屬性：transform。<br><a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/transform">transform</a> 的 MDN 文件，裡面有屬性變化效果的範例。</li>
+</ol>
+<p>  使用 transform: scale(1,0); 來取代 display: none;<br>  及 transform: scale(1,1); 來取代 display: block;</p>
+  <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line"><span class="comment">/*依據 Header 定位*/</span></span><br><span class="line"><span class="attribute">position</span>: absolute;</span><br><span class="line"><span class="attribute">top</span>: <span class="number">100%</span>;</span><br><span class="line"><span class="attribute">background</span>: <span class="number">#ffffff</span>;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line"><span class="comment">/*改設定transform的過渡動畫變化效果*/</span></span><br><span class="line"><span class="attribute">transition</span>: transform .<span class="number">2s</span> ease-out;</span><br><span class="line"><span class="comment">/*由display改為transform，一開始設定(x,y)比例為(1,0)為不顯示*/</span></span><br><span class="line"><span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.nav-toggle</span><span class="selector-pseudo">:checked</span> ~ <span class="selector-class">.nav</span> &#123;</span><br><span class="line"><span class="comment">/*由display改為transform，設定(x,y)比例為(1,1)*/</span></span><br><span class="line"><span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>  此時能夠發現有轉場效果了，但是卻從中間開闔。</p>
+<ol start="3">
+<li>使用 transform-origin 設定 transform 變化起點在上方<br>讓導覽列從上方開始做上下收放，可使用 transform-origin 這個屬性來達成。<br>預設的屬性值是 center，代表 transform 效果的起始點是在元素的中心。<br>可以看 MDN還有哪些屬性 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin">transform-origin</a></li>
+</ol>
+<p>  增加transform-origin屬性</p>
+  <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">nav</span> &#123;</span><br><span class="line"><span class="comment">/*依據 Header 定位*/</span></span><br><span class="line"><span class="attribute">position</span>: absolute;</span><br><span class="line"><span class="attribute">top</span>: <span class="number">100%</span>;</span><br><span class="line"><span class="attribute">background</span>: <span class="number">#ffffff</span>;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line"><span class="comment">/*設定transform的過渡動畫變化效果*/</span></span><br><span class="line"><span class="attribute">transition</span>: transform .<span class="number">2s</span> ease-out;</span><br><span class="line"><span class="comment">/*由display改為transform，一開始設定(x,y)比例為(1,0)為不顯示*/</span></span><br><span class="line"><span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line"><span class="comment">/*設定變化原點在上方*/</span></span><br><span class="line"><span class="attribute">transform-origin</span>: top;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.nav-toggle</span><span class="selector-pseudo">:checked</span> ~ <span class="selector-class">.nav</span> &#123;</span><br><span class="line"><span class="comment">/*由display改為transform，設定(x,y)比例為(1,1)*/</span></span><br><span class="line"><span class="attribute">transform</span>: <span class="built_in">scale</span>(<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>最後使用 opacity 讓使用者不會看到開關時文字壓縮<br>在.nav-item上加上opacity: 0 以及 .nav-toggle:checked時.nav-item的樣式<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.nav-item</span> &#123;</span><br><span class="line"><span class="attribute">margin</span>: <span class="number">1.4rem</span> <span class="number">0</span>;</span><br><span class="line"><span class="attribute">opacity</span>: <span class="number">0</span>; <span class="comment">/*完全透明*/</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.nav-toggle</span><span class="selector-pseudo">:checked</span> ~ <span class="selector-class">.nav</span> <span class="selector-class">.nav-item</span> &#123;</span><br><span class="line"><span class="attribute">transition</span>: opacity <span class="number">0.2s</span> ease-out <span class="number">0.15s</span>; <span class="comment">/*透明過場設定，最後一個參數為當checked被執行時，緩150毫秒進行過場動畫*/</span></span><br><span class="line"><span class="attribute">opacity</span>: <span class="number">1</span>; <span class="comment">/*不透明*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="製作-hamburger-樣式及位置"><a href="#製作-hamburger-樣式及位置" class="headerlink" title="製作 hamburger 樣式及位置"></a>製作 hamburger 樣式及位置</h2><p>利用label 的for 屬性會和input 的 id綁定，就可以點label的時候去觸及input<br>先在html上加入 label，再加上span打上三，暫時製作一個陽春的漢堡排</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#&quot;</span> <span class="attr">class</span>=<span class="string">&quot;navbar-brand&quot;</span>&gt;</span>毛小孩星球<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--   hamberger --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">class</span>=<span class="string">&quot;nav-toggle&quot;</span> <span class="attr">id</span>=<span class="string">&quot;nav-toggle&quot;</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--  加上導覽列  --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">nav</span> <span class="attr">class</span>=<span class="string">&quot;nav&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">&quot;nav-list&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;nav-item&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#activity&quot;</span> <span class="attr">class</span>=<span class="string">&quot;nav-link&quot;</span>&gt;</span>近期活動<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;nav-item&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#album&quot;</span> <span class="attr">class</span>=<span class="string">&quot;nav-link&quot;</span>&gt;</span>狗兒相片<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">&quot;nav-item&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#adoption&quot;</span> <span class="attr">class</span>=<span class="string">&quot;nav-link&quot;</span>&gt;</span>領養資訊<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--   增加label標籤 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;nav-toggle&quot;</span> <span class="attr">class</span>=<span class="string">&quot;navbar-toggle-label&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;hamburger&quot;</span>&gt;</span>三<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>設定漢堡排位置<br>先選定 navbar-toggle-label ，使用絕對定位，讓漢堡排從文字流離開<br>然後設定top和bottom都為0，代表這個元素高度跟父元素 header 相等是 60px<br>最後使用display: flex 和 align-items 來設定垂直置中。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.navbar-toggle-label</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">7.5%</span>;</span><br><span class="line">  <span class="attribute">display</span>: flex;</span><br><span class="line">  <span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>進階版漢堡排：使用span畫線<br>先把國字三刪除，接著改寫 .hamburger的樣式，畫出第一條具備美感的漢堡排中央橫線。<br>選定漢堡.hamburger，寬度設定 30px，高度是 3px，背景顏色則是 #267b98。</p>
+<p>.hamburger {<br>  width: 30px;<br>  height: 3px;<br>  background: #267b98;<br>}</p>
+<h3 id="使用偽元素增加漢堡另外兩條線"><a href="#使用偽元素增加漢堡另外兩條線" class="headerlink" title="使用偽元素增加漢堡另外兩條線"></a>使用偽元素增加漢堡另外兩條線</h3><p>其他兩條都跟中間這一條外觀相同，所以我們在選擇器 .hamburger後加兩個偽元素選擇 hamburger::before 和 .hamburger::after。<br>但我們還沒有給它任何的 content，還沒有任何的內容，所以基本上是看不到它。<br>我們需要給hamburger::before 和 .hamburger::after一個 content，屬性值設定為一個空值，因為我們只需要利用這個元素的空間來做樣式，不需要內容。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.hamburger</span>,</span><br><span class="line"><span class="selector-class">.hamburger</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.hamburger</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">30px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">3px</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#267b98</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.hamburger</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.hamburger</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="comment">/*給一個空的內容*/</span></span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="設定偽元素的位置"><a href="#設定偽元素的位置" class="headerlink" title="設定偽元素的位置"></a>設定偽元素的位置</h3><p>如果想給 .hamburger:before 和 .hamburger::after 設定在 .hamburger 的上下方，<br>應該給 .hamburger設定 position: relative<br>.hamburger:before 和 .hamburger::after 設定position: absolute</p>
+<p>absolute是<strong>相對於自己最近的父元素來定位的</strong>，<br>如果<strong>不給.hamburger相對定位</strong>，那麼.hamburger:before 和 .hamburger::after的<strong>絕對定位absolute就是相對於body來定位的</strong>。</p>
+<p><strong>relative是相對於自己來定位的</strong>，例如：.hamburger{position:relative;top:-50px;},這時.hamburger會以他原本的位置上移50px。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.hamburger</span>,</span><br><span class="line"><span class="selector-class">.hamburger</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.hamburger</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">30px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">3px</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#267b98</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.hamburger</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.hamburger</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.hamburger</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="comment">/*給一個空的內容*/</span></span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>接著移動before和after兩個元素的上下位置</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.hamburger</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">8px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.hamburger</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">8px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>會看到兩個元素已經各上下移動8px，但是偏了一邊，只要在設定absolute的時候給兩個元素left 0即可<br>完整css</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.hamburger</span>,</span><br><span class="line"><span class="selector-class">.hamburger</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.hamburger</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">30px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">3px</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#267b98</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.hamburger</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.hamburger</span><span class="selector-pseudo">::before</span>,</span><br><span class="line"><span class="selector-class">.hamburger</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="comment">/*給一個空的內容*/</span></span><br><span class="line">  <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.hamburger</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">8px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.hamburger</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">8px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="隱藏input-checkbox"><a href="#隱藏input-checkbox" class="headerlink" title="隱藏input-checkbox"></a>隱藏input-checkbox</h2><p>給input-checkbox設定上CSS樣式屬性 visibility: hidden;<br>就會隱藏，但是會看到brand歪一邊，這時候再給input-checkbox設定position: absolute，讓他抽離文字流即可。</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.navbar-toggle</span> &#123;</span><br><span class="line">  <span class="comment">/*不佔空間*/</span></span><br><span class="line">  <span class="attribute">visibility</span>: hidden;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>display: none 與 visibility: hidden 的差異 display: none 與 visibility: hidden 都是隱藏元素的方法，差別在於 display: none 會一口氣使操作對象從文字流中拔除，而 visibility: hidden 則像是用一塊白布蓋起來的感覺，畫面上不顯示，但還是會佔一個空間：</p>
+<p>在我們剛剛實作的案例中，將 visibility: hidden 搭配上 position: absolute; ，故元素會從文字流中移除，完全和 display: none 是一樣的效果。<br>在我們的情境中這兩種做法都可以，一併介紹給大家知道。<br>未來你可以根據需求判斷要用哪一個方法比較合適。</p>
+<h2 id="grid-auto-flow-與-grid-auto-rows"><a href="#grid-auto-flow-與-grid-auto-rows" class="headerlink" title="grid-auto-flow 與 grid-auto-rows"></a>grid-auto-flow 與 grid-auto-rows</h2><p>grid-auto-flow 是控制當沒有宣告子元素要被擺在網格的特定位置時，子元素將根據特定的流向被自動擺放到網格當中。<br><strong>grid-auto-flow 的預設值為 row</strong>，意思是子元素將<strong>逐列</strong>被擺放到網格中。<br>假設第一行有兩列，放滿後會被推向下一行，若是有設定grid-auto-rows高，那麼會自動生成下一行高，並把元素推下一行的第一列。</p>
+
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  grid-<span class="attribute">auto</span>-flow: row;</span><br><span class="line">  grid-<span class="attribute">auto</span>-rows: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>換個方向可以手動更改<strong>grid-auto-flow 為 column</strong>，意思是子元素將<strong>逐行</strong>被放到網格中。<br>假設第一行只有一列，第二行也只有一列，子元素會由上而下，放滿後會被推向下一列第一行，若是有設定grid-auto-columns寬，那麼自動生成的下一列寬，並把元素推下一列的第一行。</p>
+
+
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span>&#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  grid-<span class="attribute">auto</span>-flow: column;</span><br><span class="line">  grid-<span class="attribute">auto</span>-<span class="attribute">columns</span>: <span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="grid-template-areas"><a href="#grid-template-areas" class="headerlink" title="grid-template-areas"></a>grid-template-areas</h2><p>可以透過父層先劃分好格子，然後再選擇各個子元素，將各個子元素使用grid-area各自命名，最後回到父層使用grid-template-areas來安排子元素</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.banner-wrapper</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: grid;</span><br><span class="line">  grid-template-<span class="attribute">columns</span>: <span class="built_in">repeat</span>(<span class="number">4</span>, <span class="number">1</span>fr); </span><br><span class="line">  grid-template-rows: <span class="built_in">repeat</span>(<span class="number">2</span>, <span class="number">250px</span>);</span><br><span class="line">  grid-template-areas:</span><br><span class="line">    <span class="string">&quot;main main main main&quot;</span></span><br><span class="line">    <span class="string">&quot;left left right right&quot;</span>;</span><br><span class="line">  grid-gap: <span class="number">0.5rem</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.main-banner</span> &#123;</span><br><span class="line">  grid-area: main;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.sub-banner-left</span> &#123;</span><br><span class="line">  grid-area: left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.sub-banner-right</span> &#123;</span><br><span class="line">  grid-area: right;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>AlphaCamp</category>
+        <category>Task</category>
+      </categories>
+      <tags>
+        <tag>技術筆記</tag>
+        <tag>AlphaCamp</tag>
+        <tag>作業</tag>
+        <tag>CSS</tag>
+        <tag>切版</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>學期2-2_S2-電影清單練習實作</title>
+    <url>/2021/09/11/S2-2-%E9%9B%BB%E5%BD%B1%E6%B8%85%E5%96%AE%E7%B7%B4%E7%BF%92%E5%AF%A6%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="此文章僅記錄作業時提醒自己遇到的問題及需要注意處"><a href="#此文章僅記錄作業時提醒自己遇到的問題及需要注意處" class="headerlink" title="此文章僅記錄作業時提醒自己遇到的問題及需要注意處"></a>此文章僅記錄作業時提醒自己遇到的問題及需要注意處</h1><span id="more"></span>
+<h2 id="Array-prototype-push"><a href="#Array-prototype-push" class="headerlink" title="Array.prototype.push()"></a>Array.prototype.push()</h2><p>當用<strong>常數</strong>宣告了一個陣列容器的時候，若要加入物件或其他東西要使用Array.prototype.push()</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> movies = []</span><br><span class="line"></span><br><span class="line">axios</span><br><span class="line">  .get(INDEX_URL)</span><br><span class="line">  .then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">    movies.push(...response.data.results)</span><br><span class="line">    renderMovieList(movies)</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function">(<span class="params">err</span>) =&gt;</span> <span class="built_in">console</span>.log(err))</span><br></pre></td></tr></table></figure>
+
+<h2 id="展開運算子"><a href="#展開運算子" class="headerlink" title="展開運算子"></a>展開運算子</h2><p>…response.data.results 前面的… 是展開運算子，會將陣列內容展開</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> movies = []; <span class="comment">//空陣列，空容器</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//目標：用 push 方法把 movies 從空陣列變成 [1,2,3]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//方法一</span></span><br><span class="line">movies.push(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>); <span class="comment">//傳入 3 個參數：1,2,3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//方法二</span></span><br><span class="line">movies.push(...[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]); <span class="comment">//把陣列用展開運算子打開，打開後就和方法一一模一樣</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//方法三</span></span><br><span class="line"><span class="keyword">const</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]; <span class="comment">//做一個陣列</span></span><br><span class="line">movies.push(...numbers); <span class="comment">//和方法二同樣意思</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="關於dataset"><a href="#關於dataset" class="headerlink" title="關於dataset"></a>關於dataset</h2><p>可以在元素標籤上設定data資料，在使用JS去取得點擊目標元素上的dataset資料</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;user&quot;</span> <span class="attr">data-id</span>=<span class="string">&quot;1234567890&quot;</span> <span class="attr">data-user</span>=<span class="string">&quot;ac-genie&quot;</span> <span class="attr">data-date-of-birth</span>&gt;</span>AC Genie<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>然後我們可以呼叫 dataset. 來取得這些屬性的值，你會發現這些值的型態都是字串*：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> el = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;#user&#x27;</span>);</span><br><span class="line"><span class="built_in">console</span>.log(el.dataset.user)</span><br><span class="line"><span class="comment">//ac-genie</span></span><br><span class="line"><span class="built_in">console</span>.log(el.dataset.id)</span><br><span class="line"><span class="comment">//1234567890</span></span><br><span class="line"><span class="built_in">console</span>.log(el.dataset.dateOfBirth)</span><br><span class="line"><span class="comment">//(空字串)</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>AlphaCamp</category>
+        <category>Task</category>
+      </categories>
+      <tags>
+        <tag>技術筆記</tag>
+        <tag>AlphaCamp</tag>
+        <tag>作業</tag>
+        <tag>Array.prototype.push()</tag>
+        <tag>...展開運算子</tag>
       </tags>
   </entry>
 </search>
