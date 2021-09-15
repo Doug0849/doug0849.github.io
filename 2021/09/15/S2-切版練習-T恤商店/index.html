@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en,zh-TW,default">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P7J0KE07RD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P7J0KE07RD');
+</script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"doug0849.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"ture","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="完成作品 此編記錄自己從零到全部的實作切版畫面時所碰到的步驟處理及狀況處裡筆記。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="S2-切版練習-T恤商店">
+<meta property="og:url" content="https://doug0849.github.io/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/index.html">
+<meta property="og:site_name" content="想要邊撸鐵邊學CODE的DOUG">
+<meta property="og:description" content="完成作品 此編記錄自己從零到全部的實作切版畫面時所碰到的步驟處理及狀況處裡筆記。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/html-wireframe.png">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/build-html.png">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/01hr.png">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/02hr.png">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/03hr.png">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/04hr.png">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/04hr.png">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/05hr.png">
+<meta property="article:published_time" content="2021-09-14T21:02:36.000Z">
+<meta property="article:modified_time" content="2021-09-14T21:02:36.000Z">
+<meta property="article:author" content="Doug 道">
+<meta property="article:tag" content="技術筆記">
+<meta property="article:tag" content="AlphaCamp">
+<meta property="article:tag" content="作業">
+<meta property="article:tag" content="CSS">
+<meta property="article:tag" content="切版">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://doug0849.github.io/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/html-wireframe.png">
+
+<link rel="canonical" href="https://doug0849.github.io/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>S2-切版練習-T恤商店 | 想要邊撸鐵邊學CODE的DOUG</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="想要邊撸鐵邊學CODE的DOUG" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">想要邊撸鐵邊學CODE的DOUG</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">快樂每一天</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Doug 道">
+      <meta itemprop="description" content="關於轉職紀錄、技術筆記、隨寫">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="想要邊撸鐵邊學CODE的DOUG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          S2-切版練習-T恤商店
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-15 05:02:36" itemprop="dateCreated datePublished" datetime="2021-09-15T05:02:36+08:00">2021-09-15</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AlphaCamp/" itemprop="url" rel="index"><span itemprop="name">AlphaCamp</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AlphaCamp/Task/" itemprop="url" rel="index"><span itemprop="name">Task</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><a href="">完成作品</a></p>
+<p><strong>此編記錄自己從零到全部的實作切版畫面時所碰到的步驟處理及狀況處裡筆記。</strong></p>
+<span id="more"></span>
+<h1 id="Step1：先將得到的設計稿框出HTML的結構"><a href="#Step1：先將得到的設計稿框出HTML的結構" class="headerlink" title="Step1：先將得到的設計稿框出HTML的結構"></a>Step1：先將得到的設計稿框出HTML的結構</h1><img src="/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/html-wireframe.png" class="">
+
+<h1 id="Step2-將HTML結構寫出來"><a href="#Step2-將HTML結構寫出來" class="headerlink" title="Step2: 將HTML結構寫出來"></a>Step2: 將HTML結構寫出來</h1><img src="/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/build-html.png" class="">
+
+<h1 id="step3-reset-CSS-並設定-common-CSS"><a href="#step3-reset-CSS-並設定-common-CSS" class="headerlink" title="step3: reset CSS 並設定 common CSS"></a>step3: reset CSS 並設定 common CSS</h1><h1 id="step4-開始切版"><a href="#step4-開始切版" class="headerlink" title="step4: 開始切版"></a>step4: 開始切版</h1><h2 id="第一小時紀錄進度-4-30"><a href="#第一小時紀錄進度-4-30" class="headerlink" title="第一小時紀錄進度(4:30)"></a>第一小時紀錄進度(4:30)</h2><img src="/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/01hr.png" class="">
+
+<h2 id="第二小時紀錄進度-6-30"><a href="#第二小時紀錄進度-6-30" class="headerlink" title="第二小時紀錄進度(6:30)"></a>第二小時紀錄進度(6:30)</h2><img src="/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/02hr.png" class="">
+
+<h2 id="第三小時紀錄進度-7-30"><a href="#第三小時紀錄進度-7-30" class="headerlink" title="第三小時紀錄進度(7:30)"></a>第三小時紀錄進度(7:30)</h2><img src="/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/03hr.png" class="">
+
+<p>沒什麼進度，遇到了search icon換位置的問題，<br>因為上方的按鈕都用絕對定位，但原本將search icon放在一個div.function裏頭，這個div也是絕對定位，導致search icon無法參考頁面最左上角問題(會去參考到div.function)，所以將他移出div.function，才可以參考navbar位置定位，之後畫面縮放，用grid將各個元素位置放進去即可</p>
+<p>休息半小時</p>
+<h2 id="第四小時紀錄進度-9-00"><a href="#第四小時紀錄進度-9-00" class="headerlink" title="第四小時紀錄進度(9:00)"></a>第四小時紀錄進度(9:00)</h2><img src="/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/04hr.png" class="">
+<p>還是沒什麼進度，碰到漢堡排點空白處會無法展開menu，後來發現是因為使用了flex box,父層的label變成緊貼LOGO前面，後來研究半天，要先把它換成display: block，然後設定絕對位置到左上角，子層的span線條就會跟著移動，再設定子層為position: relative，偽元素::before ::after就可以調整成absolute後移動位置。</p>
+<h2 id="第五小時紀錄進度-10-00"><a href="#第五小時紀錄進度-10-00" class="headerlink" title="第五小時紀錄進度(10:00)"></a>第五小時紀錄進度(10:00)</h2><img src="/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/04hr.png" class="">
+<p>比較有進度了，目前做到排列T畜產品中，過程中碰到照片超出block，但使用overflow:hidden無法隱藏，後來發現是要設定在block不是設定在圖片上。</p>
+<h2 id="第六小時紀錄進度-11-00"><a href="#第六小時紀錄進度-11-00" class="headerlink" title="第六小時紀錄進度(11:00)"></a>第六小時紀錄進度(11:00)</h2><img src="/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/05hr.png" class="">
+<p>遇到的問題是在衣服照片hover時，要用一個block把兩張圖包起來，然後要疊兩層圖，一張圖不需要設定position，，一張是position:absolute，這時候不需要設定position的這張圖要比設定絕對定位這張來得小，這樣父層才可以設定高度是auto，隨著子元素圖片放大縮小，但是如果放大張的，那小張的那張會蓋不過大張的底圖。父層會根據大張的那張放大縮小。</p>
+<h2 id="第七八小時記錄進度-1-00"><a href="#第七八小時記錄進度-1-00" class="headerlink" title="第七八小時記錄進度(1:00)"></a>第七八小時記錄進度(1:00)</h2><p>完成!<br>最後footer的元素流動一直搞不定，搞半天後來才發現是自己不小心設定到flex box，但有一個重點要在一次提醒自己並且記清楚，block屬性下的子元素，每多一個元素一定都會自動換行，不需要設定其他CSS屬性，若元素不希望他換行，可以設定display: inline-block; 下個元素就不會換行了，若突然他沒換行，表示父元素絕對有設定到其他display屬性。</p>
+<p>另外在最下方的input欄，學到一個新的函式value，calc( value - value)：<br>此 calc()函數用一個表達式作為它的參數，用這個表達式的結果作為值。這個表達式可以是任何如下操作符的組合，採用標準操作符處理法則的簡單表達式。</p>
+<p>+<br>加法。<br>-<br>減法。<br>*<br>乘法，乘數中至少有一個是 <number>。<br>/<br>除法，除數（/ 右面的數）必須是 <number>。<br>表達式中的運算對象可以使用任意 <length> 值。如果你願意，你可以在一個表達式中混用這類值的不同單位。在需要時，你還可以使用小括號來建立計算順序。</p>
+<p>input欄位的長度，依整體最大寬度的50% - 固定長度，來控制input欄位隨視窗縮放時調整大小。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" rel="tag"># 技術筆記</a>
+              <a href="/tags/AlphaCamp/" rel="tag"># AlphaCamp</a>
+              <a href="/tags/%E4%BD%9C%E6%A5%AD/" rel="tag"># 作業</a>
+              <a href="/tags/CSS/" rel="tag"># CSS</a>
+              <a href="/tags/%E5%88%87%E7%89%88/" rel="tag"># 切版</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/09/14/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-%E6%AF%9B%E5%B0%8F%E5%AD%A9%E6%98%9F%E7%90%83/" rel="prev" title="S2：切版練習：毛小孩星球">
+      <i class="fa fa-chevron-left"></i> S2：切版練習：毛小孩星球
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+<script src="https://utteranc.es/client.js"
+        repo="doug0849/doug0849.github.io"
+        issue-term="pathname"
+        theme="photon-dark"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Step1%EF%BC%9A%E5%85%88%E5%B0%87%E5%BE%97%E5%88%B0%E7%9A%84%E8%A8%AD%E8%A8%88%E7%A8%BF%E6%A1%86%E5%87%BAHTML%E7%9A%84%E7%B5%90%E6%A7%8B"><span class="nav-number">1.</span> <span class="nav-text">Step1：先將得到的設計稿框出HTML的結構</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Step2-%E5%B0%87HTML%E7%B5%90%E6%A7%8B%E5%AF%AB%E5%87%BA%E4%BE%86"><span class="nav-number">2.</span> <span class="nav-text">Step2: 將HTML結構寫出來</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#step3-reset-CSS-%E4%B8%A6%E8%A8%AD%E5%AE%9A-common-CSS"><span class="nav-number">3.</span> <span class="nav-text">step3: reset CSS 並設定 common CSS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#step4-%E9%96%8B%E5%A7%8B%E5%88%87%E7%89%88"><span class="nav-number">4.</span> <span class="nav-text">step4: 開始切版</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E5%B0%8F%E6%99%82%E7%B4%80%E9%8C%84%E9%80%B2%E5%BA%A6-4-30"><span class="nav-number">4.1.</span> <span class="nav-text">第一小時紀錄進度(4:30)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E5%B0%8F%E6%99%82%E7%B4%80%E9%8C%84%E9%80%B2%E5%BA%A6-6-30"><span class="nav-number">4.2.</span> <span class="nav-text">第二小時紀錄進度(6:30)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E5%B0%8F%E6%99%82%E7%B4%80%E9%8C%84%E9%80%B2%E5%BA%A6-7-30"><span class="nav-number">4.3.</span> <span class="nav-text">第三小時紀錄進度(7:30)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E5%B0%8F%E6%99%82%E7%B4%80%E9%8C%84%E9%80%B2%E5%BA%A6-9-00"><span class="nav-number">4.4.</span> <span class="nav-text">第四小時紀錄進度(9:00)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94%E5%B0%8F%E6%99%82%E7%B4%80%E9%8C%84%E9%80%B2%E5%BA%A6-10-00"><span class="nav-number">4.5.</span> <span class="nav-text">第五小時紀錄進度(10:00)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E5%85%AD%E5%B0%8F%E6%99%82%E7%B4%80%E9%8C%84%E9%80%B2%E5%BA%A6-11-00"><span class="nav-number">4.6.</span> <span class="nav-text">第六小時紀錄進度(11:00)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%83%E5%85%AB%E5%B0%8F%E6%99%82%E8%A8%98%E9%8C%84%E9%80%B2%E5%BA%A6-1-00"><span class="nav-number">4.7.</span> <span class="nav-text">第七八小時記錄進度(1:00)</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Doug 道"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Doug 道</p>
+  <div class="site-description" itemprop="description">關於轉職紀錄、技術筆記、隨寫</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/doug0849" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;doug0849" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:etaomonk@gmail.com" title="E-Mail → mailto:etaomonk@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/dlchou89" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;dlchou89" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Doug 道</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

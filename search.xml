@@ -963,18 +963,67 @@
 <span id="more"></span>
 <p>用戶體驗 (UX) 研究表示，在<strong>桌機</strong>的閱讀體驗中，理想上<strong>每行的字元應該在 50 到 75 之間</strong>才能維持良好的易讀性。更有其他研究表示，其實這個範圍<strong>可以擴大到 85 個字元。</strong></p>
 <p>認識 display 屬性<br>所有的 HTML 元素都會有一個預設的 display 值，預設值通常是 block 或 inline 其中一個。</p>
-<table>
-<thead>
-<tr>
-<th>預設值為 block 的元素</th>
-<th>預設值為 inline 的元素</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>div, header, section, nav, p, h1, h2, h3, h4, h5, h6, ol, ul, li, form, table</td>
-<td>span, img, a, em, strong…</td>
-</tr>
-</tbody></table>
+<p>塊元素(block element)</p>
+<ul>
+<li>address - 地址</li>
+<li>blockquote - 块引用</li>
+<li>center - 举中对齐块</li>
+<li>dir - 目录列表</li>
+<li>div - 常用块级容易，也是css layout的主要标签</li>
+<li>dl - 定义列表</li>
+<li>fieldset - form控制组</li>
+<li>form - 交互表单</li>
+<li>h1 - 大标题</li>
+<li>h2 - 副标题</li>
+<li>h3 - 3级标题</li>
+<li>h4 - 4级标题</li>
+<li>h5 - 5级标题</li>
+<li>h6 - 6级标题</li>
+<li>hr - 水平分隔线</li>
+<li>isindex - input prompt</li>
+<li>menu - 菜单列表</li>
+<li>noframes - frames可选内容，（对于不支持frame的浏览器显示此区块内容</li>
+<li>noscript - ）可选脚本内容（对于不支持script的浏览器显示此内容）</li>
+<li>ol - 排序表单</li>
+<li>p - 段落</li>
+<li>pre - 格式化文本</li>
+<li>table - 表格</li>
+<li>ul - 非排序列表</li>
+</ul>
+<p>內聯元素(inline element)</p>
+<ul>
+<li>a - 锚点</li>
+<li>abbr - 缩写</li>
+<li>acronym - 首字</li>
+<li>b - 粗体(不推荐)</li>
+<li>bdo - bidi override</li>
+<li>big - 大字体</li>
+<li>br - 换行</li>
+<li>cite - 引用</li>
+<li>code - 计算机代码(在引用源码的时候需要)</li>
+<li>dfn - 定义字段</li>
+<li>em - 强调</li>
+<li>font - 字体设定(不推荐)</li>
+<li>i - 斜体</li>
+<li>img - 图片</li>
+<li>input - 输入框</li>
+<li>kbd - 定义键盘文本</li>
+<li>label - 表格标签</li>
+<li>q - 短引用</li>
+<li>s - 中划线(不推荐)</li>
+<li>samp - 定义范例计算机代码</li>
+<li>select - 项目选择</li>
+<li>small - 小字体文本</li>
+<li>span - 常用内联容器，定义文本内区块</li>
+<li>strike - 中划线</li>
+<li>strong - 粗体强调</li>
+<li>sub - 下标</li>
+<li>sup - 上标</li>
+<li>textarea - 多行文本输入框</li>
+<li>tt - 电传文本</li>
+<li>u - 下划线</li>
+<li>var - 定义变量</li>
+</ul>
 <hr>
 <h2 id="Rest-default-CSS"><a href="#Rest-default-CSS" class="headerlink" title="Rest default CSS"></a>Rest default CSS</h2><p>每家瀏覽器都有預設不同的 CSS 樣式，造成前端工程師網頁開發上一個頭痛的問題：<br>開發時用 CSS 設計好整齊美麗的排版，在 Google Chrome 上看起沒問題，用 IE 打開卻全變了樣，且市面上還有 Firefox、Safari、Opera 等其他家瀏覽器，</p>
 <p>所以實務開發中，CSS起手式通常會是 Reset CSS，先將各大瀏覽器的預設樣式還原，有個乾淨的開始，再來制訂專案的樣式。</p>
@@ -1295,6 +1344,47 @@
         <tag>作業</tag>
         <tag>Array.prototype.push()</tag>
         <tag>...展開運算子</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>S2-切版練習-T恤商店</title>
+    <url>/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/</url>
+    <content><![CDATA[<p><a href="">完成作品</a></p>
+<p><strong>此編記錄自己從零到全部的實作切版畫面時所碰到的步驟處理及狀況處裡筆記。</strong></p>
+<span id="more"></span>
+<h1 id="Step1：先將得到的設計稿框出HTML的結構"><a href="#Step1：先將得到的設計稿框出HTML的結構" class="headerlink" title="Step1：先將得到的設計稿框出HTML的結構"></a>Step1：先將得到的設計稿框出HTML的結構</h1><img src="/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/html-wireframe.png" class="">
+
+<h1 id="Step2-將HTML結構寫出來"><a href="#Step2-將HTML結構寫出來" class="headerlink" title="Step2: 將HTML結構寫出來"></a>Step2: 將HTML結構寫出來</h1><img src="/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/build-html.png" class="">
+
+<h1 id="step3-reset-CSS-並設定-common-CSS"><a href="#step3-reset-CSS-並設定-common-CSS" class="headerlink" title="step3: reset CSS 並設定 common CSS"></a>step3: reset CSS 並設定 common CSS</h1><h1 id="step4-開始切版"><a href="#step4-開始切版" class="headerlink" title="step4: 開始切版"></a>step4: 開始切版</h1><h2 id="第一小時紀錄進度-4-30"><a href="#第一小時紀錄進度-4-30" class="headerlink" title="第一小時紀錄進度(4:30)"></a>第一小時紀錄進度(4:30)</h2><img src="/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/01hr.png" class="">
+
+<h2 id="第二小時紀錄進度-6-30"><a href="#第二小時紀錄進度-6-30" class="headerlink" title="第二小時紀錄進度(6:30)"></a>第二小時紀錄進度(6:30)</h2><img src="/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/02hr.png" class="">
+
+<h2 id="第三小時紀錄進度-7-30"><a href="#第三小時紀錄進度-7-30" class="headerlink" title="第三小時紀錄進度(7:30)"></a>第三小時紀錄進度(7:30)</h2><img src="/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/03hr.png" class="">
+
+<p>沒什麼進度，遇到了search icon換位置的問題，<br>因為上方的按鈕都用絕對定位，但原本將search icon放在一個div.function裏頭，這個div也是絕對定位，導致search icon無法參考頁面最左上角問題(會去參考到div.function)，所以將他移出div.function，才可以參考navbar位置定位，之後畫面縮放，用grid將各個元素位置放進去即可</p>
+<p>休息半小時</p>
+<h2 id="第四小時紀錄進度-9-00"><a href="#第四小時紀錄進度-9-00" class="headerlink" title="第四小時紀錄進度(9:00)"></a>第四小時紀錄進度(9:00)</h2><img src="/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/04hr.png" class="">
+<p>還是沒什麼進度，碰到漢堡排點空白處會無法展開menu，後來發現是因為使用了flex box,父層的label變成緊貼LOGO前面，後來研究半天，要先把它換成display: block，然後設定絕對位置到左上角，子層的span線條就會跟著移動，再設定子層為position: relative，偽元素::before ::after就可以調整成absolute後移動位置。</p>
+<h2 id="第五小時紀錄進度-10-00"><a href="#第五小時紀錄進度-10-00" class="headerlink" title="第五小時紀錄進度(10:00)"></a>第五小時紀錄進度(10:00)</h2><img src="/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/04hr.png" class="">
+<p>比較有進度了，目前做到排列T畜產品中，過程中碰到照片超出block，但使用overflow:hidden無法隱藏，後來發現是要設定在block不是設定在圖片上。</p>
+<h2 id="第六小時紀錄進度-11-00"><a href="#第六小時紀錄進度-11-00" class="headerlink" title="第六小時紀錄進度(11:00)"></a>第六小時紀錄進度(11:00)</h2><img src="/2021/09/15/S2-%E5%88%87%E7%89%88%E7%B7%B4%E7%BF%92-T%E6%81%A4%E5%95%86%E5%BA%97/05hr.png" class="">
+<p>遇到的問題是在衣服照片hover時，要用一個block把兩張圖包起來，然後要疊兩層圖，一張圖不需要設定position，，一張是position:absolute，這時候不需要設定position的這張圖要比設定絕對定位這張來得小，這樣父層才可以設定高度是auto，隨著子元素圖片放大縮小，但是如果放大張的，那小張的那張會蓋不過大張的底圖。父層會根據大張的那張放大縮小。</p>
+<h2 id="第七八小時記錄進度-1-00"><a href="#第七八小時記錄進度-1-00" class="headerlink" title="第七八小時記錄進度(1:00)"></a>第七八小時記錄進度(1:00)</h2><p>完成!<br>最後footer的元素流動一直搞不定，搞半天後來才發現是自己不小心設定到flex box，但有一個重點要在一次提醒自己並且記清楚，block屬性下的子元素，每多一個元素一定都會自動換行，不需要設定其他CSS屬性，若元素不希望他換行，可以設定display: inline-block; 下個元素就不會換行了，若突然他沒換行，表示父元素絕對有設定到其他display屬性。</p>
+<p>另外在最下方的input欄，學到一個新的函式value，calc( value - value)：<br>此 calc()函數用一個表達式作為它的參數，用這個表達式的結果作為值。這個表達式可以是任何如下操作符的組合，採用標準操作符處理法則的簡單表達式。</p>
+<p>+<br>加法。<br>-<br>減法。<br>*<br>乘法，乘數中至少有一個是 <number>。<br>/<br>除法，除數（/ 右面的數）必須是 <number>。<br>表達式中的運算對象可以使用任意 <length> 值。如果你願意，你可以在一個表達式中混用這類值的不同單位。在需要時，你還可以使用小括號來建立計算順序。</p>
+<p>input欄位的長度，依整體最大寬度的50% - 固定長度，來控制input欄位隨視窗縮放時調整大小。</p>
+]]></content>
+      <categories>
+        <category>AlphaCamp</category>
+        <category>Task</category>
+      </categories>
+      <tags>
+        <tag>技術筆記</tag>
+        <tag>AlphaCamp</tag>
+        <tag>作業</tag>
+        <tag>CSS</tag>
+        <tag>切版</tag>
       </tags>
   </entry>
 </search>

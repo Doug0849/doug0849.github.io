@@ -270,18 +270,67 @@
 <span id="more"></span>
 <p>用戶體驗 (UX) 研究表示，在<strong>桌機</strong>的閱讀體驗中，理想上<strong>每行的字元應該在 50 到 75 之間</strong>才能維持良好的易讀性。更有其他研究表示，其實這個範圍<strong>可以擴大到 85 個字元。</strong></p>
 <p>認識 display 屬性<br>所有的 HTML 元素都會有一個預設的 display 值，預設值通常是 block 或 inline 其中一個。</p>
-<table>
-<thead>
-<tr>
-<th>預設值為 block 的元素</th>
-<th>預設值為 inline 的元素</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>div, header, section, nav, p, h1, h2, h3, h4, h5, h6, ol, ul, li, form, table</td>
-<td>span, img, a, em, strong…</td>
-</tr>
-</tbody></table>
+<p>塊元素(block element)</p>
+<ul>
+<li>address - 地址</li>
+<li>blockquote - 块引用</li>
+<li>center - 举中对齐块</li>
+<li>dir - 目录列表</li>
+<li>div - 常用块级容易，也是css layout的主要标签</li>
+<li>dl - 定义列表</li>
+<li>fieldset - form控制组</li>
+<li>form - 交互表单</li>
+<li>h1 - 大标题</li>
+<li>h2 - 副标题</li>
+<li>h3 - 3级标题</li>
+<li>h4 - 4级标题</li>
+<li>h5 - 5级标题</li>
+<li>h6 - 6级标题</li>
+<li>hr - 水平分隔线</li>
+<li>isindex - input prompt</li>
+<li>menu - 菜单列表</li>
+<li>noframes - frames可选内容，（对于不支持frame的浏览器显示此区块内容</li>
+<li>noscript - ）可选脚本内容（对于不支持script的浏览器显示此内容）</li>
+<li>ol - 排序表单</li>
+<li>p - 段落</li>
+<li>pre - 格式化文本</li>
+<li>table - 表格</li>
+<li>ul - 非排序列表</li>
+</ul>
+<p>內聯元素(inline element)</p>
+<ul>
+<li>a - 锚点</li>
+<li>abbr - 缩写</li>
+<li>acronym - 首字</li>
+<li>b - 粗体(不推荐)</li>
+<li>bdo - bidi override</li>
+<li>big - 大字体</li>
+<li>br - 换行</li>
+<li>cite - 引用</li>
+<li>code - 计算机代码(在引用源码的时候需要)</li>
+<li>dfn - 定义字段</li>
+<li>em - 强调</li>
+<li>font - 字体设定(不推荐)</li>
+<li>i - 斜体</li>
+<li>img - 图片</li>
+<li>input - 输入框</li>
+<li>kbd - 定义键盘文本</li>
+<li>label - 表格标签</li>
+<li>q - 短引用</li>
+<li>s - 中划线(不推荐)</li>
+<li>samp - 定义范例计算机代码</li>
+<li>select - 项目选择</li>
+<li>small - 小字体文本</li>
+<li>span - 常用内联容器，定义文本内区块</li>
+<li>strike - 中划线</li>
+<li>strong - 粗体强调</li>
+<li>sub - 下标</li>
+<li>sup - 上标</li>
+<li>textarea - 多行文本输入框</li>
+<li>tt - 电传文本</li>
+<li>u - 下划线</li>
+<li>var - 定义变量</li>
+</ul>
 <hr>
 <h2 id="Rest-default-CSS"><a href="#Rest-default-CSS" class="headerlink" title="Rest default CSS"></a>Rest default CSS</h2><p>每家瀏覽器都有預設不同的 CSS 樣式，造成前端工程師網頁開發上一個頭痛的問題：<br>開發時用 CSS 設計好整齊美麗的排版，在 Google Chrome 上看起沒問題，用 IE 打開卻全變了樣，且市面上還有 Firefox、Safari、Opera 等其他家瀏覽器，</p>
 <p>所以實務開發中，CSS起手式通常會是 Reset CSS，先將各大瀏覽器的預設樣式還原，有個乾淨的開始，再來制訂專案的樣式。</p>
@@ -564,7 +613,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
