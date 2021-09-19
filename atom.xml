@@ -26,11 +26,9 @@
     
     <summary type="html">&lt;p&gt;此網頁以&lt;strong&gt;記帳簿來&lt;/strong&gt;作為主題&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;此篇將記錄使用Express框架、handlebars網頁模板、Mongoose操控MongoDB來建構一個透過route來達到CRUD網頁的過程&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;以 RESTful (Representational State Transfer) 來作為撰寫程式碼風格&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;會直接將該建立的資料夾直接建立，不會最後再來改寫路由。&lt;/p&gt;</summary>
+&lt;li&gt;此篇將記錄使用Express框架、handlebars網頁模板、Mongoose操控MongoDB來建構一個透過route來達到CRUD網頁的過程&lt;/li&gt;
+&lt;li&gt;以 RESTful (Representational State Transfer) 來作為撰寫程式碼風格&lt;/li&gt;
+&lt;li&gt;會直接將該建立的資料夾直接建立，不會最後再來改寫路由。</summary>
     
     
     
