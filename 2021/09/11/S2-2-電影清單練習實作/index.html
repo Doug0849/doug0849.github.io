@@ -254,7 +254,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="此文章僅記錄作業時提醒自己遇到的問題及需要注意處"><a href="#此文章僅記錄作業時提醒自己遇到的問題及需要注意處" class="headerlink" title="此文章僅記錄作業時提醒自己遇到的問題及需要注意處"></a>此文章僅記錄作業時提醒自己遇到的問題及需要注意處</h1><span id="more"></span>
+        <p><strong>此文章僅記錄作業時提醒自己遇到的問題及需要注意處</strong></p>
+<span id="more"></span>
 <h2 id="Array-prototype-push"><a href="#Array-prototype-push" class="headerlink" title="Array.prototype.push()"></a>Array.prototype.push()</h2><p>當用<strong>常數</strong>宣告了一個陣列容器的時候，若要加入物件或其他東西要使用Array.prototype.push()</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> movies = []</span><br><span class="line"></span><br><span class="line">axios</span><br><span class="line">  .get(INDEX_URL)</span><br><span class="line">  .then(<span class="function">(<span class="params">response</span>) =&gt;</span> &#123;</span><br><span class="line">    movies.push(...response.data.results)</span><br><span class="line">    renderMovieList(movies)</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function">(<span class="params">err</span>) =&gt;</span> <span class="built_in">console</span>.log(err))</span><br></pre></td></tr></table></figure>
 
@@ -379,7 +380,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%AD%A4%E6%96%87%E7%AB%A0%E5%83%85%E8%A8%98%E9%8C%84%E4%BD%9C%E6%A5%AD%E6%99%82%E6%8F%90%E9%86%92%E8%87%AA%E5%B7%B1%E9%81%87%E5%88%B0%E7%9A%84%E5%95%8F%E9%A1%8C%E5%8F%8A%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E8%99%95"><span class="nav-number">1.</span> <span class="nav-text">此文章僅記錄作業時提醒自己遇到的問題及需要注意處</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Array-prototype-push"><span class="nav-number">1.1.</span> <span class="nav-text">Array.prototype.push()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%95%E9%96%8B%E9%81%8B%E7%AE%97%E5%AD%90"><span class="nav-number">1.2.</span> <span class="nav-text">展開運算子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%9C%E6%96%BCdataset"><span class="nav-number">1.3.</span> <span class="nav-text">關於dataset</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Array-prototype-push"><span class="nav-number">1.</span> <span class="nav-text">Array.prototype.push()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%95%E9%96%8B%E9%81%8B%E7%AE%97%E5%AD%90"><span class="nav-number">2.</span> <span class="nav-text">展開運算子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%9C%E6%96%BCdataset"><span class="nav-number">3.</span> <span class="nav-text">關於dataset</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -395,20 +396,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">47</span>
+        <span class="site-state-item-count">52</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

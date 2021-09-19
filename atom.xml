@@ -6,7 +6,7 @@
   <link href="https://doug0849.github.io/atom.xml" rel="self"/>
   
   <link href="https://doug0849.github.io/"/>
-  <updated>2021-09-16T07:40:43.000Z</updated>
+  <updated>2021-09-18T23:52:50.000Z</updated>
   <id>https://doug0849.github.io/</id>
   
   <author>
@@ -17,6 +17,70 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>專案實作 - 個人記帳簿</title>
+    <link href="https://doug0849.github.io/2021/09/19/%E5%B0%88%E6%A1%88%E5%AF%A6%E4%BD%9C-%E5%80%8B%E4%BA%BA%E8%A8%98%E5%B8%B3%E7%B0%BF/"/>
+    <id>https://doug0849.github.io/2021/09/19/%E5%B0%88%E6%A1%88%E5%AF%A6%E4%BD%9C-%E5%80%8B%E4%BA%BA%E8%A8%98%E5%B8%B3%E7%B0%BF/</id>
+    <published>2021-09-18T23:52:50.000Z</published>
+    <updated>2021-09-18T23:52:50.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;此網頁以&lt;strong&gt;記帳簿來&lt;/strong&gt;作為主題&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;此篇將記錄使用Express框架、handlebars網頁模板、Mongoose操控MongoDB來建構一個透過route來達到CRUD網頁的過程&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;以 RESTful (Representational State Transfer) 來作為撰寫程式碼風格&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;會直接將該建立的資料夾直接建立，不會最後再來改寫路由。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技術筆記" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
+    
+    <category term="JavaScript" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/"/>
+    
+    <category term="Express" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/Express/"/>
+    
+    
+    <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
+    
+    <category term="JavaScript" scheme="https://doug0849.github.io/tags/JavaScript/"/>
+    
+    <category term="Express" scheme="https://doug0849.github.io/tags/Express/"/>
+    
+    <category term="Handlebars" scheme="https://doug0849.github.io/tags/Handlebars/"/>
+    
+    <category term="MongoDB" scheme="https://doug0849.github.io/tags/MongoDB/"/>
+    
+    <category term="Mongoose" scheme="https://doug0849.github.io/tags/Mongoose/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>蒐集部落客資料</title>
+    <link href="https://doug0849.github.io/2021/09/18/%E8%92%90%E9%9B%86%E9%83%A8%E8%90%BD%E5%AE%A2%E8%B3%87%E6%96%99/"/>
+    <id>https://doug0849.github.io/2021/09/18/%E8%92%90%E9%9B%86%E9%83%A8%E8%90%BD%E5%AE%A2%E8%B3%87%E6%96%99/</id>
+    <published>2021-09-17T18:19:57.000Z</published>
+    <updated>2021-09-17T18:19:57.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;由於朋友工作關係，常常需要蒐集各部落客，部落格的名稱，部落客的網址，和主人的email蒐集起來，並且詳列出來後，它可以輕易地一鍵copy，這樣可以省得它每次都要用各自官方的部落格去搜尋相關資料，然後再將這些資料手動貼上。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技術筆記" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
+    
+    <category term="JavaScript" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/"/>
+    
+    
+    <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
+    
+    <category term="JavaScript" scheme="https://doug0849.github.io/tags/JavaScript/"/>
+    
+    <category term="實作案例" scheme="https://doug0849.github.io/tags/%E5%AF%A6%E4%BD%9C%E6%A1%88%E4%BE%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Javascript-打磚塊遊戲實作</title>
     <link href="https://doug0849.github.io/2021/09/16/Javascript-%E6%89%93%E7%A3%9A%E5%A1%8A%E9%81%8A%E6%88%B2%E5%AF%A6%E4%BD%9C/"/>
     <id>https://doug0849.github.io/2021/09/16/Javascript-%E6%89%93%E7%A3%9A%E5%A1%8A%E9%81%8A%E6%88%B2%E5%AF%A6%E4%BD%9C/</id>
@@ -24,7 +88,8 @@
     <updated>2021-09-16T07:40:43.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;自己本身滿愛玩遊戲的，自己開始學JavaScript之後，主要都是在學如何開發網頁及如何使用JavaScript來操作網頁，透過路由來新增、讀取、更新、刪除資料庫資料…，但心裡一直想，JavaScript的運用很廣泛，不如自己來查資料看看如何來製作一款簡易的小遊戲，也來接觸不同層面的開發運用。 於似乎我找到MDN上的一個打磚塊教學，就決定先從這個小遊戲開始練習學習並記錄過程。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://doug0849.github.io/javascript-brickgame-exercise&quot;&gt;完成作品&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;自己本身滿愛玩遊戲的，自己開始學JavaScript之後，主要都是在學如何開發網頁及如何使用JavaScript來操作網頁，透過路由來新增、讀取、更新、刪除資料庫資料…，但心裡一直想，JavaScript的運用很廣泛，不如自己來查資料看看如何來製作一款簡易的小遊戲，也來接觸不同層面的開發運用。 於似乎我找到MDN上的一個打磚塊教學，就決定先從這個小遊戲開始練習學習並記錄過程。&lt;/p&gt;</summary>
     
     
     
@@ -49,7 +114,7 @@
     <updated>2021-09-14T21:02:36.000Z</updated>
     
     
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://doug0849.github.io/layout-exercise&quot;&gt;完成作品&lt;/a&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://doug0849.github.io/layout-exercise&quot;&gt;完成作品&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;此編記錄自己從零到全部的實作切版畫面時所碰到的步驟處理及狀況處裡筆記。&lt;/strong&gt;&lt;/p&gt;</summary>
     
     
@@ -79,7 +144,8 @@
     <updated>2021-09-13T18:37:41.000Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;完成作品CodePen連結&quot;&gt;&lt;a href=&quot;#完成作品CodePen連結&quot; class=&quot;headerlink&quot; title=&quot;完成作品CodePen連結&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://codepen.io/doug0849/pen/MWovwyr&quot;&gt;完成作品CodePen連結&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;此文章所做的筆記，僅為提醒自己要多加注意的地方。&lt;/strong&gt;&lt;/p&gt;
+    <summary type="html">&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://codepen.io/doug0849/pen/MWovwyr&quot;&gt;完成作品CodePen連結&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;此文章所做的筆記，僅為提醒自己要多加注意的地方。&lt;/strong&gt;&lt;/p&gt;
 &lt;h1 id=&quot;本文引用之圖片均來自Alpha-Camp&quot;&gt;&lt;a href=&quot;#本文引用之圖片均來自Alpha-Camp&quot; class=&quot;headerlink&quot; title=&quot;本文引用之圖片均來自Alpha Camp&quot;&gt;&lt;/a&gt;本文引用之圖片均來自&lt;a href=&quot;https://tw.alphacamp.co/&quot;&gt;Alpha Camp&lt;/a&gt;&lt;/h1&gt;</summary>
     
     
@@ -158,7 +224,7 @@
     <updated>2021-09-10T18:12:50.000Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;此文章僅記錄作業時提醒自己遇到的問題及需要注意處&quot;&gt;&lt;a href=&quot;#此文章僅記錄作業時提醒自己遇到的問題及需要注意處&quot; class=&quot;headerlink&quot; title=&quot;此文章僅記錄作業時提醒自己遇到的問題及需要注意處&quot;&gt;&lt;/a&gt;此文章僅記錄作業時提醒自己遇到的問題及需要注意處&lt;/h1&gt;</summary>
+    <summary type="html">&lt;p&gt;&lt;strong&gt;此文章僅記錄作業時提醒自己遇到的問題及需要注意處&lt;/strong&gt;&lt;/p&gt;</summary>
     
     
     
@@ -200,31 +266,6 @@
     <category term="JavaScript" scheme="https://doug0849.github.io/tags/JavaScript/"/>
     
     <category term="Node.js" scheme="https://doug0849.github.io/tags/Node-js/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git Bash基本指令操作</title>
-    <link href="https://doug0849.github.io/2021/09/10/GitBash%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4%E6%93%8D%E4%BD%9C/"/>
-    <id>https://doug0849.github.io/2021/09/10/GitBash%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4%E6%93%8D%E4%BD%9C/</id>
-    <published>2021-09-10T16:07:44.000Z</published>
-    <updated>2021-09-10T16:07:44.000Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;Git-Bash基本操作&quot;&gt;&lt;a href=&quot;#Git-Bash基本操作&quot; class=&quot;headerlink&quot; title=&quot;Git Bash基本操作&quot;&gt;&lt;/a&gt;Git Bash基本操作&lt;/h1&gt;&lt;h2 id=&quot;當前資料夾新建一個資料夾&quot;&gt;&lt;a href=&quot;#當前資料夾新建一個資料夾&quot; class=&quot;headerlink&quot; title=&quot;當前資料夾新建一個資料夾&quot;&gt;&lt;/a&gt;當前資料夾新建一個資料夾&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ mkdir [資料夾名稱]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-
-&lt;h2 id=&quot;當前資料夾建立一個檔案&quot;&gt;&lt;a href=&quot;#當前資料夾建立一個檔案&quot; class=&quot;headerlink&quot; title=&quot;當前資料夾建立一個檔案&quot;&gt;&lt;/a&gt;當前資料夾建立一個檔案&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ touch [檔案名稱.副檔名]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    <category term="技術筆記" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
-    
-    <category term="Git Bash" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/Git-Bash/"/>
-    
-    
-    <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
-    
-    <category term="Git Bash" scheme="https://doug0849.github.io/tags/Git-Bash/"/>
     
   </entry>
   
@@ -478,63 +519,25 @@
   </entry>
   
   <entry>
-    <title>JavaScript-CSS相關</title>
-    <link href="https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-CSS%E7%9B%B8%E9%97%9C/"/>
-    <id>https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-CSS%E7%9B%B8%E9%97%9C/</id>
-    <published>2021-06-09T10:46:37.000Z</published>
-    <updated>2021-06-09T10:46:37.000Z</updated>
+    <title>Git版本控制語法使用</title>
+    <link href="https://doug0849.github.io/2021/06/19/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8/"/>
+    <id>https://doug0849.github.io/2021/06/19/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8/</id>
+    <published>2021-06-19T00:14:37.000Z</published>
+    <updated>2021-06-19T00:14:37.000Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
-&lt;h1 id=&quot;利用toggle來新增或移除元素標籤的class名稱&quot;&gt;&lt;a href=&quot;#利用toggle來新增或移除元素標籤的class名稱&quot; class=&quot;headerlink&quot;</summary>
-        
-      
+    <summary type="html">&lt;p&gt;Git 版本控制語法筆記&lt;/p&gt;</summary>
     
     
     
     <category term="技術筆記" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
     
-    <category term="JavaScript" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/"/>
+    <category term="Git" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/Git/"/>
     
     
     <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
     
-    <category term="JavaScript" scheme="https://doug0849.github.io/tags/JavaScript/"/>
-    
-    <category term="toggle" scheme="https://doug0849.github.io/tags/toggle/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript語法使用-Function相關</title>
-    <link href="https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-Function%E7%9B%B8%E9%97%9C/"/>
-    <id>https://doug0849.github.io/2021/06/09/javascript%E8%AA%9E%E6%B3%95%E4%BD%BF%E7%94%A8-Function%E7%9B%B8%E9%97%9C/</id>
-    <published>2021-06-09T10:46:37.000Z</published>
-    <updated>2021-06-09T10:46:37.000Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;關於-function&quot;&gt;&lt;a href=&quot;#關於-function&quot; class=&quot;headerlink&quot; title=&quot;關於 function&quot;&gt;&lt;/a&gt;關於 function&lt;/h2&gt;&lt;p&gt;這篇由W3HEXSCHOOL發布的有關function的特性的講解可以參考&lt;br&gt;&lt;a href=&quot;https://w3c.hexschool.com/blog/cb6e361&quot;&gt;連結在這&lt;/a&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技術筆記" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
-    
-    <category term="JavaScript" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/"/>
-    
-    
-    <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
-    
-    <category term="JavaScript" scheme="https://doug0849.github.io/tags/JavaScript/"/>
-    
-    <category term="function" scheme="https://doug0849.github.io/tags/function/"/>
-    
-    <category term="IIFE" scheme="https://doug0849.github.io/tags/IIFE/"/>
-    
-    <category term="函式" scheme="https://doug0849.github.io/tags/%E5%87%BD%E5%BC%8F/"/>
+    <category term="Git" scheme="https://doug0849.github.io/tags/Git/"/>
     
   </entry>
   
