@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en,zh-TW,default">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P7J0KE07RD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P7J0KE07RD');
+</script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"doug0849.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"ture","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="此網頁以記帳簿來作為主題  此篇將記錄使用Express框架、handlebars網頁模板、Mongoose操控MongoDB來建構一個透過route來達到CRUD網頁的過程 以 RESTful (Representational State Transfer) 來作為撰寫程式碼風格 會直接將該建立的資料夾直接建立，不會最後再來改寫路由。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="專案實作 - 個人記帳簿">
+<meta property="og:url" content="https://doug0849.github.io/2021/09/19/project-exercise-expenses/index.html">
+<meta property="og:site_name" content="想要邊撸鐵邊學CODE的DOUG">
+<meta property="og:description" content="此網頁以記帳簿來作為主題  此篇將記錄使用Express框架、handlebars網頁模板、Mongoose操控MongoDB來建構一個透過route來達到CRUD網頁的過程 以 RESTful (Representational State Transfer) 來作為撰寫程式碼風格 會直接將該建立的資料夾直接建立，不會最後再來改寫路由。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/19/project-exercise-expenses/1.png">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/19/project-exercise-expenses/2.png">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/19/project-exercise-expenses/3.png">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/19/project-exercise-expenses/4.png">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/19/project-exercise-expenses/5.png">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/19/project-exercise-expenses/7.png">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/19/project-exercise-expenses/6.png">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/19/project-exercise-expenses/8.png">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/19/project-exercise-expenses/9.png">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/19/project-exercise-expenses/10.png">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/19/project-exercise-expenses/11.png">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/19/project-exercise-expenses/12.png">
+<meta property="og:image" content="https://doug0849.github.io/2021/09/19/project-exercise-expenses/13.png">
+<meta property="article:published_time" content="2021-09-18T23:52:50.000Z">
+<meta property="article:modified_time" content="2021-09-18T23:52:50.000Z">
+<meta property="article:author" content="Doug 道">
+<meta property="article:tag" content="技術筆記">
+<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="Express">
+<meta property="article:tag" content="Handlebars">
+<meta property="article:tag" content="MongoDB">
+<meta property="article:tag" content="Mongoose">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://doug0849.github.io/2021/09/19/project-exercise-expenses/1.png">
+
+<link rel="canonical" href="https://doug0849.github.io/2021/09/19/project-exercise-expenses/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>專案實作 - 個人記帳簿 | 想要邊撸鐵邊學CODE的DOUG</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="想要邊撸鐵邊學CODE的DOUG" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">想要邊撸鐵邊學CODE的DOUG</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">快樂每一天</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/09/19/project-exercise-expenses/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Doug 道">
+      <meta itemprop="description" content="關於轉職紀錄、技術筆記、隨寫">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="想要邊撸鐵邊學CODE的DOUG">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          專案實作 - 個人記帳簿
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-09-19 07:52:50" itemprop="dateCreated datePublished" datetime="2021-09-19T07:52:50+08:00">2021-09-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" itemprop="url" rel="index"><span itemprop="name">技術筆記</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/Express/" itemprop="url" rel="index"><span itemprop="name">Express</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>此網頁以<strong>記帳簿來</strong>作為主題</p>
+<ol>
+<li>此篇將記錄使用Express框架、handlebars網頁模板、Mongoose操控MongoDB來建構一個透過route來達到CRUD網頁的過程</li>
+<li>以 RESTful (Representational State Transfer) 來作為撰寫程式碼風格</li>
+<li>會直接將該建立的資料夾直接建立，不會最後再來改寫路由。<span id="more"></span></li>
+</ol>
+<p><strong>Day 1 開始</strong></p>
+<h1 id="day-1"><a href="#day-1" class="headerlink" title="day 1"></a>day 1</h1><h2 id="初始化設定"><a href="#初始化設定" class="headerlink" title="初始化設定"></a>初始化設定</h2><ol>
+<li><p>開新專案資料夾</p>
+</li>
+<li><p>初始化git</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ol start="3">
+<li>資料夾底下初始化npm檔案<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm init</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ol start="4">
+<li>安裝express工具包<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install express</span><br></pre></td></tr></table></figure></li>
+</ol>
+<ol start="5">
+<li><p>安裝express使用的handlebars工具包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install express-handlebars</span><br></pre></td></tr></table></figure></li>
+<li><p>未來安裝mongoose來控制MongoDB文件資料庫伺服器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install mongoose</span><br></pre></td></tr></table></figure></li>
+<li><p>安裝method-override，來改寫路由的POST可以修改成PUT(修改、更新)，DELETE(刪除)，來達到GET(取得、讀取)，POST(新增)，PUT(修改、更新)，DELETE(刪除)，CRUD路由語意化</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install method-override</span><br></pre></td></tr></table></figure></li>
+<li><p>開一個js檔案來撰寫伺服器，命名為app.js</p>
+</li>
+</ol>
+<ol start="7">
+<li>在目錄底下npm初始化的package.json檔案設定腳本，方便之後使用<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">  <span class="attr">&quot;test&quot;</span>: <span class="string">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;start&quot;</span>: <span class="string">&quot;node app.js&quot;</span>,</span><br><span class="line">  <span class="attr">&quot;dev&quot;</span>: <span class="string">&quot;nodemon app.js&quot;</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+如果尚未安裝nodemon 請先安裝nodemon，未來在設計伺服器的時候，nodemon會自動抓取檔案是否有變更，有變更會自動重啟伺服器，就不需要一直手動重啟伺服器。</li>
+</ol>
+<hr>
+<h2 id="載入-packages-及設定"><a href="#載入-packages-及設定" class="headerlink" title="載入 packages 及設定"></a>載入 packages 及設定</h2><ol>
+<li><p>js載入express工具包，並設定好各項變數參數，並啟動伺服器</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span> (<span class="string">&#x27;express&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> app = express()</span><br><span class="line"><span class="keyword">const</span> port = <span class="number">3000</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 伺服器在收到跟目錄位置時，要回應什麼東西，目前先設定一段純文字</span></span><br><span class="line">app.get(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req,res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.send(<span class="string">&#x27;This is Express server.&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(port,<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;Server is running on https://localhost:3000&#x27;</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>這時可以先測試伺服器有無啟動</p>
+</li>
+<li><p>js載入handlebars工具包，並設定好各項變數參數</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span> (<span class="string">&#x27;express&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> exphbs = <span class="built_in">require</span>(<span class="string">&#x27;express-handlebars&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = express()</span><br><span class="line"><span class="keyword">const</span> port = <span class="number">3000</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 app.engine(extname, callback) 的方法，來建立要使用的樣板引擎</span></span><br><span class="line"><span class="comment">// extname 是你要給這個引擎的名稱同時也要跟附檔名設定一樣，可以自己設定，第二個參數是要使用什麼引擎，並設定這個引擎的相關參數</span></span><br><span class="line"><span class="comment">// 這邊第二個參數就將載入好的handlebars作為參數，並設定handlebars內的defaultLayout: 以及extname: </span></span><br><span class="line"><span class="comment">// defaultLayout是用來設定我們要以哪個檔案名做為主要樣板</span></span><br><span class="line"><span class="comment">// extname是用來設定我們要識別的副檔名，預設為handlebars，太長了我們把它簡化改為.hbs，同時第一個參數名稱命名也得是hbs</span></span><br><span class="line">app.engine(<span class="string">&#x27;hbs&#x27;</span>, exphbs(&#123; <span class="attr">defaultLayout</span>: <span class="string">&#x27;main&#x27;</span>, <span class="attr">extname</span>: <span class="string">&#x27;.hbs&#x27;</span> &#125;))</span><br><span class="line"></span><br><span class="line"><span class="comment">// 這邊是設定express將要使用的顯示引擎設為hbs，這個名稱是根據上面設定的名稱而訂。</span></span><br><span class="line"><span class="comment">// engine的命名，副檔名的命名，以及使用的view engine，三者要一樣</span></span><br><span class="line">app.set(<span class="string">&#x27;view engine&#x27;</span>, <span class="string">&#x27;hbs&#x27;</span>)</span><br><span class="line"></span><br><span class="line">app.get(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req,res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.send(<span class="string">&#x27;This is Express server.&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(port,<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;Server is running on https://localhost:3000&#x27;</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+<li><p>根據Express和handlebars的規範建立正確的資料夾<br>在跟目錄底下開一個 views 資料夾(Express)，views內再加一個子資料夾layouts(handlebars)。</p>
+</li>
+<li><p>在layouts內建立一個 main.hbs 的檔案</p>
+</li>
+<li><p>在main.hbs 就可以寫入html的相關布局</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;ie=edge&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span>Keep Accounts<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 這邊要寫入&#123;&#123;&#123;body&#125;&#125;&#125;是因為，樣板引擎會識別這個位置，並把其他部分的樣版內容放進來此處 --&gt;</span></span><br><span class="line">  &#123;&#123;&#123; body &#125;&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>另外<code>&#123;&#123;&#123; &#125;&#125;&#125;</code>三個花括號代表帶入的內容要分辨html標籤，如果不要分辨html內容則是帶入<code>&#123;&#123; &#125;&#125;</code>兩個花括號，也是作為其他if each之類的語法辨識使用</p>
+</li>
+<li><p>在views裡建立首頁要顯示的內容，index.hbs，這些頁面就會被引入 main.hbs 的 <code>&#123;&#123;&#123; body &#125;&#125;&#125;</code> 部分，</p>
+</li>
+<li><p>先在index內隨便寫些東西，等等要確定伺服器的啟動沒有問題。</p>
+</li>
+<li><p>目前設定好了 Express, Handlebars, 接著設定首頁的route</p>
+</li>
+</ol>
+<hr>
+<h2 id="route建立及設定"><a href="#route建立及設定" class="headerlink" title="route建立及設定"></a>route建立及設定</h2><ol>
+<li><p>先建立routes資料夾<br>根目錄下先開routes資料夾以及index.js，資料夾下建立子資料夾modules及home.js</p>
+</li>
+<li><p>先設定<strong>index.js</strong><br>載入此之路由home.js，並設定首頁<code>&#39;/&#39;</code><strong>route到home.js</strong>，最後匯出router</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 基本設定</span></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> router = express.Router()</span><br><span class="line"><span class="keyword">const</span> home = <span class="built_in">require</span>(<span class="string">&#x27;./home&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 這邊使用 router.use 導向home資料夾</span></span><br><span class="line">router.use(<span class="string">&#x27;/&#x27;</span>,home)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.export = router</span><br></pre></td></tr></table></figure></li>
+<li><p>設定<strong>home.js</strong>的路由</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 基本設定，一樣需要express及express的Router</span></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> router = express.Router()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 當router取得 &#x27;/&#x27; 請求，請回應 index 頁面給客戶端</span></span><br><span class="line">router.get(<span class="string">&#x27;/&#x27;</span>,<span class="function">(<span class="params">req,res</span>) =&gt;</span>&#123;</span><br><span class="line">  res.render(<span class="string">&#x27;index&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//同樣需要export</span></span><br><span class="line"><span class="built_in">module</span>.export = router</span><br></pre></td></tr></table></figure></li>
+<li><p>回到主程式<strong>app.js</strong>掛載此路由工具，先刪除</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">&#x27;/&#x27;</span>,<span class="function">(<span class="params">req,res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.send(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>再來設定Express要使用routes</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 只需要設定routes目錄位置就可以了，會自己去尋找index.js檔案</span></span><br><span class="line"><span class="keyword">const</span> routes = <span class="built_in">require</span>(<span class="string">&#x27;./routes&#x27;</span>)</span><br><span class="line">app.use(routes)</span><br></pre></td></tr></table></figure>
+
+<p>重新拜訪 <a target="_blank" rel="noopener" href="http://localhost:3000/">http://localhost:3000</a> 看看有沒有成功。</p>
+<ol start="5">
+<li>大致都設定完成後，終端機輸入npm run dev先來啟動伺服器看看成不成功</li>
+</ol>
+<p>目前的資料夾以及成功畫面，並且git commit一下初始化吧! 記得.gitignore要忽略node_modules，不然會一大堆檔案。</p>
+<img src="/2021/09/19/project-exercise-expenses/1.png" class="">
+
+<hr>
+<h2 id="連線-MongoDB-並建立種子資料"><a href="#連線-MongoDB-並建立種子資料" class="headerlink" title="連線 MongoDB 並建立種子資料"></a>連線 MongoDB 並建立種子資料</h2><ol>
+<li><p>先在MongoDB開設專用database，命名為expenses</p>
+</li>
+<li><p>接著在根目錄開設config資料夾，要將設定相關的檔案都放在這</p>
+</li>
+<li><p>在資料夾內建立mongoose.js<br>先載入 mongoose，並用mongoose連線mongoDB</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">&#x27;mongoose&#x27;</span>)</span><br><span class="line">mongoose.connect(<span class="string">&#x27;mongodb://localhost/expenses&#x27;</span>)</span><br></pre></td></tr></table></figure></li>
+<li><p>連線mongoose連線mongodb後會取得一個連線狀態的資訊，我們需要設定一個參數，把連線狀態暫存下來，才能繼續使用。接著設定正常連線顯示時連線成功以及錯誤時顯示連線錯誤，最後將它匯出。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> db = mongoose.connection</span><br><span class="line"><span class="comment">// 連線異常</span></span><br><span class="line">db.on(<span class="string">&#x27;error&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;mongodb error!&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// 連線成功</span></span><br><span class="line"><span class="comment">// 連線成功只會發生一次，所以這裡特地使用 once，由 once 設定的監聽器是一次性的，一旦連線成功，在執行 callback 以後就會解除監聽器。</span></span><br><span class="line">db.once(<span class="string">&#x27;open&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;mongodb connected!&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.export = db</span><br></pre></td></tr></table></figure></li>
+<li><p>回到根目錄建立models資料夾，來完成MVC(models views control)軟體設計模式，並建立expenses.js<br>先載入mongoose，再來設定Schema(資料型態結構)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">&#x27;mongoose&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> Schema = mongoose.Schema</span><br><span class="line"><span class="keyword">const</span> expenseSchema = <span class="keyword">new</span> Schema(&#123;</span><br><span class="line">  <span class="attr">category_1</span>: &#123;</span><br><span class="line">    <span class="attr">type</span>: <span class="built_in">String</span>,</span><br><span class="line">    <span class="attr">required</span>: <span class="literal">true</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">category_2</span>: &#123;</span><br><span class="line">    <span class="attr">type</span>: <span class="built_in">String</span>,</span><br><span class="line">    <span class="attr">required</span>: <span class="literal">true</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">itemName</span>: &#123;</span><br><span class="line">    <span class="attr">type</span>: <span class="built_in">String</span>,</span><br><span class="line">    <span class="attr">required</span>: <span class="literal">true</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">cost</span>: &#123;</span><br><span class="line">    <span class="attr">type</span>: <span class="built_in">Number</span>,</span><br><span class="line">    <span class="attr">required</span>: <span class="literal">true</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">    <span class="attr">method</span>: &#123;</span><br><span class="line">    <span class="attr">type</span>: <span class="built_in">String</span>,</span><br><span class="line">    <span class="attr">required</span>: <span class="literal">true</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">time</span>: &#123;</span><br><span class="line">    <span class="attr">year</span>: &#123;</span><br><span class="line">      <span class="attr">type</span>: <span class="built_in">Number</span>,</span><br><span class="line">      <span class="attr">required</span>: <span class="literal">true</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">month</span>: &#123;</span><br><span class="line">      <span class="attr">type</span>: <span class="built_in">Number</span>,</span><br><span class="line">      <span class="attr">required</span>: <span class="literal">true</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">date</span>: &#123;</span><br><span class="line">      <span class="attr">type</span>: <span class="built_in">Number</span>,</span><br><span class="line">      <span class="attr">required</span>: <span class="literal">true</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">hour</span>: &#123;</span><br><span class="line">      <span class="attr">type</span>: <span class="built_in">Number</span>,</span><br><span class="line">      <span class="attr">required</span>: <span class="literal">true</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">minute</span>: &#123;</span><br><span class="line">      <span class="attr">type</span>: <span class="built_in">Number</span>,</span><br><span class="line">      <span class="attr">required</span>: <span class="literal">true</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = mongoose.model(<span class="string">&#x27;Expenses&#x27;</span>, expenseSchema)</span><br></pre></td></tr></table></figure></li>
+<li><p>接著在models目錄下創建seeds資料夾，並建立expensesSeeder.js，之後可以用來創建基本的種子資料來做測試。<br>先引入剛剛設定好的expenses.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Expenses = <span class="built_in">require</span>(<span class="string">&#x27;../expenses&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> db = <span class="built_in">require</span>(<span class="string">&#x27;../../config/mongoose&#x27;</span>)</span><br><span class="line"></span><br><span class="line">db.once(<span class="string">&#x27;open&#x27;</span>,<span class="function">() =&gt;</span>&#123;</span><br><span class="line">  Expenses.create(&#123;</span><br><span class="line">    <span class="attr">category_1</span>: <span class="string">&#x27;分類1&#x27;</span>,</span><br><span class="line">      <span class="attr">category_2</span>: <span class="string">&#x27;分類2&#x27;</span>,</span><br><span class="line">      <span class="attr">itemName</span>: <span class="string">`itemName-`</span> + i,</span><br><span class="line">      <span class="attr">cost</span>: <span class="number">100</span>,</span><br><span class="line">      <span class="attr">method</span>: <span class="string">&#x27;現金&#x27;</span>,</span><br><span class="line">      <span class="attr">time</span>: &#123;</span><br><span class="line">        <span class="attr">year</span>: <span class="number">2021</span>,</span><br><span class="line">        <span class="attr">month</span>: <span class="number">9</span>,</span><br><span class="line">        <span class="attr">date</span>: <span class="number">19</span>,</span><br><span class="line">        <span class="attr">hour</span>: <span class="number">21</span>,</span><br><span class="line">        <span class="attr">minute</span>: <span class="number">9</span>,</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;Created seeds done.&#x27;</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>之後再package.json裡設定腳本，方便以後執行創建種子測試</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;scripts&quot;</span>: &#123;</span><br><span class="line">    <span class="attr">&quot;seeds&quot;</span>: <span class="string">&quot;node models/seeds/expensesSeeder.js&quot;</span></span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>現在可以使用專端機測試執行種子腳本看有沒有成功，並在資料庫檢查是否有成功生成種子資料</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ npm run seeds</span><br><span class="line"></span><br><span class="line">&gt; accounts@1.0.0 seeds D:\0.Personal\test\expenses</span><br><span class="line">&gt; node models/seeds/expensesSeeder.js</span><br><span class="line"></span><br><span class="line">mongodb connected</span><br><span class="line">Created seeds done.</span><br></pre></td></tr></table></figure>
+
+<ol start="6">
+<li><p>回到<strong>app.js</strong> 引入mongoose.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">require</span>(<span class="string">&#x27;./config/mongoose&#x27;</span>) <span class="comment">// 直接加入</span></span><br></pre></td></tr></table></figure></li>
+<li><p>接著嘗試將資料引入畫面中，這時我們需要回到路由<strong>home.js</strong>設定</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> router = express.Router()</span><br><span class="line"><span class="keyword">const</span> Expenses = <span class="built_in">require</span>(<span class="string">&#x27;../../models/expenses&#x27;</span>) <span class="comment">// 增加這段</span></span><br><span class="line"></span><br><span class="line">router.get(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  Expenses.find() <span class="comment">// 搜尋資料，若不加入條件，則返回全部資料</span></span><br><span class="line">  .lean() <span class="comment">// 撈完資料要用lean，因為不允許直接使用原型物件，要將原型物件先做處理將它變成單純的物件</span></span><br><span class="line">  <span class="comment">// sort為排序指令，可以帶入要以什麼作為排序，這邊使用mongodb創建時會產生的_id來作為排序資料</span></span><br><span class="line">  <span class="comment">// 這個id是會按照&quot;正常的時間&quot;先後順序排列的，asc(ascending)正序 desc(descending)反序。</span></span><br><span class="line">  .sort( &#123;<span class="attr">_id</span>: <span class="string">&#x27;asc&#x27;</span>&#125; ) </span><br><span class="line">  .then(<span class="function"><span class="params">items</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 將資料全部送到index內來使用</span></span><br><span class="line">    res.render(<span class="string">&#x27;index&#x27;</span>, &#123; items &#125;)</span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function"><span class="params">error</span> =&gt;</span> <span class="built_in">console</span>.log(error))</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = router</span><br></pre></td></tr></table></figure></li>
+<li><p>將資料帶進index.hbs<br>先建立些草稿HTML結構後，回到routes &gt; modules &gt; home.js，重新設定路由</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> router = express.Router()</span><br><span class="line"><span class="comment">// 新增</span></span><br><span class="line"><span class="keyword">const</span> Expenses = <span class="built_in">require</span>(<span class="string">&#x27;../../models/expense&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 路由需引入Expenses資料庫資料</span></span><br><span class="line">router.get(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req,res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// 這邊使用find來取得資料，後面沒有加入條件則是取得全部資料</span></span><br><span class="line">  Expenses.find()</span><br><span class="line">  .lean() <span class="comment">// handlebars不能直接使用原型物件，所以要先使用mongoose的lean()將資料轉為純物件</span></span><br><span class="line">  <span class="comment">// 將取得的資料帶入index</span></span><br><span class="line">  .then(<span class="function"><span class="params">expenseItems</span> =&gt;</span> res.render(<span class="string">&#x27;index&#x27;</span>, &#123;expenseItems&#125;))</span><br><span class="line">  .catch(<span class="function"><span class="params">error</span> =&gt;</span> <span class="built_in">console</span>.log(error))</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = router</span><br></pre></td></tr></table></figure>
+<p>此階段的完成狀態</p>
+<img src="/2021/09/19/project-exercise-expenses/2.png" class=""></li>
+</ol>
+<p><strong>Day 1 結束</strong></p>
+<hr>
+<h1 id="day-2"><a href="#day-2" class="headerlink" title="day 2"></a>day 2</h1><p><strong>Day 2 開始</strong><br>這幾天工作忙碌，沒辦法全心全力投入製作，但做多少算多少吧! 慢慢刻!</p>
+<p>從上次將資料從文件資料庫引入後，打算先來刻一些簡單的版面。</p>
+<h2 id="設定靜態檔案資料夾"><a href="#設定靜態檔案資料夾" class="headerlink" title="設定靜態檔案資料夾"></a>設定靜態檔案資料夾</h2><ol>
+<li>先根目錄開設Public資料夾來放置要使用的JavaScript及styleSheet檔案，然後接著在app.js內設定靜態檔案的資料夾名稱<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.static(<span class="string">&#x27;public&#x27;</span>))</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="初始化CSS"><a href="#初始化CSS" class="headerlink" title="初始化CSS"></a>初始化CSS</h2><ol start="2">
+<li>開style.css開始初始化設定CSS，<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* http://meyerweb.com/eric/tools/css/reset/ </span></span><br><span class="line"><span class="comment">   v2.0 | 20110126</span></span><br><span class="line"><span class="comment">   License: none (public domain)</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="selector-tag">html</span>, <span class="selector-tag">body</span>, <span class="selector-tag">div</span>, <span class="selector-tag">span</span>, applet, <span class="selector-tag">object</span>, <span class="selector-tag">iframe</span>,</span><br><span class="line"><span class="selector-tag">h1</span>, <span class="selector-tag">h2</span>, <span class="selector-tag">h3</span>, <span class="selector-tag">h4</span>, <span class="selector-tag">h5</span>, <span class="selector-tag">h6</span>, <span class="selector-tag">p</span>, <span class="selector-tag">blockquote</span>, pre,</span><br><span class="line"><span class="selector-tag">a</span>, <span class="selector-tag">abbr</span>, acronym, <span class="selector-tag">address</span>, big, <span class="selector-tag">cite</span>, <span class="selector-tag">code</span>,</span><br><span class="line"><span class="selector-tag">del</span>, <span class="selector-tag">dfn</span>, <span class="selector-tag">em</span>, <span class="selector-tag">img</span>, <span class="selector-tag">ins</span>, <span class="selector-tag">kbd</span>, <span class="selector-tag">q</span>, s, <span class="selector-tag">samp</span>,</span><br><span class="line">small, strike, <span class="selector-tag">strong</span>, sub, <span class="selector-tag">sup</span>, tt, <span class="selector-tag">var</span>,</span><br><span class="line"><span class="selector-tag">b</span>, u, <span class="selector-tag">i</span>, center,</span><br><span class="line"><span class="selector-tag">dl</span>, <span class="selector-tag">dt</span>, <span class="selector-tag">dd</span>, <span class="selector-tag">ol</span>, <span class="selector-tag">ul</span>, <span class="selector-tag">li</span>,</span><br><span class="line"><span class="selector-tag">fieldset</span>, <span class="selector-tag">form</span>, <span class="selector-tag">label</span>, <span class="selector-tag">legend</span>,</span><br><span class="line"><span class="selector-tag">table</span>, <span class="selector-tag">caption</span>, <span class="selector-tag">tbody</span>, <span class="selector-tag">tfoot</span>, <span class="selector-tag">thead</span>, <span class="selector-tag">tr</span>, <span class="selector-tag">th</span>, <span class="selector-tag">td</span>,</span><br><span class="line"><span class="selector-tag">article</span>, <span class="selector-tag">aside</span>, <span class="selector-tag">canvas</span>, <span class="selector-tag">details</span>, embed, </span><br><span class="line"><span class="selector-tag">figure</span>, <span class="selector-tag">figcaption</span>, <span class="selector-tag">footer</span>, <span class="selector-tag">header</span>, <span class="selector-tag">hgroup</span>, </span><br><span class="line"><span class="selector-tag">menu</span>, <span class="selector-tag">nav</span>, output, ruby, <span class="selector-tag">section</span>, <span class="selector-tag">summary</span>,</span><br><span class="line"><span class="selector-tag">time</span>, <span class="selector-tag">mark</span>, <span class="selector-tag">audio</span>, <span class="selector-tag">video</span> &#123;</span><br><span class="line">	<span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">padding</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">border</span>: <span class="number">0</span>;</span><br><span class="line">	<span class="attribute">font-size</span>: <span class="number">100%</span>;</span><br><span class="line">	<span class="attribute">font</span>: inherit;</span><br><span class="line">	<span class="attribute">vertical-align</span>: baseline;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* HTML5 display-role reset for older browsers */</span></span><br><span class="line"><span class="selector-tag">article</span>, <span class="selector-tag">aside</span>, <span class="selector-tag">details</span>, <span class="selector-tag">figcaption</span>, <span class="selector-tag">figure</span>, </span><br><span class="line"><span class="selector-tag">footer</span>, <span class="selector-tag">header</span>, <span class="selector-tag">hgroup</span>, <span class="selector-tag">menu</span>, <span class="selector-tag">nav</span>, <span class="selector-tag">section</span> &#123;</span><br><span class="line">	<span class="attribute">display</span>: block;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">	<span class="attribute">line-height</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">ol</span>, <span class="selector-tag">ul</span> &#123;</span><br><span class="line">	<span class="attribute">list-style</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">blockquote</span>, <span class="selector-tag">q</span> &#123;</span><br><span class="line">	<span class="attribute">quotes</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">blockquote</span>:before, blockquote:after,</span><br><span class="line">q:before, q:after &#123;</span><br><span class="line">	content: <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">	<span class="attribute">content</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">table</span> &#123;</span><br><span class="line">	<span class="attribute">border-collapse</span>: collapse;</span><br><span class="line">	<span class="attribute">border-spacing</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="載入字體"><a href="#載入字體" class="headerlink" title="載入字體"></a>載入字體</h2><ol start="3">
+<li><p>將字體載入CSS<br>將字體檔案放置到stylesheet檔案夾下，另開一個font資料夾，將中文字體檔案丟入，<br>設定中文字體，依不同副檔名會輸入不同format。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@font-face</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">&#x27;NotoSansTC&#x27;</span>;</span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">&quot;./fonts/Noto_Sans_TC/NotoSansTC-Regular.otf&quot;</span>) <span class="built_in">format</span>(<span class="string">&#x27;opentype&#x27;</span>);</span><br><span class="line">  <span class="attribute">font-style</span>: normal;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然後記得在main樣板head內載入CSS。</p>
+</li>
+<li><p>開始切版，先製作導覽列以後希望增加功能的按鈕，未來可以用來切換頁面，我們將內容寫在main.hbs內<br>切版記得要以mobile first，行動優先。<br>header下方使用javascript帶入當日日期，不管查詢或創建資料任何頁面，都將日期顯示在此處。<br>main.hbs，body後載入js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> year = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.year&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> monthDate = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.month-date&#x27;</span>)</span><br><span class="line"><span class="keyword">let</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line"></span><br><span class="line">year.innerText = date.getFullYear()</span><br><span class="line">monthDate.innerText = <span class="string">`<span class="subst">$&#123;date.getMonth() + <span class="number">1</span>&#125;</span> 月 <span class="subst">$&#123;date.getDate()&#125;</span> 日`</span></span><br></pre></td></tr></table></figure>
+<p>當創建一個日期後，會得到一個毫秒，是從1970年1月1日起經過的毫秒數，<br>對創建的新日期使用：</p>
+</li>
+</ol>
+<ul>
+<li>getFullYear，會得到年</li>
+<li>getMonth，會返還0~11數字</li>
+<li>getdate, 會返還1~31數字</li>
+</ul>
+<p>階段完成圖<img src="/2021/09/19/project-exercise-expenses/3.png" class=""></p>
+<p>第二日記錄：<br>最近工作好忙，沒多少時間可以專心刻網頁，加上還有alpha camp的課程進度，進度稍微緩慢，反正沒人催，慢慢一步一步把網頁刻出來就對了</p>
+<p>新學習項目：</p>
+<ul>
+<li>如何載入文字檔案 @font-face {}</li>
+<li>日期操作 new date()</li>
+</ul>
+<p><strong>day 2 結束</strong></p>
+<hr>
+<p><strong>day 3 開始</strong></p>
+<h1 id="day-3"><a href="#day-3" class="headerlink" title="day 3"></a>day 3</h1><h2 id="初步切版"><a href="#初步切版" class="headerlink" title="初步切版"></a>初步切版</h2><ol>
+<li><p>上次增加完當日日期後，先將上次傳送進來的資料做整理排版</p>
+</li>
+<li><p>新增一個增加的按鈕連結，路由位置可以送到/expense/new，經由此路由可以到創建資料的頁面，<br>完成畫面</p>
+<img src="/2021/09/19/project-exercise-expenses/4.png" class=""></li>
+<li><p>在資料上新增按鈕，可以檢視詳細內容，編輯，以及刪除。</p>
+<img src="/2021/09/19/project-exercise-expenses/5.png" class=""></li>
+<li><p>開始製作新增功能頁面，在views下新開一個add.hbs，一樣先隨便添加一些html內容</p>
+</li>
+</ol>
+<h2 id="設定新增功能的路由"><a href="#設定新增功能的路由" class="headerlink" title="設定新增功能的路由"></a>設定新增功能的路由</h2><ol start="5">
+<li><p>再來設定路由，目標是當按下新增按鈕的時候，能夠將畫面銜接到新增的頁面<br>在routes &gt;　modules 下開一個expenses.js ， 並設定好路由。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> router = express.Router()</span><br><span class="line"><span class="keyword">const</span> Expenses = <span class="built_in">require</span>(<span class="string">&#x27;../../models/expense&#x27;</span>) <span class="comment">// 未來編輯或查看詳細資料都會使用到資料庫</span></span><br><span class="line"></span><br><span class="line">router.get(<span class="string">&#x27;/add&#x27;</span>, <span class="function">(<span class="params">req,res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.render(<span class="string">&#x27;add&#x27;</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = router</span><br></pre></td></tr></table></figure></li>
+<li><p>設定按鈕連結至路由 /expenses/add</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;/expenses/add&quot;</span> <span class="attr">class</span>=<span class="string">&quot;btn-create btn-common&quot;</span>&gt;</span>+<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>成功連結畫面</p>
+<img src="/2021/09/19/project-exercise-expenses/7.png" class=""></li>
+</ol>
+<h2 id="隱藏滾動條"><a href="#隱藏滾動條" class="headerlink" title="隱藏滾動條"></a>隱藏滾動條</h2><ol start="8">
+<li><p>這時候發現切換頁面時，版面會移動，因為滾動條出現的關係。</p>
+<img src="/2021/09/19/project-exercise-expenses/6.png" class=""></li>
+<li><p>上網查了一下怎麼隱藏滾動條：</p>
+</li>
+</ol>
+<p><strong>不能在CSS上設定 overflow-y: hidden，</strong><br>雖然滾動條會隱藏，但是連滾動也都會失效，<br>所以又查了其他辦法，看到要依不同瀏覽器設定不同的CSS：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Chrome瀏覽器 */</span></span><br><span class="line"><span class="selector-tag">body</span>::-webkit-scrollbar &#123;</span><br><span class="line">    display: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* IE/Edge瀏覽器 */</span></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">    -ms-<span class="attribute">overflow</span>-style: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Firefox</span></span><br><span class="line"><span class="comment">firefox 是三者之中最麻煩的： */</span></span><br><span class="line"><span class="selector-tag">html</span> &#123;</span><br><span class="line">    <span class="attribute">overflow</span>: -moz-hidden-unscrollable; <span class="comment">/*注意！若只打 hidden，chrome 的其它 hidden 會出問題*/</span></span><br><span class="line">    <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">	<span class="attribute">width</span>: <span class="built_in">calc</span>(<span class="number">100vw</span> + <span class="number">18px</span>); <span class="comment">/*瀏覽器滾動條的長度大約是 18px*/</span></span><br><span class="line">	<span class="attribute">overflow</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>成功畫面</p>
+<img src="/2021/09/19/project-exercise-expenses/8.png" class="">
+
+
+<h2 id="除錯"><a href="#除錯" class="headerlink" title="除錯"></a>除錯</h2><ol start="10">
+<li>在切換到新增頁面的時候發現一個小錯誤，header內的當天日期沒有顯示，使用Devtool發現原來是在切換頁面的時候main.js內一開始設定抓取元素的常數，無法重複宣告，所以要將置入時間設定成為一個function，可以重複呼叫使用，這些常數變數的作用域就不會重覆到。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">innerTitleDate</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="keyword">const</span> year = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.year&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> monthDate = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.month-date&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> date = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">year.innerText = date.getFullYear()</span><br><span class="line">monthDate.innerText = <span class="string">`<span class="subst">$&#123;date.getMonth() + <span class="number">1</span>&#125;</span> 月 <span class="subst">$&#123;date.getDate()&#125;</span> 日`</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">innerTitleDate()</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="設定add-page的HTML-form"><a href="#設定add-page的HTML-form" class="headerlink" title="設定add page的HTML form"></a>設定add page的HTML form</h2><ol start="11">
+<li>設計新增頁面的表單，表單action要送到 /expenses/add , method 要設定為 POST<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;/expenses/add&quot;</span> <span class="attr">method</span>=<span class="string">&quot;POST&quot;</span> <span class="attr">id</span>=<span class="string">&quot;form&quot;</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 添加 input      --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+完成後的html及完成照<img src="/2021/09/19/project-exercise-expenses/9.png" class="">
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;container&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;main-wrapper&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;/expenses/add&quot;</span> <span class="attr">method</span>=<span class="string">&quot;POST&quot;</span> <span class="attr">id</span>=<span class="string">&quot;form&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;input-wrapper&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;input-date&quot;</span>&gt;</span>日期<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;date&quot;</span> <span class="attr">class</span>=<span class="string">&quot;input-date&quot;</span> <span class="attr">id</span>=<span class="string">&#x27;input-date&#x27;</span> <span class="attr">name</span>=<span class="string">&quot;time&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;input-method&quot;</span>&gt;</span>資產<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">select</span> <span class="attr">class</span>=<span class="string">&quot;input-method&quot;</span> <span class="attr">id</span>=<span class="string">&quot;input-method&quot;</span> <span class="attr">name</span>=<span class="string">&quot;method&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;0&quot;</span>&gt;</span>現金<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;1&quot;</span>&gt;</span>信用卡<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;2&quot;</span>&gt;</span>帳戶轉帳<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;input-category&quot;</span>&gt;</span>類別<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">class</span>=<span class="string">&quot;input-category&quot;</span> <span class="attr">id</span>=<span class="string">&quot;input-category&quot;</span> <span class="attr">list</span>=<span class="string">&quot;options-category&quot;</span> <span class="attr">name</span>=<span class="string">&quot;category&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">datalist</span> <span class="attr">id</span>=<span class="string">&quot;options-category&quot;</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span>&gt;</span>選擇一項類別，或自行輸入<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span>&gt;</span>食物<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span>&gt;</span>社交<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span>&gt;</span>個人發展<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span>&gt;</span>交通<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span>&gt;</span>文化<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span>&gt;</span>家居<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span>&gt;</span>服飾<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span>&gt;</span>美容<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span>&gt;</span>健康<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span>&gt;</span>教育<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span>&gt;</span>禮物<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">option</span>&gt;</span>其他<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">datalist</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;input-item-name&quot;</span>&gt;</span>內容<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">class</span>=<span class="string">&quot;input-item-name&quot;</span> <span class="attr">id</span>=<span class="string">&quot;input-item-name&quot;</span> <span class="attr">name</span>=<span class="string">&quot;itemName&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;input-cost&quot;</span>&gt;</span>花費<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;number&quot;</span> <span class="attr">class</span>=<span class="string">&quot;input-cost&quot;</span> <span class="attr">id</span>=<span class="string">&quot;input-cost&quot;</span> <span class="attr">name</span>=<span class="string">&quot;cost&quot;</span> <span class="attr">inputmode</span>=<span class="string">&quot;numeric&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;remark-textarea&quot;</span> <span class="attr">class</span>=<span class="string">&quot;input-remark&quot;</span>&gt;</span>備註<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">textarea</span> <span class="attr">name</span>=<span class="string">&quot;remark&quot;</span> <span class="attr">id</span>=<span class="string">&quot;input-remark-area&quot;</span> <span class="attr">cols</span>=<span class="string">&quot;30&quot;</span> <span class="attr">rows</span>=<span class="string">&quot;10&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">textarea</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">&quot;btn-common&quot;</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>&gt;</span>儲存<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;/javascripts/add.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="創建自動帶入當日日期"><a href="#創建自動帶入當日日期" class="headerlink" title="創建自動帶入當日日期"></a>創建自動帶入當日日期</h2><ol start="12">
+<li>可以設置一個add專用的js，目的是當新建時，會自動置入當天日期，優化UI體驗<br>input date的值為 xxxx-xx-xx，例如2021-01-01，當位數少於兩位數時，請先補上0，不然無法正常顯示。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> inputDate = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.input-date&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> today = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">insertToday</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> year = today.getFullYear()</span><br><span class="line">  <span class="keyword">let</span> month = <span class="string">&#x27;&#x27;</span></span><br><span class="line">  <span class="keyword">let</span> date = <span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> ((today.getMonth() + <span class="number">1</span>) &gt;= <span class="number">10</span>) &#123;</span><br><span class="line">    month += today.getMonth() + <span class="number">1</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    month += <span class="string">&#x27;0&#x27;</span> + (today.getMonth() + <span class="number">1</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (today.getDate() &gt;= <span class="number">10</span>) &#123;</span><br><span class="line">    date += today.getDate()</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    date += <span class="string">&#x27;0&#x27;</span> + (today.getDate())</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  inputDate.value = <span class="string">`<span class="subst">$&#123;year&#125;</span>-<span class="subst">$&#123;month&#125;</span>-<span class="subst">$&#123;date&#125;</span>`</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">insertToday()</span><br></pre></td></tr></table></figure>
+
+<p>完成後接著就要來設定路由啦! 將取得的資料存入資料庫當中。</p>
+<h2 id="將資料存入資料庫"><a href="#將資料存入資料庫" class="headerlink" title="將資料存入資料庫"></a>將資料存入資料庫</h2><ol start="13">
+<li>在設定路由之前，express要先設定使用 body-parser ，新版的express已經有將body-parser納入模組中，舊版的就得另外安裝npm install body-parser，我們直接使用模組的body-parser不另外安裝<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.urlencoded(&#123;<span class="attr">extended</span>: <span class="literal">true</span>&#125;))</span><br></pre></td></tr></table></figure>
+這樣才有辦法取得瀏覽器送出POST行為時的的表單資料(req.body的資料)，在路由端收到資料後可以直接轉化成JS的物件型態，再將其轉存進資料庫。</li>
+</ol>
+<hr>
+<p><strong>複習</strong>：當使用GET送出的話，資料會顯示在瀏覽器網址列上，有一種作法是將連結設定到某個路由位置，伺服器端路由器設定當取得某一個動態路由:params，就可以將這網址的動態路由部分，作為參數使用，範例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">&#x27;/movies/:movie_id&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;req.params.movie_id&#x27;</span>, req.params.movie_id)</span><br><span class="line"></span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">  res.render(<span class="string">&#x27;show&#x27;</span>, &#123; <span class="attr">movie</span>: movieOne &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<img src="/2021/09/19/project-exercise-expenses/10.png" class="">
+<center>圖片來源:Alpha Camp</center>
+
+<p>可以看到，當客戶端送出不同的網址時，req.params.movie_id部分會跟著網址變動</p>
+<p>另一種是當表單，例如在撰寫html的input時input會綁一個name屬性，當送出表單的action發送到某個路由位置，可以看到瀏覽器上最後會有個?後面帶著input設定的name=value(input的value)，此使可以在路由中可以透過req.query來取得name和value，範例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">app.get(<span class="string">&#x27;/search&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;req.query&#x27;</span>, req.query)</span><br><span class="line">  res.render(<span class="string">&#x27;index&#x27;</span>, &#123; <span class="attr">movies</span>: movieList.results &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<img src="/2021/09/19/project-exercise-expenses/11.png" class="">
+<center>圖片來源:Alpha Camp</center>
+
+<p>可以看到網址最後有一個?keyword=Ant-Man，search為路由器，keyword為input設定的name，Ant-Man為input的值</p>
+<hr>
+<ol start="14">
+<li>到routes &gt; modules &gt; expenses.js 設定路由<br>可以先加入，意思是當form送出時，會發出到 method為POST，到/expenses/add這個位置，伺服器收到請求後，做出console.log(req.body)<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">router.post(<span class="string">&#x27;/add&#x27;</span>, <span class="function">(<span class="params">req,res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(req.body)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<img src="/2021/09/19/project-exercise-expenses/12.png" class=""></li>
+</ol>
+<p>此時可以看到表單的內容以轉化成Javascript的物件，此時就可以轉化成伺服器資料並存入，所以我們繼續寫下去</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">router.post(<span class="string">&#x27;/add&#x27;</span>, <span class="function">(<span class="params">req,res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> time = &#123;</span><br><span class="line">    <span class="attr">year</span>: req.body.time.split(<span class="string">&#x27;-&#x27;</span>)[<span class="number">0</span>],</span><br><span class="line">    <span class="attr">month</span>: req.body.time.split(<span class="string">&#x27;-&#x27;</span>)[<span class="number">1</span>],</span><br><span class="line">    <span class="attr">date</span>: req.body.time.split(<span class="string">&#x27;-&#x27;</span>)[<span class="number">2</span>],</span><br><span class="line">    <span class="attr">hour</span>: <span class="keyword">new</span> <span class="built_in">Date</span>().getHours(),</span><br><span class="line">    <span class="attr">minute</span>: <span class="keyword">new</span> <span class="built_in">Date</span>().getMinutes(),</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 解構賦值 (destructuring assignment) 語法</span></span><br><span class="line">  <span class="keyword">const</span> &#123; method, category, itemName, cost, remark &#125;= req.body</span><br><span class="line">  <span class="keyword">return</span> Expenses.create(&#123;category, itemName, cost, method, remark, time&#125;)</span><br><span class="line">  .then(res.redirect(<span class="string">&#x27;/&#x27;</span>))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>先說明解構賦值 (destructuring assignment)語法，<strong>主要就是想要把物件裡的屬性一項項拿出來存成變數時</strong>，可以使用的一種縮寫：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; method, category, itemName, cost, remark &#125;= req.body</span><br></pre></td></tr></table></figure>
+
+<p>而time因為為一個字串，格式為 xxxx-xx-xx，所以我們先使用split將他轉為陣列，再將每段字串，個別放入不同的變數當中。<br>最後使用mongoose的 .create({}) ，創建一筆資料，依序存入變數原本寫法為 { category: category, itemName:itemName,}，也是將之簡化。第一個為資料庫的key值，第二個為value，相同時可以簡寫。<br>最後使用res.redirect(‘/‘)反為首頁。</p>
+<ol start="15">
+<li>發現最後建立的資料跑到最後一筆，希望最後寫的資料可以呈現在最上面，所以到routes &gt; modules &gt; home.js 改寫路由取得資料後的排序方式<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">router.get(<span class="string">&#x27;/&#x27;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  Expenses.find()</span><br><span class="line">    .lean()</span><br><span class="line">    .sort(&#123; <span class="attr">_id</span>: <span class="string">&#x27;desc&#x27;</span> &#125;) <span class="comment">// 這邊改為desc反序</span></span><br><span class="line">    .then(<span class="function"><span class="params">expenseItems</span> =&gt;</span> res.render(<span class="string">&#x27;index&#x27;</span>, &#123; expenseItems &#125;))</span><br><span class="line">    .catch(<span class="function"><span class="params">error</span> =&gt;</span> <span class="built_in">console</span>.log(error))</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></li>
+</ol>
+<p>最後畫面</p>
+<img src="/2021/09/19/project-exercise-expenses/13.png" class="">
+
+
+<p>第三日記錄：<br>今天週六，最近在趕工做趕圖，其實很累，原本想休息，但是又閒不下來，最後還是開了檔案繼續完成，結果一坐下來，又陸陸續續複習了很多東西，還完成了初步的建立資料，也是值得開心的一個小進度，計畫明天把剩下的幾個初步功能完成，我想應該沒問題。</p>
+<p>新學習項目：</p>
+<ul>
+<li>隱藏滾動條</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" rel="tag"># 技術筆記</a>
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+              <a href="/tags/Express/" rel="tag"># Express</a>
+              <a href="/tags/Handlebars/" rel="tag"># Handlebars</a>
+              <a href="/tags/MongoDB/" rel="tag"># MongoDB</a>
+              <a href="/tags/Mongoose/" rel="tag"># Mongoose</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/09/18/collect-blog-data/" rel="prev" title="蒐集部落客資料">
+      <i class="fa fa-chevron-left"></i> 蒐集部落客資料
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/09/25/web-app-ganerator-short-url/" rel="next" title="短網址產生器">
+      短網址產生器 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+<script src="https://utteranc.es/client.js"
+        repo="doug0849/doug0849.github.io"
+        issue-term="pathname"
+        theme="photon-dark"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#day-1"><span class="nav-number">1.</span> <span class="nav-text">day 1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E8%A8%AD%E5%AE%9A"><span class="nav-number">1.1.</span> <span class="nav-text">初始化設定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BC%89%E5%85%A5-packages-%E5%8F%8A%E8%A8%AD%E5%AE%9A"><span class="nav-number">1.2.</span> <span class="nav-text">載入 packages 及設定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#route%E5%BB%BA%E7%AB%8B%E5%8F%8A%E8%A8%AD%E5%AE%9A"><span class="nav-number">1.3.</span> <span class="nav-text">route建立及設定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%A3%E7%B7%9A-MongoDB-%E4%B8%A6%E5%BB%BA%E7%AB%8B%E7%A8%AE%E5%AD%90%E8%B3%87%E6%96%99"><span class="nav-number">1.4.</span> <span class="nav-text">連線 MongoDB 並建立種子資料</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#day-2"><span class="nav-number">2.</span> <span class="nav-text">day 2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A8%AD%E5%AE%9A%E9%9D%9C%E6%85%8B%E6%AA%94%E6%A1%88%E8%B3%87%E6%96%99%E5%A4%BE"><span class="nav-number">2.1.</span> <span class="nav-text">設定靜態檔案資料夾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96CSS"><span class="nav-number">2.2.</span> <span class="nav-text">初始化CSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BC%89%E5%85%A5%E5%AD%97%E9%AB%94"><span class="nav-number">2.3.</span> <span class="nav-text">載入字體</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#day-3"><span class="nav-number">3.</span> <span class="nav-text">day 3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E6%AD%A5%E5%88%87%E7%89%88"><span class="nav-number">3.1.</span> <span class="nav-text">初步切版</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A8%AD%E5%AE%9A%E6%96%B0%E5%A2%9E%E5%8A%9F%E8%83%BD%E7%9A%84%E8%B7%AF%E7%94%B1"><span class="nav-number">3.2.</span> <span class="nav-text">設定新增功能的路由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%B1%E8%97%8F%E6%BB%BE%E5%8B%95%E6%A2%9D"><span class="nav-number">3.3.</span> <span class="nav-text">隱藏滾動條</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%99%A4%E9%8C%AF"><span class="nav-number">3.4.</span> <span class="nav-text">除錯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A8%AD%E5%AE%9Aadd-page%E7%9A%84HTML-form"><span class="nav-number">3.5.</span> <span class="nav-text">設定add page的HTML form</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%B5%E5%BB%BA%E8%87%AA%E5%8B%95%E5%B8%B6%E5%85%A5%E7%95%B6%E6%97%A5%E6%97%A5%E6%9C%9F"><span class="nav-number">3.6.</span> <span class="nav-text">創建自動帶入當日日期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%87%E8%B3%87%E6%96%99%E5%AD%98%E5%85%A5%E8%B3%87%E6%96%99%E5%BA%AB"><span class="nav-number">3.7.</span> <span class="nav-text">將資料存入資料庫</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Doug 道"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Doug 道</p>
+  <div class="site-description" itemprop="description">關於轉職紀錄、技術筆記、隨寫</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/doug0849" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;doug0849" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:etaomonk@gmail.com" title="E-Mail → mailto:etaomonk@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/dlchou89" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;dlchou89" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Doug 道</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
