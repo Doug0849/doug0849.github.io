@@ -6,7 +6,7 @@
   <link href="https://doug0849.github.io/atom.xml" rel="self"/>
   
   <link href="https://doug0849.github.io/"/>
-  <updated>2021-09-25T07:02:12.000Z</updated>
+  <updated>2021-10-05T07:40:43.000Z</updated>
   <id>https://doug0849.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>S2-4-卡牌配對遊戲</title>
+    <link href="https://doug0849.github.io/2021/10/05/memorizing-game/"/>
+    <id>https://doug0849.github.io/2021/10/05/memorizing-game/</id>
+    <published>2021-10-05T07:40:43.000Z</published>
+    <updated>2021-10-05T07:40:43.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;此篇記錄卡牌配對遊戲製作過程，用來提醒自己的技術筆記&lt;br&gt;&lt;strong&gt;&lt;a href=&quot;https://doug0849.github.io/pair-cards-memorizing-game/&quot;&gt;實作練習作品&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="AlphaCamp" scheme="https://doug0849.github.io/categories/AlphaCamp/"/>
+    
+    <category term="Task" scheme="https://doug0849.github.io/categories/AlphaCamp/Task/"/>
+    
+    
+    <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
+    
+    <category term="JavaScript" scheme="https://doug0849.github.io/tags/JavaScript/"/>
+    
+    <category term="AlphaCamp" scheme="https://doug0849.github.io/tags/AlphaCamp/"/>
+    
+    <category term="作業" scheme="https://doug0849.github.io/tags/%E4%BD%9C%E6%A5%AD/"/>
+    
+    <category term="Game" scheme="https://doug0849.github.io/tags/Game/"/>
+    
+  </entry>
   
   <entry>
     <title>短網址產生器</title>
@@ -101,35 +130,6 @@
     <category term="JavaScript" scheme="https://doug0849.github.io/tags/JavaScript/"/>
     
     <category term="實作案例" scheme="https://doug0849.github.io/tags/%E5%AF%A6%E4%BD%9C%E6%A1%88%E4%BE%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>S2-4-卡牌配對遊戲</title>
-    <link href="https://doug0849.github.io/2021/09/16/memorizing-game/"/>
-    <id>https://doug0849.github.io/2021/09/16/memorizing-game/</id>
-    <published>2021-09-16T07:40:43.000Z</published>
-    <updated>2021-09-16T07:40:43.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;此篇記錄卡牌配對遊戲製作過程，用來提醒自己的技術筆記&lt;br&gt;&lt;strong&gt;&lt;a href=&quot;https://doug0849.github.io/pair-cards-memorizing-game/&quot;&gt;實作練習作品&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="AlphaCamp" scheme="https://doug0849.github.io/categories/AlphaCamp/"/>
-    
-    <category term="Task" scheme="https://doug0849.github.io/categories/AlphaCamp/Task/"/>
-    
-    
-    <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
-    
-    <category term="JavaScript" scheme="https://doug0849.github.io/tags/JavaScript/"/>
-    
-    <category term="AlphaCamp" scheme="https://doug0849.github.io/tags/AlphaCamp/"/>
-    
-    <category term="作業" scheme="https://doug0849.github.io/tags/%E4%BD%9C%E6%A5%AD/"/>
-    
-    <category term="Game" scheme="https://doug0849.github.io/tags/Game/"/>
     
   </entry>
   

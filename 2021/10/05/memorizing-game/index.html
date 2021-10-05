@@ -32,13 +32,13 @@
   <meta name="description" content="此篇記錄卡牌配對遊戲製作過程，用來提醒自己的技術筆記實作練習作品">
 <meta property="og:type" content="article">
 <meta property="og:title" content="S2-4-卡牌配對遊戲">
-<meta property="og:url" content="https://doug0849.github.io/2021/09/16/memorizing-game/index.html">
+<meta property="og:url" content="https://doug0849.github.io/2021/10/05/memorizing-game/index.html">
 <meta property="og:site_name" content="想要邊撸鐵邊學CODE的DOUG">
 <meta property="og:description" content="此篇記錄卡牌配對遊戲製作過程，用來提醒自己的技術筆記實作練習作品">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://doug0849.github.io/2021/09/16/memorizing-game/1.png">
-<meta property="article:published_time" content="2021-09-16T07:40:43.000Z">
-<meta property="article:modified_time" content="2021-09-16T07:40:43.000Z">
+<meta property="og:image" content="https://doug0849.github.io/2021/10/05/memorizing-game/1.png">
+<meta property="article:published_time" content="2021-10-05T07:40:43.000Z">
+<meta property="article:modified_time" content="2021-10-05T07:40:43.000Z">
 <meta property="article:author" content="Doug 道">
 <meta property="article:tag" content="技術筆記">
 <meta property="article:tag" content="JavaScript">
@@ -46,9 +46,9 @@
 <meta property="article:tag" content="作業">
 <meta property="article:tag" content="Game">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://doug0849.github.io/2021/09/16/memorizing-game/1.png">
+<meta name="twitter:image" content="https://doug0849.github.io/2021/10/05/memorizing-game/1.png">
 
-<link rel="canonical" href="https://doug0849.github.io/2021/09/16/memorizing-game/">
+<link rel="canonical" href="https://doug0849.github.io/2021/10/05/memorizing-game/">
 
 
 <script id="page-configurations">
@@ -206,7 +206,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/09/16/memorizing-game/">
+    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2021/10/05/memorizing-game/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -229,7 +229,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2021-09-16 15:40:43" itemprop="dateCreated datePublished" datetime="2021-09-16T15:40:43+08:00">2021-09-16</time>
+              <time title="Created: 2021-10-05 15:40:43" itemprop="dateCreated datePublished" datetime="2021-10-05T15:40:43+08:00">2021-10-05</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -274,7 +274,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">transformNumber (number) &#123;</span><br><span class="line">  <span class="keyword">switch</span> (number) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&#x27;A&#x27;</span></span><br><span class="line">    <span class="keyword">case</span> <span class="number">11</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&#x27;J&#x27;</span></span><br><span class="line">    <span class="keyword">case</span> <span class="number">12</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&#x27;Q&#x27;</span></span><br><span class="line">    <span class="keyword">case</span> <span class="number">13</span>:</span><br><span class="line">      <span class="keyword">return</span> <span class="string">&#x27;K&#x27;</span></span><br><span class="line">    <span class="attr">default</span>:</span><br><span class="line">      <span class="keyword">return</span> number</span><br><span class="line">  &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 
 <h1 id="使用Array-from-Array-52-key-，來生成連續數字陣列"><a href="#使用Array-from-Array-52-key-，來生成連續數字陣列" class="headerlink" title="使用Array.from(Array(52).key())，來生成連續數字陣列"></a>使用Array.from(Array(52).key())，來生成連續數字陣列</h1><p>Array.from 可以從「類似陣列」的物件來建立陣列<br>Array(52)，它會產生一個有 52 個元素的空陣列：<br>Array(52).keys()會變成一個迭代器，需要使用類似for迴圈之類的迭代，才有辦法生成。<br>ES6 推出了 Array.from() 之後，就可以搭配迭代器來生成陣列：</p>
-<img src="/2021/09/16/memorizing-game/1.png" class="">
+<img src="/2021/10/05/memorizing-game/1.png" class="">
 
 
 <h1 id="產生-52-個-DOM-元素並拼裝-template"><a href="#產生-52-個-DOM-元素並拼裝-template" class="headerlink" title="產生 52 個 DOM 元素並拼裝 template"></a>產生 52 個 DOM 元素並拼裝 template</h1><p>有了連續數字陣列以後</p>
@@ -374,13 +374,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/09/16/Javascript-brick-break-game/" rel="prev" title="Javascript-打磚塊遊戲實作">
-      <i class="fa fa-chevron-left"></i> Javascript-打磚塊遊戲實作
+    <a href="/2021/09/25/web-app-ganerator-short-url/" rel="prev" title="短網址產生器">
+      <i class="fa fa-chevron-left"></i> 短網址產生器
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/09/18/collect-blog-data/" rel="next" title="蒐集部落客資料">
-      蒐集部落客資料 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
