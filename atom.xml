@@ -105,32 +105,6 @@
   </entry>
   
   <entry>
-    <title>Javascript-打磚塊遊戲實作</title>
-    <link href="https://doug0849.github.io/2021/09/16/Javascript-brick-break-game/"/>
-    <id>https://doug0849.github.io/2021/09/16/Javascript-brick-break-game/</id>
-    <published>2021-09-16T07:40:43.000Z</published>
-    <updated>2021-09-16T07:40:43.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://doug0849.github.io/javascript-brickgame-exercise&quot;&gt;完成作品&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;自己本身滿愛玩遊戲的，自己開始學JavaScript之後，主要都是在學如何開發網頁及如何使用JavaScript來操作網頁，透過路由來新增、讀取、更新、刪除資料庫資料…，但心裡一直想，JavaScript的運用很廣泛，不如自己來查資料看看如何來製作一款簡易的小遊戲，也來接觸不同層面的開發運用。 於似乎我找到MDN上的一個打磚塊教學，就決定先從這個小遊戲開始練習學習並記錄過程。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技術筆記" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
-    
-    <category term="JavaScript" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/"/>
-    
-    
-    <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
-    
-    <category term="JavaScript" scheme="https://doug0849.github.io/tags/JavaScript/"/>
-    
-    <category term="Game" scheme="https://doug0849.github.io/tags/Game/"/>
-    
-  </entry>
-  
-  <entry>
     <title>S2-4-卡牌配對遊戲</title>
     <link href="https://doug0849.github.io/2021/09/16/memorizing-game/"/>
     <id>https://doug0849.github.io/2021/09/16/memorizing-game/</id>
@@ -154,6 +128,32 @@
     <category term="AlphaCamp" scheme="https://doug0849.github.io/tags/AlphaCamp/"/>
     
     <category term="作業" scheme="https://doug0849.github.io/tags/%E4%BD%9C%E6%A5%AD/"/>
+    
+    <category term="Game" scheme="https://doug0849.github.io/tags/Game/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript-打磚塊遊戲實作</title>
+    <link href="https://doug0849.github.io/2021/09/16/Javascript-brick-break-game/"/>
+    <id>https://doug0849.github.io/2021/09/16/Javascript-brick-break-game/</id>
+    <published>2021-09-16T07:40:43.000Z</published>
+    <updated>2021-09-16T07:40:43.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://doug0849.github.io/javascript-brickgame-exercise&quot;&gt;完成作品&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;自己本身滿愛玩遊戲的，自己開始學JavaScript之後，主要都是在學如何開發網頁及如何使用JavaScript來操作網頁，透過路由來新增、讀取、更新、刪除資料庫資料…，但心裡一直想，JavaScript的運用很廣泛，不如自己來查資料看看如何來製作一款簡易的小遊戲，也來接觸不同層面的開發運用。 於似乎我找到MDN上的一個打磚塊教學，就決定先從這個小遊戲開始練習學習並記錄過程。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技術筆記" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
+    
+    <category term="JavaScript" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/"/>
+    
+    
+    <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
+    
+    <category term="JavaScript" scheme="https://doug0849.github.io/tags/JavaScript/"/>
     
     <category term="Game" scheme="https://doug0849.github.io/tags/Game/"/>
     
