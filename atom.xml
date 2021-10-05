@@ -46,29 +46,6 @@
   </entry>
   
   <entry>
-    <title>短網址產生器</title>
-    <link href="https://doug0849.github.io/2021/09/25/web-app-ganerator-short-url/"/>
-    <id>https://doug0849.github.io/2021/09/25/web-app-ganerator-short-url/</id>
-    <published>2021-09-25T07:02:12.000Z</published>
-    <updated>2021-09-25T07:02:12.000Z</updated>
-    
-    
-    
-    
-    <category term="技術筆記" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
-    
-    <category term="JavaScript" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/"/>
-    
-    
-    <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
-    
-    <category term="JavaScript" scheme="https://doug0849.github.io/tags/JavaScript/"/>
-    
-    <category term="Web App" scheme="https://doug0849.github.io/tags/Web-App/"/>
-    
-  </entry>
-  
-  <entry>
     <title>專案實作 - 個人記帳簿</title>
     <link href="https://doug0849.github.io/2021/09/19/project-exercise-expenses/"/>
     <id>https://doug0849.github.io/2021/09/19/project-exercise-expenses/</id>
@@ -544,6 +521,30 @@
     <category term="AlphaCamp" scheme="https://doug0849.github.io/tags/AlphaCamp/"/>
     
     <category term="工作相談室" scheme="https://doug0849.github.io/tags/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E8%AB%87%E5%AE%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>跳軌換跑道關於學習寫CODE這件事</title>
+    <link href="https://doug0849.github.io/2021/07/18/change-job-about-learning-programing/"/>
+    <id>https://doug0849.github.io/2021/07/18/change-job-about-learning-programing/</id>
+    <published>2021-07-18T02:42:00.000Z</published>
+    <updated>2021-07-18T02:42:00.000Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;&lt;p&gt;　　終於在2021年5月底的時候，下定決心要轉換跑道，關於開始走上轉職成為網頁工程師的路上。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="日記" scheme="https://doug0849.github.io/categories/%E6%97%A5%E8%A8%98/"/>
+    
+    <category term="轉職" scheme="https://doug0849.github.io/categories/%E6%97%A5%E8%A8%98/%E8%BD%89%E8%81%B7/"/>
+    
+    
+    <category term="轉職" scheme="https://doug0849.github.io/tags/%E8%BD%89%E8%81%B7/"/>
+    
+    <category term="AlphaCamp" scheme="https://doug0849.github.io/tags/AlphaCamp/"/>
     
   </entry>
   
