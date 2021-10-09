@@ -2427,4 +2427,90 @@
         <tag>ORID</tag>
       </tags>
   </entry>
+  <entry>
+    <title>S2-3-前端-SCSS-切版實作</title>
+    <url>/2021/10/07/S2-3-layout-scss/</url>
+    <content><![CDATA[<p>紀錄第一次使用SCSS預處理器來實作切版，處理Form大魔王。<br><strong>此文章圖片大部分均來自Alpha Camp課程內容</strong><br><a href="https://codepen.io/doug0849/pen/YzQggMb">完成作品</a></p>
+<span id="more"></span>
+
+<h1 id="變數-variable-與運算子-operator"><a href="#變數-variable-與運算子-operator" class="headerlink" title="變數 (variable) 與運算子 (operator)"></a>變數 (variable) 與運算子 (operator)</h1><p>使用$號來宣告變數，使用:來賦值。 也可以使用 + - * /來做值的運算</p>
+<img src="/2021/10/07/S2-3-layout-scss/1.png" class="">
+
+<h1 id="繼承與覆寫"><a href="#繼承與覆寫" class="headerlink" title="繼承與覆寫"></a>繼承與覆寫</h1><p>使用%來宣告共同屬性，在選擇的元素中使用 @extend來繼承共同屬性</p>
+<img src="/2021/10/07/S2-3-layout-scss/2.png" class="">
+
+<h1 id="mixin"><a href="#mixin" class="headerlink" title="mixin"></a>mixin</h1><p>在 Sass 裡，我們使用 @mixin 進行宣告，並使用 @include 使用 mixin。<br>在以下例子中，我們創建了一個名為 font-setting 的 mixin。可以發現，透過 mixin，大幅提高了程式碼的重用性 (reusability) 以及可讀性 (readability) 。</p>
+<img src="/2021/10/07/S2-3-layout-scss/3.png" class="">
+
+<h1 id="使用-each-及變數生成-basic-setting"><a href="#使用-each-及變數生成-basic-setting" class="headerlink" title="使用@each 及變數生成 basic setting"></a>使用@each 及變數生成 basic setting</h1><figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="variable">$sizes</span>: (</span><br><span class="line">  <span class="number">25</span>: <span class="number">25%</span>,</span><br><span class="line">  <span class="number">50</span>: <span class="number">50%</span>,</span><br><span class="line">  <span class="number">75</span>: <span class="number">75%</span>,</span><br><span class="line">  <span class="number">100</span>: <span class="number">100%</span></span><br><span class="line">);</span><br><span class="line"><span class="keyword">@each</span> <span class="variable">$prop</span>, <span class="variable">$abbrev</span> in (<span class="attribute">width</span>: w, <span class="attribute">height</span>: h) &#123;</span><br><span class="line"> <span class="keyword">@each</span> <span class="variable">$num</span>, <span class="variable">$val</span> in <span class="variable">$sizes</span> &#123;</span><br><span class="line">   .#&#123;<span class="variable">$abbrev</span>&#125;-#&#123;<span class="variable">$num</span>&#125; &#123;</span><br><span class="line">     #&#123;<span class="variable">$prop</span>&#125;: <span class="variable">$val</span>;</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>$prop， $abbrev , $num, $val, $sizes 都是變數，分別代表: </p>
+<ul>
+<li>$prop: width, height</li>
+<li>$abbrev: w,h</li>
+<li>$sizes: 上方定義的變數sizes</li>
+<li>$num: 25, 50, 75, 100</li>
+<li>$val: 25%, 50%, 75%, 100%</li>
+</ul>
+<p>意思會生成以下</p>
+<img src="/2021/10/07/S2-3-layout-scss/4.png" class="">
+
+<p>可以使用 Sass to CSS 的工具<a href="https://sass.js.org/">Sass.js</a>來觀察</p>
+<h1 id="使用cursor改變滑鼠樣式"><a href="#使用cursor改變滑鼠樣式" class="headerlink" title="使用cursor改變滑鼠樣式"></a>使用cursor改變滑鼠樣式</h1><p>可以使用cursor來改變滑鼠樣式，可以參考 <a href="https://developer.mozilla.org/zh-TW/docs/Web/CSS/cursor">MDN</a></p>
+<h1 id="使用-webkit-scrollbar-生成捲動軸"><a href="#使用-webkit-scrollbar-生成捲動軸" class="headerlink" title="使用 ::-webkit-scrollbar 生成捲動軸"></a>使用 ::-webkit-scrollbar 生成捲動軸</h1><p><strong>::-webkit-scrollbar 只支援WebKit的瀏覽器 (Chrome, Safari) 可以使用。</strong></p>
+<p>可以在要加上卷軸的BLOCK上使用以下偽元素<br>::-webkit-scrollbar — 整個滾動條。<br>::-webkit-scrollbar-button — 滾動條上的按鈕（向上和向下箭頭）。<br>::-webkit-scrollbar-thumb — 滾動條上的滾動滑塊。<br>::-webkit-scrollbar-track — 滾動條軌道。<br>::-webkit-scrollbar-track-piece — 滾動條沒有滑塊的軌道部分。<br>::-webkit-scrollbar-corner — 同時有垂直滾動條和水平滾動條的部分。<br>::-webkit-resizer — 部分元素角部樣式的一部分（例如：textarea 的可拖動按鈕）。</p>
+<img src="/2021/10/07/S2-3-layout-scss/5.png" class="">
+
+<p><strong>如果是 Mozilla Firefox，我們可以使用 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Scrollbars">CSS Scrollbar</a></strong></p>
+<h1 id="nth-child-偽元素"><a href="#nth-child-偽元素" class="headerlink" title="nth-child 偽元素"></a>nth-child 偽元素</h1><p>我們可以用 nth-child 這個選擇器去選取每個步驟的元件，然後再透過偽元素 ::after 加上數字：</p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.step</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  &amp;<span class="selector-pseudo">:nth-child</span>(<span class="number">1</span>) <span class="selector-class">.circle-container</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;1&quot;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  &amp;<span class="selector-pseudo">:nth-child</span>(<span class="number">2</span>) <span class="selector-class">.circle-container</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;2&quot;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  &amp;<span class="selector-pseudo">:nth-child</span>(<span class="number">3</span>) <span class="selector-class">.circle-container</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">&quot;3&quot;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但這樣做，有很多重複的內容，也可以使用 @mixin 的功能。<br>是先叫出 @mixin，再為它取個適合的名字，並將變數名稱傳進去。最後，把要重複使用的 CSS 放在 { } 裡面。像這樣：</p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@mixin</span> &lt;mixin_的名字&gt; (&lt;變數名稱&gt;) &#123;</span><br><span class="line">  <span class="comment">// 要重複使用的程式碼</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這個 @mixin 是用來取得 stepper 裡的數字，所以我們叫它 getStepNums。而要傳進去的變數就是 num。同時，我們使用 Sass 提供的 @for 迴圈來產生 1、2、3 這三個數字：</p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="keyword">@mixin</span> getStepNums(<span class="variable">$num</span>) &#123;</span><br><span class="line">  <span class="keyword">@for</span> <span class="variable">$i</span> from <span class="number">1</span> through <span class="variable">$num</span> &#123;</span><br><span class="line">    &amp;:nth:child(#&#123;<span class="variable">$i</span>&#125;) .circle-container::after &#123;</span><br><span class="line">      content: <span class="string">&#x27;#&#123;$i&#125;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>建立好這個 mixin 之後，要如何「呼叫」它呢？我們會回到需要這段 CSS 的地方，使用 @include 來呼叫它，並傳入我們的的參數，也就是我們總共需要的步驟數目 3。</p>
+<p>所以在 .step 我們的 CSS 會是這樣：</p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.step</span> &#123;</span><br><span class="line">  <span class="attribute">flex</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="keyword">@include</span> getStepNums(<span class="number">3</span>);</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="屬性選擇器"><a href="#屬性選擇器" class="headerlink" title="屬性選擇器"></a>屬性選擇器</h1><p>可以透過 &amp;[type=”checkbox”] 來一口氣選擇所有在 HTML 中 type 等於 checkbox 的元素：</p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"> &amp;<span class="selector-attr">[type=<span class="string">&quot;checkbox&quot;</span>]</span> &#123;</span><br><span class="line">  ~ <span class="selector-tag">label</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">font-weight</span>: normal;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;    </span><br></pre></td></tr></table></figure>
+
+<p>[&lt;屬性&gt; = 字串] 是一個 CSS 選擇器，意義是透過 HTML 屬性來選擇 HTML 元素。</p>
+<p>我們也使用了 ~ sibling 選擇器來選擇跟 checkbox 同一層的 label ，確保它跟 checkbox 本身會排在同一行。最後，再調整一下 margin ，這樣 checkbox label 的樣式就已經調好了。</p>
+<h1 id="取消checkbox在瀏覽器中的預設樣式"><a href="#取消checkbox在瀏覽器中的預設樣式" class="headerlink" title="取消checkbox在瀏覽器中的預設樣式"></a>取消checkbox在瀏覽器中的預設樣式</h1><p>checkbox的樣式在每個瀏覽器中都會被設定好，而且無法改動，若要修改，要先取消瀏覽器的預設。</p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"> &amp;<span class="selector-attr">[type=<span class="string">&quot;checkbox&quot;</span>]</span> &#123;</span><br><span class="line">   -webkit-appearance: none; <span class="comment">// 補上</span></span><br><span class="line">  ~ <span class="selector-tag">label</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline-block;</span><br><span class="line">    <span class="attribute">font-weight</span>: normal;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;    </span><br></pre></td></tr></table></figure>
+<p>這時會發現checkbox樣式已經被取消了，接著才可以透過指令修改。<br>接著透過不同的狀態，去設定樣式</p>
+<h1 id="使用box-shadow-inset-製作radio-button-圓點"><a href="#使用box-shadow-inset-製作radio-button-圓點" class="headerlink" title="使用box-shadow: inset 製作radio button 圓點"></a>使用box-shadow: inset 製作radio button 圓點</h1><p>複習box-shadow參數</p>
+<img src="/2021/10/07/S2-3-layout-scss/6.png" class="">
+<p>分別是：x-偏移量 (x-offset)、y-偏移量 (y-offset)、陰影模糊半徑 (blur radius)、陰影擴散半徑 (spread radius)、與陰影顏色 (color)。</p>
+<p>在 x-偏移量與 y-偏移量的部分，是指陰影是相對於元素輪廓本身的偏移。目前要製作的是內圓，陰影其實在 x-軸與 y-軸都沒有偏移。所以都設為0。</p>
+<p>陰影模糊半徑指的是希望模糊散開，還是邊緣銳利的。實心是銳利的圓形，陰影模糊半徑也設 0。</p>
+<p>陰影擴散半徑指在陰影最邊緣還要往外擴散多少距離。在打造一般常見的陰影時，可以利用陰影模糊半徑跟陰影擴散半徑的配搭，讓陰影擴散得很遠。但在這邊，我們就只會利用這個擴散半徑來做出內圓，設定 5px。</p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line">&amp;<span class="selector-attr">[type=<span class="string">&quot;radio&quot;</span>]</span> &#123;</span><br><span class="line">  -webkit-appearance: none; </span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">50%</span>;</span><br><span class="line">  <span class="attribute">cursor</span>: pointer;</span><br><span class="line">  &amp;<span class="selector-pseudo">:checked</span> &#123;</span><br><span class="line">    <span class="attribute">box-shadow</span>: inset <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> <span class="variable">$secondary-blue</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="修改select-標籤樣式"><a href="#修改select-標籤樣式" class="headerlink" title="修改select 標籤樣式"></a>修改select 標籤樣式</h1><p>要修改select 樣式，必須要先取消瀏覽器預設，之後把select用一個div包起來，之後在div設上after偽元素來新增下拉符號。<br>之後再設定外圍的select-wrapper寬度跟select標籤的寬度一樣就可以了</p>
+<img src="/2021/10/07/S2-3-layout-scss/7.png" class="">
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.select-wrapper</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">150px</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    &amp;<span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">      <span class="attribute">content</span>: <span class="string">&quot;\25BE&quot;</span>;</span><br><span class="line">      <span class="attribute">position</span>: absolute;</span><br><span class="line">      <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">      <span class="attribute">right</span>: <span class="number">8px</span>;</span><br><span class="line">      <span class="attribute">transform</span>: translateY(-<span class="number">50%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  select &#123;</span><br><span class="line">    <span class="keyword">@extend</span> %input-style;</span><br><span class="line">    -webkit-appearance: none;</span><br><span class="line">    <span class="attribute">cursor</span>: pointer;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="下拉箭頭border製作法"><a href="#下拉箭頭border製作法" class="headerlink" title="下拉箭頭border製作法"></a>下拉箭頭border製作法</h1><img src="/2021/10/07/S2-3-layout-scss/8.png" class="">
+
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.select-wrapper</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">150px</span>;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    &amp;<span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">      <span class="attribute">content</span>: <span class="string">&quot;\25BE&quot;</span>;</span><br><span class="line">      <span class="attribute">content</span>: <span class="string">&quot;&quot;</span>;</span><br><span class="line">      <span class="attribute">position</span>: absolute;</span><br><span class="line">      <span class="attribute">border-style</span>: solid;</span><br><span class="line">      <span class="attribute">border-width</span>: <span class="number">6px</span> <span class="number">5px</span> <span class="number">0</span> <span class="number">5px</span>; <span class="comment">// 設定border寬度來製作</span></span><br><span class="line">      <span class="attribute">border-color</span>: <span class="variable">$light-gray</span> transparent transparent transparent; <span class="comment">// 之後將其他三邊透明</span></span><br><span class="line">      <span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">      <span class="attribute">right</span>: <span class="number">8px</span>;</span><br><span class="line">      <span class="attribute">transform</span>: translateY(-<span class="number">50%</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  select &#123;</span><br><span class="line">    <span class="keyword">@extend</span> %input-style;</span><br><span class="line">    -webkit-appearance: none;</span><br><span class="line">    <span class="attribute">cursor</span>: pointer;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="優化按鈕"><a href="#優化按鈕" class="headerlink" title="優化按鈕"></a>優化按鈕</h1><p>現在select的下拉箭頭蓋住了select，所以下拉箭頭點了會沒反應，設定z-index 將下拉箭頭放置到select後方即可</p>
+]]></content>
+      <categories>
+        <category>AlphaCamp</category>
+        <category>Task</category>
+      </categories>
+      <tags>
+        <tag>AlphaCamp</tag>
+        <tag>作業</tag>
+        <tag>CSS</tag>
+        <tag>切版</tag>
+        <tag>scss</tag>
+      </tags>
+  </entry>
 </search>

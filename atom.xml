@@ -6,7 +6,7 @@
   <link href="https://doug0849.github.io/atom.xml" rel="self"/>
   
   <link href="https://doug0849.github.io/"/>
-  <updated>2021-10-05T10:49:35.000Z</updated>
+  <updated>2021-10-07T03:44:23.000Z</updated>
   <id>https://doug0849.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>S2-3-前端-SCSS-切版實作</title>
+    <link href="https://doug0849.github.io/2021/10/07/S2-3-layout-scss/"/>
+    <id>https://doug0849.github.io/2021/10/07/S2-3-layout-scss/</id>
+    <published>2021-10-07T03:44:23.000Z</published>
+    <updated>2021-10-07T03:44:23.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;紀錄第一次使用SCSS預處理器來實作切版，處理Form大魔王。&lt;br&gt;&lt;strong&gt;此文章圖片大部分均來自Alpha Camp課程內容&lt;/strong&gt;&lt;br&gt;&lt;a href=&quot;https://codepen.io/doug0849/pen/YzQggMb&quot;&gt;完成作品&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="AlphaCamp" scheme="https://doug0849.github.io/categories/AlphaCamp/"/>
+    
+    <category term="Task" scheme="https://doug0849.github.io/categories/AlphaCamp/Task/"/>
+    
+    
+    <category term="AlphaCamp" scheme="https://doug0849.github.io/tags/AlphaCamp/"/>
+    
+    <category term="作業" scheme="https://doug0849.github.io/tags/%E4%BD%9C%E6%A5%AD/"/>
+    
+    <category term="CSS" scheme="https://doug0849.github.io/tags/CSS/"/>
+    
+    <category term="切版" scheme="https://doug0849.github.io/tags/%E5%88%87%E7%89%88/"/>
+    
+    <category term="scss" scheme="https://doug0849.github.io/tags/scss/"/>
+    
+  </entry>
   
   <entry>
     <title>S2-2-ORID-回顧自己的進步</title>
@@ -527,30 +556,6 @@
     <category term="作業" scheme="https://doug0849.github.io/tags/%E4%BD%9C%E6%A5%AD/"/>
     
     <category term="setAttribute()" scheme="https://doug0849.github.io/tags/setAttribute/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AC數位職涯相談室#4-開箱數位軟體團隊-模擬專案體驗帶你找出適合的職能-流水帳心得</title>
-    <link href="https://doug0849.github.io/2021/07/24/ac-4th-panel-discussion/"/>
-    <id>https://doug0849.github.io/2021/07/24/ac-4th-panel-discussion/</id>
-    <published>2021-07-24T10:31:43.000Z</published>
-    <updated>2021-07-24T10:31:43.000Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;&lt;p&gt;2021年7月22日，非常感謝AC又舉辦了每月一次的數位職涯相談室啦! 本次邀請到的就是BLOG新翹楚 &lt;strong&gt;方格子&lt;/strong&gt; 的前端及全端工程師：&lt;u&gt;&lt;strong&gt;Jiang &amp;amp; Kuan&lt;/strong&gt;&lt;/u&gt;來分享現實職場當中前後端各別負責的工作內容。 &lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="AlphaCamp" scheme="https://doug0849.github.io/categories/AlphaCamp/"/>
-    
-    <category term="工作相談室" scheme="https://doug0849.github.io/categories/AlphaCamp/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E8%AB%87%E5%AE%A4/"/>
-    
-    
-    <category term="AlphaCamp" scheme="https://doug0849.github.io/tags/AlphaCamp/"/>
-    
-    <category term="工作相談室" scheme="https://doug0849.github.io/tags/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E8%AB%87%E5%AE%A4/"/>
     
   </entry>
   
