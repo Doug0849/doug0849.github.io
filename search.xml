@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>Git Bash基本指令操作</title>
-    <url>/2021/06/10/GitBash%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4%E6%93%8D%E4%BD%9C/</url>
+    <url>/2021/06/11/GitBash%E5%9F%BA%E6%9C%AC%E6%8C%87%E4%BB%A4%E6%93%8D%E4%BD%9C/</url>
     <content><![CDATA[<h1 id="Git-Bash基本操作"><a href="#Git-Bash基本操作" class="headerlink" title="Git Bash基本操作"></a>Git Bash基本操作</h1><span id="more"></span>
 
 <h2 id="當前資料夾新建一個資料夾"><a href="#當前資料夾新建一個資料夾" class="headerlink" title="當前資料夾新建一個資料夾"></a>當前資料夾新建一個資料夾</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ mkdir [資料夾名稱]</span><br></pre></td></tr></table></figure>
@@ -313,7 +313,7 @@
   </entry>
   <entry>
     <title>預讀學期2-2_S3_A12-電影清單加碼功能-作業心得</title>
-    <url>/2021/07/29/preview-s2-2-A12-movie-list/</url>
+    <url>/2021/07/30/preview-s2-2-A12-movie-list/</url>
     <content><![CDATA[<p><strong><a href="https://doug0849.github.io/movielist-exercise/">練習完成檔案連結</a></strong></p>
 <p>　　之前一直沒有寫相關的作業心得筆記，一方面是覺得難度不高，一方面覺得操作幾次就很熟練了，所以就很懶惰…但進入到學期2-2後，光是S2的製作電影清單，突然感覺難度一下提升超級多，很多內容不是一次兩次就能夠記起來且熟悉，而且函式的拆解跟邏輯複雜度上也提升相當多，演算法也來到了百行之多，這時才發現真的很難一下吸收，所以決定開始來寫學習、作業、技術相關筆記來加深自己的記憶及熟練度。</p>
 <span id="more"></span>
@@ -664,7 +664,7 @@
   </entry>
   <entry>
     <title>建立一個Node.js本機伺服器</title>
-    <url>/2021/09/10/create-node-js-local-server/</url>
+    <url>/2021/09/11/create-node-js-local-server/</url>
     <content><![CDATA[<p>開一個測試資料夾先，在裡面建立一個app.js的檔案，並用編輯器開啟</p>
 <img src="/2021/09/10/create-node-js-local-server/1.jpg" class="">
 <span id="more"></span>
@@ -842,7 +842,7 @@
   </entry>
   <entry>
     <title>今天是學寫Code的第107天</title>
-    <url>/2021/09/09/learning-programing-107th-day/</url>
+    <url>/2021/09/10/learning-programing-107th-day/</url>
     <content><![CDATA[<h5 id="今天是我學寫code的第107天"><a href="#今天是我學寫code的第107天" class="headerlink" title="今天是我學寫code的第107天"></a><center>今天是我學寫code的第107天</center></h5><p><strong><em><center>(歡呼加鼓掌!)</center></em></strong></p>
 <p>　　在2021年5月25日晚上這一天，對自己下了一個人生的新決定，決定要轉換跑道啦!<br>　　學到至今3個月多一些，加上第一次自己成功在Github上用Hexo架出靜態網頁，就在這邊稍微紀錄一下自己的轉職日記啦! XD</p>
 <img src="/2021/09/09/learning-programing-107th-day/1.jpg" class="" title="1.jpg">
@@ -2511,6 +2511,68 @@
         <tag>CSS</tag>
         <tag>切版</tag>
         <tag>scss</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Todo List 登入系統實作</title>
+    <url>/2021/10/10/todo-list-login/</url>
+    <content><![CDATA[<p>本篇以Alpha Camp 2-3 的Todo-List作業的後續功能擴增實作練習，依照課綱內容實作登入、註冊功能，僅筆記自己不熟悉的重點處。</p>
+<p><strong><a href="">完成作品</a></strong></p>
+<span id="more"></span>
+
+<h1 id="建立使用者資料結構"><a href="#建立使用者資料結構" class="headerlink" title="建立使用者資料結構"></a>建立使用者資料結構</h1><p>之前的練習已經有很多建立資料結構的經驗，之前建立帳號的註冊時間是自己寫碼帶入各年月日，其實不用這麼麻煩，直接使用type: Date 以及default: Date.now就可解決了。<br>這邊不使用Javascript的Date.now()，沒有括弧，應該是以MongoDB建立帳戶的時間點為準所以只要傳入Date.now，MongoDB收到指令就會調用Date.now函式，以自己建立的時間為準。(如果使用Date.now()變成是在Express.js伺服器建立資料的時間)</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> mongoose = <span class="built_in">require</span>(<span class="string">&#x27;mongoose&#x27;</span>)</span><br><span class="line"><span class="keyword">const</span> Schema = mongoose.Schema</span><br><span class="line"><span class="keyword">const</span> userSchema = <span class="keyword">new</span> Schema(&#123;</span><br><span class="line">  <span class="attr">name</span>: &#123;</span><br><span class="line">    <span class="attr">type</span>: <span class="built_in">String</span>,</span><br><span class="line">    <span class="attr">required</span>: <span class="literal">true</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">email</span>: &#123;</span><br><span class="line">    <span class="attr">type</span>: <span class="built_in">String</span>,</span><br><span class="line">    <span class="attr">required</span>: <span class="literal">true</span>,</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="attr">password</span>: &#123;</span><br><span class="line">    <span class="attr">type</span>: <span class="built_in">String</span>,</span><br><span class="line">    <span class="attr">required</span>: <span class="literal">true</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">createAt</span>: &#123;</span><br><span class="line">    <span class="attr">type</span>: <span class="built_in">Date</span>, <span class="comment">// 像這樣就可以了</span></span><br><span class="line">    <span class="attr">default</span>: <span class="built_in">Date</span>.now <span class="comment">// 像這樣就可以了</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = mongoose.model(<span class="string">&#x27;Todo&#x27;</span>, userSchema)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>在設定資料時，可以使用 type 來設定資料型別、使用 default 設定預設值、使用 required 設定是否為必填。</p>
+<h1 id="註冊系統"><a href="#註冊系統" class="headerlink" title="註冊系統"></a>註冊系統</h1><ol>
+<li>首先處理前端表單發送到後端的參數</li>
+<li>檢查使用者是否已經註冊</li>
+<li>如果已經註冊，就退回原本畫面，並給予使用者提示</li>
+<li>如果是新的使用者，就將資料寫入資料庫，完成使用者註冊，並將使用者導向首頁</li>
+</ol>
+]]></content>
+      <categories>
+        <category>AlphaCamp</category>
+        <category>Task</category>
+      </categories>
+      <tags>
+        <tag>AlphaCamp</tag>
+        <tag>作業</tag>
+        <tag>login</tag>
+        <tag>register</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AC作業-expanse-tracker</title>
+    <url>/2022/06/27/AC%E4%BD%9C%E6%A5%AD-expanse-tracker/</url>
+    <content><![CDATA[<p>完成老爸的私房錢作業<br><a href="https://infinite-coast-55500.herokuapp.com/">完成練習專案</a></p>
+<span id="more"></span>
+
+<h1 id="你為何會選擇這個專案？"><a href="#你為何會選擇這個專案？" class="headerlink" title="你為何會選擇這個專案？"></a>你為何會選擇這個專案？</h1><p>會選擇這個專案來做的原因有幾點</p>
+<ul>
+<li>整個專案涉及了相當廣的且實用的功能，例如：最常見的CRUD(新增、讀取、修改、刪除資料等功能)和廣泛使用的RESTful架構風格，都是很實用且在市場上依然必要的技術。</li>
+</ul>
+<h1 id="你使用了什麼技術？"><a href="#你使用了什麼技術？" class="headerlink" title="你使用了什麼技術？"></a>你使用了什麼技術？</h1><ul>
+<li>這個專案對自己來說使用了過去以往都沒有碰過的技術，例如：掛載passport及express-session來完成本地登入驗證工具，達到註冊、登入、登出等驗證功能、以及掛在bcrypt來對使用者的密碼加密保存，保障使用者的個資安全。另外再配合過去已熟知bootstrap加速版面開發，使用express框架系統配合handlebars樣板引擎來製作頁面，最後經由路由控制來達成CRUD功能。雖然專案不大，但是是一個涉及非常多廣泛使用的功能的專案。</li>
+</ul>
+<h1 id="哪部分你相對能掌握？哪裡花了最多時間？"><a href="#哪部分你相對能掌握？哪裡花了最多時間？" class="headerlink" title="哪部分你相對能掌握？哪裡花了最多時間？"></a>哪部分你相對能掌握？哪裡花了最多時間？</h1><ul>
+<li>相對能掌握的是在切版、路由控制資料庫撈資料，花最多時間的大概是在Passport登入驗證系統上，因為對於整個後端網頁資料傳遞的過程非常不熟悉，關於工具的掛載先後，資料傳遞進來後，經過哪些工具處理後又得到哪些新的資料，感覺資料的流動方向很複雜，花了許久的時間去思考內化。</li>
+</ul>
+<h1 id="過程中碰到什麼困難？又如何克服？"><a href="#過程中碰到什麼困難？又如何克服？" class="headerlink" title="過程中碰到什麼困難？又如何克服？"></a>過程中碰到什麼困難？又如何克服？</h1><ul>
+<li>碰到最大的困難大概是在建立資料種子的部分，對於非同步處理上資料的流動性還是掌握的不太確實，Promise的寫法甚至最新的async await寫法都還不是太熟悉，不停的觀摩同學思考資料處理的方式，以及需要透過大量思考及練習，才稍微較上手。</li>
+</ul>
+<h1 id="過程中你有對哪個技術有特別深刻的學習？"><a href="#過程中你有對哪個技術有特別深刻的學習？" class="headerlink" title="過程中你有對哪個技術有特別深刻的學習？"></a>過程中你有對哪個技術有特別深刻的學習？</h1><ul>
+<li>對於驗證系統以及非同步處理這兩大塊技術有特別多花很多時間去思考及反覆練習，驗證系統算是有史以來掛在第三方工具資料流最複雜的一次，花了滿多時間思考資料的流動向；而非同步處理也是對資料流動順序的不熟悉，在加載種子時碰到了很多資料無法建立的問題，知道問題是出在非同步處理上，但卻無法在短時間內抓到是在哪裡出錯，花了不少時間不停的試錯。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>AlphaCamp</category>
+        <category>Task</category>
+      </categories>
+      <tags>
+        <tag>AlphaCamp</tag>
+        <tag>作業</tag>
+        <tag>後端</tag>
       </tags>
   </entry>
 </search>

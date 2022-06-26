@@ -6,7 +6,7 @@
   <link href="https://doug0849.github.io/atom.xml" rel="self"/>
   
   <link href="https://doug0849.github.io/"/>
-  <updated>2021-10-07T03:44:23.000Z</updated>
+  <updated>2022-06-26T19:36:05.000Z</updated>
   <id>https://doug0849.github.io/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AC作業-expanse-tracker</title>
+    <link href="https://doug0849.github.io/2022/06/27/AC%E4%BD%9C%E6%A5%AD-expanse-tracker/"/>
+    <id>https://doug0849.github.io/2022/06/27/AC%E4%BD%9C%E6%A5%AD-expanse-tracker/</id>
+    <published>2022-06-26T19:36:05.000Z</published>
+    <updated>2022-06-26T19:36:05.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;完成老爸的私房錢作業&lt;br&gt;&lt;a href=&quot;https://infinite-coast-55500.herokuapp.com/&quot;&gt;完成練習專案&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="AlphaCamp" scheme="https://doug0849.github.io/categories/AlphaCamp/"/>
+    
+    <category term="Task" scheme="https://doug0849.github.io/categories/AlphaCamp/Task/"/>
+    
+    
+    <category term="AlphaCamp" scheme="https://doug0849.github.io/tags/AlphaCamp/"/>
+    
+    <category term="作業" scheme="https://doug0849.github.io/tags/%E4%BD%9C%E6%A5%AD/"/>
+    
+    <category term="後端" scheme="https://doug0849.github.io/tags/%E5%BE%8C%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Todo List 登入系統實作</title>
+    <link href="https://doug0849.github.io/2021/10/10/todo-list-login/"/>
+    <id>https://doug0849.github.io/2021/10/10/todo-list-login/</id>
+    <published>2021-10-10T07:26:38.000Z</published>
+    <updated>2021-10-10T07:26:38.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本篇以Alpha Camp 2-3 的Todo-List作業的後續功能擴增實作練習，依照課綱內容實作登入、註冊功能，僅筆記自己不熟悉的重點處。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;&quot;&gt;完成作品&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="AlphaCamp" scheme="https://doug0849.github.io/categories/AlphaCamp/"/>
+    
+    <category term="Task" scheme="https://doug0849.github.io/categories/AlphaCamp/Task/"/>
+    
+    
+    <category term="AlphaCamp" scheme="https://doug0849.github.io/tags/AlphaCamp/"/>
+    
+    <category term="作業" scheme="https://doug0849.github.io/tags/%E4%BD%9C%E6%A5%AD/"/>
+    
+    <category term="login" scheme="https://doug0849.github.io/tags/login/"/>
+    
+    <category term="register" scheme="https://doug0849.github.io/tags/register/"/>
+    
+  </entry>
   
   <entry>
     <title>S2-3-前端-SCSS-切版實作</title>
@@ -336,8 +389,8 @@
   
   <entry>
     <title>建立一個Node.js本機伺服器</title>
-    <link href="https://doug0849.github.io/2021/09/10/create-node-js-local-server/"/>
-    <id>https://doug0849.github.io/2021/09/10/create-node-js-local-server/</id>
+    <link href="https://doug0849.github.io/2021/09/11/create-node-js-local-server/"/>
+    <id>https://doug0849.github.io/2021/09/11/create-node-js-local-server/</id>
     <published>2021-09-10T16:20:47.000Z</published>
     <updated>2021-09-10T16:20:47.000Z</updated>
     
@@ -408,8 +461,8 @@
   
   <entry>
     <title>今天是學寫Code的第107天</title>
-    <link href="https://doug0849.github.io/2021/09/09/learning-programing-107th-day/"/>
-    <id>https://doug0849.github.io/2021/09/09/learning-programing-107th-day/</id>
+    <link href="https://doug0849.github.io/2021/09/10/learning-programing-107th-day/"/>
+    <id>https://doug0849.github.io/2021/09/10/learning-programing-107th-day/</id>
     <published>2021-09-09T16:44:32.000Z</published>
     <updated>2021-09-09T16:44:32.000Z</updated>
     
@@ -504,58 +557,6 @@
     <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
     
     <category term="EJS" scheme="https://doug0849.github.io/tags/EJS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何用Hexo在Github上架設blog</title>
-    <link href="https://doug0849.github.io/2021/09/08/create-blog-by-hexo-in-github/"/>
-    <id>https://doug0849.github.io/2021/09/08/create-blog-by-hexo-in-github/</id>
-    <published>2021-09-08T07:18:18.000Z</published>
-    <updated>2021-09-08T07:18:18.000Z</updated>
-    
-    
-    <summary type="html">&lt;h1 id=&quot;廢話前言&quot;&gt;&lt;a href=&quot;#廢話前言&quot; class=&quot;headerlink&quot; title=&quot;廢話前言&quot;&gt;&lt;/a&gt;廢話前言&lt;/h1&gt;&lt;h2 id=&quot;想要架設部落格作為記錄自己生活或相關筆記嗎&quot;&gt;&lt;a href=&quot;#想要架設部落格作為記錄自己生活或相關筆記嗎&quot; class=&quot;headerlink&quot; title=&quot;想要架設部落格作為記錄自己生活或相關筆記嗎?&quot;&gt;&lt;/a&gt;想要架設部落格作為記錄自己生活或相關筆記嗎?&lt;/h2&gt;&lt;p&gt;會想架設部落格的主要原因是自己正在上Javascript課程，課程有提到要開個部落格來作為自己的技術筆記、心得、或一些自己想記錄的東西作為備忘，畢竟學海無涯，有很多東西學會後久久不使用真的會忘記。&lt;/p&gt;
-&lt;p&gt;後來使用了一些大眾市面上的blog，但終究覺得不合用，一方面更想要有自己的風格，一方面對於自己來說希望更加方便撰寫紀錄及發布。而我這個初心者才知道，原來可以在Github撰寫靜態網頁(蠢)，所以就開始研究到底該如何在Github上架設一個簡易的靜態blog之旅。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技術筆記" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
-    
-    <category term="Hexo" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/Hexo/"/>
-    
-    
-    <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
-    
-    <category term="Hexo" scheme="https://doug0849.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>預讀學期2-2_S3_A12-電影清單加碼功能-作業心得</title>
-    <link href="https://doug0849.github.io/2021/07/29/preview-s2-2-A12-movie-list/"/>
-    <id>https://doug0849.github.io/2021/07/29/preview-s2-2-A12-movie-list/</id>
-    <published>2021-07-29T16:00:00.000Z</published>
-    <updated>2021-07-29T16:00:00.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;strong&gt;&lt;a href=&quot;https://doug0849.github.io/movielist-exercise/&quot;&gt;練習完成檔案連結&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;　　之前一直沒有寫相關的作業心得筆記，一方面是覺得難度不高，一方面覺得操作幾次就很熟練了，所以就很懶惰…但進入到學期2-2後，光是S2的製作電影清單，突然感覺難度一下提升超級多，很多內容不是一次兩次就能夠記起來且熟悉，而且函式的拆解跟邏輯複雜度上也提升相當多，演算法也來到了百行之多，這時才發現真的很難一下吸收，所以決定開始來寫學習、作業、技術相關筆記來加深自己的記憶及熟練度。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="AlphaCamp" scheme="https://doug0849.github.io/categories/AlphaCamp/"/>
-    
-    <category term="Task" scheme="https://doug0849.github.io/categories/AlphaCamp/Task/"/>
-    
-    
-    <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
-    
-    <category term="AlphaCamp" scheme="https://doug0849.github.io/tags/AlphaCamp/"/>
-    
-    <category term="作業" scheme="https://doug0849.github.io/tags/%E4%BD%9C%E6%A5%AD/"/>
-    
-    <category term="setAttribute()" scheme="https://doug0849.github.io/tags/setAttribute/"/>
     
   </entry>
   
