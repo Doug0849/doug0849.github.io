@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://doug0849.github.io/2022/08/06/socket-io%E5%A6%82%E4%BD%95%E4%B8%B2%E6%8E%A5express-app/</loc>
+    
+    <lastmod>2022-08-06</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://doug0849.github.io/2022/06/27/AC%E4%BD%9C%E6%A5%AD-expanse-tracker/</loc>
     
     <lastmod>2022-06-26</lastmod>
@@ -242,7 +249,7 @@
 
   <url>
     <loc>https://doug0849.github.io/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -250,399 +257,413 @@
   
   <url>
     <loc>https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/Git/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/JavaScript/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/Array/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/%E9%99%A3%E5%88%97/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/map/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/filter/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/find/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/some/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/findIndex/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/every/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/Array-prototype-push/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/Array-prototype-join/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/%E5%B1%95%E9%96%8B%E9%81%8B%E7%AE%97%E5%AD%90/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/toggle/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/DOM/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/querySelector/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/parentElement/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/children/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/nextElementSibling/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/firstElementChild/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/lastElementChild/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/appendChild/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/matches/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/contains/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/dataset/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/function/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/%E5%87%BD%E5%BC%8F/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/IIFE/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/%E8%BD%89%E8%81%B7/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/AlphaCamp/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/%E4%BD%9C%E6%A5%AD/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/setAttribute/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/Node-js/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/%E5%AF%A6%E4%BD%9C%E6%A1%88%E4%BE%8B/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/Hexo/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/%E6%97%A5%E8%A8%98/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/%E8%B6%8A%E5%8D%97/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/EJS/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/Markdown/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/VScode/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/CSS/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/%E5%88%87%E7%89%88/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/sitemap/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/google/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/Game/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/%E5%84%AA%E5%85%88%E7%B4%9A/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E8%AB%87%E5%AE%A4/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/Express/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/Handlebars/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/MongoDB/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/Mongoose/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/ORID/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/scss/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/login/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/register/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/tags/%E5%BE%8C%E7%AB%AF/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://doug0849.github.io/tags/socket-io/</loc>
+    <lastmod>2022-08-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://doug0849.github.io/tags/express/</loc>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -651,98 +672,105 @@
   
   <url>
     <loc>https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/Git/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/categories/%E6%97%A5%E8%A8%98/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/categories/AlphaCamp/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/Hexo/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/EJS/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/categories/VS-Code/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/categories/%E6%97%A5%E8%A8%98/%E8%BD%89%E8%81%B7/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/categories/AlphaCamp/Task/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/categories/%E6%97%A5%E8%A8%98/%E8%B6%8A%E5%8D%97/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/CSS/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/categories/AlphaCamp/%E5%B7%A5%E4%BD%9C%E7%9B%B8%E8%AB%87%E5%AE%A4/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/Express/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://doug0849.github.io/categories/AlphaCamp/Task/socket-io/</loc>
+    <lastmod>2022-08-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

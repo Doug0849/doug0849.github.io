@@ -6,7 +6,7 @@
   <link href="https://doug0849.github.io/atom.xml" rel="self"/>
   
   <link href="https://doug0849.github.io/"/>
-  <updated>2022-06-26T19:36:05.000Z</updated>
+  <updated>2022-08-06T09:22:36.000Z</updated>
   <id>https://doug0849.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>socket.io如何串接express的app.js</title>
+    <link href="https://doug0849.github.io/2022/08/06/socket-io%E5%A6%82%E4%BD%95%E4%B8%B2%E6%8E%A5express-app/"/>
+    <id>https://doug0849.github.io/2022/08/06/socket-io%E5%A6%82%E4%BD%95%E4%B8%B2%E6%8E%A5express-app/</id>
+    <published>2022-08-06T09:22:36.000Z</published>
+    <updated>2022-08-06T09:22:36.000Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Simple Twitter 挑戰功能&lt;br&gt;&lt;a href=&quot;https://twitter-chatroom-dhal-team.herokuapp.com/&quot;&gt;完成練習專案&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://github.com/Doug0849/twitter-fullstack-2020/tree/feature/chatroom&quot;&gt;Github&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="AlphaCamp" scheme="https://doug0849.github.io/categories/AlphaCamp/"/>
+    
+    <category term="Task" scheme="https://doug0849.github.io/categories/AlphaCamp/Task/"/>
+    
+    <category term="socket.io" scheme="https://doug0849.github.io/categories/AlphaCamp/Task/socket-io/"/>
+    
+    
+    <category term="後端" scheme="https://doug0849.github.io/tags/%E5%BE%8C%E7%AB%AF/"/>
+    
+    <category term="socket.io" scheme="https://doug0849.github.io/tags/socket-io/"/>
+    
+    <category term="express" scheme="https://doug0849.github.io/tags/express/"/>
+    
+  </entry>
   
   <entry>
     <title>AC作業-expanse-tracker</title>
@@ -526,36 +553,6 @@
     <category term="Markdown" scheme="https://doug0849.github.io/tags/Markdown/"/>
     
     <category term="VScode" scheme="https://doug0849.github.io/tags/VScode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ejs樣板語法技術筆記</title>
-    <link href="https://doug0849.github.io/2021/09/08/ejs%E6%A8%A3%E6%9D%BF%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
-    <id>https://doug0849.github.io/2021/09/08/ejs%E6%A8%A3%E6%9D%BF%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/</id>
-    <published>2021-09-08T13:14:27.000Z</published>
-    <updated>2021-09-08T13:14:27.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;在ejs樣版檔案下的標籤語意&lt;/p&gt;
-&lt;p&gt;&amp;lt;%   ‘脚本’ 标签，用于流程控制，无输出。&lt;br&gt;&amp;lt;%_  删除其前面的空格符&lt;br&gt;&amp;lt;%__ 在模板中，透过 __ 或 _p</summary>
-        
-      
-    
-    
-    
-    <category term="技術筆記" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
-    
-    <category term="EJS" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/EJS/"/>
-    
-    
-    <category term="技術筆記" scheme="https://doug0849.github.io/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
-    
-    <category term="EJS" scheme="https://doug0849.github.io/tags/EJS/"/>
     
   </entry>
   
