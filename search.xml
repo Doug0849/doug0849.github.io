@@ -2757,4 +2757,19 @@
         <tag>front-end</tag>
       </tags>
   </entry>
+  <entry>
+    <title>About DOM</title>
+    <url>/2021/09/22/About-DOM/</url>
+    <content><![CDATA[<h2 id="到底什麼是-DOM？"><a href="#到底什麼是-DOM？" class="headerlink" title="到底什麼是 DOM？"></a>到底什麼是 DOM？</h2><span id="more"></span>
+
+<p>DOM 的全寫 Document Object Model,</p>
+<p>DOM 就是 Web 文件的編譯介面，一個網頁就是一個文件檔案，透過瀏覽器將這些文件轉化產生成所有的 DOM(節點、物件)，集結所有的 DOM 所呈現出來的就是整個網頁頁面，而這些文件透過瀏覽器解析後產出的 DOM(節點、物件)，就能透過程序對其更改結構(HTML 標籤結構)、樣式(CSS)和內容(content)，並且透過程式語言編程來達到和網頁頁面互動。</p>
+]]></content>
+      <categories>
+        <category>HTML</category>
+      </categories>
+      <tags>
+        <tag>DOM</tag>
+      </tags>
+  </entry>
 </search>

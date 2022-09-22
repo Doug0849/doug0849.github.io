@@ -282,6 +282,25 @@
   </entry>
   
   <entry>
+    <title>About DOM</title>
+    <link href="https://doug0849.github.io/2021/09/22/About-DOM/"/>
+    <id>https://doug0849.github.io/2021/09/22/About-DOM/</id>
+    <published>2021-09-22T08:08:08.000Z</published>
+    <updated>2021-09-22T08:08:08.000Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;到底什麼是-DOM？&quot;&gt;&lt;a href=&quot;#到底什麼是-DOM？&quot; class=&quot;headerlink&quot; title=&quot;到底什麼是 DOM？&quot;&gt;&lt;/a&gt;到底什麼是 DOM？&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="HTML" scheme="https://doug0849.github.io/categories/HTML/"/>
+    
+    
+    <category term="DOM" scheme="https://doug0849.github.io/tags/DOM/"/>
+    
+  </entry>
+  
+  <entry>
     <title>專案實作 - 個人記帳簿</title>
     <link href="https://doug0849.github.io/2021/09/19/project-exercise-expenses/"/>
     <id>https://doug0849.github.io/2021/09/19/project-exercise-expenses/</id>
@@ -508,30 +527,6 @@
     <category term="AlphaCamp" scheme="https://doug0849.github.io/tags/AlphaCamp/"/>
     
     <category term="作業" scheme="https://doug0849.github.io/tags/%E4%BD%9C%E6%A5%AD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>建立一個Node.js本機伺服器</title>
-    <link href="https://doug0849.github.io/2021/09/11/create-node-js-local-server/"/>
-    <id>https://doug0849.github.io/2021/09/11/create-node-js-local-server/</id>
-    <published>2021-09-10T16:20:47.000Z</published>
-    <updated>2021-09-10T16:20:47.000Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;開一個測試資料夾先，在裡面建立一個app.js的檔案，並用編輯器開啟&lt;/p&gt;
-&lt;img src=&quot;/2021/09/10/create-node-js-local-server/1.jpg&quot; class=&quot;&quot;&gt;</summary>
-    
-    
-    
-    <category term="技術筆記" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"/>
-    
-    <category term="JavaScript" scheme="https://doug0849.github.io/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/JavaScript/"/>
-    
-    
-    <category term="JavaScript" scheme="https://doug0849.github.io/tags/JavaScript/"/>
-    
-    <category term="Node.js" scheme="https://doug0849.github.io/tags/Node-js/"/>
     
   </entry>
   
