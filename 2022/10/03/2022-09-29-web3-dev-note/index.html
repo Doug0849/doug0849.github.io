@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en,zh-TW,default">
+<head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-P7J0KE07RD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-P7J0KE07RD');
+</script>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"doug0849.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":"ture","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Web3 前端實戰開發課程-第四週複習筆記">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Z-institues Web3 前端開發實戰-第四週技術筆記">
+<meta property="og:url" content="https://doug0849.github.io/2022/10/03/2022-09-29-web3-dev-note/index.html">
+<meta property="og:site_name" content="邊撸鐵健身邊學Code的Dhal">
+<meta property="og:description" content="Web3 前端實戰開發課程-第四週複習筆記">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://doug0849.github.io/2022/10/03/2022-09-29-web3-dev-note/01.png">
+<meta property="og:image" content="https://doug0849.github.io/2022/10/03/2022-09-29-web3-dev-note/02.png">
+<meta property="og:image" content="https://doug0849.github.io/2022/10/03/2022-09-29-web3-dev-note/04.png">
+<meta property="og:image" content="https://doug0849.github.io/2022/10/03/2022-09-29-web3-dev-note/05.png">
+<meta property="og:image" content="https://doug0849.github.io/2022/10/03/2022-09-29-web3-dev-note/06.png">
+<meta property="og:image" content="https://doug0849.github.io/2022/10/03/2022-09-29-web3-dev-note/07.png">
+<meta property="og:image" content="https://doug0849.github.io/2022/10/03/2022-09-29-web3-dev-note/08.png">
+<meta property="og:image" content="https://doug0849.github.io/2022/10/03/2022-09-29-web3-dev-note/09.png">
+<meta property="og:image" content="https://doug0849.github.io/2022/10/03/2022-09-29-web3-dev-note/10.png">
+<meta property="og:image" content="https://doug0849.github.io/2022/10/03/2022-09-29-web3-dev-note/11.png">
+<meta property="og:image" content="https://doug0849.github.io/2022/10/03/2022-09-29-web3-dev-note/12.png">
+<meta property="og:image" content="https://doug0849.github.io/2022/10/03/2022-09-29-web3-dev-note/13.png">
+<meta property="og:image" content="https://doug0849.github.io/2022/10/03/2022-09-29-web3-dev-note/14.png">
+<meta property="article:published_time" content="2022-10-03T06:12:29.000Z">
+<meta property="article:modified_time" content="2022-10-03T06:12:29.000Z">
+<meta property="article:author" content="Dhal 道">
+<meta property="article:tag" content="技術筆記">
+<meta property="article:tag" content="blockChain">
+<meta property="article:tag" content="web3">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://doug0849.github.io/2022/10/03/2022-09-29-web3-dev-note/01.png">
+
+<link rel="canonical" href="https://doug0849.github.io/2022/10/03/2022-09-29-web3-dev-note/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Z-institues Web3 前端開發實戰-第四週技術筆記 | 邊撸鐵健身邊學Code的Dhal</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="邊撸鐵健身邊學Code的Dhal" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">邊撸鐵健身邊學Code的Dhal</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">與其羨慕嫉妒別人、不如身體力行成為你所渴望的樣子</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://doug0849.github.io/2022/10/03/2022-09-29-web3-dev-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.webp">
+      <meta itemprop="name" content="Dhal 道">
+      <meta itemprop="description" content="關於轉職紀錄、技術筆記、隨寫">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="邊撸鐵健身邊學Code的Dhal">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Z-institues Web3 前端開發實戰-第四週技術筆記
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-10-03 14:12:29" itemprop="dateCreated datePublished" datetime="2022-10-03T14:12:29+08:00">2022-10-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web3/" itemprop="url" rel="index"><span itemprop="name">Web3</span></a>
+                </span>
+                  , 
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Web3/BlockChain/" itemprop="url" rel="index"><span itemprop="name">BlockChain</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Web3 前端實戰開發課程-第四週複習筆記</p>
+<span id="more"></span>
+
+<h2 id="React-專案初始化"><a href="#React-專案初始化" class="headerlink" title="React 專案初始化"></a>React 專案初始化</h2><p>React 初始化<br><code>npx create-react-app my-app --template typescript</code></p>
+<p><a target="_blank" rel="noopener" href="https://nextjs.org/docs/basic-features/typescript">React + Next.js</a><br><code>npx create-next-app@latest --ts</code><br>or<br><code>yarn create next-app --typescript</code></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/asaoluelijah/next-ethers">Next.js + ethers.js</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/rainbow-me/rainbowkit">React + Rainbow Kit</a><br><code>npm init @rainbow-me/rainbowkit@latest</code><br>or<br><code>yarn create @rainbow-me/rainbowkit@latest</code><br>or<br><code>pnpm create @rainbow-me/rainbowkit@latest</code></p>
+<hr>
+<h2 id="建立快速的-project，兩個好用服務"><a href="#建立快速的-project，兩個好用服務" class="headerlink" title="建立快速的 project，兩個好用服務"></a>建立快速的 project，兩個好用服務</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://codesandbox.io/">Codesendbox</a><br>有虛擬機的概念，直接建立一個新的 VM，可以直接建立各式各樣模板，例如：React, Next.js…<br>可以直接在 Dependencies 上直接輸入直接安裝 npm package<br>在左側的 GitHub 標籤，可以直接傳到 GitHub 上建立一個 Repo</li>
+<li><a target="_blank" rel="noopener" href="https://gitpod.io/">Gitpod</a><br>可以直接連接 GitHub 的 Repo 之後直接建立一個 VM 去 Run 他，<br>編輯界面是一個線上的 VS code 環境，還可以執行終端機跑 Linux 指令。<br>如果前端加上合約的 Repo 是整合在一起的話，那要做線上測試就可以使用 GitPod 環境，否則就是建立一個 VM 然後從本地端連上去做測試。<br>npm run dev 或是 run start, GitPod 會自動將那虛擬機的 port 轉接的自己的機器上面去。</li>
+</ol>
+<hr>
+<h2 id="Ethers-js-amp-Web3-js"><a href="#Ethers-js-amp-Web3-js" class="headerlink" title="Ethers.js &amp; Web3.js"></a>Ethers.js &amp; Web3.js</h2><p>基本上是很相似的東西，後來語法上大家比較偏好 ethers.js，包括後來 React 裡面的<a target="_blank" rel="noopener" href="https://www.rainbowkit.com/">RainbowKit</a>，RainbowKit 的底層就是去綁 ethers.js 去連接區塊鏈資料跟連接錢包跟執行錢包(perform action)的動作。<br>長期在用的底層套件還是往 ethers.js，雖然兩者功能一樣，但 ethers.js 的開法者跟範例都比較多。</p>
+<h2 id="開發專案或產品時建議使用整合好的環境"><a href="#開發專案或產品時建議使用整合好的環境" class="headerlink" title="開發專案或產品時建議使用整合好的環境"></a>開發專案或產品時建議使用整合好的環境</h2><p>例如：<a target="_blank" rel="noopener" href="https://github.com/AsaoluElijah/next-ethers">Next.js + ethers.js</a>，點開連結在 GitHub 上按下鍵盤上. 可以直接開啟 vs code 的 preview 模式。<br>因為已經串接好底層連接錢包的相關功能，在後續更改會比較快。</p>
+<p>還有<a target="_blank" rel="noopener" href="https://github.com/rainbow-me/rainbowkit/tree/main/examples">RainbowKit</a></p>
+<img src="/2022/10/03/2022-09-29-web3-dev-note/01.png" class="">
+<p>RainbowKit 算是目前連上各種錢包跟相關功能最好用的工具。</p>
+<p>RainbowKit 是屬於純前端的，如果要新增相關 Contract 的功能，有幾個不同的策略，其中一種範例：Mango Market UI<br><a target="_blank" rel="noopener" href="https://mango.markets/">Maongo Market</a> 原為區塊鏈上的 Defi 交易所，他本身就有開源他用的 Contract 和 UI，如果對這種比較大型的系統可以看 Mango 的東西<br><a target="_blank" rel="noopener" href="https://github.com/blockworks-foundation">Mango 原始碼</a><br>已經將不同結構拆開，分別：</p>
+<img src="/2022/10/03/2022-09-29-web3-dev-note/02.png" class="">
+
+<ol>
+<li>mongo-v3 contract</li>
+<li>mongo-client-v3 (銜接資料跟 API)</li>
+<li>mongo-ui-v3</li>
+</ol>
+<p>大型專案適合這樣分離度高的作法，小一點的專案則是可以混在一起。</p>
+<h3 id="簡單看一下-mongo-ui-v3"><a href="#簡單看一下-mongo-ui-v3" class="headerlink" title="簡單看一下 mongo-ui-v3"></a>簡單看一下 mongo-ui-v3</h3><ol>
+<li><p>Next.js 是 React 的 framework</p>
+</li>
+<li><p>將 router 的東西都處理完了，直接在 page 建立一個 newName.tsx 的檔案，他就會自動把./page/newName.tsx 的 route 建立出來就不用再處理 react-route 相關的東西，這是比較偏 Front-End 的部分</p>
+<img src="/2022/10/03/2022-09-29-web3-dev-note/04.png" class=""></li>
+<li><p>但像是在 stores 的資料夾，他會將資料層的部分抽離出來，他就是管理資料的中介狀態，傳統上的 store 有兩種方式：</p>
+</li>
+<li><p>有點像 redux 的方式來做管理，他會把所有資料層都收攏在一起，再去廣播這些變動</p>
+</li>
+<li><p>另一種 dapp 的模式請往下看。</p>
+<img src="/2022/10/03/2022-09-29-web3-dev-note/05.png" class=""></li>
+<li><p>那在區塊鏈這邊，會看到一個實踐方式，就是他把資料的部分抽成 hooks，那在區塊鏈上要 pull 資料或是 pull API 其實是滿非同步的，如果包成 hooks 的方式，再將這個 react 的屬性匯出到上一層來做使用會是一個比較好的方法。</p>
+<img src="/2022/10/03/2022-09-29-web3-dev-note/06.png" class="">
+<p>例如：useFees 裡面就會負責把所有跟 Fees 相關的東西抓到，然後變成一個 reactive 的屬性，自動渲染，然後前端渲染的時候，就 export makerFee 是多少，takeFee 是多少…</p>
+<img src="/2022/10/03/2022-09-29-web3-dev-note/07.png" class=""></li>
+<li><p>然後透過 command + shift + f 來搜尋 object 的名稱，可以找到在 Component 裡的 MarketFee.tsx 引入了 useFees()，初始化這個 react 的屬性，有點像是每個 hooks 都是一個小的 store，但也更容易去分辨用途。</p>
+<img src="/2022/10/03/2022-09-29-web3-dev-note/08.png" class=""></li>
+<li><p>再來是串接到 Contract 的部分，有些 hooks 還會跟串接 Contract 再分開，可能會單獨整理出 function 再來去做串接（Ethers, RainbowKit…），在由 hooks 去做引用。</p>
+</li>
+<li><p>最後再去串上區塊鏈的資料</p>
+</li>
+<li><p>結構分析 1. UI 層只做事覺化呈現 2. 在資料 / API 層，要想到在包裝完後，假設我用 useFees，我就只能取到 fee，而不要去想要怎麼串接 Contract，而這些 API 可能會定時去呼叫 Hooks 然後去更新資料，在回應資料給 UI。 3. 串接 contract 的部分，則是直接去想我在鏈上取得資料玩後的處理跟包裝成 React 的一個 function，再用 Hooks 去做處理。</p>
+<img src="/2022/10/03/2022-09-29-web3-dev-note/09.png" class=""></li>
+</ol>
+<h2 id="較小型專案建議模式"><a href="#較小型專案建議模式" class="headerlink" title="較小型專案建議模式"></a>較小型專案建議模式</h2><ol>
+<li>假設用 Hardhat，你是前端的 project 想要把 front-end 的 code 跟合約相關的 code 全部放在一起，也是有這種 template，在做小 project 會比較好用。</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/scaffold-eth/scaffold-eth-typescript">Scaffold-eth</a> 算是滿典型的範例。</li>
+<li>Scaffold-eth，本身就有 hardhat 的工具在裡頭，他會直接 initial 一個 front-end 資料夾，裡面裝了 next.js or vite。</li>
+<li>裝在一起有一個好處，會比直接管理或是串接要到抽象化那麼多層來的方便一些，但是檔案管理上就比較沒有那麼乾淨，如果是在大型的 project 就會相對混亂。</li>
+<li>在範例中，可以看到 hardhat 資料夾中直接把 contract 放進去，或是裡面一些測試用的 code，都會放在 hardhat 這資料夾內<img src="/2022/10/03/2022-09-29-web3-dev-note/10.png" class="">
+<img src="/2022/10/03/2022-09-29-web3-dev-note/11.png" class=""></li>
+<li>假設這些都是在同一個 Repo 裡面，hardhat 編譯完合約後會自動產生 ABI，通常我們就會直接將這些 ABI，直接放到外層資料夾，當你的 front-end 是在同個資料夾裡面時，就可以直接去引用這個 hardhat 編譯出來的 ABI，所以等於説在同一個專案裡面就可以同時去跑完 contract 的測試，然後去做一些相關的串接，譬如：中間要接 ABI 或引用合約的時候，都可以直接去 hardhat 的資料夾，把編譯完的資料直接丟到外層的 abi 資料夾去做引用，這樣就等於不用分兩邊更新，可以全部都弄在一起。</li>
+<li>一樣會用 hooks 的方式去把 ABI 引進來，然後在 Hooks 裡面把一些基礎的邏輯處理掉，包括他的串接、Connection…。<img src="/2022/10/03/2022-09-29-web3-dev-note/12.png" class=""></li>
+</ol>
+<h2 id="Wagmi-跟-RainbowKit"><a href="#Wagmi-跟-RainbowKit" class="headerlink" title="Wagmi 跟 RainbowKit"></a>Wagmi 跟 RainbowKit</h2><p><a target="_blank" rel="noopener" href="https://wagmi.sh/">Wagmi</a> 也是一個不錯的 React 相關的 hooks，專們是給 Ethereum 用的，他等於也是給 Ethers 用的一個語法糖，它包括的語法糖就比 RainbowKit 多一些</p>
+<ol>
+<li>RainbowKit 主要還是在處理 Connect Wallet 這部分。</li>
+<li>Wagmi 的話，他主要是幫你把相關的其他的東西都包起來，譬如說，useAccount, useConnect, useDisconnect…</li>
+<li>如果 RainbowKit 只處理到 Provider 的部分，那 Wagmi 這邊就直接幫你把一些 Address, isConnected, disConnect, …甚至其他東西都包好成 function 會比較好使用。<img src="/2022/10/03/2022-09-29-web3-dev-note/13.png" class=""></li>
+<li>算是包裝的比較好，Doc 也寫得比較完整的其中一個，在 Doc 中可以看到很多相關範例，在做一些操作的時候就不需要用 ethers 去做互動，比 ethers 在稍微方便一點點。</li>
+</ol>
+<p>想了解 Ether 底層運作的，可以去找 Ether.js 的相關範例，之後的部分就會以 Wagmi or RainbowKit 稍微再包裝過一層的東西來去做示範跟做 project 會比較快。</p>
+<h2 id="前端專案結構範例說明及-Work-Flow-結束"><a href="#前端專案結構範例說明及-Work-Flow-結束" class="headerlink" title="前端專案結構範例說明及 Work Flow 結束"></a>前端專案結構範例說明及 Work Flow 結束</h2><img src="/2022/10/03/2022-09-29-web3-dev-note/14.png" class="">
+
+<hr>
+
+    </div>
+
+    
+    
+    
+        
+
+  <div class="followme">
+    <p>Welcome to my other publishing channels</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
+          </a>
+        </div>
+    </div>
+  </div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" rel="tag"># 技術筆記</a>
+              <a href="/tags/blockChain/" rel="tag"># blockChain</a>
+              <a href="/tags/web3/" rel="tag"># web3</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/09/21/About-Block-Chain/" rel="prev" title="About Block Chain">
+      <i class="fa fa-chevron-left"></i> About Block Chain
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/10/03/web3-4th-week-homework/" rel="next" title="Web3 前端開發實戰-第四週作業實做筆記">
+      Web3 前端開發實戰-第四週作業實做筆記 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+<script src="https://utteranc.es/client.js"
+        repo="doug0849/doug0849.github.io"
+        issue-term="pathname"
+        theme="photon-dark"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#React-%E5%B0%88%E6%A1%88%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.</span> <span class="nav-text">React 專案初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B%E5%BF%AB%E9%80%9F%E7%9A%84-project%EF%BC%8C%E5%85%A9%E5%80%8B%E5%A5%BD%E7%94%A8%E6%9C%8D%E5%8B%99"><span class="nav-number">2.</span> <span class="nav-text">建立快速的 project，兩個好用服務</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ethers-js-amp-Web3-js"><span class="nav-number">3.</span> <span class="nav-text">Ethers.js &amp; Web3.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%96%8B%E7%99%BC%E5%B0%88%E6%A1%88%E6%88%96%E7%94%A2%E5%93%81%E6%99%82%E5%BB%BA%E8%AD%B0%E4%BD%BF%E7%94%A8%E6%95%B4%E5%90%88%E5%A5%BD%E7%9A%84%E7%92%B0%E5%A2%83"><span class="nav-number">4.</span> <span class="nav-text">開發專案或產品時建議使用整合好的環境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B0%A1%E5%96%AE%E7%9C%8B%E4%B8%80%E4%B8%8B-mongo-ui-v3"><span class="nav-number">4.1.</span> <span class="nav-text">簡單看一下 mongo-ui-v3</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BC%83%E5%B0%8F%E5%9E%8B%E5%B0%88%E6%A1%88%E5%BB%BA%E8%AD%B0%E6%A8%A1%E5%BC%8F"><span class="nav-number">5.</span> <span class="nav-text">較小型專案建議模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Wagmi-%E8%B7%9F-RainbowKit"><span class="nav-number">6.</span> <span class="nav-text">Wagmi 跟 RainbowKit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E5%B0%88%E6%A1%88%E7%B5%90%E6%A7%8B%E7%AF%84%E4%BE%8B%E8%AA%AA%E6%98%8E%E5%8F%8A-Work-Flow-%E7%B5%90%E6%9D%9F"><span class="nav-number">7.</span> <span class="nav-text">前端專案結構範例說明及 Work Flow 結束</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Dhal 道"
+      src="/images/avatar.webp">
+  <p class="site-author-name" itemprop="name">Dhal 道</p>
+  <div class="site-description" itemprop="description">關於轉職紀錄、技術筆記、隨寫</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">64</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/doug0849" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;doug0849" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:etaomonk@gmail.com" title="E-Mail → mailto:etaomonk@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Dhal51571254" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Dhal51571254" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/dlchou89" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;dlchou89" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://global.turingcerts.com/co/cert?hash=210796384a071d22d104816ce950fc8a20653e324354dbc4cbb2d2a6375ca110" title="https:&#x2F;&#x2F;global.turingcerts.com&#x2F;co&#x2F;cert?hash&#x3D;210796384a071d22d104816ce950fc8a20653e324354dbc4cbb2d2a6375ca110" rel="noopener" target="_blank">Alpha Camp全端開發區塊鏈畢業證書</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dhal 道</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

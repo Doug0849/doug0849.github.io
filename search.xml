@@ -2825,4 +2825,210 @@
         <tag>HTML</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Web3 前端開發實戰-第四週作業實做筆記</title>
+    <url>/2022/10/03/web3-4th-week-homework/</url>
+    <content><![CDATA[<p>紀錄重0開始實作的作業筆記，以及記錄遇到的相關問題：</p>
+<span id="more"></span>
+<p><strong><a href="https://goerli.etherscan.io/address/0x5442dc15613dd6b6ea3e74dea9f9ac954b3da898">Smart Contract Address: </a></strong></p>
+<ul>
+<li>0x5442dC15613dD6B6eA3E74dea9F9AC954B3DA898</li>
+</ul>
+<p><strong><a href="https://codesandbox.io/p/github/Doug0849/Z-web3-4th-hw-chatroom/csb-p7kcn1/draft/new-sunset">CodeSendBox Link</a></strong><br><strong><a href="https://github.com/Doug0849/Z-web3-4th-hw-chatroom">GitHub Link</a></strong></p>
+<h1 id="先確認開發環境"><a href="#先確認開發環境" class="headerlink" title="先確認開發環境"></a>先確認開發環境</h1><p>想在本地端直接重頭建設整個Dapp做為練習，而把學校提供的範本作為參考範本。</p>
+<ol>
+<li>node.js 版本v16.17.0</li>
+<li>本地開發環境計畫採用 RainbowKit + wagmi + Next.js 來建立</li>
+</ol>
+<h2 id="Step-1-快速開始"><a href="#Step-1-快速開始" class="headerlink" title="Step 1 - 快速開始"></a>Step 1 - 快速開始</h2><p>這邊打算直接使用 RainbowKit 上的快速開始建立一個初始化模板</p>
+<img src="/2022/10/03/web3-4th-week-homework/01.png" class="">
+
+
+<h2 id="Step-2-終端機執行順序"><a href="#Step-2-終端機執行順序" class="headerlink" title="Step 2 - 終端機執行順序"></a>Step 2 - 終端機執行順序</h2><img src="/2022/10/03/web3-4th-week-homework/02.png" class="">
+<p>建立完成後移動到資料夾使用 code . 開啟</p>
+<h2 id="Step-3-VS-code上開啟終端機執行dev模式"><a href="#Step-3-VS-code上開啟終端機執行dev模式" class="headerlink" title="Step 3 - VS code上開啟終端機執行dev模式"></a>Step 3 - VS code上開啟終端機執行dev模式</h2><ol>
+<li><p>在VS code上開啟終端機執行<br><code>npm run dev</code></p>
+<img src="/2022/10/03/web3-4th-week-homework/03.png" class=""></li>
+<li><p>成功啟動local專案</p>
+<img src="/2022/10/03/web3-4th-week-homework/04.png" class=""></li>
+</ol>
+<h2 id="Step-4-模板檔案觀察"><a href="#Step-4-模板檔案觀察" class="headerlink" title="Step 4 - 模板檔案觀察"></a>Step 4 - 模板檔案觀察</h2><ol>
+<li>已經在index.tsx裡面已經幫你寫好首頁樣式(就是上一步啟動本地專案後的首頁圖)，並且設定好了一個Connect Wallet錢包的按鈕，這個連接錢包按鈕是直接引用自RainbowKit套件</li>
+<li>看來是省去超多環境設置動作，非常好，但因為沒用過Next.js有關Next.js的設置之後還要再回頭來去讀官方文件。</li>
+<li>從模板上_app.tsx這個檔案來分析，我們會需要引入哪些打包好的工具來取得錢包及區塊鏈相關資料：<img src="/2022/10/03/web3-4th-week-homework/08.png" class="">
+<ul>
+<li>import from rainbowkit 部分，參考<a href="https://www.rainbowkit.com/docs/installation">RainbowKit Docs</a><ol>
+<li><a href="https://www.rainbowkit.com/docs/installation">getDefaultWallets</a>：<a href="https://www.rainbowkit.com/docs/installation#configure">設定錢包可以連上哪些鏈</a></li>
+<li><a href="https://www.rainbowkit.com/docs/installation">RainbowKitProvider</a>：<a href="https://www.rainbowkit.com/docs/installation#wrap-providers">Wrap providers</a><img src="/2022/10/03/web3-4th-week-homework/06.png" class=""></li>
+</ol>
+</li>
+<li>import from wagmi , 這是 create a wagmi client 部分<ol>
+<li><a href="https://wagmi.sh/docs/getting-started#2-create-a-wagmi-client">chain or defaultChains</a>：設定鏈用, chain可以自己設定，或是使用預設的</li>
+<li><a href="https://wagmi.sh/docs/getting-started#2-create-a-wagmi-client">configureChains</a>：設定可以使用哪些公鏈或測試鏈</li>
+<li><a href="https://wagmi.sh/docs/getting-started#2-create-a-wagmi-client">createClient</a>：設定客戶端用</li>
+<li><a href="https://wagmi.sh/docs/getting-started#3-wrap-app-with-wagmiconfig">WagmiConfig</a>：<a href="https://www.rainbowkit.com/docs/installation#wrap-providers">Wrap app with WagmiConfig</a>，搭配使用rainbowkit要將wagmi包在rainbowkit外層。</li>
+</ol>
+</li>
+<li>import <ol>
+<li>alchemyProvider from ‘wagmi/providers/alchemyProvider’：設定configureChains時可以使用<a href="https://dashboard.alchemy.com/">alchemy</a>作為觀察app用量，要先到alchemyProvider創建一個App，取得API帶入<img src="/2022/10/03/web3-4th-week-homework/07.png" class=""></li>
+<li>publicProvider from ‘wagmi/providers/publicProvider’：設定configureChains時可以同時帶入publicProvider</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="Step-5-改寫-app-tsx設定"><a href="#Step-5-改寫-app-tsx設定" class="headerlink" title="Step 5 - 改寫_app.tsx設定"></a>Step 5 - 改寫_app.tsx設定</h2><img src="/2022/10/03/web3-4th-week-homework/09.png" class="">
+<img src="/2022/10/03/web3-4th-week-homework/10.png" class="">
+
+<h2 id="Step-6-測試是否可以連接錢包"><a href="#Step-6-測試是否可以連接錢包" class="headerlink" title="Step 6 - 測試是否可以連接錢包"></a>Step 6 - 測試是否可以連接錢包</h2><p>順利連上後會顯示連接的鏈名稱，以及ENS域名或是錢包地址。<br>點擊右側餘額及頭像，可以展開，提供複製地址按鈕和斷開連線按鈕</p>
+<img src="/2022/10/03/web3-4th-week-homework/12.png" class="">
+
+<h2 id="Step-7-開始修改頁面"><a href="#Step-7-開始修改頁面" class="headerlink" title="Step 7 - 開始修改頁面"></a>Step 7 - 開始修改頁面</h2><ol>
+<li><p>隨便先設計版先</p>
+<img src="/2022/10/03/web3-4th-week-homework/13.png" class=""></li>
+<li><p>開始切版，需要：</p>
+<ul>
+<li>Nav &gt; Connect Wallet</li>
+<li>LeftBoard &gt; Account information</li>
+<li>RightBoard &gt; Chatroom information</li>
+<li>bottomBoard &gt; Input message &amp; send button</li>
+</ul>
+</li>
+<li><p>從Nav開始修改</p>
+<img src="/2022/10/03/web3-4th-week-homework/14.png" class="">
+<img src="/2022/10/03/web3-4th-week-homework/15.png" class=""></li>
+<li><p>製作 LeftBoard</p>
+<ol>
+<li>參考本週提供的範本，使用到 <a href="https://wagmi.sh/docs/migration-guide#useaccount">useAccount</a> 和 <a href="https://wagmi.sh/docs/migration-guide#usebalance">useBalance</a> from wagmi.</li>
+<li>直接使用範本程式碼帶入即可，直接看官方文件，基本上只要設定正確變數名稱，然後去呼叫套件語法糖就好了，超方便！<img src="/2022/10/03/web3-4th-week-homework/16.png" class="">
+<img src="/2022/10/03/web3-4th-week-homework/17.png" class=""></li>
+</ol>
+</li>
+<li><p>重新整理發現錯</p>
+<img src="/2022/10/03/web3-4th-week-homework/18.png" class="">
+<ol>
+<li>後來發現是在抓區塊鏈資料時造成的Next.js的渲染錯誤（應該）</li>
+<li>參考範本，發現有寫一個Components叫NonSSRWrapper，將他複製過來直接使用，再把LeftBoard包起來，就解決了。<img src="/2022/10/03/web3-4th-week-homework/19.png" class=""></li>
+</ol>
+</li>
+<li><p>先把剩下的版切完，再來調整內部邏輯</p>
+<img src="/2022/10/03/web3-4th-week-homework/20.png" class=""></li>
+<li><p>先完成右邊的部分<br>只需將規則說明打上</p>
+</li>
+<li><p>中間輸出留言的部分</p>
+   <img src="/2022/10/03/web3-4th-week-homework/21.png" class="">
+<p>目前結構是MessageBoard元件裡包進InputSend，MessageBoard的部分則負責讀取合約留言，使用到的 wagmi 有</p>
+<ol>
+<li>useAccount：用來取得帳戶地址，在讀取合約變數時，需將地址做為參數帶入。</li>
+<li>useContractRead：用來讀取合約內 “showLastestMsg” function，來取得帳戶地址所發送的最後五筆留言。<img src="/2022/10/03/web3-4th-week-homework/22.png" class="">
+<img src="/2022/10/03/web3-4th-week-homework/23.png" class=""></li>
+<li>改寫useContract方式來hooks state，並監聽區塊鏈資料使資料更新後自動更新。這個地方卡了超久，因為原本useContractRead的寫法不是這樣，所以頭腦一直轉不過去到底要怎麼改，後來終於試啊試跟找wagmi文檔，看了好久才發現自己頭腦打結。<img src="/2022/10/03/web3-4th-week-homework/24.png" class="">
+另外補充，這邊將abi抽出，放在abi資料夾來使用，contractInterface，就可以直接使用JSON.stringify(contractABI)，而不用寫一堆，或是我試了半天，一般變數一直抓不到回傳資料。</li>
+</ol>
+</li>
+</ol>
+<p>目前完成畫面：</p>
+<img src="/2022/10/03/web3-4th-week-homework/25.png" class="">
+
+<ol start="9">
+<li>最後完成 輸入欄<br> 1.選擇將兩個按鈕拆開，各自獨立完成背後邏輯掛勾Wagmi - usePrepareContractWrite, useContractWrite <img src="/2022/10/03/web3-4th-week-homework/26.png" class="">
+ 最後完成畫面 <img src="/2022/10/03/web3-4th-week-homework/27.png" class=""></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Web3</category>
+        <category>BlockChain</category>
+      </categories>
+      <tags>
+        <tag>技術筆記</tag>
+        <tag>blockChain</tag>
+        <tag>web3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Z-institues Web3 前端開發實戰-第四週技術筆記</title>
+    <url>/2022/10/03/2022-09-29-web3-dev-note/</url>
+    <content><![CDATA[<p>Web3 前端實戰開發課程-第四週複習筆記</p>
+<span id="more"></span>
+
+<h2 id="React-專案初始化"><a href="#React-專案初始化" class="headerlink" title="React 專案初始化"></a>React 專案初始化</h2><p>React 初始化<br><code>npx create-react-app my-app --template typescript</code></p>
+<p><a href="https://nextjs.org/docs/basic-features/typescript">React + Next.js</a><br><code>npx create-next-app@latest --ts</code><br>or<br><code>yarn create next-app --typescript</code></p>
+<p><a href="https://github.com/asaoluelijah/next-ethers">Next.js + ethers.js</a></p>
+<p><a href="https://github.com/rainbow-me/rainbowkit">React + Rainbow Kit</a><br><code>npm init @rainbow-me/rainbowkit@latest</code><br>or<br><code>yarn create @rainbow-me/rainbowkit@latest</code><br>or<br><code>pnpm create @rainbow-me/rainbowkit@latest</code></p>
+<hr>
+<h2 id="建立快速的-project，兩個好用服務"><a href="#建立快速的-project，兩個好用服務" class="headerlink" title="建立快速的 project，兩個好用服務"></a>建立快速的 project，兩個好用服務</h2><ol>
+<li><a href="https://codesandbox.io/">Codesendbox</a><br>有虛擬機的概念，直接建立一個新的 VM，可以直接建立各式各樣模板，例如：React, Next.js…<br>可以直接在 Dependencies 上直接輸入直接安裝 npm package<br>在左側的 GitHub 標籤，可以直接傳到 GitHub 上建立一個 Repo</li>
+<li><a href="https://gitpod.io/">Gitpod</a><br>可以直接連接 GitHub 的 Repo 之後直接建立一個 VM 去 Run 他，<br>編輯界面是一個線上的 VS code 環境，還可以執行終端機跑 Linux 指令。<br>如果前端加上合約的 Repo 是整合在一起的話，那要做線上測試就可以使用 GitPod 環境，否則就是建立一個 VM 然後從本地端連上去做測試。<br>npm run dev 或是 run start, GitPod 會自動將那虛擬機的 port 轉接的自己的機器上面去。</li>
+</ol>
+<hr>
+<h2 id="Ethers-js-amp-Web3-js"><a href="#Ethers-js-amp-Web3-js" class="headerlink" title="Ethers.js &amp; Web3.js"></a>Ethers.js &amp; Web3.js</h2><p>基本上是很相似的東西，後來語法上大家比較偏好 ethers.js，包括後來 React 裡面的<a href="https://www.rainbowkit.com/">RainbowKit</a>，RainbowKit 的底層就是去綁 ethers.js 去連接區塊鏈資料跟連接錢包跟執行錢包(perform action)的動作。<br>長期在用的底層套件還是往 ethers.js，雖然兩者功能一樣，但 ethers.js 的開法者跟範例都比較多。</p>
+<h2 id="開發專案或產品時建議使用整合好的環境"><a href="#開發專案或產品時建議使用整合好的環境" class="headerlink" title="開發專案或產品時建議使用整合好的環境"></a>開發專案或產品時建議使用整合好的環境</h2><p>例如：<a href="https://github.com/AsaoluElijah/next-ethers">Next.js + ethers.js</a>，點開連結在 GitHub 上按下鍵盤上. 可以直接開啟 vs code 的 preview 模式。<br>因為已經串接好底層連接錢包的相關功能，在後續更改會比較快。</p>
+<p>還有<a href="https://github.com/rainbow-me/rainbowkit/tree/main/examples">RainbowKit</a></p>
+<img src="/2022/10/03/2022-09-29-web3-dev-note/01.png" class="">
+<p>RainbowKit 算是目前連上各種錢包跟相關功能最好用的工具。</p>
+<p>RainbowKit 是屬於純前端的，如果要新增相關 Contract 的功能，有幾個不同的策略，其中一種範例：Mango Market UI<br><a href="https://mango.markets/">Maongo Market</a> 原為區塊鏈上的 Defi 交易所，他本身就有開源他用的 Contract 和 UI，如果對這種比較大型的系統可以看 Mango 的東西<br><a href="https://github.com/blockworks-foundation">Mango 原始碼</a><br>已經將不同結構拆開，分別：</p>
+<img src="/2022/10/03/2022-09-29-web3-dev-note/02.png" class="">
+
+<ol>
+<li>mongo-v3 contract</li>
+<li>mongo-client-v3 (銜接資料跟 API)</li>
+<li>mongo-ui-v3</li>
+</ol>
+<p>大型專案適合這樣分離度高的作法，小一點的專案則是可以混在一起。</p>
+<h3 id="簡單看一下-mongo-ui-v3"><a href="#簡單看一下-mongo-ui-v3" class="headerlink" title="簡單看一下 mongo-ui-v3"></a>簡單看一下 mongo-ui-v3</h3><ol>
+<li><p>Next.js 是 React 的 framework</p>
+</li>
+<li><p>將 router 的東西都處理完了，直接在 page 建立一個 newName.tsx 的檔案，他就會自動把./page/newName.tsx 的 route 建立出來就不用再處理 react-route 相關的東西，這是比較偏 Front-End 的部分</p>
+<img src="/2022/10/03/2022-09-29-web3-dev-note/04.png" class=""></li>
+<li><p>但像是在 stores 的資料夾，他會將資料層的部分抽離出來，他就是管理資料的中介狀態，傳統上的 store 有兩種方式：</p>
+</li>
+<li><p>有點像 redux 的方式來做管理，他會把所有資料層都收攏在一起，再去廣播這些變動</p>
+</li>
+<li><p>另一種 dapp 的模式請往下看。</p>
+<img src="/2022/10/03/2022-09-29-web3-dev-note/05.png" class=""></li>
+<li><p>那在區塊鏈這邊，會看到一個實踐方式，就是他把資料的部分抽成 hooks，那在區塊鏈上要 pull 資料或是 pull API 其實是滿非同步的，如果包成 hooks 的方式，再將這個 react 的屬性匯出到上一層來做使用會是一個比較好的方法。</p>
+<img src="/2022/10/03/2022-09-29-web3-dev-note/06.png" class="">
+<p>例如：useFees 裡面就會負責把所有跟 Fees 相關的東西抓到，然後變成一個 reactive 的屬性，自動渲染，然後前端渲染的時候，就 export makerFee 是多少，takeFee 是多少…</p>
+<img src="/2022/10/03/2022-09-29-web3-dev-note/07.png" class=""></li>
+<li><p>然後透過 command + shift + f 來搜尋 object 的名稱，可以找到在 Component 裡的 MarketFee.tsx 引入了 useFees()，初始化這個 react 的屬性，有點像是每個 hooks 都是一個小的 store，但也更容易去分辨用途。</p>
+<img src="/2022/10/03/2022-09-29-web3-dev-note/08.png" class=""></li>
+<li><p>再來是串接到 Contract 的部分，有些 hooks 還會跟串接 Contract 再分開，可能會單獨整理出 function 再來去做串接（Ethers, RainbowKit…），在由 hooks 去做引用。</p>
+</li>
+<li><p>最後再去串上區塊鏈的資料</p>
+</li>
+<li><p>結構分析 1. UI 層只做事覺化呈現 2. 在資料 / API 層，要想到在包裝完後，假設我用 useFees，我就只能取到 fee，而不要去想要怎麼串接 Contract，而這些 API 可能會定時去呼叫 Hooks 然後去更新資料，在回應資料給 UI。 3. 串接 contract 的部分，則是直接去想我在鏈上取得資料玩後的處理跟包裝成 React 的一個 function，再用 Hooks 去做處理。</p>
+<img src="/2022/10/03/2022-09-29-web3-dev-note/09.png" class=""></li>
+</ol>
+<h2 id="較小型專案建議模式"><a href="#較小型專案建議模式" class="headerlink" title="較小型專案建議模式"></a>較小型專案建議模式</h2><ol>
+<li>假設用 Hardhat，你是前端的 project 想要把 front-end 的 code 跟合約相關的 code 全部放在一起，也是有這種 template，在做小 project 會比較好用。</li>
+<li><a href="https://github.com/scaffold-eth/scaffold-eth-typescript">Scaffold-eth</a> 算是滿典型的範例。</li>
+<li>Scaffold-eth，本身就有 hardhat 的工具在裡頭，他會直接 initial 一個 front-end 資料夾，裡面裝了 next.js or vite。</li>
+<li>裝在一起有一個好處，會比直接管理或是串接要到抽象化那麼多層來的方便一些，但是檔案管理上就比較沒有那麼乾淨，如果是在大型的 project 就會相對混亂。</li>
+<li>在範例中，可以看到 hardhat 資料夾中直接把 contract 放進去，或是裡面一些測試用的 code，都會放在 hardhat 這資料夾內<img src="/2022/10/03/2022-09-29-web3-dev-note/10.png" class="">
+<img src="/2022/10/03/2022-09-29-web3-dev-note/11.png" class=""></li>
+<li>假設這些都是在同一個 Repo 裡面，hardhat 編譯完合約後會自動產生 ABI，通常我們就會直接將這些 ABI，直接放到外層資料夾，當你的 front-end 是在同個資料夾裡面時，就可以直接去引用這個 hardhat 編譯出來的 ABI，所以等於説在同一個專案裡面就可以同時去跑完 contract 的測試，然後去做一些相關的串接，譬如：中間要接 ABI 或引用合約的時候，都可以直接去 hardhat 的資料夾，把編譯完的資料直接丟到外層的 abi 資料夾去做引用，這樣就等於不用分兩邊更新，可以全部都弄在一起。</li>
+<li>一樣會用 hooks 的方式去把 ABI 引進來，然後在 Hooks 裡面把一些基礎的邏輯處理掉，包括他的串接、Connection…。<img src="/2022/10/03/2022-09-29-web3-dev-note/12.png" class=""></li>
+</ol>
+<h2 id="Wagmi-跟-RainbowKit"><a href="#Wagmi-跟-RainbowKit" class="headerlink" title="Wagmi 跟 RainbowKit"></a>Wagmi 跟 RainbowKit</h2><p><a href="https://wagmi.sh/">Wagmi</a> 也是一個不錯的 React 相關的 hooks，專們是給 Ethereum 用的，他等於也是給 Ethers 用的一個語法糖，它包括的語法糖就比 RainbowKit 多一些</p>
+<ol>
+<li>RainbowKit 主要還是在處理 Connect Wallet 這部分。</li>
+<li>Wagmi 的話，他主要是幫你把相關的其他的東西都包起來，譬如說，useAccount, useConnect, useDisconnect…</li>
+<li>如果 RainbowKit 只處理到 Provider 的部分，那 Wagmi 這邊就直接幫你把一些 Address, isConnected, disConnect, …甚至其他東西都包好成 function 會比較好使用。<img src="/2022/10/03/2022-09-29-web3-dev-note/13.png" class=""></li>
+<li>算是包裝的比較好，Doc 也寫得比較完整的其中一個，在 Doc 中可以看到很多相關範例，在做一些操作的時候就不需要用 ethers 去做互動，比 ethers 在稍微方便一點點。</li>
+</ol>
+<p>想了解 Ether 底層運作的，可以去找 Ether.js 的相關範例，之後的部分就會以 Wagmi or RainbowKit 稍微再包裝過一層的東西來去做示範跟做 project 會比較快。</p>
+<h2 id="前端專案結構範例說明及-Work-Flow-結束"><a href="#前端專案結構範例說明及-Work-Flow-結束" class="headerlink" title="前端專案結構範例說明及 Work Flow 結束"></a>前端專案結構範例說明及 Work Flow 結束</h2><img src="/2022/10/03/2022-09-29-web3-dev-note/14.png" class="">
+
+<hr>
+]]></content>
+      <categories>
+        <category>Web3</category>
+        <category>BlockChain</category>
+      </categories>
+      <tags>
+        <tag>技術筆記</tag>
+        <tag>blockChain</tag>
+        <tag>web3</tag>
+      </tags>
+  </entry>
 </search>
