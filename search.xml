@@ -3098,4 +3098,38 @@
         <tag>web3</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Web3 前端開發實戰-第六週作業實做筆記</title>
+    <url>/2022/11/19/web3-6th-week-homework/</url>
+    <content><![CDATA[<h1 id="前端-React-Hook-資料管理與-ERC20-貨幣合約函數互動"><a href="#前端-React-Hook-資料管理與-ERC20-貨幣合約函數互動" class="headerlink" title="前端 React Hook 資料管理與 ERC20 貨幣合約函數互動"></a>前端 React Hook 資料管理與 ERC20 貨幣合約函數互動</h1><p>技術實作過程及遇到的相關問題紀錄。<br><a href="https://github.com/Doug0849/Z-institute-6th-hw-ERC20-chatroomV2">GitHub Repositories</a><br><a href="https://nxou2r-3000.preview.csb.app/">CodeSandBox full page mode</a><br><a href="https://codesandbox.io/p/github/Doug0849/Z-institute-6th-hw-ERC20-chatroomV2/draft/cocky-heyrovsky?file=/README.md&workspace=%257B%2522activeFileId%2522%253A%2522clapwkbk8000al2igfwj9ao59%2522%252C%2522openFiles%2522%253A%255B%255D%252C%2522sidebarPanel%2522%253A%2522EXPLORER%2522%252C%2522gitSidebarPanel%2522%253A%2522COMMIT%2522%252C%2522sidekickItems%2522%253A%255B%257B%2522type%2522%253A%2522PREVIEW%2522%252C%2522taskId%2522%253A%2522dev%2522%252C%2522port%2522%253A3000%252C%2522key%2522%253A%2522clapwl9or00gz3b6ja02hmm33%2522%252C%2522isMinimized%2522%253Afalse%257D%252C%257B%2522type%2522%253A%2522TASK_LOG%2522%252C%2522taskId%2522%253A%2522dev%2522%252C%2522key%2522%253A%2522clapwkhz4009f3b6j8k0p3ypn%2522%252C%2522isMinimized%2522%253Afalse%257D%252C%257B%2522key%2522%253A%2522clapwkdth005x3b6jfgl0pfih%2522%252C%2522type%2522%253A%2522PROJECT_SETUP%2522%252C%2522isMinimized%2522%253Atrue%257D%255D%257D">CodeSandBox</a></p>
+<span id="more"></span>
+
+<p>一樣從0開始，使用rainbowKit 所提供的初始化指令來建立專案</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ npm init @rainbow-me/rainbowkit@latest</span><br></pre></td></tr></table></figure>
+
+<p>cd 到專案資料夾<br>使用code . 開啟專案</p>
+<p>Vscode裏頭使用開啟終端機輸入以下初始化</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ npm i</span><br><span class="line">$ npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion</span><br></pre></td></tr></table></figure>
+
+<p>然後在_app中加入 chakraProvider</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; ChakraProvider &#125; <span class="keyword">from</span> <span class="string">&#x27;@chakra-ui/react&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyApp</span>(<span class="params">&#123; Component, pageProps &#125;: AppProps</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">ChakraProvider</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">WagmiConfig</span> <span class="attr">client</span>=<span class="string">&#123;wagmiClient&#125;</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">RainbowKitProvider</span> <span class="attr">chains</span>=<span class="string">&#123;chains&#125;</span>&gt;</span></span></span><br><span class="line"><span class="xml">          <span class="tag">&lt;<span class="name">Component</span> &#123;<span class="attr">...pageProps</span>&#125; /&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;/<span class="name">RainbowKitProvider</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">WagmiConfig</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">ChakraProvider</span>&gt;</span></span></span><br><span class="line">  );</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>完成初始化後，使用chakraUI 製作一個Navbar，並將連接錢包按鈕放置到Navbar上。</p>
+<img src="/2022/11/19/web3-6th-week-homework/01.png" class="">
+<img src="/2022/11/19/web3-6th-week-homework/02.png" class="">
+
+<p>接著製作Token頁面</p>
+<p><strong>重點：</strong></p>
+<ol>
+<li>使用hooks，檔名：useXxxxx.tsx， 載入 wagmi,ethers 來取得區塊鏈資料。</li>
+<li>再將取得的資料載入page或是components中</li>
+<li>區塊鏈資料使用NoSSRWrapper來包裹，避免預渲染錯誤。</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>技術筆記</tag>
+        <tag>blockChain</tag>
+        <tag>web3</tag>
+      </tags>
+  </entry>
 </search>
